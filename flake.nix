@@ -15,12 +15,17 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./hosts/configuration.nix
-        ./hosts/zenbook-nixos/system/configuration.nix
+        ./nixos/shared-configuration.nix
+        ./nixos/zenbook-nixos/system/configuration.nix
         home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sebastian = import ./hosts/zenbook-nixos/home-manager/home.nix;
+	    home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.sebastian.imports = [
+		    ./nixos/shared-home.nix
+		    ./nixos/pc-nixos/home/home.nix
+		]; 
+	    };
           }
       ];
     };
@@ -29,12 +34,17 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./hosts/configuration.nix
-        ./hosts/pc-nixos/system/configuration.nix
+        ./nixos/shared-configuration.nix
+        ./nixos/pc-nixos/system/configuration.nix
         home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sebastian = import ./hosts/pc-nixos/home-manager/home.nix;
+	    home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.sebastian.imports = [
+		    ./nixos/shared-home.nix
+		    ./nixos/pc-nixos/home/home.nix
+		]; 
+	    };
           }
       ];
     };
