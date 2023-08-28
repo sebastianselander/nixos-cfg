@@ -32,8 +32,8 @@
             userEmail = "sebastian.selander@gmail.com";
         };
         home-manager = {
-	    enable = true;
-	};
+            enable = true;
+        };
         starship = {
             enable = true;
             settings = {
@@ -56,13 +56,14 @@
                 gf = "git fetch";
                 gp = "git push";
                 ga = "git add";
-                cfg = "cd ~/.config";
+                cfg = "cd ~/Documents/git/nixos-cfg/";
                 ls = "exa --group-directories-first";
                 lsa = "exa --group-directories-first -la";
                 lst = "exa -s modified -1";
                 vim = "nvim";
                 con = "mullvad connect";
                 disc = "mullvad disconnect";
+                rebuild = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg/";
             };
             initExtra = ''
                 alias ..='cd ..'
@@ -70,44 +71,58 @@
                 bindkey -e
                 '';
         };
-	neovim = {
-	    enable = true;
-	    defaultEditor = true;
-	    extraConfig = import ../nvim/customization.nix;
-	    plugins = with pkgs.vimPlugins; [
-		telescope-nvim
-		telescope-fzf-native-nvim
-		nvim-treesitter.withAllGrammars
-		undotree
-		vim-surround
-		vim-commentary
-		lualine-nvim
-		vimtex
-		harpoon
-		nvim-hs-vim
-		vim-repeat
-		vim-highlightedyank
-		nvim-colorizer-lua
-		nvim-lspconfig
-		plenary-nvim
-		diffview-nvim
-		oil-nvim
-		luasnip
-		tmux-nvim
-		nvim-cmp
-		toggleterm-nvim
-		colorbuddy-nvim
-		ayu-vim
-		onedark-nvim
-
-	        tokyonight-nvim
-	        catppuccin-nvim
-	        oxocarbon-nvim
-	        nightfox-nvim
-	        papercolor-theme
-	        solarized-nvim
-	        kmonad-vim
-	    ];
+        neovim = {
+            enable = true;
+            defaultEditor = true;
+            extraConfig = import ../nvim/customization.nix;
+            plugins = with pkgs.vimPlugins; [
+                telescope-nvim
+                telescope-fzf-native-nvim
+                nvim-treesitter.withAllGrammars
+                undotree
+                vim-surround
+                vim-commentary
+                lualine-nvim
+                vimtex
+                harpoon
+                nvim-hs-vim
+                vim-repeat
+                vim-highlightedyank
+                nvim-colorizer-lua
+                nvim-lspconfig
+                plenary-nvim
+                diffview-nvim
+                oil-nvim
+                luasnip
+                tmux-nvim
+                nvim-cmp
+                toggleterm-nvim
+                colorbuddy-nvim
+                ayu-vim
+                onedark-nvim
+                tokyonight-nvim
+                catppuccin-nvim
+                oxocarbon-nvim
+                nightfox-nvim
+                papercolor-theme
+                solarized-nvim
+                kmonad-vim
+            ];
+        };
+        tmux = {
+            enable = true;
+            shortcut = "s";
+            keyMode = "emacs";
+            clock24 = true;
+            terminal = "screen-256color";
+            extraConfig =
+                "
+                set-option -g default-shell /run/current-system/sw/bin/zsh
+                bind h select-pane -L
+                bind j select-pane -D
+                bind k select-pane -U
+                bind l select-pane -R
+                ";
         };
     };
 
@@ -142,38 +157,17 @@
             tree
             wget
             xclip
+            vlc
+            ripgrep
+            ghc
+            cabal-install
+            stack
     ];
 
     home = {
         file = {
             ".config/kitty/kitty.conf".source = ../kitty/kitty.conf;
             ".ghci".source = ../.ghci;
-            # ".config/nvim/init.lua".source = ../nvim/init.lua;
-            # ".config/nvim/after/plugin/cmp.lua".source = ../nvim/after/plugin/cmp.lua;
-            # ".config/nvim/after/plugin/colorscheme.lua".source = ../nvim/after/plugin/colorscheme.lua;
-            # ".config/nvim/after/plugin/cornelis.lua".source = ../nvim/after/plugin/cornelis.lua;
-            # ".config/nvim/after/plugin/diffview.lua".source = ../nvim/after/plugin/diffview.lua;
-            # ".config/nvim/after/plugin/eyeliner.lua".source = ../nvim/after/plugin/eyeliner.lua;
-            # ".config/nvim/after/plugin/fugitive.lua".source = ../nvim/after/plugin/fugitive.lua;
-            # ".config/nvim/after/plugin/harpoon.lua".source = ../nvim/after/plugin/harpoon.lua;
-            # ".config/nvim/after/plugin/haskell-nvim.lua".source = ../nvim/after/plugin/haskell-nvim.lua;
-            # ".config/nvim/after/plugin/haskell-tools.lua".source = ../nvim/after/plugin/haskell-tools.lua;
-            # ".config/nvim/after/plugin/init.lua".source = ../nvim/after/plugin/init.lua;
-            # ".config/nvim/after/plugin/lspconfig.lua".source = ../nvim/after/plugin/lspconfig.lua;
-            # ".config/nvim/after/plugin/lualine.lua".source = ../nvim/after/plugin/lualine.lua;
-            # ".config/nvim/after/plugin/luasnip.lua".source = ../nvim/after/plugin/luasnip.lua;
-            # ".config/nvim/after/plugin/nvim-tree.lua".source = ../nvim/after/plugin/nvim-tree.lua;
-            # ".config/nvim/after/plugin/oil.lua".source = ../nvim/after/plugin/oil.lua;
-            # ".config/nvim/after/plugin/onedark.lua".source = ../nvim/after/plugin/onedark.lua;
-            # ".config/nvim/after/plugin/telescope.lua".source = ../nvim/after/plugin/telescope.lua;
-            # ".config/nvim/after/plugin/toggleterm.lua".source = ../nvim/after/plugin/toggleterm.lua;
-            # ".config/nvim/after/plugin/treesitter.lua".source = ../nvim/after/plugin/treesitter.lua;
-            # ".config/nvim/after/plugin/truezen.lua".source = ../nvim/after/plugin/truezen.lua;
-            # ".config/nvim/after/plugin/undotree.lua".source = ../nvim/after/plugin/undotree.lua;
-            # ".config/nvim/after/plugin/vimtex.lua".source = ../nvim/after/plugin/vimtex.lua;
-            # ".config/nvim/lua/setup/init.lua".source = ../nvim/lua/setup/init.lua;
-            # ".config/nvim/lua/setup/remap.lua".source = ../nvim/lua/setup/remap.lua;
-            # ".config/nvim/lua/setup/set.lua".source = ../nvim/lua/setup/set.lua;
         };
     };
 }
