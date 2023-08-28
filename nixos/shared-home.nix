@@ -57,7 +57,7 @@
                 gp = "git push";
                 ga = "git add";
                 cfg = "cd ~/Documents/git/nixos-cfg/";
-                ls = "exa --group-directories-first";
+                ls  = "exa --group-directories-first";
                 lsa = "exa --group-directories-first -la";
                 lst = "exa -s modified -1";
                 vim = "nvim";
@@ -118,6 +118,7 @@
             extraConfig =
                 "
                 set-option -g default-shell /run/current-system/sw/bin/zsh
+                set -g mouse on
                 bind h select-pane -L
                 bind j select-pane -D
                 bind k select-pane -U
