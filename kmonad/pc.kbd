@@ -27,7 +27,7 @@
             "KMonad kbd"
             "sleep 0.2s; xset r rate 230 55; sleep 0.2s")
   cmp-seq ralt
-  cmp-seq-delay 5
+  ;; cmp-seq-delay 5
 
   fallthrough true
   allow-cmd true
@@ -78,10 +78,6 @@
   ec (tap-next esc lctl)
 )
 
-(defalias
-  sl (sticky-key 500 lsft)
-  sr (sticky-key 500 lsft))
-
 
 ;; Haskell stuff
 
@@ -98,7 +94,6 @@
   ->  #( - >   )
   =>  #( = >   )
   ::  #( : :   )
-  prg #({ - # spc L A N G U A G E spc # - } left left left :delay 5)
 )
 
 
@@ -127,7 +122,7 @@
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @ec  a    s    d    f    g    h    j    k    l    ;    '    ret
-  @sl  <    z    x    c    v    b    n    m    ,    .    /    @sr  
+  lsft  <    z    x    c    v    b    n    m    ,    .    /   rsft  
   lctl wkup lmet lalt           spc            @sym rctl      up 
                                                          lft  down rght
 )
@@ -139,7 +134,7 @@
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @ec  a    s    d    f    g    h    j    k    l    ;    '    ret
-  @sl  102d z    x    c    v    b    n    m    ,    .    /    @sr  
+  lsft  102d z    x    c    v    b    n    m    ,    .    /   rsft  
   lctl wkup lmet lalt           spc            @sym rctl      up
                                                          lft  down rght
 )
@@ -148,9 +143,9 @@
 (deflayer sym
   esc
   §    @us  @se  3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    [    ]    t    y    u    i    o    @prg å    XX   XX
+  tab  q    w    [    ]    t    y    u    i    o    p    å    XX   XX
   @ec  &    *    {    }    g    left down up   rght ö    ä    ret
-  @sl  <    z    ^    v    @=<< @>>= n    @::  @<-  @->  @=>  @sr  
+  lsft <    z    ^    v    @=<< @>>= n    @::  @<-  @->  @=>  rsft  
   lctl wkup lmet lalt           spc            @sym rctl      up
                                                          lft  down rght
 )
