@@ -111,7 +111,7 @@
         };
         tmux = {
             enable = true;
-            shortcut = "s";
+            shortcut = "b";
             keyMode = "emacs";
             clock24 = true;
             terminal = "screen-256color";

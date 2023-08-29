@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
-let
-    kmonad = (import ./kmonad-deriv/derivation.nix) pkgs;
-in
-
 {
-    imports = [ ./kmonad-deriv/kmonad.nix ];
 
     boot.loader = {
         efi.canTouchEfiVariables = true;
@@ -51,11 +46,6 @@ in
             desktopManager.plasma5.enable = true;
             autoRepeatDelay = 230;
             autoRepeatInterval = 55;
-        };
-        kmonad = {
-            enable = true;
-            configfiles = [ ../kmonad/laptop.kbd ];
-            package = kmonad; 
         };
         pipewire = {
             enable = true;
