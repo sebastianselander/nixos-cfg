@@ -4,7 +4,6 @@ let
     kmonad = (import ./kmonad-deriv/derivation.nix) pkgs;
 in
 
-
 {
     imports = [ ./kmonad-deriv/kmonad.nix ];
 
@@ -50,11 +49,13 @@ in
             xkbOptions = "compose:ralt";
             displayManager.sddm.enable = true;
             desktopManager.plasma5.enable = true;
+            autoRepeatDelay = 230;
+            autoRepeatInterval = 55;
         };
         kmonad = {
             enable = true;
-            configfiles = [ ../kmonad/pc.kbd ];
-            package= kmonad; 
+            configfiles = [ ../kmonad/laptop.kbd ];
+            package = kmonad; 
         };
         pipewire = {
             enable = true;

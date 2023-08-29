@@ -132,6 +132,7 @@
             alex
             bat
             btop
+            cabal-install
             discord
             dmenu
             exa
@@ -139,6 +140,7 @@
             firefox
             gcc
             gh
+            ghc
             ghcid
             happy
             haskell-language-server
@@ -152,17 +154,15 @@
             nixos-option
             obs-studio
             pandoc
+            ripgrep
+            stack
             texlive.combined.scheme-basic
             thunderbird
             tmux
             tree
+            vlc
             wget
             xclip
-            vlc
-            ripgrep
-            ghc
-            cabal-install
-            stack
     ];
 
     home = {

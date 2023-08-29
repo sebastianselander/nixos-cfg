@@ -1,13 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
 
-  networking.hostName = "zenbook-nixos";
+    imports = [ ./hardware-configuration.nix ];
 
-  services.tlp.enable = true;
-  services.power-profiles-daemon.enable = false;
+    networking.hostName = "zenbook-nixos";
+
+    services.tlp.enable = true;
+    services.power-profiles-daemon.enable = false;
 }

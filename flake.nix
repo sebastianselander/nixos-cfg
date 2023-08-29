@@ -15,8 +15,8 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./nixos/shared-configuration.nix
         ./nixos/zenbook-nixos/system/configuration.nix
+        ./nixos/shared-configuration.nix
         home-manager.nixosModules.home-manager {
 	    home-manager = {
                 useGlobalPkgs = true;
@@ -34,8 +34,8 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./nixos/shared-configuration.nix
         ./nixos/pc-nixos/system/configuration.nix
+        ./nixos/shared-configuration.nix
         home-manager.nixosModules.home-manager {
 	    home-manager = {
                 useGlobalPkgs = true;
