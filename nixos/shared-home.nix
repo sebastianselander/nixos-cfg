@@ -1,31 +1,39 @@
 { config, pkgs, ... }:
 
 {
-# Home Manager needs a bit of information about you and the paths it should
-# manage.
-    home.username = "sebastian";
-    home.homeDirectory = "/home/sebastian";
+    home = {
+        username = "sebastian";
+        homeDirectory = "/home/sebastian";
+        stateVersion = "23.05"; # Please read the comment before changing.
 
-# This value determines the Home Manager release that your configuration is
-# compatible with. This helps avoid breakage when a new Home Manager release
-# introduces backwards incompatible changes.
-#
-# You should not change this value, even if you update Home Manager. If you do
-# want to update the value, then make sure to first check the Home Manager
-# release notes.
-    home.stateVersion = "23.05"; # Please read the comment before changing.
+        language.base = "en_US.UTF-8";
 
-        home.language.base = "en_US.UTF-8";
-
-    nixpkgs = {
-        config = {
-            allowUnfree = true;
-        };
     };
+
+    nixpkgs.config.allowUnfree = true;
 
     fonts.fontconfig.enable = true;
 
     programs = {
+        btop.enable = true;
+        kitty = {
+            enable = true;
+            font = {
+                name = "Julia Mono";
+                size = 14;
+            };
+            theme = "One Dark";
+            shellIntegration.enableZshIntegration = true;
+            settings = {
+                    enable_audio_bell = false;
+                    disable_ligatures = true;
+                    cursor_shape = "block"; 
+                    cursor = "#00AA00";
+                    background_opacity = 1;
+                    window_padding_width = 2;
+                };
+
+        };
         git = {
             enable = true;
             userName  = "sebastianselander";
@@ -77,27 +85,21 @@
             extraConfig = import ../nvim/customization.nix;
             plugins = with pkgs.vimPlugins; [
                 telescope-nvim
-                telescope-fzf-native-nvim
+                mini-nvim
                 nvim-treesitter.withAllGrammars
                 undotree
-                vim-surround
-                vim-commentary
                 lualine-nvim
                 vimtex
                 harpoon
                 nvim-hs-vim
-                vim-repeat
                 vim-highlightedyank
-                nvim-colorizer-lua
                 nvim-lspconfig
-                plenary-nvim
-                diffview-nvim
                 oil-nvim
                 luasnip
                 tmux-nvim
                 nvim-cmp
-                toggleterm-nvim
-                colorbuddy-nvim
+
+                # Themes
                 ayu-vim
                 onedark-nvim
                 tokyonight-nvim
@@ -106,23 +108,31 @@
                 nightfox-nvim
                 papercolor-theme
                 solarized-nvim
-                kmonad-vim
             ];
         };
         tmux = {
             enable = true;
-            shortcut = "b";
+            prefix = "b";
+            shell = "\${pkgs.zsh}/bin/zsh";
             keyMode = "emacs";
             clock24 = true;
             terminal = "screen-256color";
+            newSession = true;
+            plugins = [
+               pkgs.tmuxPlugins.resurrect 
+            ];
             extraConfig =
                 "
-                set-option -g default-shell /run/current-system/sw/bin/zsh
+                set -s escape-time 0
                 set -g mouse on
+                bind R source-file '~/.config/tmux/tmux.conf'
                 bind h select-pane -L
                 bind j select-pane -D
                 bind k select-pane -U
                 bind l select-pane -R
+                set-option -g pane-border-style fg=\"\#FFFFFF\"
+                set -g status-bg gray
+                set -g status-fg black
                 ";
         };
     };
@@ -131,7 +141,6 @@
             agda
             alex
             bat
-            btop
             cabal-install
             discord
             dmenu
@@ -167,7 +176,6 @@
 
     home = {
         file = {
-            ".config/kitty/kitty.conf".source = ../kitty/kitty.conf;
             ".ghci".source = ../.ghci;
         };
     };
