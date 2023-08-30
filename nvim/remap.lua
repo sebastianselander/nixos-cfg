@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = '<C-c>'
 
 vim.keymap.set('n', '<leader>tt', vim.cmd.Oil)
 

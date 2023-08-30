@@ -25,7 +25,7 @@ local nnoremap = function(lhs, rhs)
     vim.keymap.set('n', lhs, rhs, { noremap = true })
 end
 
-nnoremap('<leader>pp', builtin.find_files)
+nnoremap('<leader>pf', builtin.find_files)
 nnoremap('<C-p>', builtin.git_files)
 nnoremap('<leader>ps', function() builtin.grep_string({search = vim.fn.input("Grep > ")}) end)
 nnoremap('<leader>b', builtin.buffers)

@@ -5,9 +5,48 @@
         username = "sebastian";
         homeDirectory = "/home/sebastian";
         stateVersion = "23.05"; # Please read the comment before changing.
-
         language.base = "en_US.UTF-8";
+        packages = with pkgs; [
+            (agda.withPackages [ agdaPackages.standard-library ])
+                bat
+                cabal-install
+                discord
+                dmenu
+                exa
+                feh
+                firefox
+                gcc
+                gh
+                ghc
+                ghcid
+                gnumake
+                haskell-language-server
+                htop
+                iosevka
+                julia-mono
+                kitty
+                neofetch
+                nerdfonts
+                nil
+                nixos-option
+                obs-studio
+                pandoc
+                spotify
+                hlint
+                ripgrep
+                stack
+                texlive.combined.scheme-basic
+                thunderbird
+                tmux
+                tree
+                vlc
+                wget
+                xclip
+                ];
 
+        file = {
+            ".ghci".source = ../.ghci;
+        };
     };
 
     nixpkgs.config.allowUnfree = true;
@@ -83,6 +122,7 @@
             enable = true;
             defaultEditor = true;
             extraConfig = import ../nvim/customization.nix;
+            extraPackages = [ pkgs.cornelis ];
             plugins = with pkgs.vimPlugins; [
                 telescope-nvim
                 mini-nvim
@@ -108,24 +148,27 @@
                 nightfox-nvim
                 papercolor-theme
                 solarized-nvim
+                {
+                    plugin = pkgs.vimPlugins.cornelis;
+                }
             ];
         };
         tmux = {
             enable = true;
-            prefix = "b";
-            shell = "\${pkgs.zsh}/bin/zsh";
+            prefix = "C-a";
+            shell = "${pkgs.zsh}/bin/zsh";
             keyMode = "emacs";
             clock24 = true;
             terminal = "screen-256color";
-            newSession = true;
+            mouse = true;
+            escapeTime = 0;
             plugins = [
                pkgs.tmuxPlugins.resurrect 
             ];
             extraConfig =
                 "
-                set -s escape-time 0
-                set -g mouse on
                 bind R source-file '~/.config/tmux/tmux.conf'
+                set-option -g default-shell /run/current-system/sw/bin/zsh
                 bind h select-pane -L
                 bind j select-pane -D
                 bind k select-pane -U
@@ -133,50 +176,12 @@
                 set-option -g pane-border-style fg=\"\#FFFFFF\"
                 set -g status-bg gray
                 set -g status-fg black
+
+                bind C-n next-window
+                bind C-p previous-window
+                bind a last-window
                 ";
         };
     };
 
-    home.packages = with pkgs; [
-            agda
-            alex
-            bat
-            cabal-install
-            discord
-            dmenu
-            exa
-            feh
-            firefox
-            gcc
-            gh
-            ghc
-            ghcid
-            happy
-            haskell-language-server
-            htop
-            iosevka
-            julia-mono
-            kitty
-            neofetch
-            nerdfonts
-            nil
-            nixos-option
-            obs-studio
-            pandoc
-            ripgrep
-            stack
-            texlive.combined.scheme-basic
-            thunderbird
-            tmux
-            tree
-            vlc
-            wget
-            xclip
-    ];
-
-    home = {
-        file = {
-            ".ghci".source = ../.ghci;
-        };
-    };
 }
