@@ -1,0 +1,8 @@
+:set +t
+:set +s
+:set -XTypeApplications
+:set -XLambdaCase
+:set -XOverloadedRecordDot
+:set -XImportQualifiedPost
+:set -Wall
+:set prompt "\ESC[1;95m%s \ESC[0;95mλ \ESC[m"
