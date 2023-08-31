@@ -42,6 +42,7 @@
                 vlc
                 wget
                 xclip
+                zathura
                 ];
 
         file = {
