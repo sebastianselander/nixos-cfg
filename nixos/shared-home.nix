@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     home = {
@@ -7,7 +7,7 @@
         stateVersion = "23.05"; # Please read the comment before changing.
         language.base = "en_US.UTF-8";
         packages = with pkgs; [
-            (agda.withPackages [ agdaPackages.standard-library ])
+                (agda.withPackages [ agdaPackages.standard-library ])
                 bat
                 cabal-install
                 discord
@@ -59,15 +59,15 @@
         kitty = {
             enable = true;
             font = {
-                name = "Julia Mono";
-                size = 14;
+                name = "Iosevka";
+                size = 16;
             };
-            theme = "One Dark";
+            theme = "Oceanic Material";
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
                     disable_ligatures = true;
-                    cursor_shape = "block"; 
+                    cursor_shape = "block";
                     cursor = "#00AA00";
                     background_opacity = 1;
                     window_padding_width = 2;
@@ -140,6 +140,9 @@
                 tmux-nvim
                 nvim-cmp
 
+                # agda
+                cornelis
+
                 # Themes
                 ayu-vim
                 onedark-nvim
@@ -148,10 +151,7 @@
                 oxocarbon-nvim
                 nightfox-nvim
                 papercolor-theme
-                solarized-nvim
-                {
-                    plugin = pkgs.vimPlugins.cornelis;
-                }
+                material-nvim
             ];
         };
         tmux = {
@@ -164,7 +164,7 @@
             mouse = true;
             escapeTime = 0;
             plugins = [
-               pkgs.tmuxPlugins.resurrect 
+               pkgs.tmuxPlugins.resurrect
             ];
             extraConfig =
                 "
@@ -185,6 +185,13 @@
                 bind C-p previous-window
                 bind a last-window
                 ";
+        };
+        emacs = {
+                enable = true;
+                extraPackages = epkgs: with epkgs; [ magit agda2-mode agda-input evil ];
+                extraConfig = '' 
+                    
+                '';
         };
     };
 
