@@ -178,6 +178,9 @@
                 set -g status-bg gray
                 set -g status-fg black
 
+                bind c new-window -c \"\#{pane_current_path}\"
+                bind '\"' split-window -c \"\#{pane_current_path}\"
+                bind % split-window -h -c \"\#{pane_current_path}\"
                 bind C-n next-window
                 bind C-p previous-window
                 bind a last-window
