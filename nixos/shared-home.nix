@@ -24,7 +24,6 @@
                 htop
                 iosevka
                 julia-mono
-                kitty
                 neofetch
                 nerdfonts
                 nil
@@ -43,6 +42,7 @@
                 wget
                 xclip
                 zathura
+                zoom-us
                 ];
 
         file = {
