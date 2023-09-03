@@ -125,33 +125,35 @@
             extraConfig = import ../nvim/customization.nix;
             extraPackages = [ pkgs.cornelis ];
             plugins = with pkgs.vimPlugins; [
-                telescope-nvim
-                mini-nvim
-                nvim-treesitter.withAllGrammars
-                undotree
-                lualine-nvim
-                vimtex
                 harpoon
-                nvim-hs-vim
-                vim-highlightedyank
-                nvim-lspconfig
-                oil-nvim
+                lualine-nvim
                 luasnip
-                tmux-nvim
+                mini-nvim
                 nvim-cmp
+                nvim-hs-vim
+                nvim-lspconfig
+                nvim-treesitter.withAllGrammars
+                oil-nvim
+                telescope-nvim
+                undotree
+                vim-highlightedyank
+                vimtex
+
+                vim-fugitive
+                vim-obsession
 
                 # agda
                 cornelis
 
                 # Themes
                 ayu-vim
+                catppuccin-nvim
+                gruvbox
+                kanagawa-nvim
+                material-nvim
+                nightfox-nvim
                 onedark-nvim
                 tokyonight-nvim
-                catppuccin-nvim
-                oxocarbon-nvim
-                nightfox-nvim
-                papercolor-theme
-                material-nvim
             ];
         };
         tmux = {
@@ -188,11 +190,25 @@
         };
         emacs = {
                 enable = true;
-                extraPackages = epkgs: with epkgs; [ magit agda2-mode agda-input evil ];
+                extraPackages = epkgs: with epkgs; [
+                    magit
+                    agda2-mode
+                    agda-input
+                    evil
+                    material-theme
+                ];
                 extraConfig = '' 
-                    
+                    (menu-bar-mode 0)
+                    (tool-bar-mode 0)
+                    (scroll-bar-mode 0)
+                    (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
+                    (set-face-attribute 'default nil :family "Julia Mono" :height 130)
+                    (evil-mode 1)
+                    (load-file (let ((coding-system-for-read 'utf-8))
+                               (shell-command-to-string "agda-mode locate"))
+                    )
+                    (load-theme 'material t)
                 '';
         };
     };
-
 }
