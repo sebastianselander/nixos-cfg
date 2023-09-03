@@ -4,7 +4,7 @@
     home = {
         username = "sebastian";
         homeDirectory = "/home/sebastian";
-        stateVersion = "23.05"; # Please read the comment before changing.
+        stateVersion = "23.05";
         language.base = "en_US.UTF-8";
         packages = with pkgs; [
                 (agda.withPackages [ agdaPackages.standard-library ])

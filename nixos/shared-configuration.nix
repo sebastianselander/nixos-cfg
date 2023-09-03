@@ -45,9 +45,6 @@
             desktopManager.plasma5.enable = true;
             displayManager = {
                 sddm.enable = true;
-                sessionCommands = ''
-                    ${pkgs.xorg.xset}/bin/xset r rate 230 55
-                '';
             };
         };
         pipewire = {
@@ -72,8 +69,8 @@
         isNormalUser = true;
         extraGroups = [
             "networkmanager"
-                "wheel"
-                "docker"
+            "wheel"
+            "docker"
         ];
         shell = pkgs.zsh;
     };
