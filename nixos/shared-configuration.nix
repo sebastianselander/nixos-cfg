@@ -42,10 +42,13 @@
             layout = "us";
             xkbVariant = "";
             xkbOptions = "compose:ralt";
-            displayManager.sddm.enable = true;
             desktopManager.plasma5.enable = true;
-            autoRepeatDelay = 230;
-            autoRepeatInterval = 55;
+            displayManager = {
+                sddm.enable = true;
+                sessionCommands = ''
+                    ${pkgs.xorg.xset}/bin/xset r rate 230 55
+                '';
+            };
         };
         pipewire = {
             enable = true;
@@ -70,8 +73,6 @@
         extraGroups = [
             "networkmanager"
                 "wheel"
-                "input"
-                "uinput"
                 "docker"
         ];
         shell = pkgs.zsh;

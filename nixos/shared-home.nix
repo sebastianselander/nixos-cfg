@@ -138,6 +138,9 @@
                 undotree
                 vim-highlightedyank
                 vimtex
+                nvim-cmp
+                cmp-nvim-lsp
+                plenary-nvim
 
                 vim-fugitive
                 vim-obsession
@@ -186,6 +189,8 @@
                 bind C-n next-window
                 bind C-p previous-window
                 bind a last-window
+
+                set -g @resurrect-strategy-nvim 'session'
                 ";
         };
         emacs = {
@@ -208,6 +213,7 @@
                                (shell-command-to-string "agda-mode locate"))
                     )
                     (load-theme 'material t)
+                    (setq visible-bell t)
                 '';
         };
     };
