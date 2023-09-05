@@ -6,7 +6,7 @@ let
         sha256 = "13vs7xq9clgg6pd9gr49h5ljgyg0kc63qd3ghh3dvmi3rkkmi7l3";
     };
 in
-    pkgs.stdenv.mkDerivation rec {
+    pkgs.stdenv.mkDerivation {
         name = "kmonad";
         version = "0.4.1";
         src = kmonad-bin;

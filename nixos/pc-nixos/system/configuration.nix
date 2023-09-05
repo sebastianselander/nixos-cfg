@@ -1,8 +1,4 @@
-{ config, pkgs, ... }:
-
-let
-    kmonad = (import ../../kmonad-deriv/derivation.nix) pkgs;
-in
+{ config, ... }:
 
 {
     imports =
