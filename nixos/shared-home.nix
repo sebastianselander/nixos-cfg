@@ -21,20 +21,21 @@
                 ghcid
                 gnumake
                 haskell-language-server
+                hlint
                 htop
                 iosevka
                 julia-mono
+                libreoffice
                 neofetch
                 nerdfonts
                 nil
                 nixos-option
                 obs-studio
                 pandoc
-                spotify
-                hlint
                 ripgrep
+                spotify
                 stack
-                texlive.combined.scheme-basic
+                texlive.combined.scheme-full
                 thunderbird
                 tmux
                 tree
@@ -62,13 +63,13 @@
                 name = "Iosevka";
                 size = 16;
             };
-            theme = "Oceanic Material";
+            # theme = "Oceanic Material";
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
                     disable_ligatures = true;
                     cursor_shape = "block";
-                    cursor = "#00AA00";
+                    cursor = "#0000AA";
                     background_opacity = 1;
                     window_padding_width = 2;
                 };
