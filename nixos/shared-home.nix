@@ -42,7 +42,6 @@
                 vlc
                 wget
                 xclip
-                zathura
                 zoom-us
                 ];
 
@@ -63,13 +62,14 @@
                 name = "Iosevka";
                 size = 16;
             };
-            # theme = "Oceanic Material";
+            #theme = "Oceanic Material";
             shellIntegration.enableZshIntegration = true;
+            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf;
             settings = {
                     enable_audio_bell = false;
                     disable_ligatures = true;
                     cursor_shape = "block";
-                    cursor = "#0000AA";
+                    cursor = "#00FF00";
                     background_opacity = 1;
                     window_padding_width = 2;
                 };
@@ -92,6 +92,15 @@
                     success_symbol = "[>](bold green)";
                     error_symbol = "[>](bold red)";
                 };
+            };
+        };
+        zathura = {
+            enable = true;
+            options = {
+                recolor = true;
+                step = 20;
+                selection-clipboard = "clipboard";
+
             };
         };
         zsh = {
