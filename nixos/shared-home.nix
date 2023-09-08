@@ -37,7 +37,6 @@
                 stack
                 texlive.combined.scheme-full
                 thunderbird
-                tmux
                 tree
                 vlc
                 wget
@@ -64,8 +63,8 @@
                 size = 16;
             };
             #theme = "Oceanic Material";
-            shellIntegration.enableZshIntegration = true;
             extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf;
+            shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
                     disable_ligatures = true;
@@ -173,7 +172,6 @@
                 nvim-cmp
                 cmp-nvim-lsp
                 plenary-nvim
-
                 vim-fugitive
                 vim-obsession
 
@@ -195,7 +193,7 @@
             enable = true;
             prefix = "C-a";
             shell = "${pkgs.zsh}/bin/zsh";
-            keyMode = "emacs";
+            keyMode = "vi";
             clock24 = true;
             terminal = "screen-256color";
             mouse = true;
@@ -226,27 +224,27 @@
                 ";
         };
         emacs = {
-                enable = true;
-                extraPackages = epkgs: with epkgs; [
-                    magit
-                    agda2-mode
-                    agda-input
-                    evil
-                    material-theme
-                ];
-                extraConfig = '' 
-                    (menu-bar-mode 0)
-                    (tool-bar-mode 0)
-                    (scroll-bar-mode 0)
-                    (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                    (set-face-attribute 'default nil :family "Julia Mono" :height 130)
-                    (evil-mode 1)
-                    (load-file (let ((coding-system-for-read 'utf-8))
-                               (shell-command-to-string "agda-mode locate"))
-                    )
-                    (load-theme 'material t)
-                    (setq visible-bell t)
-                '';
+            enable = true;
+            extraPackages = epkgs: with epkgs; [
+                magit
+                agda2-mode
+                agda-input
+                evil
+                material-theme
+            ];
+            extraConfig = '' 
+                (menu-bar-mode 0)
+                (tool-bar-mode 0)
+                (scroll-bar-mode 0)
+                (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
+                (set-face-attribute 'default nil :family "Julia Mono" :height 130)
+                (evil-mode 1)
+                (load-file (let ((coding-system-for-read 'utf-8))
+                           (shell-command-to-string "agda-mode locate"))
+                )
+                (load-theme 'material t)
+                (setq visible-bell t)
+            '';
         };
     };
 }
