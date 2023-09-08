@@ -42,6 +42,7 @@
                 vlc
                 wget
                 xclip
+                zlib
                 zoom-us
                 ];
 
@@ -102,6 +103,27 @@
                 selection-clipboard = "clipboard";
 
             };
+        };
+        nushell = {
+            configFile.source = ../nushell/config.nu;
+            envFile.source = ../nushell/env.nu;
+            loginFile.source = ../nushell/login.nu;
+            shellAliases = {
+                gs = "git status";
+                gc = "git commit";
+                gf = "git fetch";
+                gp = "git push";
+                ga = "git add";
+                cfg = "cd ~/Documents/git/nixos-cfg/";
+                ls  = "exa --group-directories-first";
+                lsa = "exa --group-directories-first -la";
+                lst = "exa -s modified -1";
+                vim = "nvim";
+                con = "mullvad connect";
+                disc = "mullvad disconnect";
+                rebuild = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg/";
+            };
+
         };
         zsh = {
             enable = true;

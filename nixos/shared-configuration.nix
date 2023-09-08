@@ -43,9 +43,9 @@
             xkbVariant = "";
             xkbOptions = "compose:ralt";
             desktopManager.plasma5.enable = true;
-            displayManager = {
-                sddm.enable = true;
-            };
+            displayManager.sddm.enable = true;
+            autoRepeatInterval = 230;
+            autoRepeatDelay = 55;
         };
         pipewire = {
             enable = true;
@@ -75,12 +75,13 @@
         shell = pkgs.zsh;
     };
 
-    programs.zsh.enable = true;
-
     nixpkgs.config.allowUnfree = true;
+    programs.zsh.enable = true;
 
     environment.systemPackages = with pkgs; [
         mullvad-vpn
+        zsh
+        nushell
     ];
 
 # This value determines the NixOS release from which the default
