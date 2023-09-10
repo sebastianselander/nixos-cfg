@@ -224,7 +224,6 @@
                 ";
         };
         emacs = {
-<<<<<<< HEAD
             enable = true;
             extraPackages = epkgs: with epkgs; [
                 magit
@@ -233,29 +232,6 @@
                 evil
                 material-theme
             ];
-            extraConfig = '' 
-                (menu-bar-mode 0)
-                (tool-bar-mode 0)
-                (scroll-bar-mode 0)
-                (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                (set-face-attribute 'default nil :family "Julia Mono" :height 130)
-                (evil-mode 1)
-                (load-file (let ((coding-system-for-read 'utf-8))
-                           (shell-command-to-string "agda-mode locate"))
-                )
-                (load-theme 'material t)
-                (setq visible-bell t)
-            '';
-=======
-                enable = true;
-                extraPackages = epkgs: with epkgs; [
-                    magit
-                    agda2-mode
-                    agda-input
-                    evil
-                    material-theme
-                    night-owl-theme
-                ];
                 extraConfig = '' 
                     (menu-bar-mode 0)
                     (tool-bar-mode 0)
@@ -269,7 +245,6 @@
                     (load-theme 'night-owl t)
                     (setq visible-bell t)
                 '';
->>>>>>> b43ac19 (changed emacs theme)
         };
     };
 }
