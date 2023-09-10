@@ -231,6 +231,7 @@
                 agda-input
                 evil
                 material-theme
+                night-owl-theme
             ];
                 extraConfig = '' 
                     (menu-bar-mode 0)
