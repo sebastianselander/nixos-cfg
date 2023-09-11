@@ -44,8 +44,6 @@
             xkbOptions = "compose:ralt";
             desktopManager.plasma5.enable = true;
             displayManager.sddm.enable = true;
-            autoRepeatInterval = 230;
-            autoRepeatDelay = 55;
         };
         pipewire = {
             enable = true;

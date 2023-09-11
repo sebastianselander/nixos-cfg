@@ -98,7 +98,7 @@
             enable = true;
             options = {
                 recolor = true;
-                step = 20;
+                scroll-step = 50;
                 selection-clipboard = "clipboard";
 
             };
