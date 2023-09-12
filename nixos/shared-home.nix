@@ -25,6 +25,7 @@
                 htop
                 iosevka
                 julia-mono
+                just
                 libreoffice
                 neofetch
                 nerdfonts
@@ -43,6 +44,9 @@
                 xclip
                 zlib
                 zoom-us
+                haskellPackages.BNFC
+                haskellPackages.alex
+                haskellPackages.happy
                 ];
 
         file = {
