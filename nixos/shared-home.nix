@@ -63,11 +63,10 @@
                 size = 16;
             };
             #theme = "Oceanic Material";
-            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf;
+            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
-                    disable_ligatures = true;
                     cursor_shape = "block";
                     cursor = "#00FF00";
                     background_opacity = 1;
@@ -232,8 +231,9 @@
                 evil
                 material-theme
                 night-owl-theme
+                doom-themes
             ];
-                extraConfig = '' 
+                extraConfig = ''
                     (menu-bar-mode 0)
                     (tool-bar-mode 0)
                     (scroll-bar-mode 0)
