@@ -243,6 +243,7 @@
                     (scroll-bar-mode 0)
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
                     (set-face-attribute 'default nil :family "Julia Mono" :height 130)
+                    (setq evil-want-C-u-scroll t)
                     (evil-mode 1)
                     (load-file (let ((coding-system-for-read 'utf-8))
                                (shell-command-to-string "agda-mode locate"))
