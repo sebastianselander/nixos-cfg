@@ -10,6 +10,7 @@
                 (agda.withPackages [ agdaPackages.standard-library ])
                 bat
                 cabal-install
+                cabal2nix
                 discord
                 dmenu
                 exa
@@ -21,6 +22,9 @@
                 ghcid
                 gnumake
                 haskell-language-server
+                haskellPackages.BNFC
+                haskellPackages.alex
+                haskellPackages.happy
                 hlint
                 htop
                 iosevka
@@ -30,6 +34,7 @@
                 neofetch
                 nerdfonts
                 nil
+                nix-prefetch-git
                 nixos-option
                 obs-studio
                 pandoc
@@ -44,9 +49,6 @@
                 xclip
                 zlib
                 zoom-us
-                haskellPackages.BNFC
-                haskellPackages.alex
-                haskellPackages.happy
                 ];
 
         file = {
