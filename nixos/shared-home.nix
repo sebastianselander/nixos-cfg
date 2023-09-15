@@ -13,7 +13,7 @@
                 cabal2nix
                 discord
                 dmenu
-                exa
+                eza
                 feh
                 firefox
                 gcc
@@ -68,8 +68,8 @@
                 name = "Iosevka";
                 size = 16;
             };
-            #theme = "Oceanic Material";
-            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
+            theme = "Gruvbox Dark";
+            # extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
@@ -119,9 +119,9 @@
                 gp = "git push";
                 ga = "git add";
                 cfg = "cd ~/Documents/git/nixos-cfg/";
-                ls  = "exa --group-directories-first";
-                lsa = "exa --group-directories-first -la";
-                lst = "exa -s modified -1";
+                ls  = "eza --group-directories-first";
+                lsa = "eza --group-directories-first -la";
+                lst = "eza -s modified -1";
                 vim = "nvim";
                 con = "mullvad connect";
                 disc = "mullvad disconnect";
@@ -141,9 +141,9 @@
                 gp = "git push";
                 ga = "git add";
                 cfg = "cd ~/Documents/git/nixos-cfg/";
-                ls  = "exa --group-directories-first";
-                lsa = "exa --group-directories-first -la";
-                lst = "exa -s modified -1";
+                ls  = "eza --group-directories-first";
+                lsa = "eza --group-directories-first -la";
+                lst = "eza -s modified -1";
                 vim = "nvim";
                 con = "mullvad connect";
                 disc = "mullvad disconnect";
