@@ -68,8 +68,8 @@
                 name = "Iosevka";
                 size = 16;
             };
-            theme = "Gruvbox Dark";
-            # extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
+            # theme = "Material Dark";
+            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Palenight.conf + ''disable_ligatures always'';
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
@@ -192,6 +192,7 @@
                 nightfox-nvim
                 onedark-nvim
                 tokyonight-nvim
+                palenight-vim
             ];
         };
         tmux = {
