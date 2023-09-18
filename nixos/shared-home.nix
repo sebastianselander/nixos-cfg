@@ -94,8 +94,21 @@
                 add_newline = false;
                 package.disabled = true;
                 character = {
-                    success_symbol = "[>](bold green)";
-                    error_symbol = "[>](bold red)";
+                    success_symbol = "[λ](bold green)";
+                    error_symbol = "[Λ](bold red)";
+                };
+                git_status = {
+                    format="([\\[ $conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind\\]]($style))";
+                    conflicted = "conflict=\${count} ";
+                    stashed = "stashed=\${count} ";
+                    deleted = "deleted=\${count} ";
+                    renamed = "renamed=\${count} ";
+                    behind = "behind=\${count} ";
+                    ahead = "ahead=\${count} ";
+                    diverged = "ahead=\${count} behind=\${count} ";
+                    untracked = "untracked=\${count} ";
+                    modified = "modified=\${count} ";
+                    staged = "staged=\${count} ";
                 };
             };
         };
