@@ -44,6 +44,7 @@
                 texlive.combined.scheme-full
                 thunderbird
                 tree
+                unzip
                 vlc
                 wget
                 xclip
