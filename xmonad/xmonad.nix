@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 
 {
     services = {
@@ -26,5 +26,8 @@
             fade = false;
             shadow = false;
         };
+        environment.systemPackages = with pkgs; [
+            xmonad-log
+        ];
     };
 }
