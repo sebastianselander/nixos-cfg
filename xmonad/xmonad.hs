@@ -254,7 +254,8 @@ main = do
             (D.busName_ "org.xmonad.Log")
             [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
     nScreens <- countScreens
-    -- when (nScreens == (2 :: Int)) (spawn "~/.config/xmonad/scripts/monitorsDesktop.sh")
+    when (nScreens == (2 :: Int)) (spawn "~/Documents/git/nixos-cfg/xmonad/monitors.sh")
+    spawn "xset r rate 230 50"
     xmonad . docks . ewmhFullscreen $
         def
             { terminal = myTerminal

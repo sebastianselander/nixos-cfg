@@ -34,23 +34,20 @@
         };
     };
 
-
     services = {
         xserver = {
             enable = true;
             layout = "us";
             xkbVariant = "";
             xkbOptions = "compose:ralt";
-            desktopManager.plasma5.enable = true;
-            displayManager.sddm.enable = true;
         };
         pipewire = {
             enable = true;
             alsa.enable = true;
             alsa.support32Bit = true;
             pulse.enable = true;
-
         };
+
         printing.enable = true;
         blueman.enable = true;
         mullvad-vpn.enable = true;

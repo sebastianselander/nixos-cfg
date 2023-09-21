@@ -15,12 +15,12 @@
 # release notes.
     home.stateVersion = "23.05"; # Please read the comment before changing.
 
-    services.polybar = {
-        enable = true;
-        config = {};
-        extraConfig = {};
-        script = "";
-        settings = {};
-        # package = null;
-    };
+#    services.polybar = {
+#        enable = true;
+#        config = {};
+#        extraConfig = {};
+#        script = "";
+#        settings = {};
+#        # package = null;
+#    };
 }

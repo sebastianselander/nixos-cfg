@@ -1,7 +1,11 @@
 { ... }:
 
 {
-    imports = [ ./hardware-configuration.nix ];
+    imports = [
+        ./hardware-configuration.nix
+        ../../../xmonad/xmonad.nix
+        ../../../plasma/plasma.nix
+    ];
 
     networking.hostName = "zenbook-nixos";
 
