@@ -3,7 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../../../xmonad/xmonad.nix
+        # ../../../xmonad/xmonad.nix
         ../../../plasma/plasma.nix
     ];
 
