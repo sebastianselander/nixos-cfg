@@ -6,6 +6,9 @@
         homeDirectory = "/home/sebastian";
         stateVersion = "23.05";
         language.base = "en_US.UTF-8";
+        sessionVariables = {
+            EDITOR = "nvim";
+        };
         packages = with pkgs; [
                 (agda.withPackages [ agdaPackages.standard-library ])
                 bat
@@ -57,6 +60,7 @@
         };
     };
 
+
     nixpkgs.config.allowUnfree = true;
 
     fonts.fontconfig.enable = true;
@@ -70,7 +74,7 @@
                 size = 16;
             };
             # theme = "Material Dark";
-            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Palenight.conf + ''disable_ligatures always'';
+            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;

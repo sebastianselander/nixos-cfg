@@ -15,109 +15,12 @@
 # release notes.
     home.stateVersion = "23.05"; # Please read the comment before changing.
 
-        home.language.base = "en_US.UTF-8";
-
-    nixpkgs = {
-        config = {
-            allowUnfree = true;
-        };
-    };
-
-    fonts.fontconfig.enable = true;
-
-    programs = {
-        git = {
-            enable = true;
-            userName  = "sebastianselander";
-            userEmail = "sebastian.selander@gmail.com";
-        };
-        home-manager.enable = true;
-        starship = {
-            enable = true;
-            settings = {
-                add_newline = false;
-                package.disabled = true;
-                character = {
-                    success_symbol = "[>](bold green)";
-                    error_symbol = "[>](bold red)";
-                };
-            };
-        };
-        zsh = {
-            enable = true;
-            enableCompletion = true;
-            enableAutosuggestions = true;
-            enableSyntaxHighlighting = true;
-            shellAliases = {
-                gs = "git status";
-                gc = "git commit";
-                gf = "git fetch";
-                gp = "git push";
-                ga = "git add";
-                cfg = "cd ~/.config";
-                ls = "exa --group-directories-first";
-                lsa = "exa --group-directories-first -la";
-                lst = "exa -s modified -1";
-                vim = "nvim";
-                con = "mullvad connect";
-                disc = "mullvad disconnect";
-            };
-            initExtra = ''
-                alias ..='cd ..'
-                alias ....='cd ....'
-                bindkey -e
-                '';
-        };
-    };
-
-    home.packages = with pkgs; [
-            agda
-            alex
-            bat
-            blueberry
-            btop
-            discord
-            dmenu
-            exa
-            feh
-            firefox
-            flameshot
-            gcc
-            gh
-            ghcid
-            happy
-            haskell-language-server
-            htop
-            iosevka
-            julia-mono
-            kitty
-            lutris
-            neofetch
-            neovim
-            neovim
-            nerdfonts
-            networkmanagerapplet
-            nil
-            nitrogen
-            nixos-option
-            obs-studio
-            pandoc
-            pcmanfm
-            polybarFull
-            texlive.combined.scheme-basic
-            thunderbird
-            tmux
-            tree
-            wget
-            wine
-            xclip
-            xmonad-log
-            ];
-
-    home.file = {
-    };
-
-    home.sessionVariables = {
-        EDITOR = "nvim";
+    services.polybar = {
+        enable = true;
+        config = {};
+        extraConfig = {};
+        script = "";
+        settings = {};
+        # package = null;
     };
 }

@@ -1,7 +1,5 @@
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<leader>tt', vim.cmd.Oil)
-
 vim.keymap.set('n', '<space>', '<Nop>')
 vim.keymap.set('n', '<esc>', vim.cmd.noh)
 vim.keymap.set('n', 'J', 'mzJ`zdmz')
@@ -35,6 +33,10 @@ vim.keymap.set('n', '<A-l>', '<C-w>l')
 vim.keymap.set('n', '<A-h>', '<C-w>h')
 vim.keymap.set('n', '<A-k>', '<C-w>k')
 vim.keymap.set('n', '<A-j>', '<C-w>j')
+vim.keymap.set('n', '<A-w>', '<C-w>+')
+vim.keymap.set('n', '<A-s>', '<C-w>-')
+vim.keymap.set('n', '<A-a>', '<C-w>>')
+vim.keymap.set('n', '<A-d>', '<C-w><')
 
 -- Nice
 vim.keymap.set('x', '<leader>p', '\"_dP')
