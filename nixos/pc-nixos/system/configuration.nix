@@ -4,8 +4,6 @@
     imports =
         [
         ./hardware-configuration.nix
-        # ../../../xmonad/xmonad.nix
-        ../../../plasma/plasma.nix
         ];
 
     networking.hostName = "pc-nixos";

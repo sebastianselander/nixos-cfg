@@ -26,8 +26,10 @@
             fade = false;
             shadow = false;
         };
-        environment.systemPackages = with pkgs; [
-            xmonad-log
-        ];
+
     };
+
+    environment.systemPackages = with pkgs; [
+        xmonad-log
+    ];
 }
