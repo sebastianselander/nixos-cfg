@@ -54,7 +54,7 @@
                    ./nixos/shared-home.nix
                    ./nixos/zenbook-nixos/home/home.nix
                    ./polybar/polybar.nix
-                   ./betterlockscreen/betterlockscreen.nix
+                   ./xmonad/xmonad-home.nix
                 ]; 
 	    };
           }
@@ -100,7 +100,7 @@
 		    ./nixos/shared-home.nix
 		    ./nixos/pc-nixos/home/home.nix
             ./polybar/polybar.nix
-           ./betterlockscreen/betterlockscreen.nix
+           ./xmonad/xmonad-home.nix
 		]; 
 	    };
           }

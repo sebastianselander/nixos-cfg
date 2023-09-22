@@ -78,6 +78,8 @@
                     label = "%date%";
                     label-foreground = "\${colors.primary}";
                 };
+                # "module/battery" = {
+                # };
             };
             script = "polybar bar &";
         };

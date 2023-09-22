@@ -39,7 +39,7 @@
             enable = true;
             layout = "us";
             xkbVariant = "";
-            xkbOptions = "compose:ralt";
+            xkbOptions = "compose:ralt,caps:escape";
         };
         pipewire = {
             enable = true;
@@ -53,7 +53,6 @@
     };
 
     sound.enable = true;
-    hardware.pulseaudio.enable = false;
     hardware.bluetooth.enable = true;
     security.rtkit.enable = true;
 

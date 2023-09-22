@@ -86,11 +86,8 @@ myFont = "xft:Julia Mono:size=11:SemiBold:antialias=true"
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "nitrogen --restore"
-    spawnOnce "polybar"
-    -- spawnOnce "~/.local/bin/kmonad ~/.config/kmonad/keyboard.kbd"
-    -- spawnOnce "picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0"
-    -- spawnOnce "xsetroot -cursor_name left_ptr"
-    -- spawnOnce "mullvad connect"
+    spawnOnce "xsetroot -cursor_name left_ptr"
+    spawnOnce "xset r rate 230 50"
     spawnOn "8" "discord"
     spawnOn "9" myMail
 
@@ -255,7 +252,6 @@ main = do
             [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
     nScreens <- countScreens
     when (nScreens == (2 :: Int)) (spawn "~/Documents/git/nixos-cfg/xmonad/monitors.sh")
-    spawn "xset r rate 230 50"
     xmonad . docks . ewmhFullscreen $
         def
             { terminal = myTerminal

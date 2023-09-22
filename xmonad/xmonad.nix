@@ -4,7 +4,13 @@
     services = {
         xserver = {
             libinput = {
-                touchpad.naturalScrolling = true;
+                touchpad = {
+                    naturalScrolling = true;
+                    disableWhileTyping = true;
+                    tapping = false;
+                    middleEmulation = true;
+                };
+
             };
             displayManager = {
                 lightdm.enable = true;
@@ -28,10 +34,14 @@
             inactiveOpacity = 1.0;
             fade = false;
             shadow = false;
+
         };
+
+        blueman.enable = true;
 
     };
     programs.slock.enable = true;
+    programs.nm-applet.enable = true;
 
     environment.systemPackages = with pkgs; [
         xmonad-log

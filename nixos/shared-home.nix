@@ -165,7 +165,9 @@
                 vim = "nvim";
                 con = "mullvad connect";
                 disc = "mullvad disconnect";
-                rebuild = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg/";
+                rebuild-plasma = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg/";
+                zenbook-xmonad = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#zenbook-xmonad"; 
+                pc-xmonad = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#pc-xmonad"; 
             };
             initExtra = ''
                 alias ..='cd ..'
