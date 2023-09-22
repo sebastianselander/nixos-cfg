@@ -18,6 +18,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.WindowSwallowing
+import XMonad.Hooks.ManageHelpers
 
 -- layout
 
@@ -110,8 +111,9 @@ myManageHook =
         , resource =? "desktop_window" --> doIgnore
         , resource =? "kdesktop" --> doIgnore
         , isFullscreen --> doFullFloat
+        , isDialog --> doF W.swapUp
         ]
-        <+> insertPosition Below Newer
+        <+> insertPosition Above Newer
 
 myLogHook :: D.Client -> PP
 myLogHook dbus =
@@ -128,7 +130,7 @@ myLogHook dbus =
     polybarColor :: String -> String -> String
     polybarColor color string = "%{F" <> color <> "}" <> string <> "%{F-}"
 
--- Requires the program xmonad-log, in AUR or home-manager
+-- Requires the program xmonad-log
 dbusOutput :: D.Client -> String -> IO ()
 dbusOutput dbus str = do
     let objectPath = D.objectPath_ "/org/xmonad/Log"
@@ -142,8 +144,6 @@ dbusOutput dbus str = do
 
 ---------------------------------------------------------------------------------------------------
 -- SCRATCHPAD
-
--- nothing yet
 
 ---------------------------------------------------------------------------------------------------
 -- LAYOUTS
@@ -264,7 +264,7 @@ main = do
             , normalBorderColor = myNormalBorderColor
             , keys = myKeys
             , layoutHook = avoidStruts myLayout
-            , manageHook = manageHook kdeConfig <+> myManageHook
+            , manageHook = myManageHook
             , handleEventHook = myEventHook
             , startupHook = myStartupHook
             , logHook = dynamicLogWithPP (myLogHook dbus)

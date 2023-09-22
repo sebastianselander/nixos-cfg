@@ -30,11 +30,11 @@
 
         picom = {
             enable = true;
+            vSync = true;
             activeOpacity = 1.0;
             inactiveOpacity = 1.0;
             fade = false;
             shadow = false;
-
         };
 
         blueman.enable = true;

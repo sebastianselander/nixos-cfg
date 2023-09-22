@@ -11,7 +11,7 @@
                     radius = 0;
                     modules-left = "xmonad";
                     modules-center = "date";
-                    modules-right = "";
+                    modules-right = "pulseaudio xkeyboard wifi memory battery";
                     cursor-click = "pointer";
                     cursor-scroll = "ns-resize";
                     enable-ipc = true;
@@ -78,8 +78,40 @@
                     label = "%date%";
                     label-foreground = "\${colors.primary}";
                 };
-                # "module/battery" = {
-                # };
+                "module/battery" = {
+                    type = "internal/battery";
+                    full-at = 99;
+                    low-at = 10;
+                    battery = "BAT0";
+                    adapter = "AC0";
+                    poll-interval = 5;
+                };
+                "module/wifi" = {
+                    type = "custom/script";
+                    exec = "~/Documents/git/nixos-cfg/scripts/internet.sh";
+                    click-left = "exec nm-connection-editor";
+                    interval = 2;
+                    format-foreground = "#FFFFFF";
+                };
+                "module/pulseaudio" = {
+                    type = "internal/pulseaudio";
+                    format-volume-prefix = "VOL ";
+                    format-volume-prefix-foreground = "\${colors.primary}";
+                    format-volume = "<label-volume>";
+                    label-volume = "%percentage%%";
+                    label-muted = "muted";
+                    label-muted-foreground = "\${colors.disabled}";
+                };
+                "module/memory" = {
+                    type = "internal/memory";
+                    interval = 3;
+                    format-prefix = "RAM ";
+                    format-prefix-foreground = "\${colors.primary}";
+                    label = "%percentage_used:2%%";
+                };
+                "module/xkeyboard" = {
+                    type = "internal/xkeyboard";
+                };
             };
             script = "polybar bar &";
         };

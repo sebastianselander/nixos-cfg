@@ -71,7 +71,7 @@
             enable = true;
             font = {
                 name = "Iosevka";
-                size = 16;
+                size = 14;
             };
             # theme = "Material Dark";
             extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
