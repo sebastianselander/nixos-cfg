@@ -3,6 +3,9 @@
 {
     services = {
         xserver = {
+            libinput = {
+                touchpad.naturalScrolling = true;
+            };
             displayManager = {
                 lightdm.enable = true;
                 defaultSession = "none+xmonad";
@@ -28,6 +31,7 @@
         };
 
     };
+    programs.slock.enable = true;
 
     environment.systemPackages = with pkgs; [
         xmonad-log

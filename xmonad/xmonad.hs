@@ -187,7 +187,7 @@ myTabConfig =
 -- WORKSPACES
 
 myWorkspaces :: [String]
-myWorkspaces = map show $ [1 .. 9 :: Int] ++ [0]
+myWorkspaces = map show [1 .. 9 :: Int]
 
 ---------------------------------------------------------------------------------------------------
 -- KEYS
