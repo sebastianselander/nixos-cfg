@@ -14,6 +14,7 @@
                 bat
                 cabal-install
                 cabal2nix
+                cargo
                 discord
                 dmenu
                 eza
@@ -271,7 +272,7 @@
                     (load-file (let ((coding-system-for-read 'utf-8))
                                (shell-command-to-string "agda-mode locate"))
                     )
-                    (load-theme 'night-owl t)
+                    (load-theme 'material t)
                     (setq visible-bell t)
                 '';
         };

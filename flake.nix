@@ -11,6 +11,7 @@
     # Neovim agda mode plugin
     cornelis.url = "github:isovector/cornelis";
     cornelis.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = attrs@{ self, nixpkgs, home-manager, cornelis, ... }:
@@ -24,7 +25,9 @@
         ./nixos/shared-configuration.nix
         ./plasma/plasma.nix
         home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [ cornelis.overlays.cornelis ];
+        nixpkgs.overlays = [
+            cornelis.overlays.cornelis
+        ];
 	    home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
@@ -46,7 +49,9 @@
         ./nixos/shared-configuration.nix
        ./xmonad/xmonad.nix
         home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [ cornelis.overlays.cornelis ];
+        nixpkgs.overlays = [
+            cornelis.overlays.cornelis
+        ];
 	    home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
@@ -70,7 +75,9 @@
         ./nixos/shared-configuration.nix
         ./plasma/plasma.nix
         home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [ cornelis.overlays.cornelis ];
+        nixpkgs.overlays = [
+            cornelis.overlays.cornelis
+        ];
 	    home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
@@ -92,7 +99,9 @@
         ./nixos/shared-configuration.nix
         ./xmonad/xmonad.nix
         home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [ cornelis.overlays.cornelis ];
+        nixpkgs.overlays = [
+            cornelis.overlays.cornelis
+        ];
 	    home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
