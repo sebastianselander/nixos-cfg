@@ -40,6 +40,9 @@
             layout = "us";
             xkbVariant = "";
             xkbOptions = "compose:ralt,caps:escape";
+            displayManager.sessionCommands = '' 
+                ${pkgs.xlibs.xset}/bin/xset r rate 200 50
+            '';
         };
         pipewire = {
             enable = true;
