@@ -39,6 +39,7 @@ import XMonad.Actions.SpawnOn
 
 -- utils
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Cursor
 
 -- keys
 import Graphics.X11.ExtraTypes.XF86
@@ -88,6 +89,7 @@ myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "nitrogen --restore"
     spawnOnce "xsetroot -cursor_name left_ptr"
+    spawnOnce "polybar xmonadbar & disown"
     spawnOnce "xset r rate 230 50"
     spawnOn "8" "discord"
     spawnOn "9" myMail
@@ -217,7 +219,8 @@ myKeys conf@(XConfig{XMonad.modMask = modm}) =
                , ((modm, xK_t), withFocused $ windows . W.sink)
                , ((modm, xK_comma), sendMessage (IncMasterN 1))
                , ((modm, xK_period), sendMessage (IncMasterN (-1)))
-               , ((modm .|. shiftMask, xK_c), spawn "xmonad --recompile && xmonad --restart")
+               , -- keyboard
+                 ((modm, xK_space), spawn "~/Documents/git/nixos-cfg/xmonad/keyboardToggle.sh")
                , -- brightness
                  ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 3")
                , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 3")

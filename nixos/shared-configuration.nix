@@ -46,9 +46,13 @@
         };
         pipewire = {
             enable = true;
-            alsa.enable = true;
-            alsa.support32Bit = true;
+            audio.enable = true;
+            alsa =  {
+                enable = true;
+                support32Bit = true;
+            };
             pulse.enable = true;
+            jack.enable = true;
         };
 
         printing.enable = true;
@@ -78,6 +82,7 @@
         mullvad-vpn
         zsh
         nushell
+        pulseaudioFull
     ];
 
 # This value determines the NixOS release from which the default

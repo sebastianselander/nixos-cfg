@@ -100,8 +100,12 @@
                 add_newline = false;
                 package.disabled = true;
                 character = {
-                    success_symbol = "[λ](bold green)";
-                    error_symbol = "[Λ](bold red)";
+                    success_symbol = "[-- INSERT --\nλ](bold green)";
+                    error_symbol = "[-- INSERT --\nΛ](bold red)";
+                    vimcmd_symbol = "[-- NORMAL --\nλ](bold green)";
+                    vimcmd_replace_one_symbol = "[-- REPLACE --\nλ](bold green)";
+                    vimcmd_replace_symbol = "[-- REPLACE --\nλ](bold green)";
+                    vimcmd_visual_symbol = "[-- VISUAL --\nλ](bold green)";
                 };
                 git_status = {
                     format="([\\[ $conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind\\]]($style))";
@@ -173,7 +177,8 @@
             initExtra = ''
                 alias ..='cd ..'
                 alias ....='cd ....'
-                bindkey -e
+                bindkey -v
+                KEYTIMEOUT=1
                 '';
         };
         neovim = {
@@ -261,6 +266,11 @@
                 material-theme
                 night-owl-theme
                 doom-themes
+                lsp-mode
+                which-key
+                corfu
+                counsel
+                flycheck
             ];
                 extraConfig = ''
                     (menu-bar-mode 0)
@@ -269,6 +279,16 @@
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
                     (set-face-attribute 'default nil :family "Julia Mono" :height 130)
                     (setq evil-want-C-u-scroll t)
+		    (flycheck-mode t)
+                    (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
+                        version-control t
+                        delete-old-versions t
+                        kept-new-versions 20
+                        kept-old-versions 5
+                    )
+                    
+                    (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
                     (evil-mode 1)
                     (load-file (let ((coding-system-for-read 'utf-8))
                                (shell-command-to-string "agda-mode locate"))

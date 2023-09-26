@@ -5,13 +5,12 @@
             enable = true;
             package = pkgs.polybar.override {};
             config = {
-                "bar/example" = {
+                "bar/xmonadbar" = {
                     width = "100%";
                     height = "22pt";
                     radius = 0;
                     modules-left = "xmonad";
-                    modules-center = "date";
-                    modules-right = "pulseaudio xkeyboard wifi memory battery";
+                    modules-right = "vpn bluetooth pipewire xkeyboard wifi memory battery date";
                     cursor-click = "pointer";
                     cursor-scroll = "ns-resize";
                     enable-ipc = true;
@@ -88,19 +87,17 @@
                 };
                 "module/wifi" = {
                     type = "custom/script";
-                    exec = "~/Documents/git/nixos-cfg/scripts/internet.sh";
+                    exec = "~/Documents/git/nixos-cfg/polybar/scripts/internet.sh";
                     click-left = "exec nm-connection-editor";
                     interval = 2;
                     format-foreground = "#FFFFFF";
                 };
-                "module/pulseaudio" = {
-                    type = "internal/pulseaudio";
-                    format-volume-prefix = "VOL ";
-                    format-volume-prefix-foreground = "\${colors.primary}";
-                    format-volume = "<label-volume>";
-                    label-volume = "%percentage%%";
-                    label-muted = "muted";
-                    label-muted-foreground = "\${colors.disabled}";
+                "module/pipewire" = {
+                    type = "custom/script";
+                    exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-pipewire/pipewire.sh";
+                    interval = 1;
+                    click-right = "exec pavucontrol &";
+                    click-left = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-pipewire/pipewire.sh --mute &";
                 };
                 "module/memory" = {
                     type = "internal/memory";
@@ -112,8 +109,23 @@
                 "module/xkeyboard" = {
                     type = "internal/xkeyboard";
                 };
+                "module/vpn" = {
+                    type = "custom/script";
+                    exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-vpn-controller/vpn_module.sh status mullvad";
+                    click-right = "mullvad-vpn";
+                    interval = 5;
+                    format = "<label>";
+                };
+                "module/bluetooth" = {
+                    type = "custom/script";
+                    exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-bluetooth/bluetooth.sh";
+                    interval = 2;
+                    click-left = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-bluetooth/toggle_bluetooth.sh";
+                    click-right = "exec blueman-manager";
+                    format-foreground = "#ffffff";
+                };
             };
-            script = "polybar bar &";
+            script = "polybar xmonadbar & disown";
         };
     };
 }
