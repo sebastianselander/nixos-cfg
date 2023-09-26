@@ -200,6 +200,7 @@
                 plenary-nvim
                 vim-fugitive
                 vim-obsession
+                hop-nvim
 
                 # agda
                 cornelis
