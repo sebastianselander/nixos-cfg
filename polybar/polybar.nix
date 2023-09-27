@@ -10,11 +10,15 @@
                     height = "22pt";
                     radius = 0;
                     modules-left = "xmonad";
-                    modules-right = "vpn bluetooth pipewire xkeyboard wifi memory battery date";
+                    modules-center = "date";
+                    modules-right = "bluetooth pipewire xkeyboard memory battery";
                     cursor-click = "pointer";
                     cursor-scroll = "ns-resize";
                     enable-ipc = true;
                     override-redirect = true;
+
+                    tray-position = "right";
+                    tray-maxsize = 30;
 
                     background = "\${colors.background}";
                     foreground = "\${colors.foreground}";
@@ -84,6 +88,11 @@
                     battery = "BAT0";
                     adapter = "AC0";
                     poll-interval = 5;
+                    format-prefix-foreground = "\${colors.primary}";
+                    label-charging = "BAT %percentage%%";
+                    label-discharging = "BAT %percentage%%";
+                    label-full = "BAT %percentage%%";
+                    label-low = "BAT %percentage%%";
                 };
                 "module/wifi" = {
                     type = "custom/script";

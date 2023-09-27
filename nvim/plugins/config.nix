@@ -16,7 +16,6 @@ telescope = builtins.readFile ./telescope.lua;
 treesitter = builtins.readFile ./treesitter.lua;
 undotree = builtins.readFile ./undotree.lua;
 vimtex = builtins.readFile ./vimtex.lua;
-hop = builtins.readFile ./hop.lua;
 
 in
 ''
@@ -26,7 +25,6 @@ ${fugitive}
 ${harpoon}
 ${haskell-nvim}
 ${haskell-tools}
-${hop}
 ${lspconfig}
 ${lualine}
 ${luasnip}

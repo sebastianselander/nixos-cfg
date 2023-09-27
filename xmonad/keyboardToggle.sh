@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh
 
 LAYOUT=$(echo $(setxkbmap -query | grep "layout: " | awk '{print $2}'))
 

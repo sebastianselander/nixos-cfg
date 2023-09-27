@@ -91,6 +91,7 @@ myStartupHook = do
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawnOnce "polybar xmonadbar & disown"
     spawnOnce "xset r rate 230 50"
+    spawnOnce "mullvad-vpn"
     spawnOn "8" "discord"
     spawnOn "9" myMail
 
