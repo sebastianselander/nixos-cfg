@@ -3,8 +3,10 @@
     services = {
         betterlockscreen.enable = true;
     };
-    gtk.cursorTheme = {
-        name = "Breeze";
+    home.pointerCursor = {
+        size = 20;
+        package = pkgs.nordzy-cursor-theme;
+        name = "Nordzy-cursors-white";
     };
     home.packages = with pkgs; [
         networkmanagerapplet
@@ -13,5 +15,6 @@
         xorg.xbacklight
         flameshot
         pavucontrol
+        nitrogen
     ];
 }

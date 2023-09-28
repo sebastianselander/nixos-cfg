@@ -38,24 +38,9 @@
                     separator-foreground = "\${colors.disabled}";
 
                     
-                    font-0  = "Symbols Nerd Font:style=Regular";
-                    font-1  = "JuliaMono,JuliaMono Latin:style=BoldLatin,Bold";
-                    font-2  = "JuliaMono,JuliaMono Black:style=BlackItalic,Italic";
-                    font-3  = "JuliaMono:style=Bold";
-                    font-4  = "JuliaMono,JuliaMono SemiBold:style=SemiBoldItalic,Italic";
-                    font-5  = "JuliaMono,JuliaMono Medium:style=Medium,Regular";
-                    font-6  = "JuliaMono:style=Regular";
-                    font-7  = "JuliaMono,JuliaMono SemiBold:style=SemiBold,Regular";
-                    font-8  = "JuliaMono,JuliaMono Light:style=LightItalic,Italic";
-                    font-9  = "JuliaMono:style=BoldItalic";
-                    font-10 = "JuliaMono,JuliaMono Medium:style=MediumItalic,Italic";
-                    font-11 = "JuliaMono,JuliaMono ExtraBold:style=ExtraBoldItalic,Bold Italic";
-                    font-12 = "JuliaMono,JuliaMono ExtraBold:style=ExtraBold,Regular";
-                    font-13 = "JuliaMono:style=RegularItalic,Italic";
-                    font-14 = "JuliaMono,JuliaMono Light:style=Light,Regular";
-                    font-15 = "JuliaMono,JuliaMono Latin:style=RegularLatin,Regular";
-                    font-16 = "JuliaMono,JuliaMono Black:style=Black,Regular";
-                    font-17 = "IosevkaTerm Nerd Font Mono,IosevkaTerm NFM:style=Regular";
+                    font-0 = "Symbols Nerd Font:style=Regular";
+                    font-1 = "IBM Plex Mono:style=SemiBold";
+                    font-2 = "JuliaMono,JuliaMono Latin:style=BoldLatin,Bold";
                 };
 
                 "colors" = {
@@ -88,10 +73,11 @@
                     battery = "BAT0";
                     adapter = "AC0";
                     poll-interval = 5;
-                    format-prefix-foreground = "\${colors.primary}";
-                    label-charging = "BAT %percentage%%";
-                    label-discharging = "BAT %percentage%%";
-                    label-full = "BAT %percentage%%";
+                    format-charging = "<label-charging>";
+                    format-discharging = "<label-discharging>";
+                    label-charging = "%{F#F0C674}CHARGING%{F-} %percentage%%";
+                    label-discharging = "%{F#F0C674}BAT%{F-} %percentage%%";
+                    label-full = "BAT FULL";
                     label-low = "BAT %percentage%%";
                 };
                 "module/wifi" = {

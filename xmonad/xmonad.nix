@@ -2,6 +2,9 @@
 
 {
     services = {
+        logind = {
+            lidSwitch = "suspend";
+        };
         xserver = {
             libinput = {
                 touchpad = {
@@ -36,10 +39,9 @@
             fade = false;
             shadow = false;
         };
-
         blueman.enable = true;
-
     };
+
     programs.slock.enable = true;
     programs.nm-applet.enable = true;
 

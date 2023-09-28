@@ -12,7 +12,7 @@ import XMonad.Config.Kde
 -- window stack manipulation and map creation
 import XMonad.StackSet qualified as W
 
--- hooks
+-- Hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.InsertPosition
@@ -100,23 +100,22 @@ myEventHook = swallowEventHook (className =? myTerminal) (return True)
 
 myManageHook :: ManageHook
 myManageHook =
-    composeAll
-        [ manageDocks
-        , className =? "MPlayer" --> doFloat
-        , className =? "Gimp" --> doFloat
-        , className =? "Zoom" --> doFloat
-        , className =? "Blueberry.py" --> doFloat
-        , className =? "nm-connection-editor" --> doFloat
-        , className =? "Nm-connection-editor" --> doFloat
-        , className =? "discord" --> doShift "8"
-        , className =? "thunderbird" --> doShift "9"
-        , className =? "Steam" --> doFloat
-        , resource =? "desktop_window" --> doIgnore
-        , resource =? "kdesktop" --> doIgnore
-        , isFullscreen --> doFullFloat
-        , isDialog --> doF W.swapUp
+    composeOne
+        [ className =? "MPlayer"                -?> doFloat
+        , className =? "Gimp"                   -?> doFloat
+        , className =? "Zoom"                   -?> doFloat
+        , className =? "Blueberry.py"           -?> doFloat
+        , className =? "nm-connection-editor"   -?> doFloat
+        , className =? "Nm-connection-editor"   -?> doFloat
+        , className =? "discord"                -?> doShift "8"
+        , className =? "thunderbird"            -?> doShift "9"
+        , className =? "Steam"                  -?> doFloat
+        , resource =? "desktop_window"          -?> doIgnore
+        , resource =? "kdesktop"                -?> doIgnore
+        , isFullscreen                          -?> doFullFloat
+        , isDialog                              -?> doFloat
+        , return True                           -?> insertPosition Below Newer
         ]
-        <+> insertPosition Above Newer
 
 myLogHook :: D.Client -> PP
 myLogHook dbus =

@@ -31,6 +31,7 @@
                 haskellPackages.happy
                 hlint
                 htop
+                ibm-plex
                 iosevka
                 julia-mono
                 just
@@ -43,6 +44,7 @@
                 obs-studio
                 pandoc
                 ripgrep
+                roboto
                 spotify
                 stack
                 texlive.combined.scheme-full
@@ -71,7 +73,7 @@
         kitty = {
             enable = true;
             font = {
-                name = "Iosevka";
+                name = "IBMPlexMono";
                 size = 14;
             };
             # theme = "Material Dark";
@@ -277,9 +279,9 @@
                     (tool-bar-mode 0)
                     (scroll-bar-mode 0)
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                    (set-face-attribute 'default nil :family "Julia Mono" :height 130)
+                    (set-face-attribute 'default nil :family "IBMPlexMono" :height 131)
                     (setq evil-want-C-u-scroll t)
-		    (flycheck-mode t)
+                    (flycheck-mode t)
                     (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
                         version-control t
                         delete-old-versions t
@@ -289,6 +291,10 @@
                     
                     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+                    (global-corfu-mode 1)
+                    (setq completion-cycle-threshold 3)
+                    (setq tab-always-indent 'complete)
+                    (ivy-mode 1)
                     (evil-mode 1)
                     (load-file (let ((coding-system-for-read 'utf-8))
                                (shell-command-to-string "agda-mode locate"))
