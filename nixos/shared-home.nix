@@ -56,6 +56,7 @@
                 xclip
                 zlib
                 zoom-us
+                qbittorrent
                 ];
 
         file = {
