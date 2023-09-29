@@ -3,7 +3,7 @@
 {
     services = {
         logind = {
-            lidSwitch = "suspend";
+            extraConfig = "HandleLidSwitch=suspend";
         };
         xserver = {
             libinput = {

@@ -43,6 +43,7 @@
                 nixos-option
                 obs-studio
                 pandoc
+                qbittorrent
                 ripgrep
                 roboto
                 spotify
@@ -51,12 +52,12 @@
                 thunderbird
                 tree
                 unzip
+                victor-mono
                 vlc
                 wget
                 xclip
                 zlib
                 zoom-us
-                qbittorrent
                 ];
 
         file = {
@@ -74,11 +75,11 @@
         kitty = {
             enable = true;
             font = {
-                name = "IBMPlexMono";
+                name = "Victor Mono Nerd Font Mono";
                 size = 14;
             };
-            # theme = "Material Dark";
-            extraConfig = builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf + ''disable_ligatures always'';
+            theme = "Material Dark";
+            extraConfig = ''disable_ligatures always''; # + builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf;
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
@@ -214,7 +215,6 @@
                 cornelis
 
                 # Themes
-                ayu-vim
                 catppuccin-nvim
                 gruvbox
                 kanagawa-nvim
@@ -280,17 +280,21 @@
                     (tool-bar-mode 0)
                     (scroll-bar-mode 0)
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                    (set-face-attribute 'default nil :family "IBMPlexMono" :height 131)
+                    (set-face-attribute 'default nil :family "Victor Mono Nerd Font Mono" :height 131)
                     (setq evil-want-C-u-scroll t)
-                    (flycheck-mode t)
                     (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
                         version-control t
                         delete-old-versions t
                         kept-new-versions 20
                         kept-old-versions 5
                     )
-                    
+
                     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
+                    (add-hook 'after-init-hook #'global-flycheck-mode)
+                    (global-flycheck-mode t)
+                    (global-font-lock-mode t)
+                    (setq font-lock-maximum-decoration t)
 
                     (global-corfu-mode 1)
                     (setq completion-cycle-threshold 3)

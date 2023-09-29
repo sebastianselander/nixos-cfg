@@ -4,7 +4,7 @@
         betterlockscreen.enable = true;
     };
     home.pointerCursor = {
-        size = 20;
+        size = 30;
         package = pkgs.nordzy-cursor-theme;
         name = "Nordzy-cursors-white";
     };
