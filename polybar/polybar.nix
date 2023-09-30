@@ -11,7 +11,7 @@
                     radius = 0;
                     modules-left = "xmonad";
                     modules-center = "date";
-                    modules-right = "bluetooth pipewire xkeyboard memory battery";
+                    modules-right = "pipewire xkeyboard memory battery";
                     cursor-click = "pointer";
                     cursor-scroll = "ns-resize";
                     enable-ipc = true;

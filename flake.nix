@@ -8,13 +8,16 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Doom emacs
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
     # Neovim agda mode plugin
     cornelis.url = "github:isovector/cornelis";
     cornelis.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = attrs@{ self, nixpkgs, home-manager, cornelis, ... }:
+  outputs = attrs@{ self, nixpkgs, home-manager, cornelis, nix-doom-emacs, ... }:
   {
     # Zenbook Plasma
     nixosConfigurations.zenbook-nixos = nixpkgs.lib.nixosSystem {
@@ -28,14 +31,15 @@
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
         ];
-	    home-manager = {
+        home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian.imports = [
-		    ./nixos/shared-home.nix
-		    ./nixos/zenbook-nixos/home/home.nix
-		]; 
-	    };
+                    ./nixos/shared-home.nix
+                    ./nixos/zenbook-nixos/home/home.nix
+                     nix-doom-emacs.hmModule
+                ];
+        };
           }
       ];
     };
@@ -52,7 +56,7 @@
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
         ];
-	    home-manager = {
+        home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian.imports = [
@@ -60,8 +64,9 @@
                    ./nixos/zenbook-nixos/home/home.nix
                    ./polybar/polybar.nix
                    ./xmonad/xmonad-home.nix
+                    nix-doom-emacs.hmModule
                 ]; 
-	    };
+        };
           }
       ];
     };
@@ -78,14 +83,15 @@
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
         ];
-	    home-manager = {
+        home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian.imports = [
-		    ./nixos/shared-home.nix
-		    ./nixos/pc-nixos/home/home.nix
-		]; 
-	    };
+                    ./nixos/shared-home.nix
+                    ./nixos/pc-nixos/home/home.nix
+                    nix-doom-emacs.hmModule
+                ]; 
+        };
           }
       ];
     };
@@ -102,16 +108,17 @@
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
         ];
-	    home-manager = {
+        home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian.imports = [
-		    ./nixos/shared-home.nix
-		    ./nixos/pc-nixos/home/home.nix
-            ./polybar/polybar.nix
-           ./xmonad/xmonad-home.nix
-		]; 
-	    };
+                    ./nixos/shared-home.nix
+                    ./nixos/pc-nixos/home/home.nix
+                    ./polybar/polybar.nix
+                    ./xmonad/xmonad-home.nix
+                    nix-doom-emacs.hmModule
+                ]; 
+        };
           }
       ];
     };

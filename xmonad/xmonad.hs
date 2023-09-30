@@ -80,7 +80,7 @@ myBrowser = "firefox"
 myMail :: String
 myMail = "thunderbird"
 myFont :: String
-myFont = "xft:Julia Mono:size=11:SemiBold:antialias=true"
+myFont = "xft:Victor Mono:size=11:SemiBold:antialias=true"
 
 ---------------------------------------------------------------------------------------------------
 -- HOOKS
@@ -92,6 +92,8 @@ myStartupHook = do
     spawnOnce "polybar xmonadbar & disown"
     spawnOnce "xset r rate 230 50"
     spawnOnce "mullvad-vpn"
+    spawnOnce "flameshot"
+    spawnOnce "blueman-applet"
     spawnOn "8" "discord"
     spawnOn "9" myMail
 
