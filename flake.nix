@@ -15,9 +15,12 @@
     cornelis.url = "github:isovector/cornelis";
     cornelis.inputs.nixpkgs.follows = "nixpkgs";
 
+    # NUR
+    nur.url = "github:nix-community/NUR";
+
   };
 
-  outputs = attrs@{ self, nixpkgs, home-manager, cornelis, nix-doom-emacs, ... }:
+  outputs = attrs@{ self, nixpkgs, home-manager, cornelis, nix-doom-emacs, nur, ... }:
   {
     # Zenbook Plasma
     nixosConfigurations.zenbook-nixos = nixpkgs.lib.nixosSystem {
@@ -27,6 +30,7 @@
         ./nixos/zenbook-nixos/system/configuration.nix
         ./nixos/shared-configuration.nix
         ./plasma/plasma.nix
+        nur.nixosModules.nur
         home-manager.nixosModules.home-manager {
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
@@ -52,6 +56,7 @@
         ./nixos/zenbook-nixos/system/configuration.nix
         ./nixos/shared-configuration.nix
        ./xmonad/xmonad.nix
+        nur.nixosModules.nur
         home-manager.nixosModules.home-manager {
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
@@ -79,6 +84,7 @@
         ./nixos/pc-nixos/system/configuration.nix
         ./nixos/shared-configuration.nix
         ./plasma/plasma.nix
+        nur.nixosModules.nur
         home-manager.nixosModules.home-manager {
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
@@ -104,6 +110,7 @@
         ./nixos/pc-nixos/system/configuration.nix
         ./nixos/shared-configuration.nix
         ./xmonad/xmonad.nix
+        nur.nixosModules.nur
         home-manager.nixosModules.home-manager {
         nixpkgs.overlays = [
             cornelis.overlays.cornelis
