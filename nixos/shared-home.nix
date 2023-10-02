@@ -1,5 +1,16 @@
 { pkgs, config, ... }:
 
+let 
+    midnight-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "midnight.nvim";
+        src = pkgs.fetchFromGitHub {
+            owner = "dasupradyumna";
+            repo = "midnight.nvim";
+            rev = "955ae794290096d42a6f182741c01fd3665c1577";
+            hash = "sha256-FmpQ5Cd9HHV70/uwgIimT2fQVBLdrWxluRCfnUkDQCU=";
+        };
+    };
+in
 {
     home = {
         username = "sebastian";
@@ -75,11 +86,11 @@
         kitty = {
             enable = true;
             font = {
-                name = "Victor Mono Nerd Font Mono";
+                name = "Iosevka";
                 size = 14;
             };
-            theme = "Material Dark";
-            extraConfig = ''disable_ligatures always''; # + builtins.readFile ../kitty/kitty-themes/themes/Kanagawa.conf;
+            # theme = "Material Dark";
+            extraConfig = ''disable_ligatures always'' + builtins.readFile ../kitty/kitty-themes/themes/Midnight.conf;
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
@@ -193,23 +204,26 @@
             plugins = with pkgs.vimPlugins; [
                 harpoon
                 lualine-nvim
-                luasnip
                 mini-nvim
-                nvim-cmp
-                nvim-hs-vim
-                nvim-lspconfig
                 nvim-treesitter.withAllGrammars
                 oil-nvim
+                plenary-nvim
                 telescope-nvim
                 undotree
-                vim-highlightedyank
-                vimtex
-                nvim-cmp
-                cmp-nvim-lsp
-                plenary-nvim
                 vim-fugitive
+                vim-highlightedyank
                 vim-obsession
-                neorg
+                vimtex
+
+                # ts playground for plugin devel
+                playground
+
+                # lsp
+                cmp-nvim-lsp
+                luasnip
+                nvim-cmp
+                nvim-lspconfig
+                trouble-nvim
 
                 # agda
                 cornelis
@@ -219,11 +233,12 @@
                 gruvbox
                 kanagawa-nvim
                 material-nvim
+                midnight-nvim
+                neovim-ayu
                 nightfox-nvim
                 onedark-nvim
-                tokyonight-nvim
                 palenight-vim
-                neovim-ayu
+                tokyonight-nvim
             ];
         };
         tmux = {
@@ -287,7 +302,7 @@
                     (tool-bar-mode 0)
                     (scroll-bar-mode 0)
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                    (set-face-attribute 'default nil :family "Victor Mono Nerd Font Mono" :height 131)
+                    (set-face-attribute 'default nil :family "IBMPlex" :height 131)
                     (setq evil-want-C-u-scroll t)
                     (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
                         version-control t

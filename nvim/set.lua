@@ -8,7 +8,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.isfname:append"@-@"
 vim.opt.list = true
-vim.opt.listchars = "tab:> ,lead:·,trail:·,extends:⇢,precedes:⇠,nbsp:+"
+vim.opt.listchars = "tab:> ,lead: ,trail:·,extends:⇢,precedes:⇠,nbsp:+"
 vim.opt.mouse = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
