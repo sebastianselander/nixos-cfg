@@ -15,6 +15,8 @@
     cornelis.url = "github:isovector/cornelis";
     cornelis.inputs.nixpkgs.follows = "nixpkgs";
 
+    nur.url = "github:nix-community/NUR";
+
   };
 
   outputs = attrs@{ self, nixpkgs, home-manager, cornelis, nix-doom-emacs, nur, ... }:
@@ -65,6 +67,7 @@
                    ./polybar/polybar.nix
                    ./xmonad/xmonad-home.nix
                     nix-doom-emacs.hmModule
+                    nur.nixosModules.nur
                 ]; 
         };
           }
