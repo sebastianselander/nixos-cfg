@@ -36,6 +36,7 @@ in
                 ghc
                 ghcid
                 gnumake
+                hack-font
                 haskell-language-server
                 haskellPackages.BNFC
                 haskellPackages.alex
@@ -73,6 +74,8 @@ in
 
         file = {
             ".ghci".source = ../.ghci;
+            ".agda/libraries".source = ../agda/libraries;
+            ".agda/defaults".source = ../agda/defaults;
         };
     };
 
@@ -229,6 +232,7 @@ in
                 cornelis
 
                 # Themes
+                rose-pine
                 catppuccin-nvim
                 gruvbox
                 kanagawa-nvim
@@ -239,6 +243,8 @@ in
                 onedark-nvim
                 palenight-vim
                 tokyonight-nvim
+                dracula-nvim
+                monokai-pro-nvim
             ];
         };
         tmux = {
