@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 let 
     midnight-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -8,6 +8,15 @@ let
             repo = "midnight.nvim";
             rev = "955ae794290096d42a6f182741c01fd3665c1577";
             hash = "sha256-FmpQ5Cd9HHV70/uwgIimT2fQVBLdrWxluRCfnUkDQCU=";
+        };
+    };
+    nightly-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "nightly.nvim";
+        src = pkgs.fetchFromGitHub {
+            owner = "Alexis12119";
+            repo = "nightly.nvim";
+            rev = "fbab0f60e2d92d119f6e0cf50c503dcd7753659e";
+            hash = "sha256-4nHEqmefHaM8CrbCX1MLcivX/sQVrXWGyQ6wWFresdI=";
         };
     };
 in
@@ -31,6 +40,7 @@ in
                 eza
                 feh
                 firefox
+                fzf
                 gcc
                 gh
                 ghc
@@ -48,6 +58,7 @@ in
                 julia-mono
                 just
                 libreoffice
+                lua-language-server
                 neofetch
                 nerdfonts
                 nil
@@ -68,7 +79,6 @@ in
                 vlc
                 wget
                 xclip
-                zlib
                 zoom-us
                 ];
 
@@ -90,10 +100,10 @@ in
             enable = true;
             font = {
                 name = "Iosevka";
-                size = 14;
+                size = 15;
             };
             # theme = "Material Dark";
-            extraConfig = ''disable_ligatures always'' + builtins.readFile ../kitty/kitty-themes/themes/Midnight.conf;
+            extraConfig = ''disable_ligatures always'' + builtins.readFile ../kitty/kitty-themes/themes/Tokyonight_Storm.conf;
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
@@ -212,11 +222,14 @@ in
                 oil-nvim
                 plenary-nvim
                 telescope-nvim
+                telescope-fzf-native-nvim
                 undotree
                 vim-fugitive
                 vim-highlightedyank
                 vim-obsession
                 vimtex
+                tabby-nvim
+                gitsigns-nvim
 
                 # ts playground for plugin devel
                 playground
@@ -227,6 +240,10 @@ in
                 nvim-cmp
                 nvim-lspconfig
                 trouble-nvim
+                cmp-buffer
+                cmp-path
+                cmp-cmdline
+                cmp_luasnip
 
                 # agda
                 cornelis
@@ -238,6 +255,7 @@ in
                 kanagawa-nvim
                 material-nvim
                 midnight-nvim
+                nightly-nvim
                 neovim-ayu
                 nightfox-nvim
                 onedark-nvim

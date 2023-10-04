@@ -1,6 +1,6 @@
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.opt.backup = false
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = {80; 100; 120}
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
@@ -8,7 +8,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.isfname:append"@-@"
 vim.opt.list = true
-vim.opt.listchars = "tab:> ,lead: ,trail:·,extends:⇢,precedes:⇠,nbsp:+"
+vim.opt.listchars = "tab:> ,lead:·,trail:·,extends:⇢,precedes:⇠,nbsp:+"
 vim.opt.mouse = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
