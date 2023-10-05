@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let 
+let
     midnight-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "midnight.nvim";
         src = pkgs.fetchFromGitHub {
@@ -326,7 +326,7 @@ in
                     (tool-bar-mode 0)
                     (scroll-bar-mode 0)
                     (setq display-line-numbers-type 'relative) (global-display-line-numbers-mode)
-                    (set-face-attribute 'default nil :family "IBMPlex" :height 131)
+                    (set-face-attribute 'default nil :family "Iosevka" :height 131)
                     (setq evil-want-C-u-scroll t)
                     (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
                         version-control t

@@ -10,7 +10,7 @@ telescope.setup {
             theme = 'ivy',
         },
         git_commits = {
-            initial_mofilesde = "normal",
+            initial_mode = "normal",
         },
         find_files = {
             mappings = {
