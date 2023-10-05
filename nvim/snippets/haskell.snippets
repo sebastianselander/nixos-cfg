@@ -1,0 +1,10 @@
+snippet lang
+        {-# LANGUAGE ${0} #-}
+
+snippet main
+        main :: IO ()
+        main = ${0:undefined}
+
+snippet let
+        let ${1} = ${2}
+        in ${3}

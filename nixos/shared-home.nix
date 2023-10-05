@@ -86,6 +86,7 @@ in
             ".ghci".source = ../.ghci;
             ".agda/libraries".source = ../agda/libraries;
             ".agda/defaults".source = ../agda/defaults;
+            ".config/nvim/snippets".source = ../nvim/snippets;
         };
     };
 
