@@ -32,7 +32,9 @@ in
         packages = with pkgs; [
                 (agda.withPackages [ agdaPackages.standard-library ])
                 bat
-                cabal-install
+                haskellPackages.cabal-install
+                haskellPackages.stylish-haskell
+                haskellPackages.hoogle
                 cabal2nix
                 cargo
                 discord
@@ -43,7 +45,9 @@ in
                 fzf
                 gcc
                 gh
-                ghc
+                haskell.compiler.ghc946
+                zlib.dev
+                zlib
                 ghcid
                 gnumake
                 hack-font

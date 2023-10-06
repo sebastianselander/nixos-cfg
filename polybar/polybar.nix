@@ -37,9 +37,9 @@
                     separator = "|";
                     separator-foreground = "\${colors.disabled}";
 
-                    
+
                     font-0 = "Symbols Nerd Font:style=Regular";
-                    font-1 = "VictorMono NFM SemiBold:style=SemiBold";
+                    font-1 = "Iosevka SemiBold:style=SemiBold";
                     font-2 = "IBM Plex Mono:style=SemiBold";
                     font-3 = "JuliaMono,JuliaMono Latin:style=BoldLatin,Bold";
                 };
