@@ -32,9 +32,6 @@ in
         packages = with pkgs; [
                 (agda.withPackages [ agdaPackages.standard-library ])
                 bat
-                haskellPackages.cabal-install
-                haskellPackages.stylish-haskell
-                haskellPackages.hoogle
                 cabal2nix
                 cargo
                 discord
@@ -45,16 +42,17 @@ in
                 fzf
                 gcc
                 gh
-                haskell.compiler.ghc946
-                zlib.dev
-                zlib
                 ghcid
                 gnumake
                 hack-font
                 haskell-language-server
+                haskell.compiler.ghc946
                 haskellPackages.BNFC
                 haskellPackages.alex
+                haskellPackages.cabal-install
                 haskellPackages.happy
+                haskellPackages.hoogle
+                haskellPackages.stylish-haskell
                 hlint
                 htop
                 ibm-plex
@@ -83,6 +81,8 @@ in
                 vlc
                 wget
                 xclip
+                zlib
+                zlib.dev
                 zoom-us
                 ];
 
