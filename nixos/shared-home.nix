@@ -70,6 +70,7 @@ in
                 pandoc
                 qbittorrent
                 ripgrep
+                rlwrap
                 roboto
                 spotify
                 stack
@@ -88,6 +89,7 @@ in
 
         file = {
             ".ghci".source = ../.ghci;
+            ".haskeline".source = ../.haskeline;
             ".agda/libraries".source = ../agda/libraries;
             ".agda/defaults".source = ../agda/defaults;
             ".config/nvim/snippets".source = ../nvim/snippets;
@@ -112,10 +114,10 @@ in
             shellIntegration.enableZshIntegration = true;
             settings = {
                     enable_audio_bell = false;
-                    cursor_shape = "block";
-                    cursor = "#00FF00";
+                    cursor = "#0000FF";
                     background_opacity = 1;
                     window_padding_width = 2;
+                    shell_integration = true;
                 };
 
         };
@@ -244,7 +246,6 @@ in
                 luasnip
                 nvim-cmp
                 nvim-lspconfig
-                trouble-nvim
                 cmp-buffer
                 cmp-path
                 cmp-cmdline
