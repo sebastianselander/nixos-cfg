@@ -13,10 +13,11 @@ luasnip = builtins.readFile ./luasnip.lua;
 mini= builtins.readFile ./mini.lua;
 oil = builtins.readFile ./oil.lua;
 onedark = builtins.readFile ./onedark.lua;
+surround = builtins.readFile ./surround.lua;
 tabby = builtins.readFile ./tabby.lua;
 telescope = builtins.readFile ./telescope.lua;
-treesitter = builtins.readFile ./treesitter.lua;
 tokyonight = builtins.readFile ./tokyonight.lua;
+treesitter = builtins.readFile ./treesitter.lua;
 undotree = builtins.readFile ./undotree.lua;
 vimtex = builtins.readFile ./vimtex.lua;
 
@@ -35,10 +36,11 @@ ${luasnip}
 ${mini}
 ${oil}
 ${onedark}
+${surround}
 ${tabby}
 ${telescope}
-${treesitter}
 ${tokyonight}
+${treesitter}
 ${undotree}
 ${vimtex}
 ''

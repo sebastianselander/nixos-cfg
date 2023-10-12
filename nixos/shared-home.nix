@@ -236,6 +236,8 @@ in
         vimtex
         tabby-nvim
         gitsigns-nvim
+        surround-nvim
+        tmux-nvim
 
         # ts playground for plugin devel
         playground
@@ -285,15 +287,14 @@ in
       ];
       extraConfig =
         "
-                bind R source-file '~/.config/tmux/tmux.conf'
                 set-option -g default-shell /run/current-system/sw/bin/zsh
                 bind h select-pane -L
                 bind j select-pane -D
                 bind k select-pane -U
                 bind l select-pane -R
                 set-option -g pane-border-style fg=\"\#FFFFFF\"
-                set -g status-bg gray
-                set -g status-fg black
+                set -g status-bg \"\#24283b\"
+                set -g status-fg \"\#41a6b5\"
 
                 bind c new-window -c \"\#{pane_current_path}\"
                 bind '\"' split-window -c \"\#{pane_current_path}\"

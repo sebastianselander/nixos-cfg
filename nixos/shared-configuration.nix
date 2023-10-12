@@ -86,6 +86,7 @@
     zsh
     nushell
     pulseaudioFull
+    lm_sensors
   ];
 
   # This value determines the NixOS release from which the default

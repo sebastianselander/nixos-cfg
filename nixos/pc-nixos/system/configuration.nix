@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
     imports =
@@ -25,4 +25,8 @@
     };
     services.xserver.videoDrivers = [ "nvidia" ];
     programs.steam.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    lm_sensors
+  ];
 }
