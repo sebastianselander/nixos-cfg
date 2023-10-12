@@ -1,13 +1,13 @@
 let
-    remap = builtins.readFile ./remap.lua;
-    set = builtins.readFile ./set.lua;
+  remap = builtins.readFile ./remap.lua;
+  set = builtins.readFile ./set.lua;
 
-    plugins = import ./plugins/config.nix;
+  plugins = import ./plugins/config.nix;
 in
-    ''
-    lua << EOF
-    ${remap}
-    ${set}
-    ${plugins}
-    EOF
-    ''
+''
+  lua << EOF
+  ${remap}
+  ${set}
+  ${plugins}
+  EOF
+''

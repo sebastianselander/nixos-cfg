@@ -65,6 +65,13 @@ nvim_lsp.rust_analyzer.setup({
 nvim_lsp.nil_ls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+        ['nil'] = {
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+        },
+    },
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

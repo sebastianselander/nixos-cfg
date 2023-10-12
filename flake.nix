@@ -20,110 +20,114 @@
   };
 
   outputs = attrs@{ self, nixpkgs, home-manager, cornelis, nix-doom-emacs, nur, ... }:
-  {
-    # Zenbook Plasma
-    nixosConfigurations.zenbook-nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./nixos/zenbook-nixos/system/configuration.nix
-        ./nixos/shared-configuration.nix
-        ./plasma/plasma.nix
-        home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [
-            cornelis.overlays.cornelis
-        ];
-        home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.sebastian.imports = [
-                    ./nixos/shared-home.nix
-                    ./nixos/zenbook-nixos/home/home.nix
-                     nix-doom-emacs.hmModule
-                ];
-        };
+    {
+      # Zenbook Plasma
+      nixosConfigurations.zenbook-nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          ./nixos/zenbook-nixos/system/configuration.nix
+          ./nixos/shared-configuration.nix
+          ./plasma/plasma.nix
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [
+              cornelis.overlays.cornelis
+            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.sebastian.imports = [
+                ./nixos/shared-home.nix
+                ./nixos/zenbook-nixos/home/home.nix
+                nix-doom-emacs.hmModule
+              ];
+            };
           }
-      ];
-    };
+        ];
+      };
 
-    # Zenbook XMonad
-    nixosConfigurations.zenbook-xmonad = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./nixos/zenbook-nixos/system/configuration.nix
-        ./nixos/shared-configuration.nix
-       ./xmonad/xmonad.nix
-        home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [
-            cornelis.overlays.cornelis
-        ];
-        home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.sebastian.imports = [
-                   ./nixos/shared-home.nix
-                   ./nixos/zenbook-nixos/home/home.nix
-                   ./polybar/polybar.nix
-                   ./xmonad/xmonad-home.nix
-                    nix-doom-emacs.hmModule
-                    nur.nixosModules.nur
-                ]; 
-        };
+      # Zenbook XMonad
+      nixosConfigurations.zenbook-xmonad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          ./nixos/zenbook-nixos/system/configuration.nix
+          ./nixos/shared-configuration.nix
+          ./xmonad/xmonad.nix
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [
+              cornelis.overlays.cornelis
+            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.sebastian.imports = [
+                ./nixos/shared-home.nix
+                ./nixos/zenbook-nixos/home/home.nix
+                ./polybar/polybar.nix
+                ./xmonad/xmonad-home.nix
+                nix-doom-emacs.hmModule
+                nur.nixosModules.nur
+              ];
+            };
           }
-      ];
-    };
+        ];
+      };
 
-    # Pc Plasma
-    nixosConfigurations.pc-nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./nixos/pc-nixos/system/configuration.nix
-        ./nixos/shared-configuration.nix
-        ./plasma/plasma.nix
-        home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [
-            cornelis.overlays.cornelis
-        ];
-        home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.sebastian.imports = [
-                    ./nixos/shared-home.nix
-                    ./nixos/pc-nixos/home/home.nix
-                    nix-doom-emacs.hmModule
-                ]; 
-        };
+      # Pc Plasma
+      nixosConfigurations.pc-nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          ./nixos/pc-nixos/system/configuration.nix
+          ./nixos/shared-configuration.nix
+          ./plasma/plasma.nix
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [
+              cornelis.overlays.cornelis
+            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.sebastian.imports = [
+                ./nixos/shared-home.nix
+                ./nixos/pc-nixos/home/home.nix
+                nix-doom-emacs.hmModule
+              ];
+            };
           }
-      ];
-    };
+        ];
+      };
 
-    # PC XMonad
-    nixosConfigurations.pc-xmonad = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./nixos/pc-nixos/system/configuration.nix
-        ./nixos/shared-configuration.nix
-        ./xmonad/xmonad.nix
-        home-manager.nixosModules.home-manager {
-        nixpkgs.overlays = [
-            cornelis.overlays.cornelis
-        ];
-        home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.sebastian.imports = [
-                    ./nixos/shared-home.nix
-                    ./nixos/pc-nixos/home/home.nix
-                    ./polybar/polybar.nix
-                    ./xmonad/xmonad-home.nix
-                    nix-doom-emacs.hmModule
-                ]; 
-        };
+      # PC XMonad
+      nixosConfigurations.pc-xmonad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          ./nixos/pc-nixos/system/configuration.nix
+          ./nixos/shared-configuration.nix
+          ./xmonad/xmonad.nix
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [
+              cornelis.overlays.cornelis
+            ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.sebastian.imports = [
+                ./nixos/shared-home.nix
+                ./nixos/pc-nixos/home/home.nix
+                ./polybar/polybar.nix
+                ./xmonad/xmonad-home.nix
+                nix-doom-emacs.hmModule
+              ];
+            };
           }
-      ];
+        ];
+      };
     };
-  };
 }

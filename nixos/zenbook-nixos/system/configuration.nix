@@ -1,12 +1,12 @@
 { ... }:
 
 {
-    imports = [
-        ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-    networking.hostName = "zenbook-nixos";
+  networking.hostName = "zenbook-nixos";
 
-    services.tlp.enable = true;
-    services.power-profiles-daemon.enable = false;
+  services.tlp.enable = true;
+  services.power-profiles-daemon.enable = false;
 }
