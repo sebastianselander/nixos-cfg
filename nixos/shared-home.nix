@@ -72,6 +72,8 @@ in
       lua-language-server
       neofetch
       nerdfonts
+      glow
+      lsof
       nil
       nix-prefetch-git
       nixpkgs-fmt
@@ -248,6 +250,7 @@ in
         surround-nvim
         tmux-nvim
         eyeliner-nvim
+        nerdtree
 
         # ts playground for plugin devel
         playground
