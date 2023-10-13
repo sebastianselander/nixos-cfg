@@ -4,5 +4,7 @@
 :set -XLambdaCase
 :set -XOverloadedRecordDot
 :set -XImportQualifiedPost
+:set -XMagicHash
 :set -Wall
 :set prompt "\ESC[1;95m%s \ESC[0;95mλ \ESC[m"
+:m + Unsafe.Coerce

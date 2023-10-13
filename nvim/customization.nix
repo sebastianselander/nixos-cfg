@@ -4,6 +4,7 @@ let
 
   plugins = import ./plugins/config.nix;
 in
+# Load plugins last for specific plugin overrides
 ''
   lua << EOF
   ${remap}

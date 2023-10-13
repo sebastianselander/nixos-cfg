@@ -3,6 +3,7 @@ let
 cmp = builtins.readFile ./cmp.lua;
 colorscheme = builtins.readFile ./colorscheme.lua;
 cornelis = builtins.readFile ./cornelis.lua;
+eyeliner = builtins.readFile ./eyeliner.lua;
 fugitive = builtins.readFile ./fugitive.lua;
 gitsigns = builtins.readFile ./gitsigns.lua;
 harpoon = builtins.readFile ./harpoon.lua;
@@ -16,6 +17,7 @@ onedark = builtins.readFile ./onedark.lua;
 surround = builtins.readFile ./surround.lua;
 tabby = builtins.readFile ./tabby.lua;
 telescope = builtins.readFile ./telescope.lua;
+tmux = builtins.readFile ./tmux.lua;
 tokyonight = builtins.readFile ./tokyonight.lua;
 treesitter = builtins.readFile ./treesitter.lua;
 undotree = builtins.readFile ./undotree.lua;
@@ -26,6 +28,7 @@ in
 ${cmp}
 ${colorscheme}
 ${cornelis}
+${eyeliner}
 ${fugitive}
 ${gitsigns}
 ${harpoon}
@@ -39,6 +42,7 @@ ${onedark}
 ${surround}
 ${tabby}
 ${telescope}
+${tmux}
 ${tokyonight}
 ${treesitter}
 ${undotree}
