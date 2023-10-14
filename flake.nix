@@ -14,53 +14,69 @@
   };
 
   outputs = attrs@{ self, nixpkgs, home-manager, cornelis, ... }:
-    {
-      # Zenbook XMonad
-      nixosConfigurations.zenbook = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = attrs;
-        modules = [
-          ./hosts/zenbook/configuration.nix
-          ./hosts/common-configuration.nix
-          ./modules/xmonad
-          home-manager.nixosModules.home-manager
-          {
-            nixpkgs.overlays = [
-              cornelis.overlays.cornelis
-            ];
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.sebastian.imports = [
-                ./home
-                ./modules/xmonad/home.nix
+    let
+      # A function that takes the imports to use for the system and home and builds the system
+      buildSystem = { systemImports, homeImports }:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = attrs;
+          modules = systemImports ++ [
+            home-manager.nixosModules.home-manager
+            {
+              nixpkgs.overlays = [
+                cornelis.overlays.cornelis
               ];
-            };
-          }
-        ];
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.sebastian.imports = homeImports;
+              };
+            }
+          ];
+        };
+    in
+    {
+      nixosConfigurations.zenbook-xmonad = buildSystem {
+          systemImports = [
+              ./hosts/zenbook/configuration.nix
+              ./hosts/common-configuration.nix
+              ./modules/xmonad
+          ];
+          homeImports = [
+            ./home
+            ./modules/xmonad/home.nix
+          ];
       };
-      # Pc Plasma
-      nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = attrs;
-        modules = [
+      nixosConfigurations.zenbook-plasma = buildSystem {
+          systemImports = [
+              ./hosts/zenbook/configuration.nix
+              ./hosts/common-configuration.nix
+              ./modules/plasma
+          ];
+          homeImports = [
+            ./home
+          ];
+      };
+      nixosConfigurations.pc-plasma = buildSystem {
+        systemImports = [
           ./hosts/pc/configuration.nix
           ./hosts/common-configuration.nix
           ./modules/plasma
-          home-manager.nixosModules.home-manager
-          {
-            nixpkgs.overlays = [
-              cornelis.overlays.cornelis
-            ];
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.sebastian.imports = [
-                ./home
-              ];
-            };
-          }
         ];
+        homeImports = [
+          ./home
+        ];
+      };
+      nixosConfigurations.pc-zenbook = buildSystem {
+          systemImports = [
+              ./hosts/pc/configuration.nix
+              ./hosts/common-configuration.nix
+              ./modules/xmonad
+          ];
+          homeImports = [
+            ./home
+            ./modules/xmonad/home.nix
+          ];
       };
     };
 }
