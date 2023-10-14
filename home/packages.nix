@@ -1,0 +1,62 @@
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    (agda.withPackages [ agdaPackages.standard-library ])
+    bat
+    cabal2nix
+    cargo
+    discord
+    dmenu
+    eza
+    feh
+    firefox
+    fzf
+    gcc
+    gh
+    ghcid
+    gnumake
+    hack-font
+    haskell-language-server
+    haskell.compiler.ghc946
+    haskellPackages.BNFC
+    haskellPackages.alex
+    haskellPackages.cabal-install
+    haskellPackages.happy
+    haskellPackages.hoogle
+    haskellPackages.stylish-haskell
+    hlint
+    htop
+    ibm-plex
+    iosevka
+    julia-mono
+    just
+    libreoffice
+    lua-language-server
+    neofetch
+    nerdfonts
+    glow
+    lsof
+    nil
+    nix-prefetch-git
+    nixpkgs-fmt
+    nixos-option
+    obs-studio
+    pandoc
+    qbittorrent
+    ripgrep
+    roboto
+    spotify
+    stack
+    texlive.combined.scheme-full
+    thunderbird
+    tree
+    unzip
+    victor-mono
+    vlc
+    wget
+    xclip
+    zlib
+    zlib.dev
+    zoom-us
+  ];
+}
