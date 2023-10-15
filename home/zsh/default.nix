@@ -15,7 +15,6 @@
         ls = "eza --group-directories-first";
         lsa = "eza --group-directories-first -la";
         lst = "eza -s modified -1";
-        vim = "nvim";
         con = "mullvad connect";
         disc = "mullvad disconnect";
         pc-plasma = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#pc-plasma";

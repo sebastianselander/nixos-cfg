@@ -33,8 +33,11 @@ in
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraConfig = import ./nvim;
-    extraPackages = [ pkgs.cornelis ];
+    vimAlias = true;
+    extraPackages = with pkgs; [
+        cornelis
+    ];
+
     plugins = with pkgs.vimPlugins; [
       harpoon
       lualine-nvim
@@ -54,7 +57,6 @@ in
       surround-nvim
       tmux-nvim
       eyeliner-nvim
-      nerdtree
 
       # ts playground for plugin devel
       playground
@@ -89,5 +91,16 @@ in
       dracula-nvim
       monokai-pro-nvim
     ];
+  };
+  xdg.configFile = {
+      "nvim/after/plugin" = {
+          source = ./plugin;
+          recursive = true;
+      };
+      "nvim/init.lua".source = ./init.lua;
+      "nvim/snippets" = {
+          source = ./snippets;
+          recursive = true;
+      };
   };
 }

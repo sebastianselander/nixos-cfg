@@ -22,7 +22,6 @@
     haskellPackages.alex
     haskellPackages.cabal-install
     haskellPackages.happy
-    haskellPackages.hoogle
     haskellPackages.stylish-haskell
     hlint
     htop
