@@ -14,6 +14,7 @@
     gcc
     gh
     ghcid
+    glow
     gnumake
     hack-font
     haskell-language-server
@@ -30,15 +31,14 @@
     julia-mono
     just
     libreoffice
+    lsof
     lua-language-server
     neofetch
     nerdfonts
-    glow
-    lsof
     nil
     nix-prefetch-git
-    nixpkgs-fmt
     nixos-option
+    nixpkgs-fmt
     obs-studio
     pandoc
     qbittorrent
