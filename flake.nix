@@ -22,6 +22,7 @@
           specialArgs = attrs;
           modules = systemImports ++ [
             home-manager.nixosModules.home-manager
+            ./hosts/common-configuration.nix
             {
               nixpkgs.overlays = [
                 cornelis.overlays.cornelis
@@ -39,7 +40,6 @@
       nixosConfigurations.zenbook-xmonad = buildSystem {
           systemImports = [
               ./hosts/zenbook/configuration.nix
-              ./hosts/common-configuration.nix
               ./modules/xmonad
           ];
           homeImports = [
@@ -50,7 +50,6 @@
       nixosConfigurations.zenbook-plasma = buildSystem {
           systemImports = [
               ./hosts/zenbook/configuration.nix
-              ./hosts/common-configuration.nix
               ./modules/plasma
           ];
           homeImports = [
@@ -60,7 +59,6 @@
       nixosConfigurations.pc-plasma = buildSystem {
         systemImports = [
           ./hosts/pc/configuration.nix
-          ./hosts/common-configuration.nix
           ./modules/plasma
         ];
         homeImports = [
@@ -70,7 +68,6 @@
       nixosConfigurations.pc-zenbook = buildSystem {
           systemImports = [
               ./hosts/pc/configuration.nix
-              ./hosts/common-configuration.nix
               ./modules/xmonad
           ];
           homeImports = [
