@@ -2,57 +2,57 @@
 
 -- normal haskell stuff
 
-import Control.Monad (when)
-import Data.Map qualified as M
-import Data.Monoid
+import           Control.Monad                    (when)
+import qualified Data.Map                         as M
+import           Data.Monoid
 
-import XMonad
-import XMonad.Config.Kde
+import           XMonad
+import           XMonad.Config.Kde
 
 -- window stack manipulation and map creation
-import XMonad.StackSet qualified as W
+import qualified XMonad.StackSet                  as W
 
 -- Hooks
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.InsertPosition
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.WindowSwallowing
-import XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.InsertPosition
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.WindowSwallowing
 
 -- layout
 
-import XMonad.Layout.IndependentScreens (countScreens)
-import XMonad.Layout.LayoutModifier (ModifiedLayout)
-import XMonad.Layout.NoBorders
-import XMonad.Layout.Renamed
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.Spacing
-import XMonad.Layout.Tabbed
-import XMonad.Layout.ThreeColumns
-import XMonad.Layout.ToggleLayouts
+import           XMonad.Layout.IndependentScreens (countScreens)
+import           XMonad.Layout.LayoutModifier     (ModifiedLayout)
+import           XMonad.Layout.NoBorders
+import           XMonad.Layout.Renamed
+import           XMonad.Layout.ResizableTile
+import           XMonad.Layout.Spacing
+import           XMonad.Layout.Tabbed
+import           XMonad.Layout.ThreeColumns
+import           XMonad.Layout.ToggleLayouts
 
 -- actions
 
-import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
-import XMonad.Actions.SpawnOn
+import           XMonad.Actions.CycleWS           (nextScreen, shiftNextScreen)
+import           XMonad.Actions.SpawnOn
 
 -- utils
-import XMonad.Util.SpawnOnce
-import XMonad.Util.Cursor
+import           XMonad.Util.Cursor
+import           XMonad.Util.SpawnOnce
 
 -- keys
-import Graphics.X11.ExtraTypes.XF86
+import           Graphics.X11.ExtraTypes.XF86
 
 -- prompts
-import XMonad.Layout.Decoration (Decoration, DefaultShrinker)
-import XMonad.Layout.Simplest (Simplest)
+import           XMonad.Layout.Decoration         (Decoration, DefaultShrinker)
+import           XMonad.Layout.Simplest           (Simplest)
 
-import Codec.Binary.UTF8.String (decodeString)
-import DBus qualified as D
-import DBus.Client qualified as D
-import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
-import XMonad.Layout.Circle
+import           Codec.Binary.UTF8.String         (decodeString)
+import qualified DBus                             as D
+import qualified DBus.Client                      as D
+import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
+import           XMonad.Layout.Circle
 
 ---------------------------------------------------------------------------------------------------
 -- USER VARIABLES
@@ -70,9 +70,9 @@ myBorderWidth = 2
 myGaps :: Integer
 myGaps = 6
 myNormalBorderColor :: String
-myNormalBorderColor = "#000000"
+myNormalBorderColor = "#FFFFFF"
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#FFFFFF"
+myFocusedBorderColor = "#41a6b5"
 myTerminal :: String
 myTerminal = "kitty"
 myBrowser :: String
@@ -222,7 +222,7 @@ myKeys conf@(XConfig{XMonad.modMask = modm}) =
                , ((modm, xK_comma), sendMessage (IncMasterN 1))
                , ((modm, xK_period), sendMessage (IncMasterN (-1)))
                , -- keyboard
-                 ((modm, xK_space), spawn "~/Documents/git/nixos-cfg/xmonad/keyboardToggle.sh")
+                 ((modm, xK_space), spawn "~/Documents/git/nixos-cfg/modules/xmonad/keyboardToggle.sh")
                , -- brightness
                  ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 3")
                , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 3")

@@ -41,6 +41,7 @@
     nixpkgs-fmt
     obs-studio
     pandoc
+    rlwrap
     qbittorrent
     ripgrep
     roboto

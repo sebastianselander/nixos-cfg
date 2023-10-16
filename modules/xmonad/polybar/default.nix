@@ -83,17 +83,17 @@
         };
         "module/wifi" = {
           type = "custom/script";
-          exec = "~/Documents/git/nixos-cfg/polybar/scripts/internet.sh";
+          exec = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/internet.sh";
           click-left = "exec nm-connection-editor";
           interval = 2;
           format-foreground = "#FFFFFF";
         };
         "module/pipewire" = {
           type = "custom/script";
-          exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-pipewire/pipewire.sh";
+          exec = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/polybar-pipewire/pipewire.sh";
           interval = 1;
           click-right = "exec pavucontrol &";
-          click-left = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-pipewire/pipewire.sh --mute &";
+          click-left = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/polybar-pipewire/pipewire.sh --mute &";
         };
         "module/memory" = {
           type = "internal/memory";
@@ -107,16 +107,16 @@
         };
         "module/vpn" = {
           type = "custom/script";
-          exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-vpn-controller/vpn_module.sh status mullvad";
+          exec = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/polybar-vpn-controller/vpn_module.sh status mullvad";
           click-right = "mullvad-vpn";
           interval = 5;
           format = "<label>";
         };
         "module/bluetooth" = {
           type = "custom/script";
-          exec = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-bluetooth/bluetooth.sh";
+          exec = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/polybar-bluetooth/bluetooth.sh";
           interval = 2;
-          click-left = "~/Documents/git/nixos-cfg/polybar/scripts/polybar-bluetooth/toggle_bluetooth.sh";
+          click-left = "~/Documents/git/nixos-cfg/modules/xmonad/polybar/scripts/polybar-bluetooth/toggle_bluetooth.sh";
           click-right = "exec blueman-manager";
           format-foreground = "#ffffff";
         };
