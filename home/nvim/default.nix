@@ -54,7 +54,7 @@ in
       vimtex
       tabby-nvim
       gitsigns-nvim
-      surround-nvim
+      vim-surround
       tmux-nvim
       eyeliner-nvim
 
