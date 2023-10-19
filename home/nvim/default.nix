@@ -50,16 +50,12 @@ in
       undotree
       vim-fugitive
       vim-highlightedyank
-      vim-obsession
       vimtex
       tabby-nvim
       gitsigns-nvim
       vim-surround
       tmux-nvim
       eyeliner-nvim
-
-      # ts playground for plugin devel
-      playground
 
       # lsp
       cmp-nvim-lsp
@@ -71,9 +67,6 @@ in
       cmp-path
       cmp-cmdline
       cmp_luasnip
-
-      # agda
-      cornelis
 
       # Themes
       rose-pine

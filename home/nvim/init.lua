@@ -26,9 +26,6 @@ vim.keymap.set('n', '<leader>tm', '<cmd> tabm 0 <CR>')
 
 vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
--- Change working directory
-vim.keymap.set('n', '<leader>cd', '<cmd> cd %:h <CR>')
-
 -- Windows.
 vim.keymap.set('n', '<A-l>', '<C-w>l')
 vim.keymap.set('n', '<A-h>', '<C-w>h')
@@ -59,7 +56,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.isfname:append"@-@"
 vim.opt.list = true
-vim.opt.listchars = "tab:> ,lead:·,trail:·,extends:⇢,precedes:⇠,nbsp:+"
+vim.opt.listchars = "tab:> ,lead:·,trail: ,extends:⇢,precedes:⇠,nbsp:+"
 vim.opt.mouse = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -80,4 +77,4 @@ vim.opt.wrap = false
 
 -- "Don't want to automatically insert comment leaders after using `o` in normal
 -- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
-vim.cmd [[ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q ]]
+vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
