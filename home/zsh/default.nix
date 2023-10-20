@@ -6,6 +6,8 @@
       enableAutosuggestions = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+
+        p  = "pwd | sed -E \"s/\\/home\\/[a-z]*\\//~\\//g\"";
         gs = "git status";
         gc = "git commit";
         gf = "git fetch";

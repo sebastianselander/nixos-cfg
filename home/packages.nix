@@ -7,6 +7,7 @@
     cargo
     discord
     dmenu
+    cloc
     eza
     feh
     firefox

@@ -19,6 +19,7 @@
 
           tray-position = "right";
           tray-maxsize = 30;
+          pseudo-transparent = true;
 
           background = "\${colors.background}";
           foreground = "\${colors.foreground}";

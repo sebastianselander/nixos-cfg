@@ -35,6 +35,11 @@
   };
 
   services = {
+    fstrim = {
+        interval = "weekly";
+        enable = true;
+    };
+
     xserver = {
       enable = true;
       layout = "us";
