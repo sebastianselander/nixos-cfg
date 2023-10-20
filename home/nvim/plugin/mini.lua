@@ -22,9 +22,4 @@ trailspace.setup()
 
 vim.keymap.set('n', '<leader>tt', function() trailspace.trim() end, { noremap = true })
 
-vim.keymap.set('n', 'gS', function()
-    splitjoin.toggle({
-        detect = {
-            separator = vim.fn.input("Separator > ")
-        }
-    }) end)
+vim.keymap.set('n', 'gS', function() splitjoin.toggle({ detect = { separator = vim.fn.input("Separator > ") } }) end)

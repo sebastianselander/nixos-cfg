@@ -39,10 +39,10 @@ let
   baleia = pkgs.vimUtils.buildVimPlugin {
     name = "m00qek";
     src = pkgs.fetchFromGitHub {
-        owner = "m00qek";
-        repo = "baleia.nvim";
-        rev = "00bb4af31c8c3865b735d40ebefa6c3f07b2dd16";
-        hash = "sha256-jxRlIzWbnSj89032msc5w+2TVt7zVyzlxdXxiH1dQqY=";
+      owner = "m00qek";
+      repo = "baleia.nvim";
+      rev = "00bb4af31c8c3865b735d40ebefa6c3f07b2dd16";
+      hash = "sha256-jxRlIzWbnSj89032msc5w+2TVt7zVyzlxdXxiH1dQqY=";
     };
   };
 in
@@ -106,7 +106,7 @@ in
       dracula-nvim
       monokai-pro-nvim
     ];
-  };
+ };
   xdg.configFile = {
     "nvim/after/plugin" = {
       source = ./plugin;
