@@ -1,6 +1,5 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
-local themes = require('telescope.themes')
 
 telescope.setup {
     extensions = {
@@ -9,17 +8,14 @@ telescope.setup {
             override_generic_sorter = true,
             override_file_sorter = true,
             case_mode = 'smart_case',
-        };
+        },
     },
-    defaults = { },
+    defaults = {
+        initial_mode = 'normal',
+    },
     pickers = {
-        git_status = {
-            initial_mode = 'normal',
-        },
-        git_commits = {
-            initial_mode = 'normal',
-        },
         find_files = {
+            initial_mode = 'insert',
             mappings = {
                 n = {
                     ['<C-t>'] = 'file_tab',
@@ -28,8 +24,10 @@ telescope.setup {
                 },
             },
         },
+        live_grep = {
+            initial_mode = 'insert',
+        },
         buffers = {
-            initial_mode = 'normal',
             sort_mru = true,
             ignore_current_buffer = true,
             theme = 'dropdown',
@@ -40,27 +38,18 @@ telescope.setup {
                 }
             }
         },
-        colorscheme = {
-            initial_mode = 'normal'
-        },
-        registers = {
-            initial_mode = 'normal'
-        },
-        marks = {
-            initial_mode = 'normal'
-        },
-    }
+    },
 }
 telescope.load_extension('fzf')
 
 local nnoremap = function(lhs, rhs)
-    vim.keymap.set("n", lhs, rhs, { noremap = true})
+    vim.keymap.set("n", lhs, rhs, { noremap = true })
 end
 
 nnoremap('<leader>pf', builtin.find_files)
 nnoremap('<C-p>', builtin.git_files)
 nnoremap('<leader>ps', builtin.live_grep)
 nnoremap('<leader>b', builtin.buffers)
-nnoremap('<leader>pr', builtin.registers)
-nnoremap('<leader>pm', builtin.marks)
+nnoremap('<leader>pr', ":Telescope registers theme=ivy <CR>")
+nnoremap('<leader>pm', ":Telescope marks theme=ivy <CR>")
 nnoremap('<leader>pd', ":Telescope diagnostics theme=ivy<CR>")

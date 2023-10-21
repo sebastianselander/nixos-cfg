@@ -2,7 +2,7 @@ local compile_mode = require('compile-mode')
 compile_mode.setup({
     no_baleia_support = false,
     split_vertically = false,
-    default_command = "make -k",
+    default_command = "",
 })
 
 vim.keymap.set('n', '<leader>xx', compile_mode.recompile)
