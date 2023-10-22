@@ -7,13 +7,9 @@
     # Home Manager flake dependency
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Neovim agda mode plugin
-    cornelis.url = "github:isovector/cornelis";
-    cornelis.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = attrs@{ self, nixpkgs, home-manager, cornelis, ... }:
+  outputs = attrs@{ self, nixpkgs, home-manager, ... }:
     let
       # A function that takes the imports to use for the system and home and builds the system
       buildSystem = { systemImports, homeImports }:
@@ -24,9 +20,6 @@
             home-manager.nixosModules.home-manager
             ./hosts/common-configuration.nix
             {
-              nixpkgs.overlays = [
-                cornelis.overlays.cornelis
-              ];
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
