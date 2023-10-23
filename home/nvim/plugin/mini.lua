@@ -9,7 +9,7 @@ ai.setup()
 align.setup()
 comment.setup()
 sessions.setup({
-    autoread = true,
+    autoread = false,
     autowrite = true,
     file = 'Session.vim',
 })
@@ -20,6 +20,12 @@ splitjoin.setup({
 })
 trailspace.setup()
 
-vim.keymap.set('n', '<leader>tt', function() trailspace.trim() end, { noremap = true })
+vim.keymap.set('n', '<leader>tt', function() trailspace.trim() end, {
+    noremap = true
+})
 
-vim.keymap.set('n', 'gS', function() splitjoin.toggle({ detect = { separator = vim.fn.input("Separator > ") } }) end)
+vim.keymap.set('n', 'gS', function() splitjoin.toggle({
+    detect = {
+        separator = vim.fn.input("Separator > ")
+    }
+}) end)
