@@ -52,10 +52,6 @@ in
     enable = true;
     defaultEditor = true;
     vimAlias = true;
-    extraPackages = with pkgs; [
-      cornelis
-    ];
-
     plugins = with pkgs.vimPlugins; [
       harpoon
       lualine-nvim
@@ -73,6 +69,8 @@ in
       gitsigns-nvim
       vim-surround
       tmux-nvim
+      neogit
+      nvim-web-devicons
 
       # manually added plugins
       compile-mode
@@ -86,7 +84,6 @@ in
       luasnip
       nvim-cmp
       nvim-lspconfig
-      trouble-nvim
       cmp-buffer
       cmp-path
       cmp-cmdline
