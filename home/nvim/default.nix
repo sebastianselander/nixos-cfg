@@ -71,6 +71,7 @@ in
       tmux-nvim
       neogit
       nvim-web-devicons
+      diffview-nvim
 
       # manually added plugins
       compile-mode
