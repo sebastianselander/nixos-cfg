@@ -5,9 +5,9 @@
     bat
     cabal2nix
     cargo
+    cloc
     discord
     dmenu
-    cloc
     eza
     feh
     firefox
@@ -35,6 +35,7 @@
     lsof
     lua-language-server
     neofetch
+    neomutt
     nerdfonts
     nil
     nix-prefetch-git
@@ -42,11 +43,12 @@
     nixpkgs-fmt
     obs-studio
     pandoc
-    rlwrap
     qbittorrent
     ripgrep
+    rlwrap
     roboto
     spotify
+    spotify-player
     stack
     texlive.combined.scheme-full
     thunderbird
