@@ -8,6 +8,7 @@
       shellAliases = {
 
         p  = "pwd | sed -E \"s/\\/home\\/[a-z]*\\//~\\//g\"";
+        n = "nnn";
         gs = "git status";
         gc = "git commit";
         gf = "git fetch";
