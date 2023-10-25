@@ -31,6 +31,7 @@
     iosevka
     julia-mono
     just
+    lazygit
     libreoffice
     lsof
     lua-language-server
