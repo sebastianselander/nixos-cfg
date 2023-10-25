@@ -44,6 +44,7 @@
     nixos-option
     nixpkgs-fmt
     nnn
+    neovide
     obs-studio
     pandoc
     qbittorrent
