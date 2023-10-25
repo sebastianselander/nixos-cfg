@@ -72,6 +72,7 @@ in
       neogit
       nvim-web-devicons
       diffview-nvim
+      colorizer
 
       # manually added plugins
       compile-mode
