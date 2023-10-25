@@ -16,16 +16,18 @@
   };
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        # The following two attributes are recommended by
+        # https://github.com/input-output-hk/haskell.nix/blob/master/docs/tutorials/getting-started-flakes.md
+        trusted-public-keys = [
+            "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+        ];
+        substituters = [
+            "https://cache.iog.io"
+        ];
+    };
 
-    # The following two attributes are recommended by
-    # https://github.com/input-output-hk/haskell.nix/blob/master/docs/tutorials/getting-started-flakes.md
-    trusted-public-keys = [
-        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-    ];
-    substituters = [
-        "https://cache.iog.io"
-    ];
   };
 
   time.timeZone = "Europe/Stockholm";
