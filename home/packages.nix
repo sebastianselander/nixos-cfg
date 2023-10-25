@@ -5,6 +5,7 @@
     bat
     cabal2nix
     cargo
+    cargo
     cloc
     discord
     dmenu
@@ -42,16 +43,16 @@
     nix-prefetch-git
     nixos-option
     nixpkgs-fmt
+    nnn
     obs-studio
     pandoc
     qbittorrent
     ripgrep
     rlwrap
     roboto
-    rustc
-    cargo
-    rustfmt
     rust-analyzer
+    rustc
+    rustfmt
     spotify
     spotify-player
     stack
