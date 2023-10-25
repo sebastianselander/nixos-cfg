@@ -48,6 +48,7 @@
     ripgrep
     rlwrap
     roboto
+    rustc
     spotify
     spotify-player
     stack
