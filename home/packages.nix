@@ -49,6 +49,9 @@
     rlwrap
     roboto
     rustc
+    cargo
+    rustfmt
+    rust-analyzer
     spotify
     spotify-player
     stack
