@@ -11,6 +11,7 @@
     dmenu
     eza
     feh
+    ffmpeg
     firefox
     fzf
     gcc
@@ -43,7 +44,6 @@
     nix-prefetch-git
     nixos-option
     nixpkgs-fmt
-    nnn
     obs-studio
     pandoc
     qbittorrent

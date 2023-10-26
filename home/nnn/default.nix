@@ -1,13 +1,12 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nnn = {
     enable = true;
     bookmarks = {
-        g = "~/Documents/git";
-        x = ":! chmod +x $nnn";
+      g = "~/Documents/git";
     };
     package = {
-        withNerdIcons = true;
+      withNerdIcons = true;
     };
   };
 }
