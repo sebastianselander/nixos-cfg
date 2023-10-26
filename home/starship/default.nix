@@ -13,19 +13,6 @@
           vimcmd_replace_symbol = "[-- REPLACE --\nλ](bold green)";
           vimcmd_visual_symbol = "[-- VISUAL --\nλ](bold green)";
         };
-        git_status = {
-          format = "([\\[ $conflicted$stashed$deleted$renamed$modified$staged$untracked$ahead_behind\\]]($style))";
-          conflicted = "conflict=\${count} ";
-          stashed = "stashed=\${count} ";
-          deleted = "deleted=\${count} ";
-          renamed = "renamed=\${count} ";
-          behind = "behind=\${count} ";
-          ahead = "ahead=\${count} ";
-          diverged = "ahead=\${count} behind=\${count} ";
-          untracked = "untracked=\${count} ";
-          modified = "modified=\${count} ";
-          staged = "staged=\${count} ";
-        };
       };
     };
 }
