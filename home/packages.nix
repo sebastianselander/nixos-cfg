@@ -27,6 +27,7 @@
     haskellPackages.cabal-install
     haskellPackages.happy
     haskellPackages.stylish-haskell
+    haskellPackages.stack
     hlint
     htop
     ibm-plex
@@ -55,7 +56,6 @@
     rustfmt
     spotify
     spotify-player
-    stack
     texlive.combined.scheme-full
     thunderbird
     tree
