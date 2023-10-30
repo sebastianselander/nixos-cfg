@@ -32,8 +32,16 @@ nvim_lsp.hls.setup({
 })
 
 nvim_lsp.lua_ls.setup({
-    capabilities = capabilities,
     on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+nvim_lsp.typst_lsp.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        exportPdf = "onSave",
+    },
 })
 
 nvim_lsp.rust_analyzer.setup({
