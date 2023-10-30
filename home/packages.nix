@@ -59,6 +59,9 @@
     texlive.combined.scheme-full
     thunderbird
     tree
+    typst
+    typstfmt
+    typst-lsp
     unzip
     victor-mono
     vlc
