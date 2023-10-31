@@ -40,7 +40,7 @@ nvim_lsp.typst_lsp.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
-        exportPdf = "onSave",
+        exportPdf = "never",
     },
 })
 
