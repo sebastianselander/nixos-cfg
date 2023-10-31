@@ -27,24 +27,6 @@ let
       hash = "sha256-k9aquvmJMGCY1YmRzHiyRt9IOC1t3ZjaC8Cb4ga8qcE=";
     };
   };
-  compile-mode = pkgs.vimUtils.buildVimPlugin {
-    name = "compile-mode.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "ej-shafran";
-      repo = "compile-mode.nvim";
-      rev = "4bc1c02cda1614bc1cb95739319751e7afe184a0";
-      hash = "sha256-1VGSLFESJK+mWuuHXqDSoc+RzFzE/tkvqVL/cK3cfyE=";
-    };
-  };
-  baleia = pkgs.vimUtils.buildVimPlugin {
-    name = "m00qek";
-    src = pkgs.fetchFromGitHub {
-      owner = "m00qek";
-      repo = "baleia.nvim";
-      rev = "00bb4af31c8c3865b735d40ebefa6c3f07b2dd16";
-      hash = "sha256-jxRlIzWbnSj89032msc5w+2TVt7zVyzlxdXxiH1dQqY=";
-    };
-  };
 in
 
 {
@@ -75,9 +57,7 @@ in
       colorizer
 
       # manually added plugins
-      compile-mode
       eyeliner-nvim
-      baleia
       midnight-nvim
       nightly-nvim
 
