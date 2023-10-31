@@ -51,7 +51,6 @@ in
       gitsigns-nvim
       vim-surround
       tmux-nvim
-      neogit
       nvim-web-devicons
       diffview-nvim
       colorizer
