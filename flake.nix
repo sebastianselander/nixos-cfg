@@ -38,6 +38,7 @@
           homeImports = [
             ./home
             ./modules/xmonad/home.nix
+            ./modules/zenbook-xmonad.nix
           ];
       };
       nixosConfigurations.zenbook-plasma = buildSystem {
@@ -47,6 +48,7 @@
           ];
           homeImports = [
             ./home
+            ./modules/zenbook-plasma.nix
           ];
       };
       nixosConfigurations.pc-plasma = buildSystem {
@@ -56,9 +58,10 @@
         ];
         homeImports = [
           ./home
+          ./modules/pc-plasma.nix
         ];
       };
-      nixosConfigurations.pc-zenbook = buildSystem {
+      nixosConfigurations.pc-xmonad = buildSystem {
           systemImports = [
               ./hosts/pc/configuration.nix
               ./modules/xmonad
@@ -66,6 +69,7 @@
           homeImports = [
             ./home
             ./modules/xmonad/home.nix
+            ./modules/pc-xmonad.nix
           ];
       };
     };
