@@ -5,7 +5,6 @@
     bat
     cabal2nix
     cargo
-    cargo
     cloc
     discord
     dmenu
@@ -34,12 +33,9 @@
     iosevka
     julia-mono
     just
-    lazygit
     libreoffice
-    lsof
     lua-language-server
     neofetch
-    neomutt
     nerdfonts
     nil
     nix-prefetch-git
