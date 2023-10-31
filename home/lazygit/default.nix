@@ -1,11 +1,11 @@
 { ... }:
 {
-    programs.lazygit = {
-        enable = true;
-        settings = {
-            gui = {
-                windowSize = "full";
-            };
-        };
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui = {
+        windowSize = "full";
+      };
     };
+  };
 }
