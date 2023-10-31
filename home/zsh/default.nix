@@ -18,10 +18,6 @@
       lst = "eza -s modified -1";
       con = "mullvad connect";
       disc = "mullvad disconnect";
-      pc-plasma = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#pc-plasma";
-      pc-xmonad = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#pc-xmonad";
-      zenbook-xmonad = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#zenbook-xmonad";
-      zenbook-plasma = "sudo nixos-rebuild switch --flake ~/Documents/git/nixos-cfg#zenbook-plasma";
     };
     initExtra = ''
       bindkey -v
