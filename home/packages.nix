@@ -21,10 +21,7 @@
     hack-font
     haskell-language-server
     haskell.compiler.ghc946
-    haskellPackages.BNFC
-    haskellPackages.alex
     haskellPackages.cabal-install
-    haskellPackages.happy
     haskellPackages.stack
     haskellPackages.stylish-haskell
     hlint
