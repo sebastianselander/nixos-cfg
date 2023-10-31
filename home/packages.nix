@@ -26,8 +26,8 @@
     haskellPackages.alex
     haskellPackages.cabal-install
     haskellPackages.happy
-    haskellPackages.stylish-haskell
     haskellPackages.stack
+    haskellPackages.stylish-haskell
     hlint
     htop
     ibm-plex
@@ -47,6 +47,7 @@
     nixpkgs-fmt
     obs-studio
     pandoc
+    pcmanfm
     qbittorrent
     ripgrep
     rlwrap
@@ -60,8 +61,8 @@
     thunderbird
     tree
     typst
-    typstfmt
     typst-lsp
+    typstfmt
     unzip
     victor-mono
     vlc
