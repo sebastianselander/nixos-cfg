@@ -30,7 +30,6 @@
     iosevka
     julia-mono
     just
-    lazygit
     libreoffice
     lua-language-server
     neofetch
@@ -39,7 +38,6 @@
     nix-prefetch-git
     nixos-option
     nixpkgs-fmt
-    nnn
     obs-studio
     pandoc
     pcmanfm

@@ -5,8 +5,5 @@
     bookmarks = {
       g = "~/Documents/git";
     };
-    package = {
-      withNerdIcons = true;
-    };
   };
 }

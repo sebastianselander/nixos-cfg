@@ -10,6 +10,8 @@
     ./nvim
     ./tmux
     ./emacs
+    ./nnn
+    ./lazygit
   ];
 
   home = {
