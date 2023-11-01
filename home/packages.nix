@@ -6,6 +6,7 @@
     cabal2nix
     cargo
     cloc
+    cron
     discord
     dmenu
     eza
@@ -15,16 +16,16 @@
     fzf
     gcc
     gh
+    ghc
     ghcid
     glow
     gnumake
     hack-font
     haskell-language-server
-    haskell.compiler.ghc946
     haskellPackages.cabal-install
+    haskellPackages.patat
     haskellPackages.stack
     haskellPackages.stylish-haskell
-    haskellPackages.patat
     hlint
     htop
     ibm-plex
