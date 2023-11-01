@@ -24,6 +24,7 @@
     haskellPackages.cabal-install
     haskellPackages.stack
     haskellPackages.stylish-haskell
+    haskellPackages.patat
     hlint
     htop
     ibm-plex
