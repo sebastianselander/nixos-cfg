@@ -3,7 +3,6 @@
   inputs = {
     # Use nixos-unstable as nixpkgs source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     # Home Manager flake dependency
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +22,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.sebastian.imports = homeImports;
+                users.sebastian.imports = [ ./home ] ++ homeImports;
               };
             }
           ];
@@ -36,7 +35,6 @@
               ./modules/xmonad
           ];
           homeImports = [
-            ./home
             ./modules/xmonad/home.nix
             ./modules/zenbook-xmonad.nix
           ];
@@ -47,7 +45,6 @@
               ./modules/plasma
           ];
           homeImports = [
-            ./home
             ./modules/zenbook-plasma.nix
           ];
       };
@@ -57,7 +54,6 @@
           ./modules/plasma
         ];
         homeImports = [
-          ./home
           ./modules/pc-plasma.nix
         ];
       };
@@ -67,7 +63,6 @@
               ./modules/xmonad
           ];
           homeImports = [
-            ./home
             ./modules/xmonad/home.nix
             ./modules/pc-xmonad.nix
           ];
