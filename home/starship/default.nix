@@ -5,6 +5,12 @@
       settings = {
         add_newline = false;
         package.disabled = true;
+        nix_shell = {
+            impure_msg = "";
+            pure_msg = "";
+            unknown_msg = "";
+            format = "via [NIX SHELL](bold blue)";
+        };
         character = {
           success_symbol = "[-- INSERT --\nλ](bold green)";
           error_symbol = "[-- INSERT --\nΛ](bold red)";
