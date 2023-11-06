@@ -28,9 +28,6 @@
     haskellPackages.stylish-haskell
     hlint
     htop
-    ibm-plex
-    iosevka
-    julia-mono
     just
     libreoffice
     lua-language-server
@@ -59,7 +56,6 @@
     typst-lsp
     typstfmt
     unzip
-    victor-mono
     vlc
     wget
     xclip

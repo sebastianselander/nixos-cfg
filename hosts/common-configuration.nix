@@ -24,6 +24,13 @@
     };
 
   };
+  fonts.packages = with pkgs; [
+      julia-mono
+      iosevka
+      ibm-plex
+      victor-mono
+      nerdfonts
+  ];
 
   time.timeZone = "Europe/Stockholm";
 
