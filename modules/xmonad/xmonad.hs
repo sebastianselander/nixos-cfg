@@ -68,7 +68,7 @@ myClickJustFocuses = False
 myBorderWidth :: Dimension
 myBorderWidth = 2
 myGaps :: Integer
-myGaps = 6
+myGaps = 0
 myNormalBorderColor :: String
 myNormalBorderColor = "#FFFFFF"
 myFocusedBorderColor :: String
