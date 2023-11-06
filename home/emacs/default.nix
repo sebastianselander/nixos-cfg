@@ -10,13 +10,8 @@
       material-theme
       night-owl-theme
       doom-themes
-      lsp-mode
-      which-key
       corfu
       counsel
-      flycheck
-      haskell-mode
-      lua-mode
     ];
     extraConfig = ''
       (menu-bar-mode 0)
