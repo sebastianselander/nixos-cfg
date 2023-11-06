@@ -73,6 +73,11 @@ nvim_lsp.rust_analyzer.setup({
     }
 })
 
+nvim_lsp.gopls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 -- Nix
 nvim_lsp.nil_ls.setup({
     capabilities = capabilities,
