@@ -29,11 +29,8 @@
 
       (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-      (add-hook 'after-init-hook #'global-flycheck-mode)
-      (global-flycheck-mode t)
       (global-font-lock-mode t)
       (setq font-lock-maximum-decoration t)
-
       (global-corfu-mode 1)
       (setq completion-cycle-threshold 3)
       (setq tab-always-indent 'complete)
