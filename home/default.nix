@@ -1,17 +1,18 @@
 { ... }:
 {
   imports = [
-    ./packages.nix
+    ./agda
+    ./emacs
     ./git
     ./kitty
+    ./lazygit
+    ./nnn
+    ./nvim
+    ./packages.nix
     ./starship
+    ./tmux
     ./zathura
     ./zsh
-    ./nvim
-    ./tmux
-    ./emacs
-    ./nnn
-    ./lazygit
   ];
 
   home = {
