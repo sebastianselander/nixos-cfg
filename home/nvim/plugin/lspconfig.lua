@@ -26,7 +26,7 @@ nvim_lsp.hls.setup({
         haskell = {
             cabalFormattingProvider = "cabalfmt",
             hlintOn = true,
-            formattingProvider = "stylish-haskell"
+            formattingProvider = "fourmolu"
         }
     }
 })
