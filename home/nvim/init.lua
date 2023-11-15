@@ -48,13 +48,13 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 vim.opt.backup = false
-vim.opt.colorcolumn = {80; 100; 120}
+vim.opt.colorcolumn = { 80, 100, 120 }
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.isfname:append"@-@"
+vim.opt.isfname:append "@-@"
 vim.opt.list = true
 vim.opt.listchars = "tab:> ,lead:·,trail: ,extends:⇢,precedes:⇠,nbsp:+"
 vim.opt.mouse = ""
@@ -74,6 +74,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 100
 vim.opt.wrap = false
+vim.opt.conceallevel = 2
 
 -- "Don't want to automatically insert comment leaders after using `o` in normal
 -- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
