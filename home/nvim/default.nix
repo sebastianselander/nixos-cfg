@@ -69,6 +69,7 @@ in
       cmp-path
       cmp-cmdline
       cmp_luasnip
+      haskell-tools-nvim
 
       # Themes
       rose-pine
@@ -88,6 +89,10 @@ in
   xdg.configFile = {
     "nvim/after/plugin" = {
       source = ./plugin;
+      recursive = true;
+    };
+    "nvim/after/ftplugin" = {
+      source = ./ftplugin;
       recursive = true;
     };
     "nvim/init.lua".source = ./init.lua;
