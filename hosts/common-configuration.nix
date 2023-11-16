@@ -30,6 +30,7 @@
       ibm-plex
       victor-mono
       nerdfonts
+      monaspace
   ];
 
   time.timeZone = "Europe/Stockholm";
