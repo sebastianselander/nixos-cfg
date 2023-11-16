@@ -13,7 +13,7 @@ vim.keymap.set('n', '<C-j>'     , vim.diagnostic.goto_next  , def_opts)
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename        , def_opts)
 vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end)
 vim.keymap.set('n', '<leader>ct', vim.cmd.TroubleToggle)
-vim.keymap.set('n', '<leader>cd'  , vim.diagnostic.open_float , def_opts)
+vim.keymap.set('n', '<leader>d'  , vim.diagnostic.open_float , def_opts)
 
 -- Hoogle search for the type signature of the definition under the cursor
 vim.keymap.set('n', '<leader>hs', ht.hoogle.hoogle_signature, def_opts)
