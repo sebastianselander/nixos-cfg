@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
+    audacity
     bat
     cabal2nix
     cargo
