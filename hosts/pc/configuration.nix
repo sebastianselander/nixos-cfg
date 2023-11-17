@@ -30,6 +30,5 @@
     lm_sensors
     lutris
     wine
-    easyeffects
   ];
 }

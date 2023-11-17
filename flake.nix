@@ -55,6 +55,7 @@
         ];
         homeImports = [
           ./modules/pc-plasma.nix
+          ./modules/easyeffects.nix
         ];
       };
       nixosConfigurations.pc-xmonad = buildSystem {
@@ -65,6 +66,7 @@
           homeImports = [
             ./modules/xmonad/home.nix
             ./modules/pc-xmonad.nix
+            ./modules/easyeffects.nix
           ];
       };
     };
