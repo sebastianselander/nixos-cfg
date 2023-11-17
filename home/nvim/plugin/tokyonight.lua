@@ -7,7 +7,7 @@ require("tokyonight").setup({
           italic = true,
         },
         keywords = {
-          italic = true,
+          italic = false,
         },
         functions = {},
         variables = {},
@@ -22,3 +22,5 @@ require("tokyonight").setup({
         "terminal",
     },
 })
+
+vim.cmd.colorscheme "tokyonight"
