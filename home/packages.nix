@@ -58,6 +58,7 @@
     typstfmt
     unzip
     vlc
+    vscode
     wget
     xclip
     zlib
