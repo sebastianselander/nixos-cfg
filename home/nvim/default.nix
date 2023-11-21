@@ -70,6 +70,7 @@ in
       cmp-cmdline
       cmp_luasnip
       haskell-tools-nvim
+      rustaceanvim
 
       # Themes
       rose-pine

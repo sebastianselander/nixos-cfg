@@ -18,17 +18,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
 end
 
--- nvim_lsp.hls.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
---     settings = {
---         haskell = {
---             cabalFormattingProvider = "cabalfmt",
---             hlintOn = true,
---             formattingProvider = "fourmolu"
---         }
---     }
--- })
 
 nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
@@ -46,35 +35,6 @@ nvim_lsp.typst_lsp.setup({
     settings = {
         exportPdf = "never",
     },
-})
-
-nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        ["rust-analyzer"] = {
-            diagnostics = {
-                enable = true,
-            },
-            checkOnSave = {
-                command = "clippy",
-            },
-            imports = {
-                granularity = {
-                    group = "module",
-                },
-                prefix = "self",
-            },
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
-        }
-    }
 })
 
 nvim_lsp.gopls.setup({
