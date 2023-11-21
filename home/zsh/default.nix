@@ -18,7 +18,7 @@
       lst = "eza -s modified -1";
       con = "mullvad connect";
       disc = "mullvad disconnect";
-      setup-direnv = "echo \"use flake\" >> .envrc && direnv allow && echo \".direnv >> .gitignore\"";
+      setup-direnv = "echo \"use flake\" >> .envrc && direnv allow && echo \".direnv\" >> .gitignore";
     };
     initExtra = ''
       bindkey -v

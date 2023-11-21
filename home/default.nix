@@ -2,6 +2,7 @@
 {
   imports = [
     ./agda
+    ./direnv
     ./emacs
     ./git
     ./kitty
