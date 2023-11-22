@@ -1,0 +1,315 @@
+------------------------------------------------------------------------
+-- The Agda standard library
+--
+-- Properties of the setoid sublist relation
+------------------------------------------------------------------------
+
+{-# OPTIONS --cubical-compatible --safe #-}
+
+open import Relation.Binary.Core using (Rel; _⇒_; _Preserves_⟶_)
+open import Relation.Binary.Bundles using (Setoid)
+
+module Data.List.Relation.Binary.Sublist.Setoid.Properties
+  {c ℓ} (S : Setoid c ℓ) where
+
+open import Data.List.Base hiding (_∷ʳ_)
+open import Data.List.Relation.Unary.Any using (Any)
+import Data.Maybe.Relation.Unary.All as Maybe
+open import Data.Nat.Base using (_≤_; _≥_)
+import Data.Nat.Properties as ℕₚ
+open import Data.Product.Base using (∃; _,_; proj₂)
+open import Function.Base
+open import Function.Bundles using (_⇔_; _⤖_)
+open import Level
+open import Relation.Binary.Definitions using () renaming (Decidable to Decidable₂)
+open import Relation.Binary.PropositionalEquality.Core using (_≡_; refl; cong)
+open import Relation.Binary.Structures using (IsDecTotalOrder)
+open import Relation.Unary using (Pred; Decidable; Irrelevant)
+open import Relation.Nullary.Negation using (¬_)
+open import Relation.Nullary.Decidable using (¬?; yes; no)
+
+import Data.List.Relation.Binary.Equality.Setoid as SetoidEquality
+import Data.List.Relation.Binary.Sublist.Setoid as SetoidSublist
+import Data.List.Relation.Binary.Sublist.Heterogeneous.Properties
+  as HeteroProperties
+import Data.List.Membership.Setoid as SetoidMembership
+
+open Setoid S using (_≈_; trans) renaming (Carrier to A; refl to ≈-refl)
+open SetoidEquality S using (_≋_; ≋-refl)
+open SetoidSublist S hiding (map)
+open SetoidMembership S using (_∈_)
+
+------------------------------------------------------------------------
+-- Injectivity of constructors
+------------------------------------------------------------------------
+
+module _ {xs ys : List A} where
+
+  ∷-injectiveˡ : ∀ {x y} {px qx : x ≈ y} {pxs qxs : xs ⊆ ys} →
+                 ((x ∷ xs) ⊆ (y ∷ ys) ∋ px ∷ pxs) ≡ (qx ∷ qxs) → px ≡ qx
+  ∷-injectiveˡ refl = refl
+
+  ∷-injectiveʳ : ∀ {x y} {px qx : x ≈ y} {pxs qxs : xs ⊆ ys} →
+                 ((x ∷ xs) ⊆ (y ∷ ys) ∋ px ∷ pxs) ≡ (qx ∷ qxs) → pxs ≡ qxs
+  ∷-injectiveʳ refl = refl
+
+  ∷ʳ-injective : ∀ {y} {pxs qxs : xs ⊆ ys} → y ∷ʳ pxs ≡ y ∷ʳ qxs → pxs ≡ qxs
+  ∷ʳ-injective refl = refl
+
+------------------------------------------------------------------------
+-- Various functions' outputs are sublists
+------------------------------------------------------------------------
+
+tail-⊆ : ∀ xs → Maybe.All (_⊆ xs) (tail xs)
+tail-⊆ xs = HeteroProperties.tail-Sublist ⊆-refl
+
+take-⊆ : ∀ n xs → take n xs ⊆ xs
+take-⊆ n xs = HeteroProperties.take-Sublist n ⊆-refl
+
+drop-⊆ : ∀ n xs → drop n xs ⊆ xs
+drop-⊆ n xs = HeteroProperties.drop-Sublist n ⊆-refl
+
+module _ {p} {P : Pred A p} (P? : Decidable P) where
+
+  takeWhile-⊆ : ∀ xs → takeWhile P? xs ⊆ xs
+  takeWhile-⊆ xs = HeteroProperties.takeWhile-Sublist P? ⊆-refl
+
+  dropWhile-⊆ : ∀ xs → dropWhile P? xs ⊆ xs
+  dropWhile-⊆ xs = HeteroProperties.dropWhile-Sublist P? ⊆-refl
+
+  filter-⊆ : ∀ xs → filter P? xs ⊆ xs
+  filter-⊆ xs = HeteroProperties.filter-Sublist P? ⊆-refl
+
+module _ {p} {P : Pred A p} (P? : Decidable P) where
+
+  takeWhile⊆filter : ∀ xs → takeWhile P? xs ⊆ filter P? xs
+  takeWhile⊆filter xs = HeteroProperties.takeWhile-filter P? {xs} ≋-refl
+
+  filter⊆dropWhile : ∀ xs → filter P? xs ⊆ dropWhile (¬? ∘ P?) xs
+  filter⊆dropWhile xs = HeteroProperties.filter-dropWhile P? {xs} ≋-refl
+
+------------------------------------------------------------------------
+-- Various list functions are increasing wrt _⊆_
+------------------------------------------------------------------------
+-- We write f⁺ for the proof that `xs ⊆ ys → f xs ⊆ f ys`
+-- and f⁻ for the one that `f xs ⊆ f ys → xs ⊆ ys`.
+
+module _ {as bs : List A} where
+
+  ∷ˡ⁻ : ∀ {a} → a ∷ as ⊆ bs → as ⊆ bs
+  ∷ˡ⁻ = HeteroProperties.∷ˡ⁻
+
+  ∷ʳ⁻ : ∀ {a b} → ¬ (a ≈ b) → a ∷ as ⊆ b ∷ bs → a ∷ as ⊆ bs
+  ∷ʳ⁻ = HeteroProperties.∷ʳ⁻
+
+  ∷⁻ : ∀ {a b} → a ∷ as ⊆ b ∷ bs → as ⊆ bs
+  ∷⁻ = HeteroProperties.∷⁻
+
+------------------------------------------------------------------------
+-- map
+
+module _ {b ℓ} (R : Setoid b ℓ) where
+
+  open Setoid R using () renaming (Carrier to B; _≈_ to _≈′_)
+  open SetoidSublist R using () renaming (_⊆_ to _⊆′_)
+
+  map⁺ : ∀ {as bs} {f : A → B} → f Preserves _≈_ ⟶ _≈′_ →
+         as ⊆ bs → map f as ⊆′ map f bs
+  map⁺ {f = f} f-resp as⊆bs =
+    HeteroProperties.map⁺ f f (SetoidSublist.map S f-resp as⊆bs)
+
+------------------------------------------------------------------------
+-- _++_
+
+module _ {as bs : List A} where
+
+  ++⁺ˡ : ∀ cs → as ⊆ bs → as ⊆ cs ++ bs
+  ++⁺ˡ = HeteroProperties.++ˡ
+
+  ++⁺ʳ : ∀ cs → as ⊆ bs → as ⊆ bs ++ cs
+  ++⁺ʳ = HeteroProperties.++ʳ
+
+  ++⁺ : ∀ {cs ds} → as ⊆ bs → cs ⊆ ds → as ++ cs ⊆ bs ++ ds
+  ++⁺ = HeteroProperties.++⁺
+
+  ++⁻ : ∀ {cs ds} → length as ≡ length bs → as ++ cs ⊆ bs ++ ds → cs ⊆ ds
+  ++⁻ = HeteroProperties.++⁻
+
+------------------------------------------------------------------------
+-- take
+
+module _ {m n} {xs} where
+
+  take⁺ : m ≤ n → take m xs ⊆ take n xs
+  take⁺ m≤n = HeteroProperties.take⁺ m≤n ≋-refl
+
+------------------------------------------------------------------------
+-- drop
+
+module _ {m n} {xs ys : List A} where
+
+  drop⁺ : m ≥ n → xs ⊆ ys → drop m xs ⊆ drop n ys
+  drop⁺ = HeteroProperties.drop⁺
+
+module _ {m n} {xs : List A} where
+
+  drop⁺-≥ : m ≥ n → drop m xs ⊆ drop n xs
+  drop⁺-≥ m≥n = drop⁺ m≥n ⊆-refl
+
+module _ {xs ys : List A} where
+
+  drop⁺-⊆ : ∀ n → xs ⊆ ys → drop n xs ⊆ drop n ys
+  drop⁺-⊆ n xs⊆ys = drop⁺ {n} ℕₚ.≤-refl xs⊆ys
+
+------------------------------------------------------------------------
+-- takeWhile / dropWhile
+
+module _ {p q} {P : Pred A p} {Q : Pred A q}
+         (P? : Decidable P) (Q? : Decidable Q) where
+
+  takeWhile⁺ : ∀ {xs} → (∀ {a b} → a ≈ b → P a → Q b) →
+               takeWhile P? xs ⊆ takeWhile Q? xs
+  takeWhile⁺ {xs} P⇒Q = HeteroProperties.⊆-takeWhile-Sublist P? Q? {xs} P⇒Q ≋-refl
+
+  dropWhile⁺ : ∀ {xs} → (∀ {a b} → a ≈ b → Q b → P a) →
+               dropWhile P? xs ⊆ dropWhile Q? xs
+  dropWhile⁺ {xs} P⇒Q = HeteroProperties.⊇-dropWhile-Sublist P? Q? {xs} P⇒Q ≋-refl
+
+------------------------------------------------------------------------
+-- filter
+
+module _ {p q} {P : Pred A p} {Q : Pred A q}
+         (P? : Decidable P) (Q? : Decidable Q) where
+
+  filter⁺ : ∀ {as bs} → (∀ {a b} → a ≈ b → P a → Q b) →
+            as ⊆ bs → filter P? as ⊆ filter Q? bs
+  filter⁺ = HeteroProperties.⊆-filter-Sublist P? Q?
+
+------------------------------------------------------------------------
+-- reverse
+
+module _ {as bs : List A} where
+
+  reverseAcc⁺ : ∀ {cs ds} → as ⊆ bs → cs ⊆ ds →
+                reverseAcc cs as ⊆ reverseAcc ds bs
+  reverseAcc⁺ = HeteroProperties.reverseAcc⁺
+
+  ʳ++⁺ : ∀ {cs ds} →
+         as ⊆ bs →
+         cs ⊆ ds →
+         as ʳ++ cs ⊆ bs ʳ++ ds
+  ʳ++⁺ = reverseAcc⁺
+
+  reverse⁺ : as ⊆ bs → reverse as ⊆ reverse bs
+  reverse⁺ = HeteroProperties.reverse⁺
+
+  reverse⁻ : reverse as ⊆ reverse bs → as ⊆ bs
+  reverse⁻ = HeteroProperties.reverse⁻
+
+------------------------------------------------------------------------
+-- merge
+
+module _ {ℓ′} {_≤_ : Rel A ℓ′} (_≤?_ : Decidable₂ _≤_) where
+
+  ⊆-mergeˡ : ∀ xs ys → xs ⊆ merge _≤?_ xs ys
+  ⊆-mergeˡ []       ys = minimum ys
+  ⊆-mergeˡ (x ∷ xs) [] = ⊆-refl
+  ⊆-mergeˡ (x ∷ xs) (y ∷ ys)
+   with x ≤? y  | ⊆-mergeˡ xs (y ∷ ys)
+                      | ⊆-mergeˡ (x ∷ xs) ys
+  ... | yes x≤y | rec | _   = ≈-refl ∷ rec
+  ... | no  x≰y | _   | rec = y ∷ʳ rec
+
+  ⊆-mergeʳ : ∀ xs ys → ys ⊆ merge _≤?_ xs ys
+  ⊆-mergeʳ [] ys =  ⊆-refl
+  ⊆-mergeʳ (x ∷ xs) [] = minimum (merge _≤?_ (x ∷ xs) [])
+  ⊆-mergeʳ (x ∷ xs) (y ∷ ys)
+   with x ≤? y  | ⊆-mergeʳ xs (y ∷ ys)
+                      | ⊆-mergeʳ (x ∷ xs) ys
+  ... | yes x≤y | rec | _   = x ∷ʳ rec
+  ... | no  x≰y | _   | rec = ≈-refl ∷ rec
+
+------------------------------------------------------------------------
+-- Inversion lemmas
+------------------------------------------------------------------------
+
+module _ {a as b bs} where
+
+  ∷⁻¹ : a ≈ b → as ⊆ bs ⇔ a ∷ as ⊆ b ∷ bs
+  ∷⁻¹ = HeteroProperties.∷⁻¹
+
+  ∷ʳ⁻¹ : ¬ (a ≈ b) → a ∷ as ⊆ bs ⇔ a ∷ as ⊆ b ∷ bs
+  ∷ʳ⁻¹ = HeteroProperties.∷ʳ⁻¹
+
+------------------------------------------------------------------------
+-- Other
+------------------------------------------------------------------------
+
+module _ where
+
+  length-mono-≤ : ∀ {as bs} → as ⊆ bs → length as ≤ length bs
+  length-mono-≤ = HeteroProperties.length-mono-≤
+
+------------------------------------------------------------------------
+-- Conversion to and from list equality
+
+  to-≋ : ∀ {as bs} → length as ≡ length bs → as ⊆ bs → as ≋ bs
+  to-≋ = HeteroProperties.toPointwise
+
+------------------------------------------------------------------------
+-- Irrelevant special case
+
+  []⊆-irrelevant : Irrelevant ([] ⊆_)
+  []⊆-irrelevant = HeteroProperties.Sublist-[]-irrelevant
+
+------------------------------------------------------------------------
+-- (to/from)∈ is a bijection
+
+module _ {x xs} where
+
+  to∈-injective : ∀ {p q : [ x ] ⊆ xs} → to∈ p ≡ to∈ q → p ≡ q
+  to∈-injective = HeteroProperties.toAny-injective
+
+  from∈-injective : ∀ {p q : x ∈ xs} → from∈ p ≡ from∈ q → p ≡ q
+  from∈-injective = HeteroProperties.fromAny-injective
+
+  to∈∘from∈≗id : ∀ (p : x ∈ xs) → to∈ (from∈ p) ≡ p
+  to∈∘from∈≗id = HeteroProperties.toAny∘fromAny≗id
+
+  [x]⊆xs⤖x∈xs : ([ x ] ⊆ xs) ⤖ (x ∈ xs)
+  [x]⊆xs⤖x∈xs = HeteroProperties.Sublist-[x]-bijection
+
+------------------------------------------------------------------------
+-- Properties of Disjoint(ness) and DisjointUnion
+
+open HeteroProperties.Disjointness {R = _≈_} public
+open HeteroProperties.DisjointnessMonotonicity {R = _≈_} {S = _≈_} {T = _≈_} trans public
+
+-- Shrinking one of two disjoint lists preserves disjointness.
+
+-- We would have liked to define  shrinkDisjointˡ σ = shrinkDisjoint σ ⊆-refl
+-- but alas, this is only possible for groupoids, not setoids in general.
+
+shrinkDisjointˡ : ∀ {xs ys zs us} {τ₁ : xs ⊆ zs} {τ₂ : ys ⊆ zs} (σ : us ⊆ xs) →
+    Disjoint τ₁ τ₂ →
+    Disjoint (⊆-trans σ τ₁) τ₂
+-- Not affected by σ:
+shrinkDisjointˡ σ          (y   ∷ₙ d) = y             ∷ₙ shrinkDisjointˡ σ d
+shrinkDisjointˡ σ          (y≈z ∷ᵣ d) = y≈z           ∷ᵣ shrinkDisjointˡ σ d
+-- In σ: keep x.
+shrinkDisjointˡ (u≈x ∷ σ)  (x≈z ∷ₗ d) = trans u≈x x≈z ∷ₗ shrinkDisjointˡ σ d
+-- Not in σ: drop x.
+shrinkDisjointˡ (x  ∷ʳ σ)  (x≈z ∷ₗ d) = _             ∷ₙ shrinkDisjointˡ σ d
+shrinkDisjointˡ []         []         = []
+
+shrinkDisjointʳ : ∀ {xs ys zs vs} {τ₁ : xs ⊆ zs} {τ₂ : ys ⊆ zs} (σ : vs ⊆ ys) →
+  Disjoint τ₁ τ₂ →
+  Disjoint τ₁ (⊆-trans σ τ₂)
+-- Not affected by σ:
+shrinkDisjointʳ σ          (y   ∷ₙ d) = y             ∷ₙ shrinkDisjointʳ σ d
+shrinkDisjointʳ σ          (x≈z ∷ₗ d) = x≈z           ∷ₗ shrinkDisjointʳ σ d
+-- In σ: keep y.
+shrinkDisjointʳ (v≈y ∷ σ)  (y≈z ∷ᵣ d) = trans v≈y y≈z ∷ᵣ shrinkDisjointʳ σ d
+-- Not in σ: drop y.
+shrinkDisjointʳ (y  ∷ʳ σ)  (y≈z ∷ᵣ d) = _             ∷ₙ shrinkDisjointʳ σ d
+shrinkDisjointʳ []         []         = []

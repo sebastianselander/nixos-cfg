@@ -1,0 +1,11 @@
+included-dirs:
+  - src
+  - README
+
+included-files:
+  - "*.agda"
+  - "*.md"
+
+excluded-files:
+  - "README/Text/Tabular.agda"
+  - CHANGELOG.md
