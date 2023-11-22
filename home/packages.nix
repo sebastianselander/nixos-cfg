@@ -24,6 +24,7 @@
     hack-font
     haskell-language-server
     haskellPackages.cabal-install
+    haskellPackages.cabal-fmt
     haskellPackages.patat
     haskellPackages.stack
     haskellPackages.stylish-haskell
