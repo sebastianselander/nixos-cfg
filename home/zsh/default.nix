@@ -23,6 +23,7 @@
     initExtra = ''
       bindkey -v
       KEYTIMEOUT=1
+      export DIRENV_LOG_FORMAT=
     '';
   };
   home.sessionVariables = {
