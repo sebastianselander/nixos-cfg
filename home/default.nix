@@ -14,6 +14,7 @@
     ./tmux
     ./zathura
     ./zsh
+    ./wezterm
   ];
 
   home = {
