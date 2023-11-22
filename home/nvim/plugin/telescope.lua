@@ -41,7 +41,7 @@ telescope.setup {
         buffers = {
             sort_mru = true,
             ignore_current_buffer = true,
-            theme = 'dropdown',
+            theme = 'ivy',
             previewer = false,
             mappings = {
                 n = {
