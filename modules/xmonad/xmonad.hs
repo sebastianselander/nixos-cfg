@@ -74,7 +74,7 @@ myNormalBorderColor = "#FFFFFF"
 myFocusedBorderColor :: String
 myFocusedBorderColor = "#41a6b5"
 myTerminal :: String
-myTerminal = "wezterm"
+myTerminal = "kitty"
 myBrowser :: String
 myBrowser = "firefox"
 myMail :: String
