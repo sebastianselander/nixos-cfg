@@ -17,20 +17,20 @@
 
   nix = {
     settings = {
-        experimental-features = [
-            "nix-command"
-            "flakes"
-        ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
 
   };
   fonts.packages = with pkgs; [
-      julia-mono
-      iosevka
-      ibm-plex
-      victor-mono
-      nerdfonts
-      monaspace
+    julia-mono
+    iosevka
+    ibm-plex
+    victor-mono
+    nerdfonts
+    monaspace
   ];
 
   time.timeZone = "Europe/Stockholm";
@@ -51,9 +51,24 @@
   };
 
   services = {
+    hoogle = {
+      enable = true;
+      packages = hp: with hp; [
+        algebraic-graphs
+        either
+        extra
+        lens
+        megaparsec
+        memoize
+        search-algorithms
+        unordered-containers
+        vector
+      ];
+    };
+
     fstrim = {
-        interval = "weekly";
-        enable = true;
+      interval = "weekly";
+      enable = true;
     };
 
     xserver = {
@@ -62,8 +77,8 @@
       xkbVariant = "";
       xkbOptions = "compose:ralt,caps:escape";
       displayManager.sessionCommands = ''
-                ${pkgs.xorg.xset}/bin/xset r rate 200 50
-            '';
+        ${pkgs.xorg.xset}/bin/xset r rate 200 50
+      '';
     };
     pipewire = {
       enable = true;
