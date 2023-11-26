@@ -13,9 +13,9 @@
     ./packages.nix
     ./starship
     ./tmux
+    ./wezterm
     ./zathura
     ./zsh
-    ./wezterm
   ];
 
   home = {

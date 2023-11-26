@@ -27,6 +27,7 @@
     haskellPackages.cabal-fmt
     haskellPackages.patat
     haskellPackages.stack
+    haskellPackages.hoogle
     haskellPackages.stylish-haskell
     hlint
     htop
