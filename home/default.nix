@@ -5,6 +5,7 @@
     ./direnv
     ./emacs
     ./git
+    ./haskell
     ./kitty
     ./lazygit
     ./nnn
