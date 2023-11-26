@@ -51,21 +51,6 @@
   };
 
   services = {
-    hoogle = {
-      enable = true;
-      packages = hp: with hp; [
-        algebraic-graphs
-        either
-        extra
-        lens
-        megaparsec
-        memoize
-        search-algorithms
-        unordered-containers
-        vector
-      ];
-    };
-
     fstrim = {
       interval = "weekly";
       enable = true;
