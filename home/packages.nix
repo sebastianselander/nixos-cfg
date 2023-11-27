@@ -29,6 +29,7 @@
     haskellPackages.stack
     haskellPackages.hoogle
     haskellPackages.stylish-haskell
+    haskellPackages.fast-tags
     hlint
     htop
     just
