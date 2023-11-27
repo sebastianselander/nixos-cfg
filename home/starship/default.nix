@@ -9,7 +9,7 @@
             impure_msg = "";
             pure_msg = "";
             unknown_msg = "";
-            format = "via [NIX SHELL](bold blue)";
+            format = "via [NIX SHELL ](bold blue)";
         };
         character = {
           success_symbol = "[-- INSERT --\nλ](bold green)";
