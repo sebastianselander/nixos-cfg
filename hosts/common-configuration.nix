@@ -31,6 +31,7 @@
     victor-mono
     nerdfonts
     monaspace
+    font-awesome
   ];
 
   time.timeZone = "Europe/Stockholm";
