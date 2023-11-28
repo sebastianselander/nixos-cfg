@@ -18,6 +18,10 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
 end
 
+nvim_lsp.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 nvim_lsp.lua_ls.setup({
     on_attach = on_attach,

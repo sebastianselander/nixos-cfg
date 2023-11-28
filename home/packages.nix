@@ -6,6 +6,7 @@
     bat
     cabal2nix
     cargo
+    clippy
     cloc
     cron
     discord
@@ -23,11 +24,11 @@
     gnumake
     hack-font
     haskell-language-server
-    haskellPackages.cabal-install
     haskellPackages.cabal-fmt
+    haskellPackages.cabal-install
+    haskellPackages.hoogle
     haskellPackages.patat
     haskellPackages.stack
-    haskellPackages.hoogle
     haskellPackages.stylish-haskell
     haskellPackages.fast-tags
     hlint
