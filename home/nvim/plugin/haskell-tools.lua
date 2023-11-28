@@ -42,7 +42,6 @@ vim.g.haskell_tools = {
             vim.keymap.set('n', '<C-k>', vim.diagnostic.goto_prev, opts)
             vim.keymap.set('n', '<C-j>', vim.diagnostic.goto_next, opts)
             vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts)
-            vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end)
             vim.keymap.set('n', '<leader>ct', vim.cmd.TroubleToggle)
             vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
 

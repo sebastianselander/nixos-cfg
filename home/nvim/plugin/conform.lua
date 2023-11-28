@@ -1,4 +1,6 @@
-require("conform").setup({
+local conform = require'conform'
+
+conform.setup({
   formatters_by_ft = {
     lua     = { "stylua" },
     haskell = { "fourmolu" },
@@ -6,3 +8,5 @@ require("conform").setup({
     rust    = { "rustfmt" },
   },
 })
+
+vim.keymap.set('n', '<leader>cf', conform.format)

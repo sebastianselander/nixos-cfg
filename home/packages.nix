@@ -26,11 +26,11 @@
     haskell-language-server
     haskellPackages.cabal-fmt
     haskellPackages.cabal-install
+    haskellPackages.fast-tags
     haskellPackages.hoogle
     haskellPackages.patat
     haskellPackages.stack
     haskellPackages.stylish-haskell
-    haskellPackages.fast-tags
     hlint
     htop
     just
@@ -54,6 +54,7 @@
     rustfmt
     spotify
     spotify-player
+    stylua
     texlive.combined.scheme-full
     thunderbird
     tree
