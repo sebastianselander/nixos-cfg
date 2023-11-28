@@ -1,3 +1,0 @@
-branches: master experimental
-haddock-components: all
-cabal-check: False

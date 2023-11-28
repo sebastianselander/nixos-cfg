@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    agda
+    (agda.withPackages [ agdaPackages.standard-library ])
     audacity
     bat
     cabal2nix
