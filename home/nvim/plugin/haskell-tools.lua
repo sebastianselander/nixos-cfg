@@ -53,11 +53,5 @@ vim.g.haskell_tools = {
             vim.keymap.set('n', '<leader>cp', ht.project.open_package_cabal, opts)
         end,
         capabilities = capabilities,
-        default_settings = {
-            haskell = {
-                formattingProvider = 'fourmolu',
-                maxCompletions = 10,
-            },
-        },
     },
 }

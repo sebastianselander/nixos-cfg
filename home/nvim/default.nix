@@ -1,5 +1,14 @@
 { pkgs, ... }:
 let
+  conform-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "conform.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "stevearc";
+      repo = "conform.nvim";
+      rev = "eddd6431370814caacec1d1e3c7d6d95d41b133d";
+      hash = "sha256-QshO3J67VHP6Kz8wdroAnp13FPSbYZDkYdCznNDr6j0=";
+    };
+  };
   midnight-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "midnight.nvim";
     src = pkgs.fetchFromGitHub {
@@ -59,6 +68,7 @@ in
       eyeliner-nvim
       midnight-nvim
       nightly-nvim
+      conform-nvim
 
       # lsp
       cmp-nvim-lsp
@@ -85,7 +95,7 @@ in
       dracula-nvim
       monokai-pro-nvim
     ];
- };
+  };
   xdg.configFile = {
     "nvim/after/plugin" = {
       source = ./plugin;
