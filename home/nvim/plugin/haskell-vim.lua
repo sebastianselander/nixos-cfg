@@ -1,4 +1,3 @@
-
 vim.g.haskell_enable_quantification = 1   -- to enable highlighting of `forall`
 vim.g.haskell_enable_recursivedo = 1      -- to enable highlighting of `mdo` and `rec`
 vim.g.haskell_enable_arrowsyntax = 1      -- to enable highlighting of `proc`

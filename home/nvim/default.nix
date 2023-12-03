@@ -63,6 +63,7 @@ in
       nvim-web-devicons
       diffview-nvim
       colorizer
+      haskell-vim
 
       # manually added plugins
       eyeliner-nvim
