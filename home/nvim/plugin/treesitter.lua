@@ -1,5 +1,11 @@
 require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
+  modules = {
+    highlight = {
+      enable = true,
+    },
+    disable = {
+      'haskell',
+      'hs',
+    },
   },
 }
