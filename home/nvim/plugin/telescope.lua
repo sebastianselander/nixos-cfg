@@ -60,9 +60,8 @@ local nnoremap = function(lhs, rhs)
     vim.keymap.set('n', lhs, rhs, { noremap = true })
 end
 
-nnoremap('<leader>pf', builtin.find_files)
 nnoremap('<leader>ph', '<cmd>Telescope hoogle theme=ivy initial_mode=insert<CR>')
-nnoremap('<leader><leader>', '<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>')
+nnoremap('<leader>pf', '<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>')
 nnoremap('<C-p>', builtin.git_files)
 nnoremap('<leader>ps', builtin.live_grep)
 nnoremap('<leader>b', builtin.buffers)
