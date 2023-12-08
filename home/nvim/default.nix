@@ -44,57 +44,55 @@ in
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      harpoon
+      colorizer
+      diffview-nvim
+      haskell-vim
       lualine-nvim
       mini-nvim
       nvim-treesitter.withAllGrammars
+      nvim-web-devicons
       oil-nvim
+      overseer-nvim
       plenary-nvim
-      telescope-nvim
+      tabby-nvim
       telescope-fzf-native-nvim
+      telescope-nvim
+      telescope_hoogle
+      telescope-frecency-nvim
+      tmux-nvim
       undotree
       vim-fugitive
       vim-highlightedyank
-      vimtex
-      tabby-nvim
-      gitsigns-nvim
       vim-surround
-      tmux-nvim
-      nvim-web-devicons
-      diffview-nvim
-      colorizer
-      haskell-vim
+      vimtex
 
       # manually added plugins
-      eyeliner-nvim
-      midnight-nvim
-      nightly-nvim
       conform-nvim
 
       # lsp
+      cmp-buffer
+      cmp-cmdline
       cmp-nvim-lsp
+      cmp-path
+      cmp_luasnip
+      haskell-tools-nvim
       luasnip
       nvim-cmp
       nvim-lspconfig
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      cmp_luasnip
-      haskell-tools-nvim
 
       # Themes
-      rose-pine
       catppuccin-nvim
+      dracula-nvim
       gruvbox
       kanagawa-nvim
       material-nvim
+      monokai-pro-nvim
       neovim-ayu
       nightfox-nvim
       onedark-nvim
       palenight-vim
+      rose-pine
       tokyonight-nvim
-      dracula-nvim
-      monokai-pro-nvim
     ];
   };
   xdg.configFile = {

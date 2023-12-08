@@ -3,7 +3,21 @@ local align = require('mini.align')
 local comment = require('mini.comment')
 local splitjoin = require('mini.splitjoin')
 local trailspace = require('mini.trailspace')
+local move = require('mini.move')
 
+move.setup({
+  mappings = {
+    left = '<S-h>',
+    right = '<S-l>',
+    down = '<S-j>',
+    up = '<S-k>',
+
+    line_left = '',
+    line_right = '',
+    line_down = '',
+    line_up = '',
+  },
+})
 ai.setup()
 align.setup()
 comment.setup()
