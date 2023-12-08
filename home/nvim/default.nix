@@ -56,7 +56,6 @@ in
       diffview-nvim
       dracula-nvim
       gruvbox
-      harpoon
       haskell-tools-nvim
       haskell-vim
       kanagawa-nvim
