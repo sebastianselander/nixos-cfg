@@ -45,6 +45,7 @@
     obs-studio
     pandoc
     pcmanfm
+    python3
     qbittorrent
     ripgrep
     rlwrap
