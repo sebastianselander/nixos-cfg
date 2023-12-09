@@ -6,6 +6,7 @@ conform.setup({
     haskell = { "fourmolu" },
     go      = { "gofmt" },
     rust    = { "rustfmt" },
+    typst   = { "typstfmt" },
   },
 })
 

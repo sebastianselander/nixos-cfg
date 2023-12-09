@@ -6,3 +6,5 @@
 :set -XImportQualifiedPost
 :set -XMagicHash
 :set prompt "\ESC[1;95m%s \ESC[0;95mλ \ESC[m"
+
+:def rr \s -> ":cmd return $ Prelude.unlines [\":r\", s]"
