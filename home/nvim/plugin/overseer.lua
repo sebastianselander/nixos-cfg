@@ -32,5 +32,5 @@ end, {
 })
 
 vim.keymap.set('n', '<leader>or', '<cmd>OverseerRun<CR>')
-vim.keymap.set('n', '<leader>oo', '<cmd>OverseerOpen<CR>')
+vim.keymap.set('n', '<leader>oo', '<cmd>OverseerToggle bottom<CR>')
 vim.keymap.set('n', '<leader>oa', '<cmd>OverseerRestartLast<CR>')
