@@ -85,7 +85,6 @@ in
       tokyonight-nvim
       undotree
       vim-fugitive
-      vim-highlightedyank
       vim-surround
       vimtex
     ];

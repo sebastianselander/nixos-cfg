@@ -1,49 +1,72 @@
 ---- REMAPS -------------------------------------------------------------------
+local map = vim.keymap.set
+
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<space>', '<Nop>')
-vim.keymap.set('n', '<esc>', vim.cmd.noh)
-vim.keymap.set('n', 'J', 'mzJ`zdmz')
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', 'N', 'Nzzzv')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'Y', 'yg$')
+map('n', '<space>', '<Nop>')
+map('n', '<esc>', vim.cmd.noh)
+map('n', 'J', 'mzJ`zdmz')
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
+map('n', 'N', 'Nzzzv')
+map('n', 'n', 'nzzzv')
+map('n', 'Y', 'yg$')
 
 -- Tabs.
-vim.keymap.set('n', '<leader>1', '1gt')
-vim.keymap.set('n', '<leader>2', '2gt')
-vim.keymap.set('n', '<leader>3', '3gt')
-vim.keymap.set('n', '<leader>4', '4gt')
-vim.keymap.set('n', '<leader>5', '5gt')
-vim.keymap.set('n', '<leader>6', '6gt')
-vim.keymap.set('n', '<leader>7', '7gt')
-vim.keymap.set('n', '<leader>8', '8gt')
-vim.keymap.set('n', '<leader>9', '9gt')
+map('n', '<leader>1', '1gt')
+map('n', '<leader>2', '2gt')
+map('n', '<leader>3', '3gt')
+map('n', '<leader>4', '4gt')
+map('n', '<leader>5', '5gt')
+map('n', '<leader>6', '6gt')
+map('n', '<leader>7', '7gt')
+map('n', '<leader>8', '8gt')
+map('n', '<leader>9', '9gt')
 
-vim.keymap.set('n', '<leader>tn', '<cmd> tabnew % <CR> <cmd> tabm <CR>')
-vim.keymap.set('n', '<leader>tm', '<cmd> tabm 0 <CR>')
+map('n', '<leader>tn', '<cmd> tabnew % <CR> <cmd> tabm <CR>')
+map('n', '<leader>tm', '<cmd> tabm 0 <CR>')
 
-vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
+map('t', '<Esc>', "<C-\\><C-n>")
 
 -- Windows.
-vim.keymap.set('n', '<A-l>', '<C-w>l')
-vim.keymap.set('n', '<A-h>', '<C-w>h')
-vim.keymap.set('n', '<A-k>', '<C-w>k')
-vim.keymap.set('n', '<A-j>', '<C-w>j')
-vim.keymap.set('n', '<A-w>', '<C-w>+')
-vim.keymap.set('n', '<A-s>', '<C-w>-')
-vim.keymap.set('n', '<A-a>', '<C-w>>')
-vim.keymap.set('n', '<A-d>', '<C-w><')
+map('n', '<A-l>', '<C-w>l')
+map('n', '<A-h>', '<C-w>h')
+map('n', '<A-k>', '<C-w>k')
+map('n', '<A-j>', '<C-w>j')
+map('n', '<A-w>', '<C-w>+')
+map('n', '<A-s>', '<C-w>-')
+map('n', '<A-a>', '<C-w>>')
+map('n', '<A-d>', '<C-w><')
 
 -- Nice
-vim.keymap.set('x', '<leader>p', '\"_dP')
+map('x', '<leader>p', '\"_dP')
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
 
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+---- CMD ----------------------------------------------------------------------
+
+vim.cmd("cnoreabbrev Q  q")
+vim.cmd("cnoreabbrev q1  q!")
+vim.cmd("cnoreabbrev Q1  q!")
+vim.cmd("cnoreabbrev Qa1 qa!")
+vim.cmd("cnoreabbrev Qa qa")
+vim.cmd("cnoreabbrev W  w")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev WQ wq")
+vim.cmd("cnoreabbrev Set set")
+vim.cmd("cnoreabbrev SEt set")
+vim.cmd("cnoreabbrev SET set")
+
+-- Highlight yank
+vim.cmd([[
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='ErrorMsg', timeout=500 }
+  augroup END
+]])
 ---- SET ----------------------------------------------------------------------
 
 vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
