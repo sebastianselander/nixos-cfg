@@ -29,6 +29,26 @@
         };
     in
     {
+
+      nixosConfigurations.thinkpad-xmonad = buildSystem {
+          systemImports = [
+              ./hosts/thinkpad/configuration.nix
+              ./modules/xmonad
+          ];
+          homeImports = [
+            ./modules/xmonad/home.nix
+            ./modules/thinkpad-xmonad.nix
+          ];
+      };
+      nixosConfigurations.thinkpad-plasma = buildSystem {
+          systemImports = [
+              ./hosts/thinkpad/configuration.nix
+              ./modules/plasma
+          ];
+          homeImports = [
+            ./modules/thinkpad-plasma.nix
+          ];
+      };
       nixosConfigurations.zenbook-xmonad = buildSystem {
           systemImports = [
               ./hosts/zenbook/configuration.nix
