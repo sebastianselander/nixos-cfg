@@ -44,8 +44,7 @@ in
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      conform-nvim
-
+      aerial-nvim
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
@@ -53,8 +52,10 @@ in
       cmp-path
       cmp_luasnip
       colorizer
+      conform-nvim
       diffview-nvim
       dracula-nvim
+      eyeliner-nvim
       gruvbox
       haskell-tools-nvim
       haskell-vim
@@ -62,10 +63,12 @@ in
       lualine-nvim
       luasnip
       material-nvim
+      midnight-nvim
       mini-nvim
       monokai-pro-nvim
       neovim-ayu
       nightfox-nvim
+      nightly-nvim
       nvim-cmp
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
