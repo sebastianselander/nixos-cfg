@@ -98,6 +98,8 @@ vim.opt.undofile = true
 vim.opt.updatetime = 100
 vim.opt.wrap = false
 vim.opt.conceallevel = 2
+vim.opt.nrformats = 'bin,hex,alpha'
+
 
 -- "Don't want to automatically insert comment leaders after using `o` in normal
 -- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
