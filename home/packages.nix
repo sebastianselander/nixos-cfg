@@ -36,6 +36,7 @@
     just
     libreoffice
     lua-language-server
+    marksman
     neofetch
     nerdfonts
     nil
