@@ -9,24 +9,6 @@ let
       hash = "sha256-QshO3J67VHP6Kz8wdroAnp13FPSbYZDkYdCznNDr6j0=";
     };
   };
-  midnight-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "midnight.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "dasupradyumna";
-      repo = "midnight.nvim";
-      rev = "955ae794290096d42a6f182741c01fd3665c1577";
-      hash = "sha256-FmpQ5Cd9HHV70/uwgIimT2fQVBLdrWxluRCfnUkDQCU=";
-    };
-  };
-  nightly-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "nightly.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Alexis12119";
-      repo = "nightly.nvim";
-      rev = "fbab0f60e2d92d119f6e0cf50c503dcd7753659e";
-      hash = "sha256-4nHEqmefHaM8CrbCX1MLcivX/sQVrXWGyQ6wWFresdI=";
-    };
-  };
   eyeliner-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "eyeliner.nvim";
     src = pkgs.fetchFromGitHub {
