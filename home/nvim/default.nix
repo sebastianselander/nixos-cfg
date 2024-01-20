@@ -45,7 +45,6 @@ in
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
-      catppuccin-nvim
       cmp-buffer
       cmp-cmdline
       cmp-nvim-lsp
@@ -54,31 +53,18 @@ in
       colorizer
       conform-nvim
       diffview-nvim
-      dracula-nvim
       eyeliner-nvim
-      gruvbox
       haskell-tools-nvim
       haskell-vim
-      kanagawa-nvim
       lualine-nvim
       luasnip
-      material-nvim
-      midnight-nvim
       mini-nvim
-      monokai-pro-nvim
       neovim-ayu
-      nightfox-nvim
-      nightly-nvim
       nvim-cmp
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       oil-nvim
-      onedark-nvim
-      overseer-nvim
-      palenight-vim
-      plenary-nvim
-      rose-pine
       tabby-nvim
       telescope-frecency-nvim
       telescope-fzf-native-nvim
