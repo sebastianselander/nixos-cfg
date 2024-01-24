@@ -7,6 +7,7 @@ conform.setup({
     go      = { "gofmt" },
     rust    = { "rustfmt" },
     typst   = { "typstfmt" },
+    nix     = { "nixfmt" },
   },
 })
 

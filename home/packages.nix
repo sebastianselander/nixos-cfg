@@ -43,7 +43,7 @@
     nil
     nix-prefetch-git
     nixos-option
-    nixpkgs-fmt
+    nixfmt
     obs-studio
     pandoc
     pcmanfm
