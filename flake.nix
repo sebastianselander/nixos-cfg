@@ -27,67 +27,39 @@
             }
           ];
         };
-    in
-    {
+    in {
 
       nixosConfigurations.thinkpad-xmonad = buildSystem {
-          systemImports = [
-              ./hosts/thinkpad/configuration.nix
-              ./modules/xmonad
-          ];
-          homeImports = [
-            ./modules/xmonad/home.nix
-            ./modules/thinkpad-xmonad.nix
-          ];
+        systemImports = [ ./hosts/thinkpad/configuration.nix ./modules/xmonad ];
+        homeImports =
+          [ ./modules/xmonad/home.nix ./modules/thinkpad-xmonad.nix ];
       };
       nixosConfigurations.thinkpad-plasma = buildSystem {
-          systemImports = [
-              ./hosts/thinkpad/configuration.nix
-              ./modules/plasma
-          ];
-          homeImports = [
-            ./modules/thinkpad-plasma.nix
-          ];
+        systemImports = [ ./hosts/thinkpad/configuration.nix ./modules/plasma ];
+        homeImports = [ ./modules/thinkpad-plasma.nix ];
       };
       nixosConfigurations.zenbook-xmonad = buildSystem {
-          systemImports = [
-              ./hosts/zenbook/configuration.nix
-              ./modules/xmonad
-          ];
-          homeImports = [
-            ./modules/xmonad/home.nix
-            ./modules/zenbook-xmonad.nix
-          ];
+        systemImports = [ ./hosts/zenbook/configuration.nix ./modules/xmonad ];
+        homeImports =
+          [ ./modules/xmonad/home.nix ./modules/zenbook-xmonad.nix ];
       };
       nixosConfigurations.zenbook-plasma = buildSystem {
-          systemImports = [
-              ./hosts/zenbook/configuration.nix
-              ./modules/plasma
-          ];
-          homeImports = [
-            ./modules/zenbook-plasma.nix
-          ];
+        systemImports = [ ./hosts/zenbook/configuration.nix ./modules/plasma ];
+        homeImports = [ ./modules/zenbook-plasma.nix ];
       };
       nixosConfigurations.pc-plasma = buildSystem {
-        systemImports = [
-          ./hosts/pc/configuration.nix
-          ./modules/plasma
-        ];
-        homeImports = [
-          ./modules/pc-plasma.nix
-          ./modules/easyeffects.nix
-        ];
+        systemImports =
+          [ ./hosts/pc/configuration.nix ./modules/plex ./modules/plasma ];
+        homeImports = [ ./modules/pc-plasma.nix ./modules/easyeffects.nix ];
       };
       nixosConfigurations.pc-xmonad = buildSystem {
-          systemImports = [
-              ./hosts/pc/configuration.nix
-              ./modules/xmonad
-          ];
-          homeImports = [
-            ./modules/xmonad/home.nix
-            ./modules/pc-xmonad.nix
-            ./modules/easyeffects.nix
-          ];
+        systemImports =
+          [ ./hosts/pc/configuration.nix ./modules/plex ./modules/xmonad ];
+        homeImports = [
+          ./modules/xmonad/home.nix
+          ./modules/pc-xmonad.nix
+          ./modules/easyeffects.nix
+        ];
       };
     };
 }
