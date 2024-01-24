@@ -24,11 +24,16 @@
         steam-hardware.enable = true;
     };
     services.xserver.videoDrivers = [ "nvidia" ];
+    services.plex = {
+      enable = true;
+      openFirewall = true;
+    };
     programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
     lm_sensors
     lutris
     wine
+    plex-media-player
   ];
 }
