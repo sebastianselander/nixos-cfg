@@ -10,6 +10,7 @@
     cloc
     cron
     discord
+    distrobox
     dmenu
     eza
     feh
@@ -68,6 +69,7 @@
     vscode
     wget
     xclip
+    xorg.xhost
     zlib
     zlib.dev
     zoom-us

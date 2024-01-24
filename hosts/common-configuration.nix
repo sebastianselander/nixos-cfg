@@ -89,6 +89,7 @@
   security.rtkit.enable = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
 
   users.users.sebastian = {
     isNormalUser = true;
@@ -108,7 +109,6 @@
     mullvad-vpn
     zsh
     pulseaudioFull
-    nushell
   ];
 
   # This value determines the NixOS release from which the default
