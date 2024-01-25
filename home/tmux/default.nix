@@ -13,6 +13,8 @@
     plugins = [
       pkgs.tmuxPlugins.resurrect
       pkgs.tmuxPlugins.sensible
+      pkgs.tmuxPlugins.yank
+      pkgs.tmuxPlugins.continuum
     ];
     extraConfig = builtins.readFile ./tmux.conf;
   };
