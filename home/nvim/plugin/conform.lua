@@ -8,6 +8,7 @@ conform.setup({
     rust    = { "rustfmt" },
     typst   = { "typstfmt" },
     nix     = { "nixfmt" },
+    python  = { "black" },
   },
 })
 
