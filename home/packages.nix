@@ -9,7 +9,6 @@
     clippy
     cloc
     cron
-    discord
     distrobox
     dmenu
     eza
@@ -38,6 +37,7 @@
     libreoffice
     lua-language-server
     marksman
+    tldr
     neofetch
     nerdfonts
     nil
@@ -67,6 +67,7 @@
     unzip
     vlc
     vscode
+    webcord
     wget
     xclip
     xorg.xhost
