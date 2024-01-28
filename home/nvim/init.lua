@@ -1,5 +1,9 @@
 ---- REMAPS -------------------------------------------------------------------
 local map = vim.keymap.set
+local g = vim.g
+local o = vim.o
+local opt = vim.opt
+local cmd = vim.cmd
 
 vim.g.mapleader = ' '
 
@@ -46,22 +50,28 @@ map('v', 'K', ":m '<-2<CR>gv=gv")
 
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+map('x', '.', ':norm .<CR>')
+
+for c in ("abcdefghijklmnopqrstuvwxyz"):gmatch(".") do
+    map('x', "@"..c, ":norm @"..c..'<CR>')
+end
+
 ---- CMD ----------------------------------------------------------------------
 
-vim.cmd("cnoreabbrev Q  q")
-vim.cmd("cnoreabbrev q1  q!")
-vim.cmd("cnoreabbrev Q1  q!")
-vim.cmd("cnoreabbrev Qa1 qa!")
-vim.cmd("cnoreabbrev Qa qa")
-vim.cmd("cnoreabbrev W  w")
-vim.cmd("cnoreabbrev Wq wq")
-vim.cmd("cnoreabbrev WQ wq")
-vim.cmd("cnoreabbrev Set set")
-vim.cmd("cnoreabbrev SEt set")
-vim.cmd("cnoreabbrev SET set")
+cmd("cnoreabbrev Q  q")
+cmd("cnoreabbrev q1  q!")
+cmd("cnoreabbrev Q1  q!")
+cmd("cnoreabbrev Qa1 qa!")
+cmd("cnoreabbrev Qa qa")
+cmd("cnoreabbrev W  w")
+cmd("cnoreabbrev Wq wq")
+cmd("cnoreabbrev WQ wq")
+cmd("cnoreabbrev Set set")
+cmd("cnoreabbrev SEt set")
+cmd("cnoreabbrev SET set")
 
 -- Highlight yank
-vim.cmd([[
+cmd([[
   augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='ErrorMsg', timeout=500 }
@@ -69,38 +79,51 @@ vim.cmd([[
 ]])
 ---- SET ----------------------------------------------------------------------
 
-vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
-vim.opt.backup = false
-vim.opt.colorcolumn = { 80, 100, 120 }
-vim.opt.cursorline = true
-vim.opt.expandtab = true
-vim.opt.guicursor = ""
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.isfname:append "@-@"
-vim.opt.list = true
-vim.opt.listchars = "tab:> ,lead:·,trail: ,extends:⇢,precedes:⇠,nbsp:+"
-vim.opt.mouse = ""
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
-vim.opt.shiftwidth = 4
-vim.opt.signcolumn = "yes"
-vim.opt.smartindent = true
-vim.opt.softtabstop = 4
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
-vim.opt.tabstop = 4
-vim.opt.termguicolors = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-vim.opt.updatetime = 100
-vim.opt.wrap = false
-vim.opt.conceallevel = 2
-vim.opt.nrformats = 'bin,hex,alpha'
+o.cmdheight = 0
 
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+
+opt.lazyredraw = true
+
+opt.backup = false
+opt.colorcolumn = { 80, 100, 120 }
+opt.cursorline = true
+opt.expandtab = true
+opt.guicursor = ""
+opt.hlsearch = true
+opt.incsearch = true
+opt.isfname:append "@-@"
+opt.list = true
+opt.listchars = "tab:> ,lead:·,trail: ,extends:⇢,precedes:⇠,nbsp:+"
+opt.mouse = ""
+opt.nu = true
+opt.relativenumber = true
+opt.scrolloff = 8
+opt.shiftwidth = 4
+opt.signcolumn = "yes"
+opt.smartindent = true
+opt.softtabstop = 4
+opt.splitbelow = true
+opt.splitright = true
+opt.swapfile = false
+opt.tabstop = 4
+opt.termguicolors = true
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.updatetime = 100
+opt.wrap = false
+opt.conceallevel = 2
+opt.nrformats = 'bin,hex,alpha'
+
+vim.api.nvim_create_autocmd('BufReadPost', {
+  desc = 'Open file at the last position it was edited earlier',
+  group = misc_augroup,
+  pattern = "*",
+  command = 'silent! normal! g`"zv'
+})
 
 -- "Don't want to automatically insert comment leaders after using `o` in normal
 -- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
-vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
+cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
+
+
