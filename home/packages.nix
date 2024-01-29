@@ -37,13 +37,12 @@
     libreoffice
     lua-language-server
     marksman
-    tldr
     neofetch
     nerdfonts
     nil
     nix-prefetch-git
-    nixos-option
     nixfmt
+    nixos-option
     obs-studio
     pandoc
     pcmanfm
@@ -60,6 +59,7 @@
     stylua
     texlive.combined.scheme-full
     thunderbird
+    tldr
     tree
     typst
     typst-lsp
@@ -71,6 +71,7 @@
     wget
     xclip
     xorg.xhost
+    zip
     zlib
     zlib.dev
     zoom-us
