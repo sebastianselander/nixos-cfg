@@ -1,59 +1,73 @@
 ---- REMAPS -------------------------------------------------------------------
-local map = vim.keymap.set
 local g = vim.g
 local o = vim.o
 local opt = vim.opt
 local cmd = vim.cmd
+local api = vim.api
 
-vim.g.mapleader = ' '
+local tmap = function(from, to)
+    vim.keymap.set('t', from, to)
+end
 
-map('n', '<space>', '<Nop>')
-map('n', '<esc>', vim.cmd.noh)
-map('n', 'J', 'mzJ`zdmz')
-map('n', '<C-d>', '<C-d>zz')
-map('n', '<C-u>', '<C-u>zz')
-map('n', 'N', 'Nzzzv')
-map('n', 'n', 'nzzzv')
-map('n', 'Y', 'yg$')
+local vmap = function(from, to)
+    vim.keymap.set('v', from, to)
+end
+
+local nmap = function(from, to)
+    vim.keymap.set('n', from, to)
+end
+
+vim.g.mapleader = " "
+
+nmap("<space>", "<Nop>")
+nmap("<esc>", vim.cmd.noh)
+nmap("J", "mzJ`zdmz")
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+nmap("N", "Nzzzv")
+nmap("n", "nzzzv")
+nmap("Y", "yg$")
 
 -- Tabs.
-map('n', '<leader>1', '1gt')
-map('n', '<leader>2', '2gt')
-map('n', '<leader>3', '3gt')
-map('n', '<leader>4', '4gt')
-map('n', '<leader>5', '5gt')
-map('n', '<leader>6', '6gt')
-map('n', '<leader>7', '7gt')
-map('n', '<leader>8', '8gt')
-map('n', '<leader>9', '9gt')
+nmap("<leader>1", "1gt")
+nmap("<leader>2", "2gt")
+nmap("<leader>3", "3gt")
+nmap("<leader>4", "4gt")
+nmap("<leader>5", "5gt")
+nmap("<leader>6", "6gt")
+nmap("<leader>7", "7gt")
+nmap("<leader>8", "8gt")
+nmap("<leader>9", "9gt")
 
-map('n', '<leader>tn', '<cmd> tabnew % <CR> <cmd> tabm <CR>')
-map('n', '<leader>tm', '<cmd> tabm 0 <CR>')
+nmap("<leader>tn", "<cmd> tabnew % <CR> <cmd> tabm <CR>")
+nmap("<leader>tm", "<cmd> tabm 0 <CR>")
 
-map('t', '<Esc>', "<C-\\><C-n>")
+tmap("<Esc>", "<C-\\><C-n>")
 
 -- Windows.
-map('n', '<A-l>', '<C-w>l')
-map('n', '<A-h>', '<C-w>h')
-map('n', '<A-k>', '<C-w>k')
-map('n', '<A-j>', '<C-w>j')
-map('n', '<A-w>', '<C-w>+')
-map('n', '<A-s>', '<C-w>-')
-map('n', '<A-a>', '<C-w>>')
-map('n', '<A-d>', '<C-w><')
+nmap("<A-l>", "<C-w>l")
+nmap("<A-h>", "<C-w>h")
+nmap("<A-k>", "<C-w>k")
+nmap("<A-j>", "<C-w>j")
+nmap("<A-w>", "<C-w>+")
+nmap("<A-s>", "<C-w>-")
+nmap("<A-a>", "<C-w>>")
+nmap("<A-d>", "<C-w><")
 
--- Nice
-map('x', '<leader>p', '\"_dP')
+local sub_under_cursor = function()
+	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
+	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
+	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
+		cmd(":%s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gI")
+	end
+end
 
-map('v', 'J', ":m '>+1<CR>gv=gv")
-map('v', 'K', ":m '<-2<CR>gv=gv")
+nmap("<leader>s", sub_under_cursor)
 
-map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-map('x', '.', ':norm .<CR>')
+vmap(".", ":norm .<CR>")
 
 for c in ("abcdefghijklmnopqrstuvwxyz"):gmatch(".") do
-    map('x', "@"..c, ":norm @"..c..'<CR>')
+	vmap("@" .. c, ":norm @" .. c .. "<CR>")
 end
 
 ---- CMD ----------------------------------------------------------------------
@@ -79,7 +93,7 @@ cmd([[
 ]])
 ---- SET ----------------------------------------------------------------------
 
-o.cmdheight = 0
+o.cmdheight = 1
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
@@ -90,7 +104,7 @@ opt.expandtab = true
 opt.guicursor = ""
 opt.hlsearch = true
 opt.incsearch = true
-opt.isfname:append "@-@"
+opt.isfname:append("@-@")
 opt.list = true
 opt.listchars = "tab:> ,lead:·,trail: ,extends:⇢,precedes:⇠,nbsp:+"
 opt.mouse = ""
@@ -111,17 +125,17 @@ opt.undofile = true
 opt.updatetime = 100
 opt.wrap = false
 opt.conceallevel = 2
-opt.nrformats = 'bin,hex,alpha'
+opt.nrformats = "bin,hex,alpha"
 
-vim.api.nvim_create_autocmd('BufReadPost', {
-  desc = 'Open file at the last position it was edited earlier',
-  group = misc_augroup,
-  pattern = "*",
-  command = 'silent! normal! g`"zv'
+api.nvim_create_autocmd("BufReadPost", {
+	desc = "Open file at the last position it was edited earlier",
+	group = misc_augroup,
+	pattern = "*",
+	command = 'silent! normal! g`"zv',
 })
 
 -- "Don't want to automatically insert comment leaders after using `o` in normal
 -- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
-cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
-
-
+cmd(
+	[[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
+)
