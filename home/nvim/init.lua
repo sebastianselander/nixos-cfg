@@ -83,8 +83,6 @@ o.cmdheight = 0
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
-opt.lazyredraw = true
-
 opt.backup = false
 opt.colorcolumn = { 80, 100, 120 }
 opt.cursorline = true
