@@ -6,15 +6,15 @@ local cmd = vim.cmd
 local api = vim.api
 
 local tmap = function(from, to)
-    vim.keymap.set('t', from, to)
+	vim.keymap.set("t", from, to)
 end
 
 local vmap = function(from, to)
-    vim.keymap.set('v', from, to)
+	vim.keymap.set("v", from, to)
 end
 
 local nmap = function(from, to)
-    vim.keymap.set('n', from, to)
+	vim.keymap.set("n", from, to)
 end
 
 vim.g.mapleader = " "
@@ -139,3 +139,9 @@ api.nvim_create_autocmd("BufReadPost", {
 cmd(
 	[[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
 )
+
+-- Set filetype to typst on entering a file that end in .typ
+api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.typ" },
+    command = "set ft=typst",
+})
