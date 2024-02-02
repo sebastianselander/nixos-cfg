@@ -11,6 +11,7 @@
     cron
     distrobox
     dmenu
+    edir
     eza
     feh
     ffmpeg
@@ -37,6 +38,8 @@
     libreoffice
     lua-language-server
     marksman
+    man-pages
+    man-pages-posix
     neofetch
     nerdfonts
     nil
