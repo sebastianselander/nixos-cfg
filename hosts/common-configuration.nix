@@ -11,17 +11,10 @@
   };
 
   # Enable networking
-  networking = {
-    networkmanager.enable = true;
-  };
+  networking = { networkmanager.enable = true; };
 
   nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
+    settings = { experimental-features = [ "nix-command" "flakes" ]; };
 
   };
   fonts.packages = with pkgs; [
@@ -59,12 +52,11 @@
 
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
-      xkbOptions = "compose:ralt,caps:escape";
-      displayManager.sessionCommands = ''
-        ${pkgs.xorg.xset}/bin/xset r rate 200 50
-      '';
+      xkb = {
+        layout = "us";
+        variant = "";
+        options = "compose:ralt,caps:escape";
+      };
     };
     pipewire = {
       enable = true;
@@ -93,11 +85,7 @@
 
   users.users.sebastian = {
     isNormalUser = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -105,11 +93,7 @@
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    mullvad-vpn
-    zsh
-    pulseaudioFull
-  ];
+  environment.systemPackages = with pkgs; [ mullvad-vpn zsh pulseaudioFull ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
