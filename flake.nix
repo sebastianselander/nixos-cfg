@@ -1,20 +1,18 @@
 {
   description = "Configuration for my nixos setups";
   inputs = {
-    # Use nixos-unstable as nixpkgs source
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Home Manager flake dependency
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = attrs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       # A function that takes the imports to use for the system and home and builds the system
       buildSystem = { systemImports, homeImports }:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = attrs;
+          specialArgs = inputs;
           modules = systemImports ++ [
             home-manager.nixosModules.home-manager
             ./hosts/common-configuration.nix
@@ -22,13 +20,12 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.sebastian.imports = [ ./home ] ++ homeImports;
+                users.sebastian = { imports = [ ./home ] ++ homeImports; };
               };
             }
           ];
         };
-    in
-    {
+    in {
 
       nixosConfigurations.thinkpad-xmonad = buildSystem {
         systemImports = [ ./hosts/thinkpad/configuration.nix ./modules/xmonad ];
