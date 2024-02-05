@@ -37,15 +37,16 @@
     just
     libreoffice
     lua-language-server
-    marksman
     man-pages
     man-pages-posix
+    marksman
     neofetch
     nerdfonts
     nil
     nix-prefetch-git
-    nixfmt
     nixos-option
+    nixpkgs-fmt
+    nixpkgs-lint
     obs-studio
     pandoc
     pcmanfm

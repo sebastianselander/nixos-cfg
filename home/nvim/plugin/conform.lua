@@ -3,11 +3,11 @@ local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		haskell = { "stylish-haskell" },
+		haskell = { "fourmolu" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		typst = { "typstfmt" },
-		nix = { "nixfmt" },
+		nix = { "nixpkgs-fmt" },
 		python = { "black" },
 		["*"] = { "trim_whitespace" },
 	},
