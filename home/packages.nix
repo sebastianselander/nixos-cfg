@@ -46,6 +46,8 @@
     nerdfonts
     nil
     nix-prefetch-git
+    nix-tree
+    nixfmt
     nixos-option
     nixpkgs-fmt
     nixpkgs-lint
