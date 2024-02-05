@@ -27,7 +27,8 @@
             }
           ];
         };
-    in {
+    in
+    {
 
       nixosConfigurations.thinkpad-xmonad = buildSystem {
         systemImports = [ ./hosts/thinkpad/configuration.nix ./modules/xmonad ];

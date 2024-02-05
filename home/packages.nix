@@ -4,6 +4,7 @@
     (agda.withPackages [ agdaPackages.standard-library ])
     audacity
     bat
+    black
     cabal2nix
     cargo
     clippy
@@ -32,6 +33,7 @@
     haskellPackages.patat
     haskellPackages.stack
     haskellPackages.stylish-haskell
+    haskellPackages.fourmolu
     hlint
     htop
     just
