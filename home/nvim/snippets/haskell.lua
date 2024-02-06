@@ -1,5 +1,5 @@
 local ls = require("luasnip")
-local s = ls.s
+local s = ls.snippet
 local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
@@ -9,23 +9,8 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
-local date = function()
-	return os.date("%Y-%m-%d")
-end
-
 return {
-	s({
-	    trig = "date",
-	    namr = "Date",
-	    dscr = "Date in the format YYYY-MM-DD"
-	}, {
-		f(date, {}),
-	}),
-    s({
-        trig = "ss",
-        namr = "Date",
-        dscr = "",
-    }, {
-        t("Sebastian Selander")
-    })
+	s("lang", fmta("{-# LANGUAGE <> #-}", { i(1, "extension") })),
+	s("let", fmta("let <> = <>\nin <>", { i(1, ""), i(2, ""), i(3, "") })),
+	s("main", fmta("main :: IO ()\nmain = <>", { i(1, "undefined") })),
 }

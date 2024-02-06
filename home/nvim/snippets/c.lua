@@ -11,56 +11,39 @@ local rep = require("luasnip.extras").rep
 
 return {
 	s(
-		{
-			name = "For loop",
-			dscr = "For loop with automatic inserting of declared variable",
-			trig = "for",
-		},
-		fmta(
-			[[
-            for (int <> = 0; <> << <>; <>++) {
-                <>
-	        } ]],
-			{
-				i(1, "i"),
-				rep(1),
-				i(2, "SIZE"),
-				rep(1),
-				i(3, ""),
-			}
-		)
+		"for",
+		fmta("for (int <> = 0; <> << <>; <>++) {\n    <>\n}", {
+			i(1, "i"),
+			rep(1),
+			i(2, ""),
+			rep(1),
+			i(3, ""),
+		})
 	),
 	s(
-		{
-			name = "Printf",
-			dscr = "Printf",
-			trig = "printf",
-		},
-		fmta([[ printf("<>\n", <>);]], {
+		"printf",
+		fmta([[printf("<>\n", <>);]], {
 			i(1, ""),
 			i(2, ""),
 		})
 	),
 	s(
-		{
-			name = "Sprintf",
-			dscr = "Sprintf",
-			trig = "sprintf",
-		},
-		fmta([[ sprintf("<>\n", <>);]], {
+		"sprintf",
+		fmta([[sprintf("<>\n", <>);]], {
 			i(1, ""),
 			i(2, ""),
 		})
 	),
 	s(
-		{
-			name = "Fprintf",
-			dscr = "Fprintf",
-			trig = "fprintf",
-		},
-		fmta([[ fprintf("<>\n", <>);]], {
+		"fprintf",
+		fmta([[fprintf("<>\n", <>);]], {
 			i(1, ""),
 			i(2, ""),
+		})
+	),
+	s("main",
+		fmta("int main(int argc, char **argv) {\n    <>\n}", {
+			i(1, "")
 		})
 	),
 }
