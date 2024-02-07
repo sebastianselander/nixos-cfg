@@ -41,9 +41,32 @@ return {
 			i(2, ""),
 		})
 	),
-	s("main",
+	s(
+		"main",
 		fmta("int main(int argc, char **argv) {\n    <>\n}", {
-			i(1, "")
+			i(1, ""),
+		})
+	),
+	s(
+		"while",
+		fmta("while (<>) {\n    <>\n}", {
+			i(1, "1"),
+			i(2, ""),
+		})
+	),
+	s(
+		"if",
+		fmta("if (<>) {\n    <>\n}", {
+			i(1, ""),
+			i(2, ""),
+		})
+	),
+	s(
+		"ifelse",
+		fmta("if (<>) {\n    <>\n} else {\n    <>\n}", {
+			i(1, ""),
+			i(2, ""),
+			i(3, ""),
 		})
 	),
 }

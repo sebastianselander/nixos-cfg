@@ -54,15 +54,18 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
-local sub_under_cursor = function()
+local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
 	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
-		cmd(":%s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gI")
+		cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gI")
+        cmd(":noh")
 	end
 end
 
-nmap("<leader>s", sub_under_cursor)
+nmap("<leader>sl", function() sub_under_cursor("") end)
+
+nmap("<leader>ss", function() sub_under_cursor("%") end)
 
 vmap(".", ":norm .<CR>")
 
@@ -143,5 +146,5 @@ cmd(
 -- Set filetype to typst on entering a file that end in .typ
 api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.typ" },
-    command = "set ft=typst",
+	command = "set ft=typst",
 })
