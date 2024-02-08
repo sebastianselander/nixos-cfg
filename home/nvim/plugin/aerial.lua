@@ -5,7 +5,7 @@ require("aerial").setup({
 	end,
 
 	layout = {
-		default_direction = "prefer_left",
+		default_direction = "prefer_right",
 	},
 	autojump = true,
 })
