@@ -9,6 +9,7 @@ conform.setup({
 		typst = { "typstfmt" },
 		nix = { "nixpkgs-fmt" },
 		python = { "black" },
+        c = { "clang-format" },
 		["*"] = { "trim_whitespace" },
 	},
 })
