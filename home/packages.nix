@@ -56,6 +56,7 @@
     pcmanfm
     python3
     qbittorrent
+    remmina
     ripgrep
     rlwrap
     roboto
