@@ -40,10 +40,6 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
--- Buffers
-nmap("<leader>bn", ":bn")
-nmap("<leader>bp", ":bp")
-
 local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
