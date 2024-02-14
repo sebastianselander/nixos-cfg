@@ -28,20 +28,6 @@ nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("Y", "yg$")
 
--- Tabs.
-nmap("<leader>1", "1gt")
-nmap("<leader>2", "2gt")
-nmap("<leader>3", "3gt")
-nmap("<leader>4", "4gt")
-nmap("<leader>5", "5gt")
-nmap("<leader>6", "6gt")
-nmap("<leader>7", "7gt")
-nmap("<leader>8", "8gt")
-nmap("<leader>9", "9gt")
-
-nmap("<leader>tn", "<cmd> tabnew % <CR> <cmd> tabm <CR>")
-nmap("<leader>tm", "<cmd> tabm 0 <CR>")
-
 tmap("<Esc>", "<C-\\><C-n>")
 
 -- Windows.
@@ -53,6 +39,10 @@ nmap("<A-w>", "<C-w>+")
 nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
+
+-- Buffers
+nmap("<leader>bn", ":bn")
+nmap("<leader>bp", ":bp")
 
 local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
@@ -128,7 +118,7 @@ opt.undofile = true
 opt.updatetime = 100
 opt.wrap = false
 opt.conceallevel = 2
-opt.nrformats = "bin,hex,alpha"
+opt.nrformats = "bin,hex"
 
 api.nvim_create_autocmd("BufReadPost", {
 	desc = "Open file at the last position it was edited earlier",
