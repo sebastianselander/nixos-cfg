@@ -15,7 +15,7 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "dropdown",
+			theme = "ivy",
 			initial_mode = "insert",
 			mappings = {
 				n = {
@@ -26,22 +26,22 @@ telescope.setup({
 			},
 		},
 		diagnostics = {
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		live_grep = {
 			initial_mode = "insert",
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		marks = {
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		registers = {
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		buffers = {
 			sort_mru = true,
 			ignore_current_buffer = true,
-			theme = "dropdown",
+			theme = "ivy",
 			previewer = true,
 			mappings = {
 				n = {
@@ -52,7 +52,7 @@ telescope.setup({
 		git_files = {
 			sort_mru = true,
 			ignore_current_buffer = true,
-			theme = "dropdown",
+			theme = "ivy",
 			previewer = true,
 			initial_mode = "insert",
 		},
@@ -68,8 +68,8 @@ local nnoremap = function(lhs, rhs)
 end
 
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert<CR>")
-nnoremap("<leader>pf", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=dropdown<CR>")
-nnoremap("C-p", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=dropdown<CR>")
+nnoremap("<leader>pf", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
+nnoremap("C-p", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>b", builtin.buffers)
 nnoremap("<leader>pr", builtin.registers)
