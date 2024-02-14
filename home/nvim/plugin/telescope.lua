@@ -69,7 +69,7 @@ end
 
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert<CR>")
 nnoremap("<leader>pf", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
-nnoremap("C-p", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
+nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>b", builtin.buffers)
 nnoremap("<leader>pr", builtin.registers)
