@@ -26,10 +26,12 @@ in
       conform-nvim
       diffview-nvim
       eyeliner-nvim
+      flash-nvim
       lualine-nvim
       luasnip
       mini-nvim
       neovim-ayu
+      nightfox-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
