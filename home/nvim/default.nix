@@ -27,6 +27,7 @@ in
       diffview-nvim
       eyeliner-nvim
       flash-nvim
+      harpoon2
       lualine-nvim
       luasnip
       mini-nvim
