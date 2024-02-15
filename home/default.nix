@@ -15,6 +15,7 @@
     ./tmux
     ./wezterm
     ./zathura
+    ./zoxide
     ./zsh
   ];
 
