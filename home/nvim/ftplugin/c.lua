@@ -8,7 +8,7 @@ local header_normal_swap = function()
 	local extension = vim.fn.expand("%:e")
 	local file = vim.fn.expand("%:t:r")
 
-	if extension ~= "c" or extension ~= "h" then
+	if extension ~= 'c' and extension ~= 'h' then
 		return
 	end
 
@@ -19,7 +19,8 @@ local header_normal_swap = function()
 			extension = ".c"
 		end
 	end
-	vim.cmd("edit " .. path .. file .. extension)
+    path = path .. file .. extension
+	vim.cmd("edit " .. path)
 end
 
 vim.keymap.set("n", "<leader><leader>", header_normal_swap)
