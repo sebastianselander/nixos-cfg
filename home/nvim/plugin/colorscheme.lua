@@ -4,7 +4,7 @@ require("tokyonight").setup({
     transparent = false,
     styles = {
         comments = {
-          italic = true,
+          italic = false,
         },
         keywords = {
           italic = false,

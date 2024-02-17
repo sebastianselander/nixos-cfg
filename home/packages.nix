@@ -29,11 +29,11 @@
     haskellPackages.cabal-fmt
     haskellPackages.cabal-install
     haskellPackages.fast-tags
+    haskellPackages.fourmolu
     haskellPackages.hoogle
     haskellPackages.patat
     haskellPackages.stack
     haskellPackages.stylish-haskell
-    haskellPackages.fourmolu
     hlint
     htop
     just
@@ -52,6 +52,7 @@
     nixpkgs-fmt
     nixpkgs-lint
     obs-studio
+    onefetch
     pandoc
     pcmanfm
     python3
