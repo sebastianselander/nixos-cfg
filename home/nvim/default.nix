@@ -34,6 +34,7 @@ in
       neovim-ayu
       nightfox-nvim
       nvim-cmp
+      neodev-nvim
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
