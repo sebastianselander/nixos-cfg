@@ -1,3 +1,22 @@
+-- Must be setup before lspconfig
+require("neodev").setup({
+	library = {
+		enabled = true,
+		runtime = true,
+		types = true,
+		plugins = true,
+	},
+	setup_jsonls = true,
+	override = function(root_dir, options)
+		if root_dir:find("/home/sebastian/Documents/git/nixos-cfg", 1, true) == 1 then
+			options.enabled = true
+			options.plugins = true
+		end
+	end,
+	lspconfig = true,
+	pathStrict = true,
+})
+
 local nvim_lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -28,23 +47,6 @@ end
 
 nvim_lsp.hls.setup(default)
 nvim_lsp.rust_analyzer.setup(default)
-require("neodev").setup({
-	library = {
-		enabled = true,
-		runtime = true,
-		types = true,
-		plugins = true,
-	},
-	setup_jsonls = true,
-	override = function(root_dir, options)
-        if root_dir:find("/home/sebastian/Documents/git/nixos-cfg", 1, true) == 1 then
-            options.enabled = true
-            options.plugins = true
-        end
-    end,
-	lspconfig = true,
-	pathStrict = true,
-})
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)
 nvim_lsp.marksman.setup(default)
