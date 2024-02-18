@@ -23,4 +23,4 @@ require("tokyonight").setup({
     },
 })
 
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "ayu-mirage"
