@@ -1,7 +1,28 @@
-require'nvim-treesitter.configs'.setup {
-  modules = {
-    highlight = {
-      enable = true,
-    },
-  },
-}
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true,
+	},
+	modules = {},
+	ensure_installed = {
+		"c",
+		"lua",
+		"haskell",
+		"nix",
+		"vimdoc",
+		"markdown",
+		"typst",
+		"rust",
+		"agda",
+		"python",
+		"latex",
+		"go",
+		"java",
+		"html",
+		"javascript",
+		"fish",
+		"bash",
+	},
+	sync_install = false,
+	ignore_install = {},
+	auto_install = true,
+})
