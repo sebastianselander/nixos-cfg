@@ -86,14 +86,14 @@
   users.users.sebastian = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.zsh;
+    shell = pkgs.oil;
   };
 
   nixpkgs.config.allowUnfree = true;
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   programs.dconf.enable = true;
 
-  environment.systemPackages = with pkgs; [ mullvad-vpn zsh pulseaudioFull ];
+  environment.systemPackages = with pkgs; [ mullvad-vpn zsh pulseaudioFull oil ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
