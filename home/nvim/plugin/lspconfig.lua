@@ -46,7 +46,27 @@ local union = function(t1, t2)
 end
 
 nvim_lsp.hls.setup(default)
-nvim_lsp.rust_analyzer.setup(default)
+nvim_lsp.rust_analyzer.setup({
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        },
+    },
+})
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)
 nvim_lsp.marksman.setup(default)
