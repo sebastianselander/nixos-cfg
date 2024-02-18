@@ -10,6 +10,7 @@
     clippy
     cloc
     cron
+    difftastic
     distrobox
     dmenu
     edir
