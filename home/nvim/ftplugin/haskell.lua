@@ -12,7 +12,7 @@ local swap_current_cabal = function()
 
 	local files = io.popen("cd " .. cwd .. "; ls *.cabal"):lines()
 	local project_file = nil
-    -- Get first .cabal file
+	-- Get first .cabal file
 	for file in files do
 		project_file = cwd .. "/" .. file
 		break
