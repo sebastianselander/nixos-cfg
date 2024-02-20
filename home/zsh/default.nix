@@ -19,8 +19,7 @@
       con = "mullvad connect";
       diff = "difftastic";
       disc = "mullvad disconnect";
-      setup-direnv = "echo \"use flake\" >> .envrc && direnv allow && echo \".direnv\" >> .gitignore";
-      test-weights = "echo -e \"\\e[1mbold\\e[0m\\n\\e[3mitalic\\e[0m\\n\\e[4munderline\\e[0m\\n\\e[9mstrikethrough\\e[0m\"";
+      test-font = "echo -e \"\\e[1mbold\\e[0m\\n\\e[3mitalic\\e[0m\\n\\e[4munderline\\e[0m\\n\\e[9mstrikethrough\\e[0m\"";
 
     };
     initExtra = ''
