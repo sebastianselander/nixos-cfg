@@ -9,6 +9,7 @@ local header_normal_swap = function()
 	local file = vim.fn.expand("%:t:r")
 
 	if extension ~= 'c' and extension ~= 'h' then
+        vim.notify("Not a C file", vim.log.levels.WARN)
 		return
 	end
 

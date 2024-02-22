@@ -12,6 +12,7 @@ local swap_current_cabal = function()
 
 	local files = io.popen("cd " .. cwd .. "; ls *.cabal"):lines()
 	local project_file = nil
+
 	-- Get first .cabal file
 	for file in files do
 		project_file = cwd .. "/" .. file
@@ -19,6 +20,7 @@ local swap_current_cabal = function()
 	end
 
 	if project_file == nil then
+        vim.notify("No cabal file found", vim.log.levels.WARN)
 		return
 	end
 
