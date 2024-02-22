@@ -28,6 +28,7 @@ nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("Y", "yg$")
 
+
 tmap("<Esc>", "<C-\\><C-n>")
 
 -- Windows.
@@ -57,6 +58,8 @@ nmap("<leader>ss", function()
 	sub_under_cursor("%")
 end)
 
+nmap("<leader>w", "<Cmd>silent update | redraw<CR>")
+
 vmap(".", ":norm .<CR>")
 
 for c in ("abcdefghijklmnopqrstuvwxyz"):gmatch(".") do
@@ -81,9 +84,10 @@ cmd("cnoreabbrev SET set")
 cmd([[
   augroup highlight_yank
     autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='ErrorMsg', timeout=500 }
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=300 }
   augroup END
 ]])
+
 ---- SET ----------------------------------------------------------------------
 
 o.cmdheight = 1
