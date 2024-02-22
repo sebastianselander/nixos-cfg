@@ -12,6 +12,7 @@
       gf = "git fetch";
       gp = "git push";
       ga = "git add";
+      lg = "lazygit";
       cfg = "cd ~/Documents/git/nixos-cfg/";
       ls = "eza --group-directories-first";
       lsa = "eza --group-directories-first -la";
