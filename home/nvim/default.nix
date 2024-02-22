@@ -25,16 +25,17 @@ in
       colorizer
       conform-nvim
       diffview-nvim
+      embark-vim
       eyeliner-nvim
       flash-nvim
       harpoon2
       lualine-nvim
       luasnip
       mini-nvim
+      neodev-nvim
       neovim-ayu
       nightfox-nvim
       nvim-cmp
-      neodev-nvim
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
