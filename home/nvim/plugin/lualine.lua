@@ -1,5 +1,5 @@
 require("lualine").setup({
 	options = {
-		theme = "embark",
+		theme = "tokyonight-storm",
 	},
 })
