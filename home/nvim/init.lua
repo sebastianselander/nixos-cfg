@@ -58,7 +58,7 @@ nmap("<leader>ss", function()
 	sub_under_cursor("%")
 end)
 
-nmap("<leader>w", "<Cmd>silent update | redraw<CR>")
+nmap("<leader>w", "<Cmd>w<CR>")
 
 vmap(".", ":norm .<CR>")
 
