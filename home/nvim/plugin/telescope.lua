@@ -30,7 +30,7 @@ telescope.setup({
 		},
 		live_grep = {
 			initial_mode = "insert",
-			theme = "ivy",
+            previewer = true,
 		},
 		marks = {
 			theme = "ivy",
