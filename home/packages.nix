@@ -77,6 +77,7 @@
     typstfmt
     unzip
     vlc
+    mdcat
     vscode
     webcord
     wget
