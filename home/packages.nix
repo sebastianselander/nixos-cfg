@@ -43,6 +43,7 @@
     man-pages
     man-pages-posix
     marksman
+    mdcat
     neofetch
     nerdfonts
     nil
@@ -77,8 +78,8 @@
     typstfmt
     unzip
     vlc
-    mdcat
     vscode
+    watchexec
     webcord
     wget
     xclip
