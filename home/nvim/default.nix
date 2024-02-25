@@ -9,6 +9,15 @@ let
       hash = "sha256-CeSlexSIwb2sIdqGKa1FTAn5VK48zrjsKXqFRsLz2iw=";
     };
   };
+  cyberdream-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "cyberdream.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "scottmckendry";
+      repo = "cyberdream.nvim";
+      rev = "7b83422a9318e036ac21df6a63c0ab1ca745e54f";
+      hash = "sha256-FhD50JNIXv3T588BkiWvJy4zaZ2jMryH6bvlZsQRFzY=";
+    };
+  };
 in
 {
   programs.neovim = {
