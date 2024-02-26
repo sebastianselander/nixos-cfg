@@ -80,6 +80,7 @@ cmd("cnoreabbrev Set set")
 cmd("cnoreabbrev SEt set")
 cmd("cnoreabbrev SET set")
 
+
 -- Highlight yank
 cmd([[
   augroup highlight_yank
@@ -90,7 +91,7 @@ cmd([[
 
 ---- SET ----------------------------------------------------------------------
 
-o.cmdheight = 1
+o.cmdheight = 0
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
