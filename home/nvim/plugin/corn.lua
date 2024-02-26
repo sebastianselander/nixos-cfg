@@ -1,2 +1,2 @@
 require("corn").setup()
-require("corn").scope("file")
+require("corn").scope("line")
