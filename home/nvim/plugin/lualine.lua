@@ -19,7 +19,7 @@ lualine.setup({
 		},
 	},
 	options = {
-		theme = "cyberdream",
+		theme = "tokyonight",
 	},
 })
 
