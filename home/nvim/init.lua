@@ -132,12 +132,15 @@ api.nvim_create_autocmd("BufReadPost", {
 	command = 'silent! normal! g`"zv',
 })
 
--- "Don't want to automatically insert comment leaders after using `o` in normal
--- mode.  Doesn't work without the autocmd for some freak reason." - Typesafety
-cmd(
-	[[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=j formatoptions+=q]]
-)
+api.nvim_create_autocmd("BufReadPost", {
+	desc = "Open file at the last position it was edited earlier",
+	group = misc_augroup,
+	pattern = "*",
+	command = 'silent! normal! g`"zv',
+})
 
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+vim.opt.formatoptions:append({ "q", "j" })
 -- Set filetype to typst on entering a file that end in .typ
 api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.typ" },
