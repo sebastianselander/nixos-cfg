@@ -59,6 +59,7 @@ in
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      none-ls-nvim
       nvim-web-devicons
       oil-nvim
       tabby-nvim
