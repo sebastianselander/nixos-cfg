@@ -91,7 +91,7 @@ cmd([[
 
 ---- SET ----------------------------------------------------------------------
 
-o.cmdheight = 0
+o.cmdheight = 1
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
