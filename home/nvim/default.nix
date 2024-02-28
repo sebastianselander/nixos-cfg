@@ -18,15 +18,6 @@ let
       hash = "sha256-FhD50JNIXv3T588BkiWvJy4zaZ2jMryH6bvlZsQRFzY=";
     };
   };
-  corn-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "corn.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "RaafatTurki";
-      repo = "corn.nvim";
-      rev = "b0b86d11e0da93aa8554d4031faace8096c95e36";
-      hash = "sha256-Q5+BxvW4NlRV/f/MgX310WzW8MedwBbxmFF5Ci/Y3OA=";
-      };
-  };
 in
 {
   programs.neovim = {
@@ -45,7 +36,6 @@ in
       conform-nvim
       diffview-nvim
       embark-vim
-      corn-nvim
       eyeliner-nvim
       flash-nvim
       harpoon2
