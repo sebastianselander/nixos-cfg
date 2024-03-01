@@ -78,6 +78,7 @@
     typstfmt
     unzip
     vlc
+    fd
     vscode
     watchexec
     webcord
