@@ -9,15 +9,6 @@ let
       hash = "sha256-CeSlexSIwb2sIdqGKa1FTAn5VK48zrjsKXqFRsLz2iw=";
     };
   };
-  cyberdream-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "cyberdream.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "scottmckendry";
-      repo = "cyberdream.nvim";
-      rev = "7b83422a9318e036ac21df6a63c0ab1ca745e54f";
-      hash = "sha256-FhD50JNIXv3T588BkiWvJy4zaZ2jMryH6bvlZsQRFzY=";
-    };
-  };
 in
 {
   programs.neovim = {
@@ -28,15 +19,13 @@ in
       aerial-nvim
       cmp-buffer
       cmp-cmdline
+      cmp-latex-symbols
       cmp-nvim-lsp
       cmp-path
-      cyberdream-nvim
       cmp_luasnip
       colorizer
       conform-nvim
       diffview-nvim
-      embark-vim
-      eyeliner-nvim
       flash-nvim
       harpoon2
       lualine-nvim
@@ -45,11 +34,11 @@ in
       neodev-nvim
       neovim-ayu
       nightfox-nvim
+      none-ls-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      none-ls-nvim
       nvim-web-devicons
       oil-nvim
       tabby-nvim
