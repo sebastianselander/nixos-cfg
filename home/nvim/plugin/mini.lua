@@ -3,10 +3,26 @@ local align = require("mini.align")
 local comment = require("mini.comment")
 local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
+local surround = require("mini.surround")
 
 ai.setup({})
 align.setup({})
 comment.setup({})
+surround.setup({
+	custom_surroundings = nil,
+	mappings = {
+		add = "ys",
+		delete = "ds",
+		find = "",
+		find_left = "",
+		highlight = "",
+		replace = "cs",
+		update_n_lines = "",
+		suffix_last = "",
+		suffix_next = "",
+	},
+	silent = false,
+})
 splitjoin.setup({
 	mappings = {
 		toggle = "gs",

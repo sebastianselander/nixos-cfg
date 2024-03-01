@@ -50,7 +50,6 @@ in
       tokyonight-nvim
       undotree
       vim-fugitive
-      vim-surround
       vimtex
     ];
   };
