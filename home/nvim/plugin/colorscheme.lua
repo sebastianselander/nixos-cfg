@@ -25,16 +25,4 @@ require("tokyonight").setup({
 	},
 })
 
-require("cyberdream").setup({
-	transparent = true,
-	italic_comments = true,
-	hide_fillchars = true,
-	borderless_telescope = true,
-	theme = {
-		highlights = {
-			CursorLine = { bg = "#292e42" },
-		},
-	},
-})
-
 vim.cmd.colorscheme("tokyonight-storm")
