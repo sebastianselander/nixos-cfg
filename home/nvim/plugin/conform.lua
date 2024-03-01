@@ -7,7 +7,7 @@ conform.setup({
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		typst = { "typstfmt" },
-		nix = { "nixpkgs_fmt" },
+		nix = { "nixfmt" },
 		python = { "black" },
         c = { "clang_format" },
 		["*"] = { "trim_whitespace" },
