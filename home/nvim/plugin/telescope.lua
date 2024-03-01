@@ -15,7 +15,6 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "ivy",
 			initial_mode = "insert",
 			mappings = {
 				n = {
@@ -23,38 +22,31 @@ telescope.setup({
 					["<C-s>"] = "file_vsplit",
 					["<C-h>"] = "file_split",
 				},
+				i = {
+					["<C-t>"] = "file_tab",
+					["<C-s>"] = "file_vsplit",
+					["<C-h>"] = "file_split",
+				},
 			},
 		},
-		diagnostics = {
-			theme = "ivy",
-		},
+		diagnostics = {},
 		live_grep = {
 			initial_mode = "insert",
-            previewer = true,
+			previewer = true,
 		},
-		marks = {
-			theme = "ivy",
-		},
-		registers = {
-			theme = "ivy",
-		},
+		marks = {},
+		registers = {},
 		buffers = {
 			sort_mru = true,
+			layout_config = { width = 0.5, height = 0.5 },
 			ignore_current_buffer = true,
-			theme = "ivy",
 			previewer = true,
+			path_display = { "tail" },
 			mappings = {
 				n = {
 					["dd"] = "delete_buffer",
 				},
 			},
-		},
-		git_files = {
-			sort_mru = true,
-			ignore_current_buffer = true,
-			theme = "ivy",
-			previewer = true,
-			initial_mode = "insert",
 		},
 	},
 })
@@ -67,12 +59,24 @@ local nnoremap = function(lhs, rhs)
 	vim.keymap.set("n", lhs, rhs, { noremap = true })
 end
 
+local telescope_aerial = function()
+	require("telescope").extensions.aerial.aerial({
+		initial_mode = "insert",
+		layout_config = {
+			cursor = {
+				preview_cutoff = 10,
+			},
+			width = 0.4,
+			height = 0.5,
+		},
+	})
+end
+
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert<CR>")
-nnoremap("<leader>pf", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
-nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD initial_mode=insert theme=ivy<CR>")
+nnoremap("<leader>pf", telescope_aerial)
+nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD initial_mode=insert<CR>")
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>b", builtin.buffers)
-nnoremap("<leader>pr", builtin.registers)
 nnoremap("<leader>pm", builtin.marks)
 nnoremap("<leader>pd", builtin.diagnostics)
-nnoremap("<leader>\"", builtin.registers)
+nnoremap('<leader>"', builtin.registers)
