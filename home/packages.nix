@@ -52,6 +52,7 @@
     nixfmt
     nixos-option
     nixpkgs-fmt
+    file
     nixpkgs-lint
     obs-studio
     onefetch
