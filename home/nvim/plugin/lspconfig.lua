@@ -47,25 +47,25 @@ end
 
 nvim_lsp.hls.setup(default)
 nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
-    settings = {
-        ["rust-analyzer"] = {
-            imports = {
-                granularity = {
-                    group = "module",
-                },
-                prefix = "self",
-            },
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
-        },
-    },
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
 })
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)
@@ -81,9 +81,57 @@ nvim_lsp.typst_lsp.setup(union(default, {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	virtual_text = false,
 	signs = true,
-	update_in_insert = true,
+	update_in_insert = false,
+	underline = true,
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = "single",
+})
+
+local echo_diagnostic = function()
+	local line = vim.fn.line(".") - 1
+	local bufnr = vim.api.nvim_win_get_buf(0)
+
+	local diags = vim.diagnostic.get(bufnr, { lnum = line, end_lnum = line, severity_limit = "Warning" })
+
+	if #diags == 0 then
+		vim.api.nvim_command('echo ""')
+		return
+	end
+
+	local diag = diags[1]
+	local width = vim.api.nvim_get_option("columns") - 15
+	local lines = vim.split(diag.message, "\n")
+	local message = lines[1]
+
+	if #lines > 1 and #message <= 20 then
+		message = message .. " " .. lines[2]
+	end
+
+	if width > 0 and #message >= width then
+		message = message:sub(1, width) .. "..."
+	end
+
+	local kind = "warning"
+	local hlgroup = "WarningMsg"
+
+	if diag.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
+		kind = "error"
+		hlgroup = "ErrorMsg"
+	end
+
+	local chunks = {
+		{ kind .. ": ", hlgroup },
+		{ message },
+	}
+
+	vim.api.nvim_echo(chunks, false, {})
+end
+
+vim.api.nvim_create_autocmd("CursorMoved", {
+	desc = "Lsp diagnostics",
+	group = misc_augroup,
+	pattern = "*",
+	callback = echo_diagnostic,
 })
