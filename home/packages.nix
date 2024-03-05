@@ -5,6 +5,7 @@
     audacity
     bat
     black
+    btop
     cabal2nix
     cargo
     clippy
@@ -15,8 +16,10 @@
     dmenu
     edir
     eza
+    fd
     feh
     ffmpeg
+    file
     firefox
     fzf
     gcc
@@ -36,7 +39,6 @@
     haskellPackages.stack
     haskellPackages.stylish-haskell
     hlint
-    htop
     just
     libreoffice
     lua-language-server
@@ -52,7 +54,6 @@
     nixfmt
     nixos-option
     nixpkgs-fmt
-    file
     nixpkgs-lint
     obs-studio
     onefetch
@@ -79,7 +80,6 @@
     typstfmt
     unzip
     vlc
-    fd
     vscode
     watchexec
     webcord
