@@ -128,10 +128,3 @@ local echo_diagnostic = function()
 
 	vim.api.nvim_echo(chunks, false, {})
 end
-
-vim.api.nvim_create_autocmd("CursorMoved", {
-	desc = "Lsp diagnostics",
-	group = misc_augroup,
-	pattern = "*",
-	callback = echo_diagnostic,
-})
