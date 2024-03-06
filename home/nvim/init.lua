@@ -123,22 +123,26 @@ opt.wrap = false
 opt.conceallevel = 2
 opt.nrformats = "bin,hex"
 
+api.nvim_create_autocmd("FileType", {
+	desc = "Change some formatoptions",
+	pattern = "*",
+	callback = function()
+		vim.opt.formatoptions:append({ "j", "q" })
+		vim.opt.formatoptions:remove({ "c", "o", "r" })
+	end,
+})
+
 api.nvim_create_autocmd("BufReadPost", {
 	desc = "Open file at the last position it was edited earlier",
-	group = misc_augroup,
 	pattern = "*",
 	command = 'silent! normal! g`"zv',
 })
 
 api.nvim_create_autocmd("BufReadPost", {
 	desc = "Open file at the last position it was edited earlier",
-	group = misc_augroup,
 	pattern = "*",
 	command = 'silent! normal! g`"zv',
 })
-
-vim.opt.formatoptions:remove({"c", "o", "r"})
-vim.opt.formatoptions:append({"q", "j" })
 
 -- Set filetype to typst on entering a file that end in .typ
 
