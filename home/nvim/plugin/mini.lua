@@ -8,7 +8,18 @@ local hipatterns = require("mini.hipatterns")
 
 ai.setup({})
 align.setup({})
-comment.setup({})
+comment.setup({
+	options = {
+		custom_commentstring = function()
+            if vim.bo.filetype == "nix" then
+                return "#%s"
+            end
+            if vim.bo.filetype == "typst" then
+                return "//%s"
+            end
+		end,
+	},
+})
 hipatterns.setup({
 	highlighters = {
 		hex_color = hipatterns.gen_highlighter.hex_color(),
