@@ -4,10 +4,16 @@ local comment = require("mini.comment")
 local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
 local surround = require("mini.surround")
+local hipatterns = require("mini.hipatterns")
 
 ai.setup({})
 align.setup({})
 comment.setup({})
+hipatterns.setup({
+	highlighters = {
+		hex_color = hipatterns.gen_highlighter.hex_color(),
+	},
+})
 surround.setup({
 	custom_surroundings = nil,
 	mappings = {

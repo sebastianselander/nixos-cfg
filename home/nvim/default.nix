@@ -23,7 +23,6 @@ in
       cmp-nvim-lsp
       cmp-path
       cmp_luasnip
-      colorizer
       conform-nvim
       diffview-nvim
       flash-nvim
