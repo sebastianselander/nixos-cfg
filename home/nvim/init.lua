@@ -139,8 +139,8 @@ api.nvim_create_autocmd("BufReadPost", {
 	command = 'silent! normal! g`"zv',
 })
 
-vim.opt.formatoptions:remove({ "c", "r", "o" })
-vim.opt.formatoptions:append({ "q", "j" })
+vim.opt.formatoptions:append({ "c", "r", "o"})
+vim.opt.formatoptions:remove({ "q", "j" })
 -- Set filetype to typst on entering a file that end in .typ
 api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.typ" },
