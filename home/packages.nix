@@ -57,6 +57,7 @@
     nixpkgs-lint
     obs-studio
     onefetch
+    comma
     pandoc
     pcmanfm
     python3
