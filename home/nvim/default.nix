@@ -25,6 +25,7 @@ in
       cmp_luasnip
       conform-nvim
       diffview-nvim
+      dressing-nvim
       flash-nvim
       harpoon2
       lualine-nvim
