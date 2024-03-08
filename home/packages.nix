@@ -12,6 +12,7 @@
     cloc
     cron
     difftastic
+    discord
     distrobox
     dmenu
     edir
@@ -57,7 +58,6 @@
     nixpkgs-lint
     obs-studio
     onefetch
-    comma
     pandoc
     pcmanfm
     python3
@@ -83,7 +83,6 @@
     vlc
     vscode
     watchexec
-    webcord
     wget
     xclip
     xorg.xhost
