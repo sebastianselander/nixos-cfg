@@ -44,8 +44,10 @@ local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
 	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
+        cmd("norm mz")
 		cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gIc")
 		cmd(":noh")
+        cmd("norm `z")
 	end
 end
 
