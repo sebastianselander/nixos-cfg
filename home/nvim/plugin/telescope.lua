@@ -62,13 +62,6 @@ end
 local telescope_aerial = function()
 	require("telescope").extensions.aerial.aerial({
 		initial_mode = "insert",
-		layout_config = {
-			cursor = {
-				preview_cutoff = 10,
-			},
-			width = 0.4,
-			height = 0.5,
-		},
 	})
 end
 
