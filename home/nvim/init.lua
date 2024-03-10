@@ -47,7 +47,7 @@ local sub_under_cursor = function(modifier)
         cmd("norm mz")
 		cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gIc")
 		cmd(":noh")
-        cmd("norm `z")
+        cmd("norm `zzz")
 	end
 end
 
