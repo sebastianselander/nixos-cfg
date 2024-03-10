@@ -39,7 +39,6 @@ in
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      nvim-spider
       nvim-web-devicons
       oil-nvim
       tabby-nvim
