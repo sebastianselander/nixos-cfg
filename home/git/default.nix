@@ -4,7 +4,7 @@
     enable = true;
     userName = "sebastianselander";
     userEmail = "sebastian.selander@gmail.com";
-    difftastic.enable = true;
+    delta.enable = true;
     extraConfig = {
       branch.sort = "-committerdate";
       commit.verbose = true;
