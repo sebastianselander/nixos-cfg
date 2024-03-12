@@ -32,7 +32,6 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, opts)
-
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 end
 
@@ -45,7 +44,29 @@ local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
 end
 
-nvim_lsp.hls.setup(default)
+nvim_lsp.hls.setup(union(default, {
+	settings = {
+		haskell = {
+			plugin = {
+				stan = {
+					globalOn = false,
+				},
+				changeTypeSignature = {
+					globalOn = true,
+				},
+				gadt = {
+					globalOn = false,
+				},
+				alternateNumberFormat = {
+					globalOn = false,
+				},
+                class = {
+                    globalOn = true,
+                },
+			},
+		},
+	},
+}))
 nvim_lsp.rust_analyzer.setup({
 	on_attach = on_attach,
 	settings = {
@@ -83,6 +104,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	signs = true,
 	update_in_insert = false,
 	underline = true,
+	border = "single",
+	severity_sort = true,
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
