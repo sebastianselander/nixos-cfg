@@ -10,7 +10,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
     let
       # A function that takes the imports to use for the system and home and builds the system
       buildSystem = { systemImports, homeImports }:
@@ -18,6 +18,7 @@
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = systemImports ++ [
+            nix-index-database.nixosModules.nix-index
             home-manager.nixosModules.home-manager
             ./hosts/common-configuration.nix
             {
