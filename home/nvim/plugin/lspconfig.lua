@@ -60,9 +60,9 @@ nvim_lsp.hls.setup(union(default, {
 				alternateNumberFormat = {
 					globalOn = false,
 				},
-                class = {
-                    globalOn = true,
-                },
+				class = {
+					globalOn = true,
+				},
 			},
 		},
 	},
@@ -111,43 +111,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = "single",
 })
-
-local echo_diagnostic = function()
-	local line = vim.fn.line(".") - 1
-	local bufnr = vim.api.nvim_win_get_buf(0)
-
-	local diags = vim.diagnostic.get(bufnr, { lnum = line, end_lnum = line, severity_limit = "Warning" })
-
-	if #diags == 0 then
-		vim.api.nvim_command('echo ""')
-		return
-	end
-
-	local diag = diags[1]
-	local width = vim.api.nvim_get_option("columns") - 15
-	local lines = vim.split(diag.message, "\n")
-	local message = lines[1]
-
-	if #lines > 1 and #message <= 20 then
-		message = message .. " " .. lines[2]
-	end
-
-	if width > 0 and #message >= width then
-		message = message:sub(1, width) .. "..."
-	end
-
-	local kind = "warning"
-	local hlgroup = "WarningMsg"
-
-	if diag.severity == vim.lsp.protocol.DiagnosticSeverity.Error then
-		kind = "error"
-		hlgroup = "ErrorMsg"
-	end
-
-	local chunks = {
-		{ kind .. ": ", hlgroup },
-		{ message },
-	}
-
-	vim.api.nvim_echo(chunks, false, {})
-end
