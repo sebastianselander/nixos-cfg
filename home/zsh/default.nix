@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
       p = "pwd | sed -E \"s/\\/home\\/[a-z]*\\//~\\//g\"";
