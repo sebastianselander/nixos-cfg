@@ -13,12 +13,13 @@
   outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
     let
       # A function that takes the imports to use for the system and home and builds the system
+      index = nix-index-database.nixosModules.nix-index;
       buildSystem = { systemImports, homeImports }:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = inputs;
           modules = systemImports ++ [
-            nix-index-database.nixosModules.nix-index
+            index
             home-manager.nixosModules.home-manager
             ./hosts/common-configuration.nix
             {

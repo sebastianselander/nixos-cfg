@@ -90,14 +90,20 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nix.optimise = {
-    automatic = true;
+  nix.optimise = { automatic = true; };
+  programs = {
+    zsh.enable = true;
+    dconf.enable = true;
+    command-not-found.enable = false;
+    nix-index-database.comma.enable = true;
   };
-  programs.zsh.enable = true;
-  programs.dconf.enable = true;
-  programs.command-not-found.enable = false;
 
-  environment.systemPackages = with pkgs; [ mullvad-vpn zsh pulseaudioFull oil ];
+  environment.systemPackages = with pkgs; [
+    mullvad-vpn
+    zsh
+    pulseaudioFull
+    oil
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
