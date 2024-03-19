@@ -59,7 +59,6 @@
     obs-studio
     onefetch
     pandoc
-    comma
     pcmanfm
     python3
     qbittorrent
