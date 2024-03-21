@@ -65,7 +65,7 @@ local telescope_aerial = function()
 	})
 end
 
-nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert<CR>")
+nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>pf", telescope_aerial)
 nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD initial_mode=insert<CR>")
 nnoremap("<leader>ps", builtin.live_grep)
