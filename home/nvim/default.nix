@@ -23,6 +23,7 @@ in
       cmp-nvim-lsp
       cmp-path
       cmp_luasnip
+      catppuccin-nvim
       conform-nvim
       diffview-nvim
       dressing-nvim
