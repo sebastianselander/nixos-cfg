@@ -40,6 +40,16 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
+local remove_text_on_line = function ()
+    local remove = vim.fn.input("Remove: ")
+    if remove ~= "" and remove ~= nil then
+        cmd(":s/" .. remove .. "//g")
+        cmd(":noh")
+    end
+end
+
+nmap("<leader>sd", remove_text_on_line)
+
 local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
