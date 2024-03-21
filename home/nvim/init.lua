@@ -104,7 +104,7 @@ opt.hlsearch = true
 opt.incsearch = true
 opt.isfname:append("@-@")
 opt.list = true
-opt.listchars = "tab:> ,lead: ,trail: ,extends:⇢,precedes:⇠,nbsp:+"
+opt.listchars = "tab:⇢ ,lead: ,trail: ,extends:⇢,precedes:⇠,nbsp:+"
 opt.mouse = ""
 opt.nu = true
 opt.relativenumber = true

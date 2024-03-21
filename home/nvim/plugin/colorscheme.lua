@@ -1,5 +1,10 @@
 require("tokyonight").setup({
-	on_colors = function(colors) end,
+	on_colors = function(colors) 
+        colors.fg_gutter = "#5b638d"
+
+        -- default is:
+        -- colors.fg_gutter = "#3b4261"
+    end,
 	on_highlights = function(highlights, colors) end,
 	style = "storm",
 	light_style = "day",
