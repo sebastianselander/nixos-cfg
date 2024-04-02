@@ -45,11 +45,6 @@
   };
 
   services = {
-    arbtt = {
-      enable = true;
-      sampleRate = 30;
-      logFile = "/home/sebastian/.arbtt-capture.log";
-    };
     fstrim = {
       interval = "weekly";
       enable = true;
