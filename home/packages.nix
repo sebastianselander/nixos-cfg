@@ -52,7 +52,7 @@
     nil
     nix-prefetch-git
     nix-tree
-    nixfmt
+    nixfmt-classic
     nixos-option
     nixpkgs-fmt
     nixpkgs-lint
