@@ -27,6 +27,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
+		{ name = "path" },
 		{ name = "latex_symbols", option = { strategy = 0 } },
 	}),
 })
