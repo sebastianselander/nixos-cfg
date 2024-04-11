@@ -1,22 +1,33 @@
 { pkgs, ... }:
-{
+let
+  gx-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "gx.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "chrishrb";
+      repo = "gx.nvim";
+      rev = "ea4cc715326a8bd060a450c24c3c9831cdee2f59";
+      hash = "sha256-MgRAw3SAYKJ9f0k/kWDBeYIY3eX2KyDmv8mwCLh5A7g=";
+    };
+  };
+in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
+      catppuccin-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
       cmp-nvim-lsp
       cmp-path
       cmp_luasnip
-      catppuccin-nvim
       conform-nvim
       diffview-nvim
       dressing-nvim
       flash-nvim
+      gx-nvim
       harpoon2
       lualine-nvim
       luasnip
