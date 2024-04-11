@@ -114,11 +114,11 @@ opt.hlsearch = true
 opt.incsearch = true
 opt.isfname:append("@-@")
 opt.list = true
-opt.listchars = "tab:⇢ ,lead: ,trail: ,extends:⇢,precedes:⇠,nbsp:+"
+opt.listchars = { tab = '» ', nbsp = '␣' }
 opt.mouse = ""
 opt.nu = true
 opt.relativenumber = true
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.shiftwidth = 4
 opt.signcolumn = "yes"
 opt.smartindent = true
@@ -130,10 +130,16 @@ opt.tabstop = 4
 opt.termguicolors = true
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
-opt.updatetime = 100
+opt.updatetime = 250
 opt.wrap = false
 opt.conceallevel = 2
 opt.nrformats = "bin,hex"
+opt.showmode = false
+opt.breakindent = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.timeoutlen = 300
+opt.inccommand = 'split'
 
 api.nvim_create_autocmd("FileType", {
 	desc = "Change some formatoptions",
