@@ -1,6 +1,8 @@
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 
+-- Use in telescope buffers
+
 telescope.setup({
 	extensions = {
 		fzf = {
@@ -9,6 +11,9 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
+        frecency = {
+			path_display = { "smart" },
+        },
 	},
 	defaults = {
 		initial_mode = "normal",
@@ -38,10 +43,9 @@ telescope.setup({
 		registers = {},
 		buffers = {
 			sort_mru = true,
-			layout_config = { width = 0.5, height = 0.5 },
 			ignore_current_buffer = true,
 			previewer = true,
-			path_display = { "tail" },
+            path_display = { "smart" },
 			mappings = {
 				n = {
 					["dd"] = "delete_buffer",
@@ -65,11 +69,26 @@ local telescope_aerial = function()
 	})
 end
 
+local telescope_frecency = function()
+	require("telescope").extensions.frecency.frecency({
+        entry_maker = vscode_lookalike_entry(),
+		workspace = "cwd",
+		initial_mode = "insert",
+	})
+end
+
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>pf", telescope_aerial)
-nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD initial_mode=insert<CR>")
+nnoremap("<C-p>", telescope_frecency)
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>b", builtin.buffers)
 nnoremap("<leader>pm", builtin.marks)
 nnoremap("<leader>pd", builtin.diagnostics)
 nnoremap('<leader>"', builtin.registers)
+nnoremap("<leader>/", function()
+	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		windblend = 10,
+		previewer = false,
+		initial_mode = "insert",
+	}))
+end)
