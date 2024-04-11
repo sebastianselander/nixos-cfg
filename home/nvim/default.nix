@@ -1,15 +1,4 @@
 { pkgs, ... }:
-let
-  conform-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "conform.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "stevearc";
-      repo = "conform.nvim";
-      rev = "61cff430c9f15770d0c5e68c1b08067223bd94ab";
-      hash = "sha256-CeSlexSIwb2sIdqGKa1FTAn5VK48zrjsKXqFRsLz2iw=";
-    };
-  };
-in
 {
   programs.neovim = {
     enable = true;
