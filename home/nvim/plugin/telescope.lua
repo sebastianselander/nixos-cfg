@@ -71,7 +71,6 @@ end
 
 local telescope_frecency = function()
 	require("telescope").extensions.frecency.frecency({
-        entry_maker = vscode_lookalike_entry(),
 		workspace = "cwd",
 		initial_mode = "insert",
 	})
