@@ -2,6 +2,9 @@
 
 {
   services = {
+      displayManager = {
+        defaultSession = "none+xmonad";
+      };
     logind = {
       extraConfig = "HandleLidSwitch=suspend";
     };
@@ -17,7 +20,6 @@
       };
       displayManager = {
         lightdm.enable = true;
-        defaultSession = "none+xmonad";
       };
       windowManager = {
         xmonad = {
