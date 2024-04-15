@@ -13,4 +13,14 @@ return {
 	s("lang", fmta("{-# LANGUAGE <> #-}", { i(1, "extension") })),
 	s("let", fmta("let <> = <>\nin <>", { i(1, ""), i(2, ""), i(3, "") })),
 	s("main", fmta("main :: IO ()\nmain = <>", { i(1, "undefined") })),
+	s("class", fmta("class <> where\n    <>", { i(1, "") })),
+	s("instance", fmta("instance <> where\n    <>", { i(1, "") })),
+	s(
+		"newtype",
+		fmta("newtype <> = <> <>\n    deriving (Show, Read, Eq, Ord)", {
+			i(1, ""),
+			rep(1),
+			i(2, ""),
+		})
+	),
 }
