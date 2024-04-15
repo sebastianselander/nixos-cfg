@@ -1,9 +1,6 @@
 ---- REMAPS -------------------------------------------------------------------
 local g = vim.g
 local o = vim.o
-local opt = vim.opt
-local cmd = vim.cmd
-local api = vim.api
 
 local tmap = function(from, to)
 	vim.keymap.set("t", from, to)
@@ -43,8 +40,8 @@ nmap("<A-d>", "<C-w><")
 local remove_text_on_line = function ()
     local remove = vim.fn.input("Remove: ")
     if remove ~= "" and remove ~= nil then
-        cmd(":s/" .. remove .. "//g")
-        cmd(":noh")
+        vim.cmd(":s/" .. remove .. "//g")
+        vim.cmd(":noh")
     end
 end
 
@@ -54,10 +51,10 @@ local sub_under_cursor = function(modifier)
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
 	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
-        cmd("norm mz")
-		cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gIc")
-		cmd(":noh")
-        cmd("norm `zzz")
+        vim.cmd("norm mz")
+		vim.cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gIc")
+		vim.cmd(":noh")
+        vim.cmd("norm `zzz")
 	end
 end
 
@@ -79,20 +76,20 @@ end
 
 ---- CMD ----------------------------------------------------------------------
 
-cmd("cnoreabbrev Q  q")
-cmd("cnoreabbrev q1  q!")
-cmd("cnoreabbrev Q1  q!")
-cmd("cnoreabbrev Qa1 qa!")
-cmd("cnoreabbrev Qa qa")
-cmd("cnoreabbrev W  w")
-cmd("cnoreabbrev Wq wq")
-cmd("cnoreabbrev WQ wq")
-cmd("cnoreabbrev Set set")
-cmd("cnoreabbrev SEt set")
-cmd("cnoreabbrev SET set")
+vim.cmd("cnoreabbrev Q  q")
+vim.cmd("cnoreabbrev q1  q!")
+vim.cmd("cnoreabbrev Q1  q!")
+vim.cmd("cnoreabbrev Qa1 qa!")
+vim.cmd("cnoreabbrev Qa qa")
+vim.cmd("cnoreabbrev W  w")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev WQ wq")
+vim.cmd("cnoreabbrev Set set")
+vim.cmd("cnoreabbrev SEt set")
+vim.cmd("cnoreabbrev SET set")
 
 -- Highlight yank
-cmd([[
+vim.cmd([[
   augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=300 }
@@ -105,43 +102,43 @@ o.cmdheight = 1
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
-opt.backup = false
-opt.colorcolumn = { 80, 100, 120 }
-opt.cursorline = true
-opt.expandtab = true
-opt.guicursor = ""
-opt.hlsearch = true
-opt.incsearch = true
-opt.isfname:append("@-@")
-opt.list = true
-opt.listchars = { tab = '» ', nbsp = '␣' }
-opt.mouse = ""
-opt.nu = true
-opt.relativenumber = true
-opt.scrolloff = 10
-opt.shiftwidth = 4
-opt.signcolumn = "yes"
-opt.smartindent = true
-opt.softtabstop = 4
-opt.splitbelow = true
-opt.splitright = true
-opt.swapfile = false
-opt.tabstop = 4
-opt.termguicolors = true
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
-opt.updatetime = 250
-opt.wrap = false
-opt.conceallevel = 2
-opt.nrformats = "bin,hex"
-opt.showmode = false
-opt.breakindent = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.timeoutlen = 300
-opt.inccommand = 'split'
+vim.opt.backup = false
+vim.opt.colorcolumn = { 80, 100, 120 }
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.guicursor = ""
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.isfname:append("@-@")
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', nbsp = '␣' }
+vim.opt.mouse = ""
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
+vim.opt.shiftwidth = 4
+vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+vim.opt.softtabstop = 4
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.termguicolors = true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+vim.opt.updatetime = 250
+vim.opt.wrap = false
+vim.opt.conceallevel = 2
+vim.opt.nrformats = "bin,hex"
+vim.opt.showmode = false
+vim.opt.breakindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.timeoutlen = 300
+vim.opt.inccommand = 'split'
 
-api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", {
 	desc = "Change some formatoptions",
 	pattern = "*",
 	callback = function()
@@ -150,13 +147,13 @@ api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd("BufReadPost", {
 	desc = "Open file at the last position it was edited earlier",
 	pattern = "*",
 	command = 'silent! normal! g`"zv',
 })
 
-api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd("BufReadPost", {
 	desc = "Open file at the last position it was edited earlier",
 	pattern = "*",
 	command = 'silent! normal! g`"zv',
@@ -164,7 +161,7 @@ api.nvim_create_autocmd("BufReadPost", {
 
 -- Set filetype to typst on entering a file that end in .typ
 
-api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.typ" },
 	command = "set ft=typst",
 })
