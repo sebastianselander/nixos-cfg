@@ -17,4 +17,12 @@ return {
 			i(2, "https://nixos.org"),
 		})
 	),
+	s(
+		"image",
+		fmta("![<>](<>)", {
+			i(1, "<my_image>"),
+			i(2, "<link/to/image/"),
+		})
+	),
 }
+
