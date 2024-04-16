@@ -13,6 +13,7 @@
       gp = "git push";
       ga = "git add";
       lg = "lazygit";
+      nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
       ls = "eza --group-directories-first";
       lsa = "eza --group-directories-first -la";
