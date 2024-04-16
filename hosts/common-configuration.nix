@@ -11,7 +11,10 @@
   };
 
   # Enable networking
-  networking = { networkmanager.enable = true; };
+  networking = {
+    networkmanager.enable = true;
+    firewall.enable = false;
+  };
 
   nix = {
     settings = { experimental-features = [ "nix-command" "flakes" ]; };
