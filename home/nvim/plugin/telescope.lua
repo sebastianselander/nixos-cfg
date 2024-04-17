@@ -71,7 +71,7 @@ end
 
 local telescope_frecency = function()
 	require("telescope").extensions.frecency.frecency({
-		workspace = "cwd",
+		workspace = "CWD",
 		initial_mode = "insert",
 	})
 end
