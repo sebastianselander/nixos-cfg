@@ -1,21 +1,21 @@
 local ls = require("luasnip")
 
--- luasnip binds are created in cmp.lua
-
-vim.keymap.set({ "i" }, "<C-E>", function()
+vim.keymap.set({ "i" }, "<C-Q>", function()
 	ls.expand()
 end, { silent = true })
+
 vim.keymap.set({ "i", "s" }, "<C-L>", function()
 	ls.jump(1)
 end, { silent = true })
+
 vim.keymap.set({ "i", "s" }, "<C-H>", function()
 	ls.jump(-1)
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-Q>", function()
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	end
 end, { silent = true })
 
-require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets" })
+require("luasnip.loaders.from_lua").lazy_load({ paths = { "~/.config/nvim/snippets" } })
