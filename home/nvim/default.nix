@@ -1,5 +1,14 @@
 { pkgs, ... }:
 let
+  nvim-tree-pairs = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-tree-pairs";
+    src = pkgs.fetchFromGitHub {
+      owner = "yorickpeterse";
+      repo = "nvim-tree-pairs";
+      rev = "5859b79ab2104b0970e6a8d21fcc021da8078e6e";
+      hash = "sha256-3BStRGoooT1CzJ8AzYMOcqMUmsxSjP+FcOG+RbsmM14=";
+    };
+  };
   gx-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "gx.nvim";
     src = pkgs.fetchFromGitHub {
@@ -39,6 +48,7 @@ in {
       nvim-cmp
       nvim-lint
       nvim-lspconfig
+      nvim-tree-pairs
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       oil-nvim
