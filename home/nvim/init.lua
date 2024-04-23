@@ -165,3 +165,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.typ" },
 	command = "set ft=typst",
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.ll" },
+	command = "set ft=llvm",
+})
