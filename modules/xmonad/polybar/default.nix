@@ -34,6 +34,7 @@
           font-1               = "Iosevka SemiBold:style=SemiBold";
           font-2               = "IBM Plex Mono:style=SemiBold";
           font-3               = "JuliaMono,JuliaMono Latin:style=BoldLatin,Bold";
+          monitor = "HDMI-0";
         };
 
         "colors" = {
