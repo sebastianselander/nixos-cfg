@@ -78,16 +78,9 @@ end
 
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>pf", telescope_aerial)
-nnoremap("<C-p>", telescope_frecency)
-nnoremap("<leader>ps", builtin.live_grep)
-nnoremap("<leader>b", builtin.buffers)
-nnoremap("<leader>pm", builtin.marks)
-nnoremap("<leader>pd", builtin.diagnostics)
-nnoremap('<leader>"', builtin.registers)
-nnoremap("<leader>/", function()
-	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		windblend = 10,
-		previewer = false,
-		initial_mode = "insert",
-	}))
-end)
+-- nnoremap("<C-p>", telescope_frecency)
+-- nnoremap("<leader>ps", builtin.live_grep)
+-- nnoremap("<leader>b", builtin.buffers)
+-- nnoremap("<leader>pm", builtin.marks)
+-- nnoremap("<leader>pd", builtin.diagnostics)
+-- nnoremap('<leader>"', builtin.registers)
