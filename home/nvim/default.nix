@@ -63,6 +63,7 @@ in {
       undotree
       vim-fugitive
       vimtex
+      futhark-vim
     ];
   };
   xdg.configFile = {
