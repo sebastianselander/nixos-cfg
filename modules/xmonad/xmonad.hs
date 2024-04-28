@@ -94,7 +94,7 @@ myStartupHook = do
     spawnOnce "mullvad-exclude thunderbird"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
-    spawnOn "8" "webcord"
+    spawnOn "8" "discord"
     spawnOn "9" myMail
 
 myEventHook :: Event -> X All
@@ -110,9 +110,6 @@ myManageHook =
         , className =? "nm-connection-editor"   -?> doFloat
         , className =? "Nm-connection-editor"   -?> doFloat
         , className =? "discord"                -?> doShift "8"
-        , className =? "webcord"                -?> doShift "8"
-        , className =? "Webcord"                -?> doShift "8"
-        , className =? "WebCord"                -?> doShift "8"
         , className =? "thunderbird"            -?> doShift "9"
         , className =? "Steam"                  -?> doFloat
         , resource =? "desktop_window"          -?> doIgnore
