@@ -18,6 +18,17 @@ local date_ugly = function()
 	return os.date("%d/%m - %Y")
 end
 
+local auto_pair = function(trig, dscr, open, close)
+	return s({
+		trig = trig,
+		dscr = dscr
+	}, {
+		t(open),
+		i(1, ""),
+		t(close),
+	})
+end
+
 return {
 	s({
 		trig = "date",
@@ -36,4 +47,10 @@ return {
 	}, {
 		t("Sebastian Selander"),
 	}),
+    auto_pair("(", "auto pair parens", "(", ")"),
+    auto_pair(")", "auto pair parens", "(", ")"),
+    auto_pair("[", "auto pair brackets", "[", "]"),
+    auto_pair("]", "auto pair brackets", "[", "]"),
+    auto_pair("{", "auto pair curly brackets", "{", "}"),
+    auto_pair("}", "auto pair curly brackets", "{", "}"),
 }
