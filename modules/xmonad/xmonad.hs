@@ -65,20 +65,12 @@ myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
-myBorderWidth :: Dimension
-myBorderWidth = 2
 myGaps :: Integer
-myGaps = 0
-myNormalBorderColor :: String
-myNormalBorderColor = "#FFFFFF"
-myFocusedBorderColor :: String
-myFocusedBorderColor = "#41a6b5"
+myGaps = 6
 myTerminal :: String
 myTerminal = "kitty"
 myBrowser :: String
 myBrowser = "firefox"
-myMail :: String
-myMail = "thunderbird"
 myFont :: String
 myFont = "xft:Victor Mono:size=11:SemiBold:antialias=true"
 
@@ -96,7 +88,7 @@ myStartupHook = do
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
     spawnOn "8" "discord"
-    spawnOn "9" myMail
+    spawnOn "9" "thunderbird"
 
 myEventHook :: Event -> X All
 myEventHook = swallowEventHook (className =? myTerminal) (return True)
@@ -177,7 +169,7 @@ myLayout = avoidStruts $ smartBorders myDefaultLayout
 myTabConfig :: Theme
 myTabConfig =
     def
-        { fontName = myFont
+        { fontName = "xft:Victor Mono:size=11:SemiBold:antialias=true"
         , activeBorderColor = activeColor myTabConfig
         , inactiveBorderColor = inactiveColor myTabConfig
         , activeTextColor = "#000000"
@@ -263,11 +255,11 @@ main = do
             { terminal = myTerminal
             , focusFollowsMouse = myFocusFollowsMouse
             , clickJustFocuses = myClickJustFocuses
-            , borderWidth = myBorderWidth
+            , borderWidth = 2
             , modMask = myModMask
             , workspaces = myWorkspaces
-            , focusedBorderColor = myFocusedBorderColor
-            , normalBorderColor = myNormalBorderColor
+            , focusedBorderColor = "#41a6b5"
+            , normalBorderColor = "#24283b"
             , keys = myKeys
             , layoutHook = avoidStruts myLayout
             , manageHook = myManageHook
