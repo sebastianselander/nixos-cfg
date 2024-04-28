@@ -8,16 +8,15 @@
     logind = {
       extraConfig = "HandleLidSwitch=suspend";
     };
-    xserver = {
-      libinput = {
+    libinput = {
         touchpad = {
           naturalScrolling = true;
           disableWhileTyping = true;
           tapping = false;
           middleEmulation = true;
         };
-
-      };
+    };
+    xserver = {
       displayManager = {
         lightdm.enable = true;
       };
