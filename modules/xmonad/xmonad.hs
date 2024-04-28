@@ -92,6 +92,7 @@ myStartupHook = do
     spawnOnce "polybar xmonadbar & disown"
     spawnOnce "xset r rate 230 50"
     spawnOnce "mullvad-exclude thunderbird"
+    spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
     spawnOn "8" "discord"
