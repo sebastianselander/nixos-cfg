@@ -35,7 +35,6 @@ in {
       conform-nvim
       diffview-nvim
       dressing-nvim
-      flash-nvim
       fzf-lua
       gx-nvim
       harpoon2
