@@ -2,57 +2,56 @@
 
 -- normal haskell stuff
 
-import           Control.Monad                    (when)
-import qualified Data.Map                         as M
-import           Data.Monoid
+import Control.Monad (when)
+import Data.Map qualified as M
+import Data.Monoid
 
-import           XMonad
-import           XMonad.Config.Kde
+import XMonad
+import XMonad.Config.Kde
 
 -- window stack manipulation and map creation
-import qualified XMonad.StackSet                  as W
+import XMonad.StackSet qualified as W
 
 -- Hooks
-import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops
-import           XMonad.Hooks.InsertPosition
-import           XMonad.Hooks.ManageDocks
-import           XMonad.Hooks.ManageHelpers
-import           XMonad.Hooks.WindowSwallowing
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.InsertPosition
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.WindowSwallowing
 
 -- layout
 
-import           XMonad.Layout.IndependentScreens (countScreens)
-import           XMonad.Layout.LayoutModifier     (ModifiedLayout)
-import           XMonad.Layout.NoBorders
-import           XMonad.Layout.Renamed
-import           XMonad.Layout.ResizableTile
-import           XMonad.Layout.Spacing
-import           XMonad.Layout.Tabbed
-import           XMonad.Layout.ThreeColumns
-import           XMonad.Layout.ToggleLayouts
+import XMonad.Layout.IndependentScreens (countScreens)
+import XMonad.Layout.LayoutModifier (ModifiedLayout)
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Renamed
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Spacing
+import XMonad.Layout.Tabbed
+import XMonad.Layout.ThreeColumns
+import XMonad.Layout.ToggleLayouts
 
 -- actions
 
-import           XMonad.Actions.CycleWS           (nextScreen, shiftNextScreen)
-import           XMonad.Actions.SpawnOn
+import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
+import XMonad.Actions.SpawnOn
 
 -- utils
-import           XMonad.Util.Cursor
-import           XMonad.Util.SpawnOnce
+import XMonad.Util.Cursor
+import XMonad.Util.SpawnOnce
 
 -- keys
-import           Graphics.X11.ExtraTypes.XF86
+import Graphics.X11.ExtraTypes.XF86
 
 -- prompts
-import           XMonad.Layout.Decoration         (Decoration, DefaultShrinker)
-import           XMonad.Layout.Simplest           (Simplest)
+import XMonad.Layout.Decoration (Decoration, DefaultShrinker)
+import XMonad.Layout.Simplest (Simplest)
 
-import           Codec.Binary.UTF8.String         (decodeString)
-import qualified DBus                             as D
-import qualified DBus.Client                      as D
-import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
-import           XMonad.Layout.Circle
+import Codec.Binary.UTF8.String (decodeString)
+import DBus qualified as D
+import DBus.Client qualified as D
+import XMonad.Layout.Circle
 
 ---------------------------------------------------------------------------------------------------
 -- USER VARIABLES
@@ -96,20 +95,20 @@ myEventHook = swallowEventHook (className =? myTerminal) (return True)
 myManageHook :: ManageHook
 myManageHook =
     composeOne
-        [ className =? "MPlayer"                -?> doFloat
-        , className =? "Gimp"                   -?> doFloat
-        , className =? "Zoom"                   -?> doFloat
-        , className =? "Blueberry.py"           -?> doFloat
-        , className =? "nm-connection-editor"   -?> doFloat
-        , className =? "Nm-connection-editor"   -?> doFloat
-        , className =? "discord"                -?> doShift "8"
-        , className =? "thunderbird"            -?> doShift "9"
-        , className =? "Steam"                  -?> doFloat
-        , resource =? "desktop_window"          -?> doIgnore
-        , resource =? "kdesktop"                -?> doIgnore
-        , isFullscreen                          -?> doFullFloat
-        , isDialog                              -?> doFloat
-        , return True                           -?> insertPosition Below Newer
+        [ className =? "MPlayer" -?> doFloat
+        , className =? "Gimp" -?> doFloat
+        , className =? "Zoom" -?> doFloat
+        , className =? "Blueberry.py" -?> doFloat
+        , className =? "nm-connection-editor" -?> doFloat
+        , className =? "Nm-connection-editor" -?> doFloat
+        , className =? "discord" -?> doShift "8"
+        , className =? "thunderbird" -?> doShift "9"
+        , className =? "Steam" -?> doFloat
+        , resource =? "desktop_window" -?> doIgnore
+        , resource =? "kdesktop" -?> doIgnore
+        , isFullscreen -?> doFullFloat
+        , isDialog -?> doFloat
+        , return True -?> insertPosition Below Newer
         ]
 
 myLogHook :: D.Client -> PP
@@ -186,8 +185,8 @@ myWorkspaces = map show [1 .. 9 :: Int]
 ---------------------------------------------------------------------------------------------------
 -- KEYS
 
-myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
-myKeys conf@(XConfig{XMonad.modMask = modm}) =
+myKeys :: Bool -> XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
+myKeys isDualMonitor conf@(XConfig{XMonad.modMask = modm}) =
     M.fromList $
         workspace
             ++ [
@@ -230,6 +229,9 @@ myKeys conf@(XConfig{XMonad.modMask = modm}) =
                , ((0 .|. shiftMask, xK_Print), spawn "flameshot screen -p ~/Pictures/screenshots")
                , ((0 .|. controlMask, xK_Print), spawn "flameshot full -p ~/Pictures/screenshots")
                ]
+                ++ [((modm .|. shiftMask .|. controlMask, xK_Escape) 
+                   , spawn "~/Documents/git/nixos-cfg/modules/xmonad/monitors.sh") 
+                   | isDualMonitor]
   where
     workspace =
         [ ((m .|. modm, k), windows $ f i)
@@ -248,8 +250,8 @@ main = do
             dbus
             (D.busName_ "org.xmonad.Log")
             [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
-    nScreens <- countScreens
-    when (nScreens == (2 :: Int)) (spawn "~/Documents/git/nixos-cfg/xmonad/monitors.sh")
+    isDualMonitor <- (== (2 :: Int)) <$> countScreens
+    when isDualMonitor (spawn "~/Documents/git/nixos-cfg/xmonad/monitors.sh")
     xmonad . docks . ewmhFullscreen $
         def
             { terminal = myTerminal
@@ -260,7 +262,7 @@ main = do
             , workspaces = myWorkspaces
             , focusedBorderColor = "#41a6b5"
             , normalBorderColor = "#24283b"
-            , keys = myKeys
+            , keys = myKeys isDualMonitor
             , layoutHook = avoidStruts myLayout
             , manageHook = myManageHook
             , handleEventHook = myEventHook
