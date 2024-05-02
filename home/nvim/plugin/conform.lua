@@ -1,18 +1,19 @@
 local conform = require("conform")
 
 conform.setup({
-    formatters = {
-        cabal_fmt = {
-            meta = {
-                url = "https://hackage.haskell.org/package/cabal-fmt",
-                description = "Format cabal files with cabal-fmt",
-            },
-            command = "cabal-fmt",
-        },
-    },
+	formatters = {
+		erlfmt = {
+			meta = {
+				url = "https://github.com/WhatsApp/erlfmt",
+				description = "Format erlang files with erlfmt",
+			},
+			command = "erlfmt",
+			args = { "$FILENAME" },
+		},
+	},
 	formatters_by_ft = {
 		lua = { "stylua" },
-        cabal = { "cabal_fmt" },
+		cabal = { "cabal_fmt" },
 		haskell = { "fourmolu" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
@@ -20,6 +21,7 @@ conform.setup({
 		nix = { "nixfmt" },
 		python = { "black" },
 		c = { "clang_format" },
+		erlang = { "erlfmt" },
 		["*"] = { "trim_whitespace" },
 	},
 })
