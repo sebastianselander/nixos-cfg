@@ -46,6 +46,8 @@ local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
 end
 
+nvim_lsp.erlangls.setup(default)
+
 nvim_lsp.hls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
