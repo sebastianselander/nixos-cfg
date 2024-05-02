@@ -5,8 +5,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "yorickpeterse";
       repo = "nvim-tree-pairs";
-      rev = "5859b79ab2104b0970e6a8d21fcc021da8078e6e";
-      hash = "sha256-3BStRGoooT1CzJ8AzYMOcqMUmsxSjP+FcOG+RbsmM14=";
+      rev = "e1e0753def400534ead9230c2536e3273df3305c";
+      hash = "sha256-1eHSSz9IAXJrc93B0D2WU9FkN6LlEIU/OPHytqkb2ew=";
     };
   };
   gx-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -14,8 +14,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "chrishrb";
       repo = "gx.nvim";
-      rev = "ea4cc715326a8bd060a450c24c3c9831cdee2f59";
-      hash = "sha256-MgRAw3SAYKJ9f0k/kWDBeYIY3eX2KyDmv8mwCLh5A7g=";
+      rev = "ea543829d7eb36c9bf80e43d7a27bd326bb8d3ed";
+      hash = "sha256-VkJTgDgE12r6UgbnHU37uu4LHHaaCXlpz8aflDPVR2A=";
     };
   };
 in {
@@ -35,6 +35,7 @@ in {
       conform-nvim
       diffview-nvim
       dressing-nvim
+      futhark-vim
       fzf-lua
       gx-nvim
       harpoon2
@@ -62,7 +63,6 @@ in {
       undotree
       vim-fugitive
       vimtex
-      futhark-vim
     ];
   };
   xdg.configFile = {
