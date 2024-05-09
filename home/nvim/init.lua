@@ -48,7 +48,9 @@ end
 nmap("<leader>sd", remove_text_on_line)
 
 local sub_under_cursor = function(modifier)
+	modifier = modifier or ""
 	local word_under_cursor = vim.fn.escape(vim.fn.expand("<cword>"), [[\/]])
+	-- TODO: Use vim.ui.input
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
 	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
         vim.cmd("norm mz")
@@ -59,7 +61,7 @@ local sub_under_cursor = function(modifier)
 end
 
 nmap("<leader>sl", function()
-	sub_under_cursor("")
+	sub_under_cursor()
 end)
 
 nmap("<leader>ss", function()
