@@ -10,7 +10,7 @@
       commit.verbose = true;
       diff.algorithm = "histogram";
       merge.conflictstyle = "zdiff3";
-      pull.rebase = true;
+      pull.rebase = false;
       push.autoSetupRemote = true;
       rebase.autosquash = true;
       url."git@github.com:" = {
