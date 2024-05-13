@@ -48,6 +48,12 @@
   };
 
   services = {
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+      };
+    };
     fstrim = {
       interval = "weekly";
       enable = true;
