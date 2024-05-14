@@ -94,7 +94,12 @@
 
   users.users.sebastian = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "video"
+    ];
     shell = pkgs.zsh;
   };
 
