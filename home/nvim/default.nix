@@ -9,15 +9,6 @@ let
       hash = "sha256-1eHSSz9IAXJrc93B0D2WU9FkN6LlEIU/OPHytqkb2ew=";
     };
   };
-  gx-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "gx.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "chrishrb";
-      repo = "gx.nvim";
-      rev = "ea543829d7eb36c9bf80e43d7a27bd326bb8d3ed";
-      hash = "sha256-VkJTgDgE12r6UgbnHU37uu4LHHaaCXlpz8aflDPVR2A=";
-    };
-  };
 in {
   programs.neovim = {
     enable = true;
@@ -37,7 +28,6 @@ in {
       dressing-nvim
       futhark-vim
       fzf-lua
-      gx-nvim
       harpoon2
       lualine-nvim
       luasnip

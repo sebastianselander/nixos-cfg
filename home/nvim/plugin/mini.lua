@@ -1,6 +1,5 @@
 local ai = require("mini.ai")
 local align = require("mini.align")
-local comment = require("mini.comment")
 local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
 local surround = require("mini.surround")
@@ -8,18 +7,6 @@ local hipatterns = require("mini.hipatterns")
 
 ai.setup({})
 align.setup({})
-comment.setup({
-	options = {
-		custom_commentstring = function()
-            if vim.bo.filetype == "nix" then
-                return "#%s"
-            end
-            if vim.bo.filetype == "typst" then
-                return "//%s"
-            end
-		end,
-	},
-})
 hipatterns.setup({
 	highlighters = {
 		hex_color = hipatterns.gen_highlighter.hex_color(),
