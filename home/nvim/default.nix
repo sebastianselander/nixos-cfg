@@ -1,15 +1,5 @@
 { pkgs, ... }:
-let
-  nvim-tree-pairs = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-tree-pairs";
-    src = pkgs.fetchFromGitHub {
-      owner = "yorickpeterse";
-      repo = "nvim-tree-pairs";
-      rev = "e1e0753def400534ead9230c2536e3273df3305c";
-      hash = "sha256-1eHSSz9IAXJrc93B0D2WU9FkN6LlEIU/OPHytqkb2ew=";
-    };
-  };
-in {
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -39,7 +29,6 @@ in {
       nvim-cmp
       nvim-lint
       nvim-lspconfig
-      nvim-tree-pairs
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       oil-nvim
