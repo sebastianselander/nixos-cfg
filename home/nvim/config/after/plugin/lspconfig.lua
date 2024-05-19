@@ -20,19 +20,20 @@ require("neodev").setup({
 local nvim_lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local on_attach = function(_, bufnr)
-	local opts = { noremap = true, silent = true, buffer = bufnr }
+local on_attach = function(_, _)
+	local opts = { noremap = true, silent = true, buffer = 0 }
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 	vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, opts)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 end
