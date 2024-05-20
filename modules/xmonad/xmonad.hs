@@ -85,7 +85,7 @@ myStartupHook = do
     spawnOnce "mullvad-exclude thunderbird"
     spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
-    spawnOnce "blueman-applet"
+    spawnOnce "blueberry"
     spawnOn "8" "discord"
     spawnOn "9" "thunderbird"
 
