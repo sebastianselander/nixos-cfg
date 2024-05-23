@@ -139,6 +139,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.timeoutlen = 300
 vim.opt.inccommand = 'split'
+vim.opt.jumpoptions = "stack,view"
 
 vim.api.nvim_create_autocmd("FileType", {
 	desc = "Change some formatoptions",
