@@ -5,7 +5,7 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    haskellPackages.kmonad
+    kmonad
   ];
 
   services.kmonad = {
@@ -16,9 +16,5 @@
          config = builtins.readFile ./kmonad.kbd;
        };
      };
-
-    # If you've installed KMonad from a different source, update this property
-    package = pkgs.haskellPackages.kmonad;
   };
-
 }
