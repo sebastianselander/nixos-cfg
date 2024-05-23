@@ -81,7 +81,7 @@ myStartupHook = do
     spawnOnce "nitrogen --restore"
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawnOnce "polybar xmonadbar & disown"
-    spawnOnce "xset r rate 230 50"
+    spawnOnce "xset r rate 230 40"
     spawnOnce "mullvad-exclude thunderbird"
     spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
