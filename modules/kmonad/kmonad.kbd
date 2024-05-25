@@ -23,7 +23,7 @@
   ;; input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   ;; desktop:
   input (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd")
-  output (uinput-sink "KMonad kbd" "sleep 0.2s; xset r rate 230 40")
+  output (uinput-sink "KMonad kbd" "sleep 0.2s; xset r rate 230 40; sleep 0.2s; setxkbmap -option compose:menu")
   cmp-seq ralt
   cmp-seq-delay 5
 
@@ -65,11 +65,9 @@
 
 ;; Layer shortcuts
 (defalias
+  us (around (cmd-button "setxkbmap us") (layer-switch qwertyus))
+  se (around (cmd-button "setxkbmap se") (layer-switch qwertyse))
   sym (layer-toggle sym)
-  se (around (cmd-button "setxkbmap se")
-             (layer-switch qwertyse))
-  us (around (cmd-button "setxkbmap us")
-             (layer-switch qwertyus))
 )
 
 ;;; Layers
@@ -78,7 +76,6 @@
 ;; keys that will be overwritten later.  It is `not' a layer that will
 ;; be used in the actual layout.
 
-;; I do not include the f-keys because I do not want to remap them in any layer
 
 (defsrc
   esc
@@ -98,17 +95,16 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   esc  a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft <    z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl wkup lmet lalt           spc            ralt rctl      up
+  lctl wkup lmet lalt           spc            @sym rctl      up
                                                          lft  down rght
 )
 
-;; qwerty layer se
 
 (deflayer qwertyse
   esc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  esc  a    s    d    f    g    h    j    k    l    ;    '    ret
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft
   lctl wkup lmet lalt           spc            ralt rctl      up
                                                          lft  down rght
@@ -116,10 +112,10 @@
 
 (deflayer sym
   esc
-  §    @us  @se  3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \ 
-  esc  a    s    d    f    g    left down up   rght ;    '    ret
-  lsft <    z    x    c    v    b    n    m    ,    .    /    rsft 
-  lctl wkup lmet lalt           spc            @sym rctl      up
+  `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps @us  @se  d    f    g    h    j    k    l    ;    '    ret
+  lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl wkup lmet lalt           spc            ralt rctl      up
                                                          lft  down rght
 )

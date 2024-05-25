@@ -9,7 +9,7 @@
   ];
 
   services.kmonad = {
-   enable = true;
+   enable = false;
      keyboards = {
        myKMonadOutput = {
          device = "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd";

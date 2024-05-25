@@ -76,7 +76,7 @@ let
     let defcfg = ''
       (defcfg
         input  (device-file "${keyboard.device}")
-        output (uinput-sink "kmonad-${keyboard.name}")
+        output (uinput-sink "kmonad-${keyboard.name}" "sleep 0.2s; xset r rate 230 70; sleep 0.2s; setxkbmap -option compose:menu")
     '' +
     lib.optionalString (keyboard.defcfg.compose.key != null) ''
       cmp-seq ${keyboard.defcfg.compose.key}
