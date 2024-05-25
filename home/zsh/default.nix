@@ -10,7 +10,7 @@
       lg = "lazygit";
       nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
-      ls = "eza --group-directories-first";
+      ls = "eza --icons=always -l --git --group-directories-first";
       lsa = "eza --group-directories-first -la";
       lst = "eza -s modified -1 -la";
       con = "mullvad connect";
