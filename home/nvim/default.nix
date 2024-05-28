@@ -19,6 +19,7 @@
       futhark-vim
       fzf-lua
       harpoon2
+      haskell-vim
       lualine-nvim
       luasnip
       mini-nvim
