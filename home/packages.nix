@@ -43,6 +43,7 @@
     just
     libreoffice
     lua-language-server
+    ccls
     man-pages
     man-pages-posix
     marksman
