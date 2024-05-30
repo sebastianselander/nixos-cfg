@@ -1,8 +1,8 @@
 { ... }:
 {
   programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-    options = [ "--cmd cd" ];
+    enable = false;
+    enableZshIntegration = false;
+    # options = [ "--cmd cd" ];
   };
 }
