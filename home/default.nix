@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./agda
     ./direnv
     ./emacs
     ./git
