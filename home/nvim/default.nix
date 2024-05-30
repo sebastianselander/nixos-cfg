@@ -43,6 +43,7 @@
       undotree
       vim-fugitive
       vimtex
+      zen-mode-nvim
     ];
   };
   xdg.configFile = {
