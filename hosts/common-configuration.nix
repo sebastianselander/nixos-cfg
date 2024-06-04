@@ -28,6 +28,7 @@
     nerdfonts
     monaspace
     font-awesome
+    hack-font
   ];
 
   time.timeZone = "Europe/Stockholm";

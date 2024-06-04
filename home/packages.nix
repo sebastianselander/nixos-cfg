@@ -29,7 +29,6 @@
     ghcid
     glow
     gnumake
-    hack-font
     haskell-language-server
     haskellPackages.cabal-fmt
     haskellPackages.cabal-install
@@ -49,7 +48,6 @@
     marksman
     mdcat
     neofetch
-    nerdfonts
     nil
     nix-prefetch-git
     nix-tree
