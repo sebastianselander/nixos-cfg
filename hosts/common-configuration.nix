@@ -63,9 +63,9 @@
     xserver = {
       enable = true;
       xkb = {
-        layout = "us";
-        variant = "";
-        options = "compose:ralt,caps:escape";
+        layout = "us,se";
+        variant = ",altgr-intl";
+        options = "grp:win_space_toggle";
       };
     };
     pipewire = {
