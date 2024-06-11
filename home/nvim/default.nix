@@ -1,4 +1,14 @@
 { pkgs, ... }:
+  let trouble-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "trouble.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "folke";
+      repo = "trouble.nvim";
+      rev = "5e45bb78f8da3444d35616934c180fce3742c439";
+      hash = "sha256-CwaPOXHIvyDVyjDic4JbkXjdhlOSoxLL2pMgOcxNeQE=";
+    };
+  };
+  in
 {
   programs.neovim = {
     enable = true;
@@ -16,7 +26,6 @@
       conform-nvim
       diffview-nvim
       dressing-nvim
-      futhark-vim
       fzf-lua
       harpoon2
       haskell-vim
@@ -44,6 +53,7 @@
       vim-fugitive
       vimtex
       zen-mode-nvim
+    trouble-nvim
     ];
   };
   xdg.configFile = {
