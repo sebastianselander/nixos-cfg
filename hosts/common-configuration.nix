@@ -64,7 +64,7 @@
       enable = true;
       xkb = {
         layout = "us,se";
-        variant = ",altgr-intl";
+        variant = "";
         options = "grp:win_space_toggle";
       };
     };
