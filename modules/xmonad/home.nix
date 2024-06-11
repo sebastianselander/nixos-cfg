@@ -13,6 +13,7 @@
     packages = with pkgs; [
       networkmanagerapplet
       blueberry
+      blueman
       pamixer
       xorg.xbacklight
       flameshot
