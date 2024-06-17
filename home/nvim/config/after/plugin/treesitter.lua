@@ -1,7 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
-		disable = { "haskell" },
+		disable = {},
 	},
 	modules = {},
 	ensure_installed = {}, -- Not friendly with nixos
