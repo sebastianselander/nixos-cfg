@@ -105,7 +105,7 @@ o.cmdheight = 1
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 vim.opt.backup = false
-vim.opt.colorcolumn = { 80, 100, 120 }
+vim.opt.colorcolumn = { 100 }
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.guicursor = ""
