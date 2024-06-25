@@ -9,10 +9,9 @@
     networking.hostName = "pc";
 
     hardware = {
-        opengl = {
-            enable = true;
-            driSupport = true;
-            driSupport32Bit = true;
+        graphics = {
+          enable32Bit = true;
+          enable = true;
         };
         nvidia = {
             modesetting.enable = true;
