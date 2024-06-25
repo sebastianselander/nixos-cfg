@@ -1,2 +1,5 @@
 local trouble = require("trouble")
-vim.keymap.set("n", "<leader>tt", trouble.toggle)
+trouble.setup()
+vim.keymap.set("n", "<leader>td", "<cmd>Trouble diagnostics toggle<cr>")
+vim.keymap.set("n", "<leader>tl", "<cmd>Trouble lsp toggle<cr>")
+vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>")
