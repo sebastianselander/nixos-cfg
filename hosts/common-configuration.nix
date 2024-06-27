@@ -88,7 +88,7 @@
   sound.enable = true;
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true;
   };
   security.rtkit.enable = true;
 
