@@ -6,6 +6,7 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
+      todo-comments-nvim
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
