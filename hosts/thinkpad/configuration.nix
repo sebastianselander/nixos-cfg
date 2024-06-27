@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_6_8;
   networking.hostName = "thinkpad";
 
   programs.light.enable = true;
