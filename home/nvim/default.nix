@@ -16,6 +16,7 @@
       conform-nvim
       diffview-nvim
       dressing-nvim
+      flash-nvim
       fzf-lua
       harpoon2
       haskell-vim
