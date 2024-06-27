@@ -1,12 +1,15 @@
 { pkgs, ... }:
 
 {
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      devices = [ "nodev" ];
-      efiSupport = true;
-      enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        devices = [ "nodev" ];
+        efiSupport = true;
+        enable = true;
+      };
     };
   };
 
