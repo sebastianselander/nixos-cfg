@@ -73,14 +73,15 @@ local telescope_frecency = function()
 	require("telescope").extensions.frecency.frecency({
 		workspace = "CWD",
 		initial_mode = "insert",
+        previewer = false,
 	})
 end
 
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>pf", telescope_aerial)
--- nnoremap("<C-p>", telescope_frecency)
--- nnoremap("<leader>ps", builtin.live_grep)
--- nnoremap("<leader>b", builtin.buffers)
--- nnoremap("<leader>pm", builtin.marks)
--- nnoremap("<leader>pd", builtin.diagnostics)
--- nnoremap('<leader>"', builtin.registers)
+nnoremap("<C-p>", telescope_frecency)
+nnoremap("<leader>ps", builtin.live_grep)
+nnoremap("<leader>b", builtin.buffers)
+nnoremap("<leader>pm", builtin.marks)
+nnoremap("<leader>pd", builtin.diagnostics)
+nnoremap('<leader>"', builtin.registers)
