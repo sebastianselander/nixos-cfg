@@ -6,6 +6,7 @@ conform.toggle_autoformat = function()
 		if vim.g.disable_autoformat then
 			return "OFF"
 		else
+            vim.g.disable_autoformat = false
 			return "ON"
 		end
 	end
