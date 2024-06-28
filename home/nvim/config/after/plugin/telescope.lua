@@ -16,6 +16,7 @@ telescope.setup({
         },
 	},
 	defaults = {
+        prompt_prefix = "> ",
 		initial_mode = "normal",
 	},
 	pickers = {
@@ -81,6 +82,7 @@ nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>"
 nnoremap("<leader>pf", telescope_aerial)
 nnoremap("<C-p>", telescope_frecency)
 nnoremap("<leader>ps", builtin.live_grep)
+nnoremap("<leader>pw", builtin.grep_string)
 nnoremap("<leader>b", builtin.buffers)
 nnoremap("<leader>pm", builtin.marks)
 nnoremap("<leader>pd", builtin.diagnostics)
