@@ -1,1 +1,5 @@
-require('tiny-inline-diagnostic').setup()
+require('tiny-inline-diagnostic').setup({
+    options = {
+        overflow = "",
+    },
+})
