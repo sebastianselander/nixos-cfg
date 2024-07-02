@@ -17,7 +17,6 @@
       conform-nvim
       diffview-nvim
       dressing-nvim
-      flash-nvim
       fzf-lua
       harpoon2
       haskell-vim
@@ -27,7 +26,6 @@
       neodev-nvim
       neovim-ayu
       nightfox-nvim
-      none-ls-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
