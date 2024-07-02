@@ -58,16 +58,9 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("hoogle")
 telescope.load_extension("frecency")
-telescope.load_extension("aerial")
 
 local nnoremap = function(lhs, rhs)
 	vim.keymap.set("n", lhs, rhs, { noremap = true })
-end
-
-local telescope_aerial = function()
-	require("telescope").extensions.aerial.aerial({
-		initial_mode = "insert",
-	})
 end
 
 local telescope_frecency = function()
@@ -79,7 +72,6 @@ local telescope_frecency = function()
 end
 
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
-nnoremap("<leader>pf", telescope_aerial)
 nnoremap("<C-p>", telescope_frecency)
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>pw", builtin.grep_string)
