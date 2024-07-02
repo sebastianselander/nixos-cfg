@@ -53,7 +53,7 @@
           type = "internal/date";
           interval = 1;
           date = "%H:%M";
-          date-alt = "%Y-%m-%d %H:%M:%S";
+          date-alt = "%a %Y-%m-%d %H:%M:%S";
 
           label = "%date%";
           label-foreground = "\${colors.primary}";
