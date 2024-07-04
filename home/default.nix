@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ inputs, extraImports, ... }: {
   imports = [
     ./direnv
     ./emacs
@@ -9,14 +8,14 @@
     ./lazygit
     ./nnn
     ./nvim
-    ./packages.nix
+    (import ./packages.nix { inherit inputs; })
     ./starship
     ./tmux
     ./wezterm
     ./zathura
     ./zoxide
     ./zsh
-  ];
+  ] ++ extraImports;
 
   home = {
     username = "sebastian";
@@ -24,9 +23,5 @@
     stateVersion = "23.05";
     language.base = "en_US.UTF-8";
   };
-  programs = {
-    home-manager = {
-      enable = true;
-    };
-  };
+  programs = { home-manager = { enable = true; }; };
 }

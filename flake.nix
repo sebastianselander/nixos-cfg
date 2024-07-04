@@ -8,6 +8,7 @@
     };
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flakes.url = "./flakes";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
@@ -26,7 +27,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.sebastian = { imports = [ ./home ] ++ homeImports; };
+                users.sebastian = import ./home { inherit inputs; extraImports = homeImports; };
               };
             }
           ];

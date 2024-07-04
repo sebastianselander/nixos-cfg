@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{inputs}: { pkgs, ... }:
 {
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
@@ -88,5 +88,5 @@
     zlib
     zlib.dev
     zoom-us
-  ];
+  ] ++ inputs.flakes.packages."${pkgs.system}";
 }
