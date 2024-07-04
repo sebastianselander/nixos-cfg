@@ -88,5 +88,5 @@
     zlib
     zlib.dev
     zoom-us
-  ] ++ inputs.flakes.packages."${pkgs.system}";
+  ] ++ inputs.external-flakes.packages."${pkgs.system}";
 }

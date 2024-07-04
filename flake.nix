@@ -1,14 +1,17 @@
 {
   description = "Configuration for my nixos setups";
   inputs = {
+    # nix flake lock --update-input nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flakes.url = "./flakes";
+    # nix flake lock --update-input external-flakes
+    external-flakes.url = "./flakes";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
