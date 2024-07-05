@@ -17,6 +17,7 @@ in {
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
       catppuccin-nvim
+      octo-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
