@@ -24,7 +24,6 @@
     firefox
     fzf
     gcc
-    gh
     ghc
     ghcid
     glow

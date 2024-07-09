@@ -8,6 +8,7 @@
     ./lazygit
     ./nnn
     ./nvim
+    ./github
     (import ./packages.nix { inherit inputs; })
     ./starship
     ./tmux
