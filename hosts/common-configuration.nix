@@ -85,7 +85,6 @@
     mullvad-vpn.enable = true;
   };
 
-  sound.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
