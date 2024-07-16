@@ -1,15 +1,4 @@
-{ pkgs, ... }:
-let
-  tiny-inline-diagnostic = pkgs.vimUtils.buildVimPlugin {
-    name = "tiny-inlne-diagnostic";
-    src = pkgs.fetchFromGitHub {
-      owner = "rachartier";
-      repo = "tiny-inline-diagnostic.nvim";
-      rev = "01ded45a2c1054d9751b13571a0baa1e80fe9456";
-      hash = "sha256-InSpvkRBi6I2Ve6NLNvcsHFGCjd8+gAiZSjKOfCcDVY=";
-    };
-  };
-in {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -47,7 +36,6 @@ in {
       telescope-fzf-native-nvim
       telescope-nvim
       telescope_hoogle
-      tiny-inline-diagnostic
       tmux-nvim
       todo-comments-nvim
       tokyonight-nvim
