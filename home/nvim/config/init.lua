@@ -137,7 +137,7 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 400
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = "stack,view"
 
