@@ -22,6 +22,7 @@ indentscope.setup({
 	},
 	symbol = "│",
 })
+vim.cmd[[:highlight MiniIndentscopeSymbol guifg=#565f89]]
 hipatterns.setup({
 	highlighters = {
 		hex_color = hipatterns.gen_highlighter.hex_color(),
