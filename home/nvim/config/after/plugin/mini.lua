@@ -18,6 +18,7 @@ vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
 indentscope.setup({
 	draw = {
 		delay = 0,
+        animation = indentscope.gen_animation.none(),
 	},
 	symbol = "│",
 })
