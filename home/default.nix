@@ -1,6 +1,7 @@
 { inputs, extraImports, ... }: {
   imports = [
     (import ./packages.nix { inherit inputs; })
+    ./atuin
     ./bat
     ./direnv
     ./emacs
