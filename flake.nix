@@ -28,6 +28,7 @@
             ./hosts/common-configuration.nix
             {
               home-manager = {
+                backupFileExtension = "hm-backup";
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian = import ./home { inherit inputs; extraImports = homeImports; };
