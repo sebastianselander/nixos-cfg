@@ -4,9 +4,23 @@ local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
 local surround = require("mini.surround")
 local hipatterns = require("mini.hipatterns")
+local indentscope = require("mini.indentscope")
+local diff = require("mini.diff")
 
 ai.setup({})
+
 align.setup({})
+
+diff.setup()
+
+vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
+
+indentscope.setup({
+	draw = {
+		delay = 0,
+	},
+	symbol = "│",
+})
 hipatterns.setup({
 	highlighters = {
 		hex_color = hipatterns.gen_highlighter.hex_color(),
@@ -17,22 +31,21 @@ surround.setup({
 	mappings = {
 		add = "ys",
 		delete = "ds",
-		find = '',
-		find_left = '',
-		highlight = '',
+		find = "",
+		find_left = "",
+		highlight = "",
 		replace = "cs",
-		update_n_lines = '',
-		suffix_last = '',
-		suffix_next = '',
+		update_n_lines = "",
+		suffix_last = "",
+		suffix_next = "",
 	},
 	silent = false,
-    search_method = "cover_or_next",
+	search_method = "cover_or_next",
 })
 
 -- To mimic tpope's
-vim.keymap.del('x', 'ys')
-vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true})
-
+vim.keymap.del("x", "ys")
+vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
 splitjoin.setup({
 	mappings = {
