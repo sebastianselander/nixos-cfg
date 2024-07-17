@@ -6,7 +6,6 @@
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
       catppuccin-nvim
-      octo-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
@@ -21,6 +20,7 @@
       haskell-vim
       lualine-nvim
       luasnip
+      markview-nvim
       mini-nvim
       neodev-nvim
       neovim-ayu
@@ -30,6 +30,7 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
+      octo-nvim
       oil-nvim
       tabby-nvim
       telescope-frecency-nvim
@@ -40,6 +41,7 @@
       todo-comments-nvim
       tokyonight-nvim
       trouble-nvim
+      twilight-nvim
       undotree
       vim-fugitive
       vimtex
