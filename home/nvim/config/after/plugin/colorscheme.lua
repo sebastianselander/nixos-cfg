@@ -6,7 +6,7 @@ require("tokyonight").setup({
         colors.fg_gutter = "#3b4261"
     end,
 	on_highlights = function(highlights, colors) end,
-	style = "moon",
+	style = "night",
 	light_style = "day",
 	transparent = false,
 	styles = {
