@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
     audacity
-    bat
     black
     btop
     cabal2nix

@@ -1,15 +1,16 @@
 { inputs, extraImports, ... }: {
   imports = [
+    (import ./packages.nix { inherit inputs; })
+    ./bat
     ./direnv
     ./emacs
     ./git
+    ./github
     ./haskell
     ./kitty
     ./lazygit
     ./nnn
     ./nvim
-    ./github
-    (import ./packages.nix { inherit inputs; })
     ./starship
     ./tmux
     ./wezterm
