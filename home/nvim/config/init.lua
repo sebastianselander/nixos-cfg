@@ -23,7 +23,9 @@ nmap("<C-d>", "<C-d>zz")
 nmap("<C-u>", "<C-u>zz")
 nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
-nmap("Y", "yg$")
+nmap("Y", "yg_")
+
+vmap("gA", "$A")
 
 tmap("<Esc>", "<C-\\><C-n>")
 
@@ -36,6 +38,7 @@ nmap("<A-w>", "<C-w>+")
 nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
+
 
 local remove_text_on_line = function ()
     local remove = vim.fn.input("Remove: ")
