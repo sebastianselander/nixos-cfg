@@ -39,13 +39,12 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
-
-local remove_text_on_line = function ()
-    local remove = vim.fn.input("Remove: ")
-    if remove ~= "" and remove ~= nil then
-        vim.cmd(":s/" .. remove .. "//g")
-        vim.cmd(":noh")
-    end
+local remove_text_on_line = function()
+	local remove = vim.fn.input("Remove: ")
+	if remove ~= "" and remove ~= nil then
+		vim.cmd(":s/" .. remove .. "//g")
+		vim.cmd(":noh")
+	end
 end
 
 nmap("<leader>sd", remove_text_on_line)
@@ -56,10 +55,10 @@ local sub_under_cursor = function(modifier)
 	-- TODO: Use vim.ui.input
 	local to = vim.fn.input("Substitute '" .. word_under_cursor .. "' with: ")
 	if word_under_cursor ~= nil and word_under_cursor ~= "" and to ~= nil and to ~= "" then
-        vim.cmd("norm mz")
+		vim.cmd("norm mz")
 		vim.cmd(":" .. modifier .. "s/\\<" .. word_under_cursor .. "\\>/" .. to .. "/gIc")
 		vim.cmd(":noh")
-        vim.cmd("norm `zzz")
+		vim.cmd("norm `zzz")
 	end
 end
 
@@ -111,12 +110,13 @@ vim.opt.backup = false
 vim.opt.colorcolumn = { 100 }
 vim.opt.cursorline = true
 vim.opt.expandtab = true
-vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+vim.opt.guicursor =
+	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.isfname:append("@-@")
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', nbsp = '␣' }
+vim.opt.listchars = { nbsp = "␣" }
 vim.opt.mouse = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -141,7 +141,7 @@ vim.opt.breakindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.timeoutlen = 400
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
 
 vim.api.nvim_create_autocmd("FileType", {
