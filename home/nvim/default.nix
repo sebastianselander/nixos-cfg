@@ -10,6 +10,7 @@
       cmp-cmdline
       cmp-latex-symbols
       cmp-nvim-lsp
+      arrow-nvim
       cmp-path
       cmp_luasnip
       conform-nvim
