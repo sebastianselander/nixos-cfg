@@ -12,6 +12,7 @@
       cmp-nvim-lsp
       arrow-nvim
       cmp-path
+      hop-nvim
       cmp_luasnip
       conform-nvim
       diffview-nvim
