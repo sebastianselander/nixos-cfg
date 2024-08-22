@@ -5,7 +5,6 @@
     extraPackages = epkgs: with epkgs; [
       magit
       agda2-mode
-      agda-input
       evil
       material-theme
       night-owl-theme
