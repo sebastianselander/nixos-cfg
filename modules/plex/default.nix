@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   services = {
     plex = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       dataDir = "/home/sebastian/Videos";
       user = "sebastian";
