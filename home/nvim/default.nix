@@ -32,7 +32,6 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
-      octo-nvim
       oil-nvim
       tabby-nvim
       telescope-frecency-nvim
