@@ -1,1 +1,1 @@
-require("lean").setup({ mappings = true })
+require("lean").setup({ mappings = false })
