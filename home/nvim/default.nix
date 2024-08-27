@@ -5,14 +5,13 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       aerial-nvim
+      arrow-nvim
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
       cmp-nvim-lsp
-      arrow-nvim
       cmp-path
-      hop-nvim
       cmp_luasnip
       conform-nvim
       diffview-nvim
@@ -20,6 +19,8 @@
       fzf-lua
       harpoon2
       haskell-vim
+      hop-nvim
+      lean-nvim
       lualine-nvim
       luasnip
       markview-nvim
