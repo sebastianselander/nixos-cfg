@@ -29,5 +29,6 @@
     lm_sensors
     lutris
     wine
+    wineWowPackages.stable
   ];
 }
