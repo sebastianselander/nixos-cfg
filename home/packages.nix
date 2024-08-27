@@ -7,6 +7,7 @@
     btop
     cabal2nix
     cargo
+    chromium
     clippy
     cloc
     cron
