@@ -74,7 +74,7 @@
     tldr
     tree
     typst
-    # typst-lsp
+    typst-lsp
     typstfmt
     unzip
     vlc
