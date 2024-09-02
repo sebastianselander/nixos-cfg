@@ -251,7 +251,7 @@ main = do
             (D.busName_ "org.xmonad.Log")
             [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
     isDualMonitor <- (== (2 :: Int)) <$> countScreens
-    when isDualMonitor (spawn "~/Documents/git/nixos-cfg/xmonad/monitors.sh")
+    when isDualMonitor (spawn "~/Documents/git/nixos-cfg/modules/xmonad/monitors.sh")
     xmonad . docks . ewmhFullscreen $
         def
             { terminal = myTerminal
