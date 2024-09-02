@@ -28,6 +28,7 @@
       neodev-nvim
       neovim-ayu
       nightfox-nvim
+      noice-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
