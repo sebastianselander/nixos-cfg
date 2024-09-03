@@ -47,6 +47,7 @@
       twilight-nvim
       undotree
       vim-fugitive
+      vim-slime
       vimtex
       zen-mode-nvim
     ];
