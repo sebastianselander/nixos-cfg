@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
     audacity
+    arandr
     black
     btop
     cabal2nix
