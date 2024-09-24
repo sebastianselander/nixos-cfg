@@ -10,11 +10,11 @@
     mouse = true;
     keyMode = "vi";
     escapeTime = 0;
-    plugins = [
-      pkgs.tmuxPlugins.resurrect
-      pkgs.tmuxPlugins.sensible
-      pkgs.tmuxPlugins.yank
-      pkgs.tmuxPlugins.continuum
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      sensible
+      yank
+      continuum
     ];
     extraConfig = builtins.readFile ./tmux.conf;
   };
