@@ -24,7 +24,10 @@
         steam-hardware.enable = true;
     };
     services.xserver.videoDrivers = [ "nvidia" ];
-    programs.steam.enable = true;
+    programs = {
+      steam.enable = true;
+      steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    };
     programs.virt-manager.enable = true;
     virtualisation.libvirtd.enable = true;
 
