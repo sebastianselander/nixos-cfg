@@ -86,6 +86,8 @@ nvim_lsp.typst_lsp.setup(union(default, {
 	},
 }))
 
+nvim_lsp.dafny.setup(default)
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	virtual_text = false,
 	signs = true,
