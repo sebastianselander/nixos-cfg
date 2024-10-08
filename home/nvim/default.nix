@@ -47,6 +47,7 @@
       twilight-nvim
       undotree
       vim-fugitive
+      vim-loves-dafny
       vim-slime
       vimtex
       zen-mode-nvim
