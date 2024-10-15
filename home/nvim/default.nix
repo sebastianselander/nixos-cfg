@@ -18,7 +18,6 @@
       fzf-lua
       harpoon2
       haskell-vim
-      hop-nvim
       lean-nvim
       lualine-nvim
       luasnip
