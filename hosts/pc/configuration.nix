@@ -41,5 +41,6 @@
     wine64
     wine
     winetricks
+    mangohud
   ];
 }
