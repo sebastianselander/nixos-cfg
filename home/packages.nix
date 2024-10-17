@@ -2,12 +2,13 @@
 {
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
-    audacity
     arandr
+    audacity
     black
     btop
     cabal2nix
     cargo
+    ccls
     chromium
     clippy
     cloc
@@ -42,7 +43,6 @@
     just
     libreoffice
     lua-language-server
-    ccls
     man-pages
     man-pages-posix
     marksman
@@ -67,6 +67,7 @@
     rust-analyzer
     rustc
     rustfmt
+    see
     spotify
     spotify-player
     stylua
