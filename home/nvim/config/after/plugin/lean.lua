@@ -1,1 +1,2 @@
-require("lean").setup({ mappings = false })
+vim.g.maplocalleader = ' '
+require("lean").setup({ mappings = true })
