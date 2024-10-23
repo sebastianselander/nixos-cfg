@@ -2,12 +2,13 @@
 {
   home.packages = with pkgs; [
     (agda.withPackages [ agdaPackages.standard-library ])
-    audacity
     arandr
+    audacity
     black
     btop
     cabal2nix
     cargo
+    ccls
     chromium
     clippy
     cloc
@@ -40,9 +41,9 @@
     haskellPackages.stylish-haskell
     hlint
     just
+    lean4
     libreoffice
     lua-language-server
-    ccls
     man-pages
     man-pages-posix
     marksman
