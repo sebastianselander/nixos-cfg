@@ -33,6 +33,7 @@
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       oil-nvim
+      plenary-nvim
       tabby-nvim
       telescope-frecency-nvim
       telescope-fzf-native-nvim
