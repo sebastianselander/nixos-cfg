@@ -26,7 +26,7 @@ local on_attach = function(_, _)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
+	vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
@@ -42,6 +42,12 @@ local default = {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
+
+require("lean").setup({
+	lsp = { on_attach = on_attach, },
+	mappings = true,
+})
+
 
 local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
