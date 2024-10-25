@@ -48,6 +48,7 @@
       vim-fugitive
       vim-loves-dafny
       vim-slime
+      vim-wakatime
       vimtex
       zen-mode-nvim
     ];
