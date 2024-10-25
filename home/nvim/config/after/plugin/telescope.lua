@@ -13,6 +13,7 @@ telescope.setup({
 		},
         frecency = {
 			path_display = { "smart" },
+            db_safe_mode = false,
         },
 	},
 	defaults = {
