@@ -44,10 +44,9 @@ local default = {
 }
 
 require("lean").setup({
-	lsp = { on_attach = on_attach, },
+	lsp = { capabilities = capabilities, on_attach = on_attach },
 	mappings = true,
 })
-
 
 local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
