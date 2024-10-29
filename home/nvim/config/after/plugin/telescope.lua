@@ -11,13 +11,16 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
-        frecency = {
+		frecency = {
 			path_display = { "smart" },
-            db_safe_mode = false,
-        },
+			db_safe_mode = false,
+			sort_mru = true,
+			sort_lastused = true,
+		},
 	},
 	defaults = {
-        prompt_prefix = "> ",
+        theme = "ivy",
+		prompt_prefix = "> ",
 		initial_mode = "normal",
 	},
 	pickers = {
@@ -45,12 +48,13 @@ telescope.setup({
 		registers = {},
 		buffers = {
 			sort_mru = true,
+            sort_lastused = true,
 			ignore_current_buffer = true,
 			previewer = true,
-            path_display = { "smart" },
+			path_display = { "smart" },
 			mappings = {
 				n = {
-					["dd"] = "delete_buffer",
+					["d"] = "delete_buffer",
 				},
 			},
 		},
@@ -65,23 +69,9 @@ local nnoremap = function(lhs, rhs)
 	vim.keymap.set("n", lhs, rhs, { noremap = true })
 end
 
-local telescope_aerial = function()
-	require("telescope").extensions.aerial.aerial({
-		initial_mode = "insert",
-	})
-end
-
-local telescope_frecency = function()
-	require("telescope").extensions.frecency.frecency({
-		workspace = "CWD",
-		initial_mode = "insert",
-        previewer = false,
-	})
-end
-
 nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
-nnoremap("<leader>pf", telescope_aerial)
-nnoremap("<C-p>", telescope_frecency)
+nnoremap("<leader>pf", "<cmd>Telescope aerial initial_mode=insert")
+nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert theme=ivy<CR>")
 nnoremap("<leader>ps", builtin.live_grep)
 nnoremap("<leader>pw", builtin.grep_string)
 nnoremap("<leader>b", builtin.buffers)
