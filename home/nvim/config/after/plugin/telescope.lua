@@ -19,7 +19,7 @@ telescope.setup({
 		},
 	},
 	defaults = {
-        theme = "ivy",
+		theme = "ivy",
 		prompt_prefix = "> ",
 		initial_mode = "normal",
 	},
@@ -48,13 +48,14 @@ telescope.setup({
 		registers = {},
 		buffers = {
 			sort_mru = true,
-            sort_lastused = true,
+			sort_lastused = true,
 			ignore_current_buffer = true,
+            theme = "ivy",
 			previewer = true,
 			path_display = { "smart" },
 			mappings = {
 				n = {
-					["d"] = "delete_buffer",
+					["dd"] = "delete_buffer",
 				},
 			},
 		},
