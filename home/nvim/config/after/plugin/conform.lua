@@ -38,7 +38,7 @@ conform.setup({
 		haskell = { "fourmolu" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
-		typst = { "typstfmt" },
+		typst = { "typstyle" },
 		nix = { "nixfmt" },
 		python = { "black" },
 		c = { "clang_format" },

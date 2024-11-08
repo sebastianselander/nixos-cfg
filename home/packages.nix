@@ -77,7 +77,7 @@
     tree
     typst
     typst-lsp
-    typstfmt
+    typstyle
     unzip
     vlc
     vscode
