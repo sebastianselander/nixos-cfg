@@ -85,11 +85,7 @@ nvim_lsp.gopls.setup(default)
 nvim_lsp.marksman.setup(default)
 nvim_lsp.ccls.setup(default)
 nvim_lsp.nil_ls.setup(default)
-nvim_lsp.typst_lsp.setup(union(default, {
-	settings = {
-		exportPdf = "never",
-	},
-}))
+nvim_lsp.tinymist.setup(default)
 
 nvim_lsp.dafny.setup(default)
 

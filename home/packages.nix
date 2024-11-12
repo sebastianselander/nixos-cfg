@@ -76,7 +76,7 @@
     tldr
     tree
     typst
-    typst-lsp
+    tinymist
     typstyle
     unzip
     vlc
