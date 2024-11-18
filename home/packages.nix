@@ -30,6 +30,7 @@
     ghcid
     glow
     gnumake
+    harper
     haskell-language-server
     haskellPackages.cabal-fmt
     haskellPackages.cabal-install
@@ -73,10 +74,10 @@
     stylua
     texlive.combined.scheme-full
     thunderbird
+    tinymist
     tldr
     tree
     typst
-    tinymist
     typstyle
     unzip
     vlc
