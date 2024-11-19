@@ -8,11 +8,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-VkSth4KqZpe04eoQ1SWVE5+S8O41ByAoQUyT2h44nTo=",
-        "path": "/nix/store/ycvyl8yzvxr54x9rj9mws7v9vnlmkjvw-source/flakes",
+        "path": "/nix/store/wcgabczr8a0k5a4zgfj6vfxwax02smi9-source/flakes",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/ycvyl8yzvxr54x9rj9mws7v9vnlmkjvw-source/flakes",
+        "path": "/nix/store/wcgabczr8a0k5a4zgfj6vfxwax02smi9-source/flakes",
         "type": "path"
       }
     },
@@ -41,11 +41,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731832479,
-        "narHash": "sha256-icDDuYwJ0avTMZTxe1qyU/Baht5JOqw4pb5mWpR+hT0=",
+        "lastModified": 1731968878,
+        "narHash": "sha256-+hTCwETOE9N8voTAaF+IzdUZz28Ws3LDpH90FWADrEE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5056a1cf0ce7c2a08ab50713b6c4af77975f6111",
+        "rev": "a42fa14b53ceab66274a21da480c9f8e06204173",
         "type": "github"
       },
       "original": {
