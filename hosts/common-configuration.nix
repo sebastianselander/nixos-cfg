@@ -124,7 +124,6 @@
     mullvad-vpn
     zsh
     pulseaudioFull
-    oil
   ];
 
   # This value determines the NixOS release from which the default
