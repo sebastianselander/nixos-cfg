@@ -71,7 +71,6 @@
     spotify
     spotify-player
     stylua
-    texlive.combined.scheme-full
     thunderbird
     tinymist
     tldr
