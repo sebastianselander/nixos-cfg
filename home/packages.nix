@@ -30,7 +30,6 @@
     ghcid
     glow
     gnumake
-    harper
     haskell-language-server
     haskellPackages.cabal-fmt
     haskellPackages.cabal-install
