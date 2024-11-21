@@ -6,6 +6,7 @@ local surround = require("mini.surround")
 local hipatterns = require("mini.hipatterns")
 local indentscope = require("mini.indentscope")
 local diff = require("mini.diff")
+local operators = require("mini.operators")
 
 ai.setup({})
 
@@ -75,3 +76,12 @@ vim.keymap.set("n", "gS", function()
 		},
 	})
 end)
+
+
+vim.keymap.del("n", "gx")
+
+operators.setup({
+    sort = {
+        prefix = '',
+    },
+})
