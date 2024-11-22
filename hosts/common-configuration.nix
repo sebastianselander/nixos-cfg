@@ -31,6 +31,8 @@
     monaspace
     font-awesome
     hack-font
+    corefonts
+    vistafonts
   ];
 
   time.timeZone = "Europe/Stockholm";
