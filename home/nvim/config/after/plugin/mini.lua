@@ -30,24 +30,13 @@ hipatterns.setup({
 	},
 })
 surround.setup({
-	custom_surroundings = nil,
 	mappings = {
-		add = "ys",
-		delete = "ds",
-		find = "",
-		find_left = "",
 		highlight = "",
-		replace = "cs",
 		update_n_lines = "",
-		suffix_last = "",
-		suffix_next = "",
 	},
-	silent = false,
-	search_method = "cover_or_next",
 })
 
 -- To mimic tpope's
-vim.keymap.del("x", "ys")
 vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
 splitjoin.setup({
