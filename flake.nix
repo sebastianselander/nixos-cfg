@@ -66,7 +66,6 @@
           ./hosts/pc/configuration.nix
           ./modules/plex
           ./modules/xmonad
-          ./modules/kmonad/kmonad.nix
         ];
         homeImports = [
           ./modules/xmonad/home.nix
