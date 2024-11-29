@@ -19,11 +19,11 @@ vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
 indentscope.setup({
 	draw = {
 		delay = 0,
-        animation = indentscope.gen_animation.none(),
+		animation = indentscope.gen_animation.none(),
 	},
 	symbol = "│",
 })
-vim.cmd[[:highlight MiniIndentscopeSymbol guifg=#565f89]]
+vim.cmd([[:highlight MiniIndentscopeSymbol guifg=#565f89]])
 hipatterns.setup({
 	highlighters = {
 		hex_color = hipatterns.gen_highlighter.hex_color(),
@@ -34,6 +34,7 @@ surround.setup({
 		highlight = "",
 		update_n_lines = "",
 	},
+	search_method = "cover_or_next",
 })
 
 -- To mimic tpope's
@@ -66,11 +67,10 @@ vim.keymap.set("n", "gS", function()
 	})
 end)
 
-
 vim.keymap.del("n", "gx")
 
 operators.setup({
-    sort = {
-        prefix = '',
-    },
+	sort = {
+		prefix = "",
+	},
 })
