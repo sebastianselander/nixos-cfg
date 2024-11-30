@@ -14,7 +14,7 @@ local snippets = {}
 local executable = snippet({
     trig = "executable",
     dscr = "Advent of Code Cabal File Executable"
-}, fmt("executable 2024-{}\n  import: day\n  main-is: 2024/{}.hs", {
+}, fmt("executable 2024-{}\n  import: day, extensions\n  main-is: 2024/{}.hs", {
     insert(1, "00"),
     repeated(1),
 })
