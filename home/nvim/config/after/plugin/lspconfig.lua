@@ -60,9 +60,15 @@ nvim_lsp.hls.setup({
 	settings = {
 		haskell = {
 			plugin = {
-				stan = {
-					globalOn = false,
-				},
+                rename = {
+                    globalOn = true,
+                    config = {
+                        diff = true,
+                    },
+                },
+                eval = {
+                    globalOn = true,
+                },
 				changeTypeSignature = {
 					globalOn = true,
 				},
@@ -79,6 +85,7 @@ nvim_lsp.hls.setup({
 		},
 	},
 })
+
 nvim_lsp.rust_analyzer.setup(default)
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)
