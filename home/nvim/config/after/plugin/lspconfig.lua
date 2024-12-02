@@ -54,37 +54,40 @@ end
 
 nvim_lsp.erlangls.setup(default)
 
-nvim_lsp.hls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		haskell = {
-			plugin = {
-                rename = {
-                    globalOn = true,
-                    config = {
-                        diff = true,
-                    },
-                },
-                eval = {
-                    globalOn = true,
-                },
-				changeTypeSignature = {
-					globalOn = true,
-				},
-				gadt = {
-					globalOn = false,
-				},
-				alternateNumberFormat = {
-					globalOn = false,
-				},
-				class = {
-					globalOn = true,
-				},
-			},
-		},
-	},
-})
+-- nvim_lsp.hls.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	settings = {
+-- 		haskell = {
+-- 			plugin = {
+--                 rename = {
+--                     globalOn = true,
+--                     config = {
+--                         diff = true,
+--                     },
+--                 },
+--                 eval = {
+--                     globalOn = true,
+--                 },
+-- 				changeTypeSignature = {
+-- 					globalOn = true,
+-- 				},
+-- 				gadt = {
+-- 					globalOn = false,
+-- 				},
+-- 				alternateNumberFormat = {
+-- 					globalOn = false,
+-- 				},
+-- 				class = {
+-- 					globalOn = true,
+-- 				},
+--                 splice = {
+--                     globalOn = true,
+--                 }
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 nvim_lsp.rust_analyzer.setup(default)
 nvim_lsp.lua_ls.setup(default)
