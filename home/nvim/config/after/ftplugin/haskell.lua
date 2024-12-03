@@ -5,32 +5,24 @@ vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = { 100 }
 vim.bo.makeprg = "cabal run"
 
-local current_file, previous_file = vim.fn.expand("%:p")
+local bufnr = vim.api.nvim_get_current_buf()
+local opts = { noremap = true, silent = true, buffer = bufnr  }
+local ht = require("haskell-tools")
 
-local swap_current_cabal = function()
-	local cwd = vim.fn.getcwd()
-	current_file = vim.fn.expand("%:p")
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, opts)
+vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
-	local files = io.popen("cd " .. cwd .. "; ls *.cabal"):lines()
-	local project_file = nil
-
-	-- Get first .cabal file
-	for file in files do
-		project_file = cwd .. "/" .. file
-		break
-	end
-
-	if project_file == nil then
-        vim.notify("No cabal file found", vim.log.levels.WARN)
-		return
-	end
-
-	if current_file == project_file then
-		vim.cmd("edit " .. previous_file)
-	else
-		vim.cmd("edit " .. project_file)
-	end
-	previous_file = current_file
-end
-
-vim.keymap.set("n", "<leader><leader>", swap_current_cabal)
+vim.keymap.set("n", "<leader>hs", ht.hoogle.hoogle_signature, opts)
+vim.keymap.set("n", "<leader>ea", ht.lsp.buf_eval_all, opts)
+vim.keymap.set("n", "<leader>rr", ht.repl.toggle, opts)
+vim.keymap.set("n", "<leader>rq", ht.repl.quit, opts)
+vim.keymap.set("n", "<leader>cp", ht.project.open_package_cabal, opts)
