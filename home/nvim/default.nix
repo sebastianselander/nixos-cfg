@@ -11,6 +11,7 @@
       cmp-latex-symbols
       cmp-nvim-lsp
       cmp-path
+      overseer-nvim
       cmp_luasnip
       conform-nvim
       diffview-nvim
