@@ -39,7 +39,7 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
-nmap("gX", "gx") -- gx is taken by mini.operators
+nmap("gX", vim.ui.open) -- gx is taken by mini.operators
 
 local remove_text_on_line = function()
 	local remove = vim.fn.input("Remove: ")
