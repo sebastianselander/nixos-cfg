@@ -196,18 +196,6 @@ vim.api.nvim_create_autocmd("UILeave", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("RecordingEnter", {
-	callback = function()
-		vim.api.nvim_set_hl(0, "Cursor", { bg = "#6327A6" })
-	end,
-})
-
-vim.api.nvim_create_autocmd("RecordingLeave", {
-	callback = function()
-		vim.api.nvim_set_hl(0, "Cursor", { bg = "#000000" })
-	end,
-})
-
 -- change line number based on mode:
 -- for command mode: make it absolute for ranges etc
 -- for normal mode: relative movements <3
