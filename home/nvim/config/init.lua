@@ -24,6 +24,7 @@ nmap("<C-u>", "<C-u>zz")
 nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("Y", "yg_")
+nmap("<C-s>", "<cmd>w<CR>")
 
 vmap("gA", "$A")
 
