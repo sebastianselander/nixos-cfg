@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -11,14 +13,12 @@
       cmp-latex-symbols
       cmp-nvim-lsp
       cmp-path
-      overseer-nvim
       cmp_luasnip
       conform-nvim
       diffview-nvim
       dressing-nvim
       fzf-lua
       harpoon2
-      haskell-vim
       haskell-tools-nvim
       lean-nvim
       lualine-nvim
@@ -28,13 +28,12 @@
       neodev-nvim
       neovim-ayu
       nightfox-nvim
-      noice-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      nvim-web-devicons
       oil-nvim
+      overseer-nvim
       plenary-nvim
       tabby-nvim
       telescope-frecency-nvim
@@ -47,12 +46,8 @@
       trouble-nvim
       twilight-nvim
       undotree
-      vim-fugitive
-      vim-loves-dafny
       vim-slime
-      vim-wakatime
       vimtex
-      zen-mode-nvim
     ];
   };
   xdg.configFile = {
