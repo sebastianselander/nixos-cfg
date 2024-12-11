@@ -30,6 +30,7 @@
       nightfox-nvim
       nvim-cmp
       nvim-lint
+      tiny-inline-diagnostic-nvim
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim
