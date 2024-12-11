@@ -44,15 +44,13 @@ local default = {
 }
 
 require("lean").setup({
-	lsp = { capabilities = capabilities, on_attach = on_attach },
+	lsp = default,
 	mappings = true,
 })
 
 local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
 end
-
-nvim_lsp.erlangls.setup(default)
 
 -- nvim_lsp.hls.setup({
 -- 	on_attach = on_attach,
@@ -89,6 +87,8 @@ nvim_lsp.erlangls.setup(default)
 -- 	},
 -- })
 
+nvim_lsp.erlangls.setup(default)
+nvim_lsp.pylsp.setup(default)
 nvim_lsp.rust_analyzer.setup(default)
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)

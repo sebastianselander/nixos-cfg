@@ -61,6 +61,7 @@
     pandoc
     pcmanfm
     python3
+    python312Packages.python-lsp-server
     qbittorrent
     ripgrep
     rlwrap
