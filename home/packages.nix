@@ -60,9 +60,8 @@
       onefetch
       pandoc
       pcmanfm
-      (python3.withPackages
-        (ps: with ps; [ python-lsp-server python-lsp-black ]))
-
+      (python3.withPackages (ps: with ps; [ python-lsp-black ]))
+      pyright
       qbittorrent
       ripgrep
       rlwrap

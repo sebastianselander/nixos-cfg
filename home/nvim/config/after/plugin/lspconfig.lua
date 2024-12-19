@@ -88,7 +88,7 @@ end
 -- })
 
 nvim_lsp.erlangls.setup(default)
-nvim_lsp.pylsp.setup(default)
+nvim_lsp.pyright.setup(default)
 nvim_lsp.rust_analyzer.setup(default)
 nvim_lsp.lua_ls.setup(default)
 nvim_lsp.gopls.setup(default)
