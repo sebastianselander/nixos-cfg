@@ -62,6 +62,7 @@
       pcmanfm
       (python3.withPackages (ps: with ps; [ python-lsp-black ]))
       pyright
+      texliveSmall
       qbittorrent
       ripgrep
       rlwrap
