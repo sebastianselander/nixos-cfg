@@ -61,20 +61,19 @@ telescope.setup({
 		},
 	},
 })
-telescope.load_extension("fzf")
-telescope.load_extension("hoogle")
-telescope.load_extension("frecency")
+-- telescope.load_extension("fzf")
+-- telescope.load_extension("hoogle")
+-- telescope.load_extension("frecency")
 
 local nnoremap = function(lhs, rhs)
 	vim.keymap.set("n", lhs, rhs, { noremap = true })
 end
 
-nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
-nnoremap("<leader>pf", "<cmd>Telescope aerial initial_mode=insert")
-nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert theme=ivy<CR>")
-nnoremap("<leader>ps", builtin.live_grep)
-nnoremap("<leader>pw", builtin.grep_string)
-nnoremap("<leader>b", builtin.buffers)
-nnoremap("<leader>pm", builtin.marks)
-nnoremap("<leader>pd", builtin.diagnostics)
-nnoremap('<leader>"', builtin.registers)
+-- nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
+-- nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert theme=ivy<CR>")
+-- nnoremap("<leader>ps", builtin.live_grep)
+-- nnoremap("<leader>pw", builtin.grep_string)
+-- nnoremap("<leader>b", builtin.buffers)
+-- nnoremap("<leader>pm", builtin.marks)
+-- nnoremap("<leader>pd", builtin.diagnostics)
+-- nnoremap('<leader>"', builtin.registers)
