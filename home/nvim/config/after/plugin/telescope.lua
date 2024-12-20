@@ -64,7 +64,6 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("hoogle")
 telescope.load_extension("frecency")
-telescope.load_extension("aerial")
 
 local nnoremap = function(lhs, rhs)
 	vim.keymap.set("n", lhs, rhs, { noremap = true })

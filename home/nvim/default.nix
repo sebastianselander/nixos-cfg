@@ -6,7 +6,6 @@
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      aerial-nvim
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
