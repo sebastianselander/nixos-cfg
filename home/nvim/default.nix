@@ -51,14 +51,20 @@
     ];
   };
   xdg.configFile = {
-    "nvim/after" = {
-      source = ./config/after;
-      recursive = true;
-    };
-    "nvim/init.lua".source = ./config/init.lua;
-    "nvim/snippets" = {
-      source = ./config/snippets;
+    "nvim" = {
+      source = ./config;
       recursive = true;
     };
   };
+  # xdg.configFile = {
+  #   "nvim/after" = {
+  #     source = ./config/after;
+  #     recursive = true;
+  #   };
+  #   "nvim/init.lua".source = ./config/init.lua;
+  #   "nvim/snippets" = {
+  #     source = ./config/snippets;
+  #     recursive = true;
+  #   };
+  # };
 }
