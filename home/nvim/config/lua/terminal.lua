@@ -42,12 +42,11 @@ local create_window = function(opts)
 	end
 
 	local win_config = {
-		height = 10,
+		height = math.floor(vim.o.lines * 0.25),
 		style = "minimal",
 		split = "below",
 	}
 	local win = vim.api.nvim_open_win(buf, true, win_config)
-	vim.api.nvim_win_set_height(0, 10)
 	return { win = win, buf = buf, job_id = state.job_id, task = state.task }
 end
 
@@ -76,19 +75,32 @@ local create_task = function()
 end
 
 local run_task = function()
+	if state.task == nil and state.job_id ~= -1 then
+		create_task()
+		return
+	end
 	if state.task == nil then
 		vim.notify("No task found", vim.log.levels.WARN)
 	else
 		if state.job_id == -1 then
 			vim.notify("Invaild job id", vim.log.levels.WARN)
 		else
-			vim.print(state.job_id, state.task)
 			vim.fn.chansend(state.job_id, { state.task .. "\r" })
-            scroll_to_end(state.buf)
+			scroll_to_end(state.buf)
 		end
 	end
 end
 
-vim.keymap.set({ "n", "t" }, "<leader>tt", toggle_terminal)
+local cancel_job = function()
+	if state.job_id == -1 then
+		vim.notify("Invaild job id", vim.log.levels.WARN)
+	else
+		vim.fn.chansend(state.job_id, { "\r" })
+		scroll_to_end(state.buf)
+	end
+end
+
+vim.keymap.set({ "n", "t" }, "<leader>ff", toggle_terminal)
 vim.keymap.set("n", "<leader><leader>", run_task)
-vim.keymap.set("n", "<leader>to", create_task)
+vim.keymap.set("n", "<leader>fo", create_task)
+vim.keymap.set("n", "<leader>fc", cancel_job)
