@@ -91,5 +91,5 @@
       zip
       zlib
       zlib.dev
-    ] ++ inputs.external-flakes.packages."${pkgs.system}";
+    ];
 }

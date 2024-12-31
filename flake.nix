@@ -10,8 +10,6 @@
     # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # nix flake lock --update-input external-flakes
-    external-flakes.url = "./flakes";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
