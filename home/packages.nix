@@ -6,6 +6,8 @@
       arandr
       audacity
       btop
+      bitwarden-desktop
+      bitwarden-menu
       cabal2nix
       cargo
       ccls
