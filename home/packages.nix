@@ -3,11 +3,13 @@
   home.packages = with pkgs;
     [
       (agda.withPackages [ agdaPackages.standard-library ])
+      (python3.withPackages (ps: with ps; [ python-lsp-black ]))
+      alsa-utils
       arandr
       audacity
-      btop
       bitwarden-desktop
       bitwarden-menu
+      btop
       cabal2nix
       cargo
       ccls
@@ -32,6 +34,7 @@
       ghcid
       glow
       gnumake
+      gping
       haskell-language-server
       haskellPackages.cabal-fmt
       haskellPackages.cabal-install
@@ -62,9 +65,7 @@
       onefetch
       pandoc
       pcmanfm
-      (python3.withPackages (ps: with ps; [ python-lsp-black ]))
       pyright
-      texliveSmall
       qbittorrent
       ripgrep
       rlwrap
@@ -75,6 +76,7 @@
       spotify
       spotify-player
       stylua
+      texliveSmall
       thunderbird
       tinymist
       tldr
