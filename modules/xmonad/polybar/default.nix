@@ -36,7 +36,8 @@
         };
 
         "colors" = {
-          background = "#24283b";
+          # background = "#24283b";
+          background = "#121212";
           background-alt = "#24283b";
           foreground = "#a9b1d6";
           primary = "#41a6b5";

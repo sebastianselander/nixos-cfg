@@ -30,4 +30,4 @@ require("tokyonight").setup({
 	},
 })
 
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("ashen")
