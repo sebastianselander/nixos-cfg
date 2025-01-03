@@ -75,16 +75,15 @@ local create_task = function()
 end
 
 local run_task = function()
-	if state.task == nil and state.job_id ~= -1 then
-		create_task()
-		return
-	end
 	if state.task == nil then
 		vim.notify("No task found", vim.log.levels.WARN)
 	else
 		if state.job_id == -1 then
 			vim.notify("Invaild job id", vim.log.levels.WARN)
 		else
+			if not vim.api.nvim_win_is_valid(state.win) then
+				state = create_window({ buf = state.buf, job_id = state.job_id })
+			end
 			vim.fn.chansend(state.job_id, { state.task .. "\r" })
 			scroll_to_end(state.buf)
 		end
