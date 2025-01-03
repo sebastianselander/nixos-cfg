@@ -30,4 +30,5 @@ require("tokyonight").setup({
 	},
 })
 
-vim.cmd.colorscheme("ashen")
+vim.cmd.set("background=dark")
+vim.cmd.colorscheme("tokyonight-storm")
