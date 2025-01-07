@@ -8,14 +8,21 @@ local indentscope = require("mini.indentscope")
 local diff = require("mini.diff")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
+local jump = require("mini.jump")
 
-ai.setup({})
+ai.setup()
 
-align.setup({})
+align.setup()
 
 diff.setup()
 
-icons.setup({})
+icons.setup()
+
+jump.setup({
+	delay = {
+		highlight = 0,
+	},
+})
 
 vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
 
