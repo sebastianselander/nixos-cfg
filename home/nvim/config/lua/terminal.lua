@@ -17,7 +17,6 @@ local state = {
 
 local scroll_to_end = function(bufnr)
 	local cur_win = vim.api.nvim_get_current_win()
-
 	-- switch to buf and set cursor
 	vim.api.nvim_buf_call(bufnr, function()
 		local target_win = vim.api.nvim_get_current_win()
@@ -98,8 +97,3 @@ local cancel_job = function()
 		scroll_to_end(state.buf)
 	end
 end
-
-vim.keymap.set({ "n", "t" }, "<leader>ff", toggle_terminal)
-vim.keymap.set("n", "<leader><leader>", run_task)
-vim.keymap.set("n", "<leader>fo", create_task)
-vim.keymap.set("n", "<leader>fc", cancel_job)
