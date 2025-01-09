@@ -9,6 +9,9 @@ local diff = require("mini.diff")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
 local jump = require("mini.jump")
+local pairs = require"mini.pairs"
+
+pairs.setup()
 
 ai.setup()
 
