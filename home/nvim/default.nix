@@ -55,6 +55,7 @@
       todo-comments-nvim
       tokyonight-nvim
       trouble-nvim
+      toggleterm-nvim
       twilight-nvim
       undotree
       vim-slime
