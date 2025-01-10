@@ -58,7 +58,6 @@
       toggleterm-nvim
       twilight-nvim
       undotree
-      vim-slime
       vimtex
     ];
   };
