@@ -7,6 +7,10 @@ vim.keymap.set("n", "<leader>ff", function()
 	toggleterm.toggle(1)
 end)
 
+vim.keymap.set("v", "<C-c>", function()
+	toggleterm.send_lines_to_terminal("visual_selection", true, {})
+end)
+
 local repl_command = function(cmd)
 	return Terminal:new({ count = 999, cmd = cmd, hidden = true })
 end
@@ -31,7 +35,7 @@ local config = {
 		local repl = repl_command(haskell_cmd)
 		if repl:is_open() then
 			repl:send(":r", true)
-            repl:clear()
+			repl:clear()
 			repl:focus()
 		else
 			repl:open()
