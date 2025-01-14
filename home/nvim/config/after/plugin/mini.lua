@@ -8,10 +8,11 @@ local indentscope = require("mini.indentscope")
 local diff = require("mini.diff")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
-local jump = require("mini.jump")
-local pairs = require"mini.pairs"
+local pairs = require("mini.pairs")
+local notify = require("mini.notify")
 
 pairs.setup()
+notify.setup()
 
 ai.setup()
 
@@ -20,12 +21,6 @@ align.setup()
 diff.setup()
 
 icons.setup()
-
-jump.setup({
-	delay = {
-		highlight = 0,
-	},
-})
 
 vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
 
@@ -50,7 +45,6 @@ surround.setup({
 	search_method = "cover_or_next",
 })
 
--- To mimic tpope's
 vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
 splitjoin.setup({
