@@ -14,6 +14,7 @@
       cargo
       ccls
       chromium
+      clangd
       clippy
       cloc
       cron

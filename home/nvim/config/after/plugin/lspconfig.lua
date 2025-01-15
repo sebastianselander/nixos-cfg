@@ -96,6 +96,7 @@ nvim_lsp.marksman.setup(default)
 nvim_lsp.ccls.setup(default)
 nvim_lsp.nil_ls.setup(default)
 nvim_lsp.tinymist.setup(union(default, { offset_encoding = "utf-8" }))
+nvim_lsp.clangd.setup(default)
 
 nvim_lsp.dafny.setup(default)
 
