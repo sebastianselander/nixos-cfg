@@ -14,7 +14,8 @@
       cargo
       ccls
       chromium
-      clangd
+      clang-tools
+      clang
       clippy
       cloc
       cron
@@ -30,7 +31,6 @@
       file
       firefox
       fzf
-      gcc
       ghc
       ghcid
       glow
