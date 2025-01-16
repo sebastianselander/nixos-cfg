@@ -45,6 +45,8 @@
       oil-nvim
       overseer-nvim
       plenary-nvim
+      nvim-dap
+      nvim-dap-ui
       tabby-nvim
       telescope-frecency-nvim
       telescope-fzf-native-nvim
