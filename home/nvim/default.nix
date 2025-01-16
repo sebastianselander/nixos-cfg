@@ -57,6 +57,7 @@
       trouble-nvim
       toggleterm-nvim
       twilight-nvim
+      hop-nvim
       undotree
       vimtex
     ];
