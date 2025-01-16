@@ -33,7 +33,6 @@
       lean-nvim
       lualine-nvim
       luasnip
-      markview-nvim
       mini-nvim
       neodev-nvim
       neovim-ayu
