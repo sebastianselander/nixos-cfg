@@ -57,8 +57,8 @@
       tokyonight-nvim
       trouble-nvim
       toggleterm-nvim
-      twilight-nvim
       hop-nvim
+      snacks-nvim
       undotree
       vimtex
     ];
