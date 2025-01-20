@@ -1,18 +1,5 @@
 local conform = require("conform")
 
-conform.toggle_autoformat = function()
-	vim.g.disable_autoformat = not vim.g.disable_autoformat
-	local is_disabled = function()
-		if vim.g.disable_autoformat then
-			return "OFF"
-		else
-            vim.g.disable_autoformat = false
-			return "ON"
-		end
-	end
-	vim.notify("Auto format: " .. is_disabled(), vim.log.levels.WARN)
-end
-
 conform.setup({
 	format_on_save = function(bufnr)
 		-- Disable with a global or buffer-local variable
@@ -42,10 +29,10 @@ conform.setup({
 		nix = { "nixfmt" },
 		python = { "black" },
 		c = { "clang_format" },
+		cpp = { "clang_format" },
 		erlang = { "erlfmt" },
 		["*"] = { "trim_whitespace" },
 	},
 })
 
 vim.keymap.set("n", "<leader>cf", conform.format)
-vim.keymap.set("n", "<leader>cc", conform.toggle_autoformat)
