@@ -59,6 +59,7 @@
       toggleterm-nvim
       hop-nvim
       snacks-nvim
+      typst-preview-nvim
       undotree
       vimtex
     ];
