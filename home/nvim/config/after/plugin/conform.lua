@@ -35,4 +35,4 @@ conform.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>cf", conform.format)
+vim.keymap.set("n", "<leader>cf", conform.format, {desc = "Format buffer"})

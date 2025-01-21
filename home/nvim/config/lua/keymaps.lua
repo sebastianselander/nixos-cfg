@@ -2,8 +2,12 @@ local vmap = function(from, to)
 	vim.keymap.set("v", from, to)
 end
 
-local nmap = function(from, to)
-	vim.keymap.set("n", from, to)
+local nmap = function(from, to, desc)
+	if desc ~= nil then
+		vim.keymap.set("n", from, to, { desc = desc })
+	else
+		vim.keymap.set("n", from, to)
+	end
 end
 
 vim.g.mapleader = " "
@@ -50,17 +54,7 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
-nmap("gX", vim.ui.open) -- gx is taken by mini.operators
-
-local remove_text_on_line = function()
-	local remove = vim.fn.input("Remove: ")
-	if remove ~= "" and remove ~= nil then
-		vim.cmd(":s/" .. remove .. "//g")
-		vim.cmd(":noh")
-	end
-end
-
-nmap("<leader>sd", remove_text_on_line)
+vim.keymap.set("n", "gX", "gx", {desc = "Open filepath or url under cursor", noremap = true}) -- gx is taken by mini.operators
 
 local sub_under_cursor = function(modifier)
 	modifier = modifier or ""
@@ -74,16 +68,11 @@ local sub_under_cursor = function(modifier)
 		vim.cmd("norm `zzz")
 	end
 end
-
-nmap("<leader>sl", function()
-	sub_under_cursor()
-end)
-
 nmap("<leader>ss", function()
 	sub_under_cursor("%")
-end)
+end, "Remove word under cursor")
 
-nmap("<leader>w", "<Cmd>w<CR>")
+nmap("<leader>w", "<Cmd>w<CR>", "Write file")
 
 vmap(".", ":norm .<CR>")
 
