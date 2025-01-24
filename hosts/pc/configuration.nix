@@ -36,6 +36,7 @@
 
   environment.systemPackages = with pkgs; [
     lm_sensors
+    geckodriver
     lutris
     wineWowPackages.staging
     wine64
