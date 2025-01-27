@@ -32,7 +32,6 @@
       monaspace
       font-awesome
       hack-font
-      corefonts
       vistafonts
     ] ++ (builtins.filter pkgs.lib.isDerivation
       (builtins.attrValues pkgs.nerd-fonts));
