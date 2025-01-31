@@ -19,7 +19,6 @@ telescope.setup({
 		},
 	},
 	defaults = {
-		theme = "ivy",
 		prompt_prefix = "> ",
 		initial_mode = "normal",
 	},
@@ -61,19 +60,16 @@ telescope.setup({
 		},
 	},
 })
--- telescope.load_extension("fzf")
--- telescope.load_extension("hoogle")
--- telescope.load_extension("frecency")
+telescope.load_extension("fzf")
+telescope.load_extension("hoogle")
+telescope.load_extension("frecency")
 
-local nnoremap = function(lhs, rhs)
-	vim.keymap.set("n", lhs, rhs, { noremap = true })
-end
-
--- nnoremap("<leader>ph", "<cmd>Telescope hoogle initial_mode=insert theme=ivy<CR>")
--- nnoremap("<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert theme=ivy<CR>")
--- nnoremap("<leader>ps", builtin.live_grep)
--- nnoremap("<leader>pw", builtin.grep_string)
--- nnoremap("<leader>b", builtin.buffers)
--- nnoremap("<leader>pm", builtin.marks)
--- nnoremap("<leader>pd", builtin.diagnostics)
--- nnoremap('<leader>"', builtin.registers)
+vim.keymap.set("n", "<leader>ph", "<cmd>Telescope hoogle initial_mode=insert <CR>")
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert <CR>")
+vim.keymap.set("n", "<leader>ps", builtin.live_grep)
+vim.keymap.set("n", "<leader>pw", builtin.grep_string)
+vim.keymap.set("n", "<leader>b", builtin.buffers)
+vim.keymap.set("n", "<leader>pm", builtin.marks)
+vim.keymap.set("n", "<leader>pd", builtin.diagnostics)
+vim.keymap.set("n", '<leader>"', builtin.registers)
+vim.keymap.set("n", "<F1>", builtin.help_tags)
