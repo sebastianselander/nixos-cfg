@@ -43,7 +43,6 @@ vim.keymap.set("n", "y", function()
 	return "y"
 end, { expr = true })
 
-nmap("Y", "yg_")
 -- Windows.
 nmap("<A-l>", "<C-w>l")
 nmap("<A-h>", "<C-w>h")
