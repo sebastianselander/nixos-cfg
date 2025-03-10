@@ -21,28 +21,6 @@ nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("<C-s>", "<cmd>w<CR>")
 
--- Unfortunately as the autocmd and keymaps share state they have to be in the
--- same file
-local cursorPreYank
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		if vim.v.event.operator == "y" and cursorPreYank then
-			vim.api.nvim_win_set_cursor(0, cursorPreYank)
-		end
-	end,
-})
-
-vim.keymap.set("n", "Y", function()
-	cursorPreYank = vim.api.nvim_win_get_cursor(0)
-	return "yg_"
-end, { expr = true })
-
-vim.keymap.set("n", "y", function()
-	cursorPreYank = vim.api.nvim_win_get_cursor(0)
-	return "y"
-end, { expr = true })
-
 -- Windows.
 nmap("<A-l>", "<C-w>l")
 nmap("<A-h>", "<C-w>h")
