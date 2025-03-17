@@ -49,7 +49,6 @@ telescope.setup({
 			sort_mru = true,
 			sort_lastused = true,
 			ignore_current_buffer = true,
-            theme = "ivy",
 			previewer = true,
 			path_display = { "smart" },
 			mappings = {
