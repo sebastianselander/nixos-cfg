@@ -6,7 +6,12 @@ snacks.setup({
 	zen = { enabled = true },
 	input = { enabled = true },
 	gitbrowse = { enabled = true },
-    image = { enabled = true },
+	image = {
+        doc = {
+            inline = false,
+        },
+		enabled = false,
+	},
 	-- picker = {
 	-- 	main = {
 	-- 		current = true,
