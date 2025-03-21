@@ -34,7 +34,6 @@
       lualine-nvim
       luasnip
       mini-nvim
-      which-key-nvim
       neodev-nvim
       neovim-ayu
       nightfox-nvim
