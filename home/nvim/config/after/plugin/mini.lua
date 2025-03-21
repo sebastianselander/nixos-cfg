@@ -5,7 +5,6 @@ local move = require("mini.move")
 local surround = require("mini.surround")
 local hipatterns = require("mini.hipatterns")
 local indentscope = require("mini.indentscope")
-local diff = require("mini.diff")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
 local pairs = require("mini.pairs")
@@ -18,11 +17,7 @@ ai.setup()
 
 align.setup()
 
-diff.setup()
-
 icons.setup()
-
-vim.keymap.set("n", "<leader>md", diff.toggle_overlay)
 
 indentscope.setup({
 	draw = {
