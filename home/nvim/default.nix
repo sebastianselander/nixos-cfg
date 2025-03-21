@@ -28,6 +28,7 @@
       diffview-nvim
       dressing-nvim
       fzf-lua
+      gitsigns-nvim
       harpoon2
       haskell-tools-nvim
       lean-nvim
