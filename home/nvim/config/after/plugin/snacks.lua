@@ -20,6 +20,8 @@ snacks.setup({
 	-- },
 })
 
+vim.api.nvim_create_user_command("Gitbrowse", function() snacks.gitbrowse() end, {})
+
 vim.keymap.set("n", "<leader>zz", function()
 	snacks.zen()
 end)
