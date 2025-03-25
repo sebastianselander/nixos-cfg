@@ -46,6 +46,7 @@
       plenary-nvim
       nvim-dap
       nvim-dap-ui
+      nightfly
       tabby-nvim
       telescope-frecency-nvim
       telescope-fzf-native-nvim
