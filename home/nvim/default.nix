@@ -16,7 +16,6 @@
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      ashen-nvim
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
@@ -44,7 +43,6 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim
-      overseer-nvim
       plenary-nvim
       nvim-dap
       nvim-dap-ui
