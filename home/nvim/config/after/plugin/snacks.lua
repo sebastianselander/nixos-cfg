@@ -7,11 +7,12 @@ snacks.setup({
 	input = { enabled = true },
 	gitbrowse = { enabled = true },
 	image = {
-        doc = {
-            inline = false,
-        },
+		doc = {
+			inline = false,
+		},
 		enabled = false,
 	},
+	explorer = { enabled = true },
 	-- picker = {
 	-- 	main = {
 	-- 		current = true,
@@ -20,7 +21,14 @@ snacks.setup({
 	-- },
 })
 
-vim.api.nvim_create_user_command("Gitbrowse", function() snacks.gitbrowse() end, {})
+
+vim.api.nvim_create_user_command("Explore", function()
+	snacks.explorer()
+end, {})
+
+vim.api.nvim_create_user_command("Gitbrowse", function()
+	snacks.gitbrowse()
+end, {})
 
 vim.keymap.set("n", "<leader>zz", function()
 	snacks.zen()
