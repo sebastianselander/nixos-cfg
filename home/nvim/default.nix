@@ -61,6 +61,7 @@
       typst-preview-nvim
       undotree
       vimtex
+      quicker-nvim
     ];
   };
   xdg.configFile = {
