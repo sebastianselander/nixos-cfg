@@ -1,7 +1,7 @@
 local g = vim.g
 local o = vim.o
 
-o.cmdheight = 1
+o.cmdheight = 0
 
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
@@ -42,3 +42,8 @@ vim.opt.smartcase = true
 vim.opt.timeoutlen = 400
 vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
+
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
