@@ -43,7 +43,6 @@ vim.opt.timeoutlen = 400
 vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
 
-vim.o.foldcolumn = "1"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
