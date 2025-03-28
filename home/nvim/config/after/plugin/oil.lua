@@ -28,7 +28,7 @@ require("oil").setup({
 	-- Restore window options to previous values when leaving an oil buffer
 	restore_win_options = true,
 	-- Skip the confirmation popup for simple operations
-	skip_confirm_for_simple_edits = false,
+	skip_confirm_for_simple_edits = true,
 	-- Deleted files will be removed with the trash_command (below).
 	delete_to_trash = true,
 	-- Selecting a new/moved/renamed file or directory will prompt you to save changes first
