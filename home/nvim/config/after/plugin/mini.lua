@@ -7,10 +7,8 @@ local hipatterns = require("mini.hipatterns")
 local indentscope = require("mini.indentscope")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
-local pairs = require("mini.pairs")
 local notify = require("mini.notify")
 
-pairs.setup()
 notify.setup()
 
 ai.setup()
