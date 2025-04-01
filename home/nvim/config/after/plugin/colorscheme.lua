@@ -1,11 +1,20 @@
 require("tokyonight").setup({
-	on_colors = function(colors) 
-        -- colors.fg_gutter = "#5b638d"
+	terminal_colors = true,
+	day_brightness = 0.3,
+	dim_inactive = false,
+	lualine_bold = true,
+	cache = true,
+	plugins = {
+		all = true,
+		auto = true,
+	},
+	on_colors = function(colors)
+		-- colors.fg_gutter = "#5b638d"
 
-        -- default is:
-        colors.fg_gutter = "#3b4261"
-    end,
-	on_highlights = function(highlights, colors) end,
+		-- default is:
+		colors.fg_gutter = "#3b4261"
+	end,
+	on_highlights = function(_, _) end,
 	style = "storm",
 	light_style = "day",
 	transparent = false,
@@ -31,4 +40,4 @@ require("tokyonight").setup({
 })
 
 vim.cmd.set("background=dark")
-vim.cmd.colorscheme("nightfly")
+vim.cmd.colorscheme("tokyonight")
