@@ -73,8 +73,11 @@ operators.setup({
 	sort = {
 		prefix = "",
 	},
+    replace = {
+        prefix = "",
+    },
 })
 
-vim.api.nvim_create_user_command("NotifyHistory", function() 
+vim.api.nvim_create_user_command("NotifyHistory", function()
     notify.show_history()
 end, {})
