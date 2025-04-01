@@ -43,11 +43,6 @@ local default = {
 	capabilities = capabilities,
 }
 
-require("lean").setup({
-	lsp = default,
-	mappings = true,
-})
-
 local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
 end

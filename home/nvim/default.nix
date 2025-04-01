@@ -28,14 +28,11 @@
       dressing-nvim
       fzf-lua
       gitsigns-nvim
-      harpoon2
       haskell-tools-nvim
-      lean-nvim
       lualine-nvim
       luasnip
       mini-nvim
       neodev-nvim
-      neovim-ayu
       nightfox-nvim
       nvim-cmp
       nvim-lint
@@ -44,8 +41,6 @@
       nvim-treesitter.withAllGrammars
       oil-nvim
       plenary-nvim
-      nvim-dap
-      nvim-dap-ui
       nightfly
       tabby-nvim
       telescope-frecency-nvim
