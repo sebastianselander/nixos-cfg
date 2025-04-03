@@ -32,10 +32,6 @@ nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
 
--- Tabs
-nmap("<TAB>", "gt")
-nmap("<S-TAB>", "gT")
-
 vim.keymap.set("n", "gX", "gx", {desc = "Open filepath or url under cursor", noremap = true}) -- gx is taken by mini.operators
 
 local sub_under_cursor = function(modifier)
