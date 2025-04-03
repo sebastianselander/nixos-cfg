@@ -20,6 +20,7 @@ nmap("<C-u>", "<C-u>zz")
 nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("<C-s>", "<cmd>w<CR>")
+nmap("<CR>", ":write<CR>")
 
 -- Windows.
 nmap("<A-l>", "<C-w>l")
@@ -30,6 +31,10 @@ nmap("<A-w>", "<C-w>+")
 nmap("<A-s>", "<C-w>-")
 nmap("<A-a>", "<C-w>>")
 nmap("<A-d>", "<C-w><")
+
+-- Tabs
+nmap("<TAB>", "gt")
+nmap("<S-TAB>", "gT")
 
 vim.keymap.set("n", "gX", "gx", {desc = "Open filepath or url under cursor", noremap = true}) -- gx is taken by mini.operators
 
