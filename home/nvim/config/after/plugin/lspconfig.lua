@@ -18,7 +18,13 @@ require("neodev").setup({
 })
 
 local nvim_lsp = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local default_capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities(default_capabilities)
+
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
 
 local on_attach = function(_, _)
 	local opts = { noremap = true, silent = true, buffer = 0 }
