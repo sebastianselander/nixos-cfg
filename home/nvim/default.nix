@@ -24,6 +24,7 @@
       cmp-path
       cmp_luasnip
       conform-nvim
+      harpoon2
       diffview-nvim
       dressing-nvim
       fzf-lua
