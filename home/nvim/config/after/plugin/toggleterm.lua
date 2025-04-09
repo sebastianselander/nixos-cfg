@@ -1,7 +1,12 @@
 local toggleterm = require("toggleterm")
 local Terminal = require("toggleterm.terminal").Terminal
 
-toggleterm.setup({ start_in_insert = true })
+toggleterm.setup({
+	start_in_insert = true,
+	shade_terminals = false,
+    shading_factor = 0,
+    shading_ratio = 0,
+})
 
 vim.keymap.set("n", "<leader>ff", function()
 	toggleterm.toggle(1)
@@ -24,9 +29,9 @@ local config = {
 			python_cmd = "python3 -i " .. vim.fn.expand("%")
 		end
 		local repl = repl_command(python_cmd)
-        repl:shutdown()
-        repl = repl_command(python_cmd)
-        repl:open()
+		repl:shutdown()
+		repl = repl_command(python_cmd)
+		repl:open()
 	end,
 	haskell = function()
 		if haskell_cmd == nil then
