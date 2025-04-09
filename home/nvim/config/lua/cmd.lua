@@ -110,17 +110,18 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 	end,
 })
 
-
 local reverse = function(line1, line2, no_range)
-    if no_range then
-        return
-    end
-    local lines = vim.api.nvim_buf_get_lines(0, line1-1, line2, false)
-    local reversed = {}
-    for i=1, #lines do
-        reversed[#lines-i+1] = lines[i]
-    end
-    vim.api.nvim_buf_set_lines(0, math.max(line1-1,0), line2, false, reversed)
+	if no_range then
+		return
+	end
+	local lines = vim.api.nvim_buf_get_lines(0, line1 - 1, line2, false)
+	local reversed = {}
+	for i = 1, #lines do
+		reversed[#lines - i + 1] = lines[i]
+	end
+	vim.api.nvim_buf_set_lines(0, math.max(line1 - 1, 0), line2, false, reversed)
 end
 
-vim.api.nvim_create_user_command("Reverse", function(opts) reverse(opts.line1, opts.line2, opts.range == 0) end, {range = true})
+vim.api.nvim_create_user_command("Reverse", function(opts)
+	reverse(opts.line1, opts.line2, opts.range == 0)
+end, { range = true })
