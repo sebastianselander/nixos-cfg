@@ -4,7 +4,7 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<leader>hh", function()
+vim.keymap.set("n", "<leader>he", function()
 	local ui = harpoon.ui
 	ui:toggle_quick_menu(harpoon:list())
 	local bufnr = ui.bufnr
