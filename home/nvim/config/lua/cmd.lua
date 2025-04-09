@@ -11,13 +11,16 @@ vim.cmd("cnoreabbrev Set set")
 vim.cmd("cnoreabbrev SEt set")
 vim.cmd("cnoreabbrev SET set")
 
--- Highlight yank
-vim.cmd([[
-  augroup highlight_yank
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=300 }
-  augroup END
-]])
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
+		if vim.v.event.operator == "y" then
+			for i = 9, 1, -1 do
+				vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
+			end
+		end
+	end,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	desc = "Change some formatoptions",
