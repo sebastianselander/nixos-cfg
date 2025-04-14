@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 
 local config = {
-  font             = wezterm.font { family = 'Monaspace Neon' },
+  font             = wezterm.font { family = 'JetBrainsMono Nerd Font' },
   font_size        = 13,
   color_scheme     = 'tokyonight_night',
   scrollback_lines = 10000,
@@ -12,7 +12,7 @@ local config = {
       intensity = 'Bold',
       italic = false,
       font = wezterm.font {
-        family = 'Monaspace Krypton',
+        family = 'JetBrainsMono Nerd Font',
         weight = 'Bold',
       }
     },
