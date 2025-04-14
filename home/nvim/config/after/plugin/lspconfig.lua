@@ -29,16 +29,26 @@ capabilities.textDocument.foldingRange = {
 local on_attach = function(_, _)
 	local opts = { noremap = true, silent = true, buffer = 0 }
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "K", function()
+		vim.lsp.buf.hover({ border = "single" })
+	end, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 	vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
-	vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts)
-	vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, opts)
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+	vim.keymap.set("n", "<C-k>", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, opts)
+	vim.keymap.set("n", "<C-j>", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, opts)
+	vim.keymap.set("n", "[d", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, opts)
+	vim.keymap.set("n", "]d", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, opts)
 	vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 	vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, opts)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
@@ -101,15 +111,10 @@ nvim_lsp.clangd.setup(default)
 
 nvim_lsp.dafny.setup(default)
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.diagnostic.config({
 	virtual_text = false,
 	signs = true,
 	update_in_insert = false,
 	underline = true,
-	border = "single",
 	severity_sort = true,
-})
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "single",
 })
