@@ -31,6 +31,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.SubLayouts
 
 -- actions
 
@@ -161,7 +162,7 @@ tabs = renamed [Replace "Tabbed"] . mySpacing (myGaps `div` 2) $ tabbed shrinkTe
 
 myLayout = avoidStruts $ smartBorders myDefaultLayout
   where
-    myDefaultLayout = fullTog tall ||| fullTog wide ||| tabs
+    myDefaultLayout = fullTog (tall ||| tabs {- ||| fullTog wide -})
       where
         fullTog l = toggleLayouts full l
 
