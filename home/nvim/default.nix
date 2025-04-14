@@ -26,7 +26,6 @@
       conform-nvim
       harpoon2
       diffview-nvim
-      dressing-nvim
       fzf-lua
       gitsigns-nvim
       haskell-tools-nvim
