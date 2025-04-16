@@ -22,7 +22,7 @@ conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		cabal = { "cabal_fmt" },
-		-- haskell = { "fourmolu" },
+		haskell = { "fourmolu" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
 		typst = { "typstyle" },
