@@ -31,6 +31,7 @@
       haskell-tools-nvim
       lualine-nvim
       luasnip
+      vscode-nvim
       mini-nvim
       neodev-nvim
       nightfox-nvim
