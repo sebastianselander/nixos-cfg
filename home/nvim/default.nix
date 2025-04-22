@@ -24,41 +24,41 @@
       cmp-path
       cmp_luasnip
       conform-nvim
-      harpoon2
       diffview-nvim
       fzf-lua
       gitsigns-nvim
+      harpoon2
       haskell-tools-nvim
       lualine-nvim
       luasnip
-      vscode-nvim
       mini-nvim
       neodev-nvim
+      nightfly
       nightfox-nvim
       nvim-cmp
       nvim-lint
-      vim-abolish
-      tiny-inline-diagnostic-nvim
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim
       plenary-nvim
-      nightfly
+      quicker-nvim
+      snacks-nvim
       tabby-nvim
       telescope-frecency-nvim
       telescope-fzf-native-nvim
       telescope-nvim
       telescope_hoogle
+      tiny-inline-diagnostic-nvim
       tmux-nvim
       todo-comments-nvim
+      toggleterm-nvim
       tokyonight-nvim
       trouble-nvim
-      toggleterm-nvim
-      snacks-nvim
       typst-preview-nvim
       undotree
+      vim-abolish
       vimtex
-      quicker-nvim
+      vscode-nvim
     ];
   };
   xdg.configFile = {
