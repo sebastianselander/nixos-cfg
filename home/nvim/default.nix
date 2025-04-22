@@ -37,6 +37,7 @@
       nightfox-nvim
       nvim-cmp
       nvim-lint
+      vim-abolish
       tiny-inline-diagnostic-nvim
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
