@@ -54,6 +54,8 @@ local on_attach = function(_, _)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 end
 
+vim.diagnostic.config({ float = { border = "rounded" } })
+
 local default = {
 	on_attach = on_attach,
 	capabilities = capabilities,
