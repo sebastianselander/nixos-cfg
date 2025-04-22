@@ -8,6 +8,9 @@
     extraConfig = {
       branch.sort = "-committerdate";
       commit.verbose = true;
+      gpg.format = "ssh";
+      user.signingKey = "/home/sebastian/.ssh/id_ed25519.pub";
+      commit.gpgSign = true;
       diff = {
         algorithm = "histogram";
         colorMoved = "plain";
