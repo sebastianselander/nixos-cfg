@@ -1,8 +1,11 @@
 local wezterm = require("wezterm")
 
+
 local config = {
 	font = wezterm.font({ family = "FiraCode Nerd Font" }),
 	font_size = 13,
+    font_ligatures = false,
+    harfbuzz_features = { 'calt=0' },
     -- color_scheme = "tokyonight_storm",
     color_scheme = "Vs Code Light+ (Gogh)",
 	scrollback_lines = 10000,
