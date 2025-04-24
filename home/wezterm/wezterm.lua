@@ -1,9 +1,10 @@
 local wezterm = require("wezterm")
 
 local config = {
-  color_scheme     = 'tokyonight_night',
 	font = wezterm.font({ family = "FiraCode Nerd Font" }),
 	font_size = 13,
+    -- color_scheme = "tokyonight_storm",
+    color_scheme = "Vs Code Light+ (Gogh)",
 	scrollback_lines = 10000,
 	enable_tab_bar = false,
 	audible_bell = "Disabled",
