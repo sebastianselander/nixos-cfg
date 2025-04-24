@@ -66,13 +66,11 @@ myFocusFollowsMouse = False
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 myGaps :: Integer
-myGaps = 6
+myGaps = 5
 myTerminal :: String
-myTerminal = "kitty"
+myTerminal = "wezterm"
 myBrowser :: String
 myBrowser = "firefox"
-myFont :: String
-myFont = "xft:Victor Mono:size=11:SemiBold:antialias=true"
 
 ---------------------------------------------------------------------------------------------------
 -- HOOKS
@@ -87,6 +85,8 @@ myStartupHook = do
     spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
+    spawnOn "1" myTerminal
+    spawnOn "2" myBrowser
     spawnOn "8" "discord"
     spawnOn "9" "thunderbird"
 
