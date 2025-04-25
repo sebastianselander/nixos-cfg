@@ -21,7 +21,7 @@
       gc = "echo \"Collecting garbage\"; sudo nix-collect-garbage -d --quiet 2> /dev/null; nix-collect-garbage -d --quiet 2> /dev/null";
 
     };
-    initExtra = ''
+    initContent = ''
       bindkey -v
       KEYTIMEOUT=1
       export DIRENV_LOG_FORMAT=
