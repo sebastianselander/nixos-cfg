@@ -68,7 +68,7 @@ myClickJustFocuses = False
 myGaps :: Integer
 myGaps = 5
 myTerminal :: String
-myTerminal = "wezterm"
+myTerminal = "kitty"
 myBrowser :: String
 myBrowser = "firefox"
 
