@@ -85,8 +85,6 @@ myStartupHook = do
     spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
-    spawnOn "1" myTerminal
-    spawnOn "2" myBrowser
     spawnOn "8" "discord"
     spawnOn "9" "thunderbird"
 
