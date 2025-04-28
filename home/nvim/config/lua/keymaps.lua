@@ -12,15 +12,24 @@ end
 
 vim.g.mapleader = " "
 
+local join = function ()
+    local count = math.max(vim.v.count, 1)
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    vim.cmd("join" .. count)
+    vim.api.nvim_win_set_cursor(0, cursor)
+end
+
 nmap("<space>", "<Nop>")
 nmap("<esc>", vim.cmd.noh)
-nmap("J", "mzJ`zdmz")
+nmap("J", join)
 nmap("<C-d>", "<C-d>zz")
 nmap("<C-u>", "<C-u>zz")
 nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
 nmap("<C-s>", "<cmd>w<CR>")
-nmap("<CR>", ":write<CR>")
+nmap("<CR>", "<cmd>write<CR>")
+nmap("<leader>y", '"+y')
+nmap("gyy", "yygccp")
 
 -- Windows.
 nmap("<A-l>", "<C-w>l")
