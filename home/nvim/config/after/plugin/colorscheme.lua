@@ -40,4 +40,4 @@ require("tokyonight").setup({
 })
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("tokyonight-storm")
+vim.cmd.colorscheme("catppuccin-macchiato")
