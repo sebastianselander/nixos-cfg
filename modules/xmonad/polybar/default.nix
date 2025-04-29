@@ -3,7 +3,19 @@
     polybar = {
       enable = true;
       package = pkgs.polybar.override { };
-      config = {
+      config = let colors = {
+          background = "#000000";
+          # background = "#24283b";
+          # background = "#121212";
+          background-alt = "#24283b";
+          foreground = "#a9b1d6";
+          # primary = "#41a6b5";
+          primary = "#FFFFFF";
+          secondary = "#8ABEB7";
+          alert = "#A54242";
+          disabled = "#707880";
+      };
+      in {
         "bar/xmonadbar" = {
           width = "100%";
           height = "22pt";
@@ -35,16 +47,7 @@
           font-3 = "JuliaMono,JuliaMono Latin:style=BoldLatin,Bold";
         };
 
-        "colors" = {
-          background = "#24283b";
-          # background = "#121212";
-          background-alt = "#24283b";
-          foreground = "#a9b1d6";
-          primary = "#41a6b5";
-          secondary = "#8ABEB7";
-          alert = "#A54242";
-          disabled = "#707880";
-        };
+        "colors" = colors;
         "module/xmonad" = {
           type = "custom/script";
           exec = "xmonad-log";
@@ -57,7 +60,7 @@
           date-alt = "%a %Y-%m-%d %H:%M:%S";
 
           label = "%date%";
-          label-foreground = "\${colors.primary}";
+          label-foreground = colors.primary;
         };
         "module/battery" = {
           type = "internal/battery";
@@ -68,8 +71,8 @@
           poll-interval = 5;
           format-charging = "<label-charging>";
           format-discharging = "<label-discharging>";
-          label-charging = "%{F#41a6b5}CHARGING%{F-} %percentage%%";
-          label-discharging = "%{F#41a6b5}BAT%{F-} %percentage%%";
+          label-charging = "%{F${colors.primary}}CHARGING%{F-} %percentage%%";
+          label-discharging = "%{F${colors.primary}}BAT%{F-} %percentage%%";
           label-full = "BAT FULL";
           label-low = "BAT %percentage%%";
         };
@@ -94,7 +97,7 @@
           type = "internal/memory";
           interval = 3;
           format-prefix = "RAM ";
-          format-prefix-foreground = "\${colors.primary}";
+          format-prefix-foreground = colors.primary;
           label = "%percentage_used:2%%";
         };
         "module/xkeyboard" = { type = "internal/xkeyboard"; };
