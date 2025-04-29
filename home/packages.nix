@@ -14,8 +14,7 @@
       cargo
       ccls
       chromium
-      clang-tools
-      clang
+      gcc
       clippy
       cloc
       cron
