@@ -43,8 +43,11 @@
     blueman.enable = true;
   };
 
-  programs.slock.enable = true;
-  programs.nm-applet.enable = true;
+  programs = {
+    slock.enable = true;
+    nm-applet.enable = true;
+    i3lock.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     xmonad-log
