@@ -23,7 +23,13 @@
 
         steam-hardware.enable = true;
     };
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services = {
+      xserver.videoDrivers = [ "nvidia" ];
+      udev.extraRules = '' 
+        SUBSYSTEM=="usb", ATTR{idVendor}=="8087", ATTR{idProduct}=="0026", ATTR{authorized}="0"
+      '';
+
+    };
     programs = {
       steam.enable = true;
       steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
