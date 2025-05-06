@@ -14,6 +14,9 @@ vim.g.mapleader = " "
 
 local join = function ()
     local count = math.max(vim.v.count, 1)
+    if count > 1 then
+        count = count + 1
+    end
     local cursor = vim.api.nvim_win_get_cursor(0)
     vim.cmd("join" .. count)
     vim.api.nvim_win_set_cursor(0, cursor)
