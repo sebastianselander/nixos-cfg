@@ -39,5 +39,20 @@ require("tokyonight").setup({
 	},
 })
 
-vim.o.background = "dark"
-vim.cmd.colorscheme("catppuccin-macchiato")
+local background = "dark"
+local colorscheme_dark = "catppuccin-macchiato"
+local colorscheme_light = "vscode"
+
+vim.o.background = background
+vim.cmd.colorscheme(colorscheme_dark)
+
+vim.api.nvim_create_user_command("ColorToggle", function()
+	local bg = vim.o.background
+    if bg == "light" then
+        vim.o.background = "dark"
+        vim.cmd.colorscheme(colorscheme_dark)
+    else
+        vim.o.background = "light"
+        vim.cmd.colorscheme(colorscheme_light)
+    end
+end, {})
