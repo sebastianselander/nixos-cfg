@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.direnv = {
+    silent = true;
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
