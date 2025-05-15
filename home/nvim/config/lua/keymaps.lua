@@ -29,7 +29,6 @@ nmap("<C-d>", "<C-d>zz")
 nmap("<C-u>", "<C-u>zz")
 nmap("N", "Nzzzv")
 nmap("n", "nzzzv")
-nmap("<C-s>", "<cmd>w<CR>")
 nmap("<leader>y", '"+y')
 nmap("gyy", "yygccp")
 
