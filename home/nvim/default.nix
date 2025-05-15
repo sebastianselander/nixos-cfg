@@ -1,16 +1,4 @@
-{ pkgs, ... }:
-
-  let ashen-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "ashen.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "ficcdaf";
-      repo = "ashen.nvim";
-      rev = "b0ddf13ff5fcc20f3c78aaf7a28e68b3923224e2";
-      hash = "sha256-0u4JsPSQKaSKh01Mh8LNj7DF1pT+Z3WEASjmhDT+p88=";
-    };
-  };
-  in
-{
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -25,6 +13,7 @@
       cmp_luasnip
       conform-nvim
       diffview-nvim
+      flash-nvim
       fzf-lua
       gitsigns-nvim
       harpoon2
