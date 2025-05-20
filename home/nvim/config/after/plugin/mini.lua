@@ -11,8 +11,37 @@ local notify = require("mini.notify")
 
 notify.setup()
 
-ai.setup()
+ai.setup({
+	custom_textobjects = {
+		m = {
+			{
+				-- Matches a single uppercase letter followed by 1+ lowercase letters.
+				-- This covers:
+				-- - PascalCaseWords (or the latter part of camelCaseWords)
+				"%u[%l%d]+%f[^%l%d]", -- An uppercase letter, 1+ lowercase letters, to end of lowercase letters
 
+				-- Matches lowercase letters up until not lowercase letter.
+				-- This covers:
+				-- - start of camelCaseWords (just the `camel`)
+				-- - snake_case_words in lowercase
+				-- - regular lowercase words
+				"%f[^%s%p][%l%d]+%f[^%l%d]", -- after whitespace/punctuation, 1+ lowercase letters, to end of lowercase letters
+				"^[%l%d]+%f[^%l%d]", -- after beginning of line, 1+ lowercase letters, to end of lowercase letters
+
+				-- Matches uppercase or lowercase letters up until not letters.
+				-- This covers:
+				-- - SNAKE_CASE_WORDS in uppercase
+				-- - Snake_Case_Words in titlecase
+				-- - regular UPPERCASE words
+				-- (it must be both uppercase and lowercase otherwise it will
+				-- match just the first letter of PascalCaseWords)
+				"%f[^%s%p][%a%d]+%f[^%a%d]", -- after whitespace/punctuation, 1+ letters, to end of letters
+				"^[%a%d]+%f[^%a%d]", -- after beginning of line, 1+ letters, to end of letters
+			},
+			"^().*()$",
+		},
+	},
+})
 align.setup()
 
 icons.setup()
@@ -73,11 +102,11 @@ operators.setup({
 	sort = {
 		prefix = "",
 	},
-    replace = {
-        prefix = "",
-    },
+	replace = {
+		prefix = "",
+	},
 })
 
 vim.api.nvim_create_user_command("NotifyHistory", function()
-    notify.show_history()
+	notify.show_history()
 end, {})
