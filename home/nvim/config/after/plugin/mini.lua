@@ -38,7 +38,7 @@ surround.setup({
 	search_method = "cover_or_next",
 })
 
-vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
+vim.keymap.set("x", "s", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
 splitjoin.setup({
 	mappings = {
