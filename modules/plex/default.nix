@@ -8,5 +8,5 @@
       group = "plex";
     };
   };
-  environment.systemPackages = with pkgs; [ plex-media-player ];
+  environment.systemPackages = with pkgs; [ plex-desktop ];
 }
