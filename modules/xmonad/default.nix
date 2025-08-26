@@ -6,7 +6,10 @@
         defaultSession = "none+xmonad";
       };
     logind = {
-      extraConfig = "HandleLidSwitch=suspend";
+      settings.Login = {
+        HandleLidSwitch = "suspend";
+        KillUserProcesses = false;
+      };
     };
     libinput = {
         touchpad = {

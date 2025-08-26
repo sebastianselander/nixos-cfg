@@ -52,7 +52,6 @@
       man-pages
       man-pages-posix
       marksman
-      mdcat
       neofetch
       nil
       nix-prefetch-git
