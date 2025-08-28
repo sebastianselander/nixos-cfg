@@ -85,7 +85,7 @@ myStartupHook = do
     spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
-    spawnOn "8" "discord"
+    spawnOn "8" "discordptb"
     spawnOn "9" "thunderbird"
 
 myEventHook :: Event -> X All
