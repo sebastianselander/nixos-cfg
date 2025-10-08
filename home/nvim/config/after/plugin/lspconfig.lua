@@ -17,7 +17,6 @@ require("neodev").setup({
 	pathStrict = true,
 })
 
-local nvim_lsp = require("lspconfig")
 local default_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = require("cmp_nvim_lsp").default_capabilities(default_capabilities)
 
@@ -54,66 +53,39 @@ local on_attach = function(_, _)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 end
 
-vim.diagnostic.config({ float = { border = "rounded" } })
-
-local default = {
-	on_attach = on_attach,
-	capabilities = capabilities,
-}
-
 local union = function(t1, t2)
 	return vim.tbl_deep_extend("error", t1, t2)
 end
 
--- nvim_lsp.hls.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	settings = {
--- 		haskell = {
--- 			plugin = {
---                 rename = {
---                     globalOn = true,
---                     config = {
---                         diff = true,
---                     },
---                 },
---                 eval = {
---                     globalOn = true,
---                 },
--- 				changeTypeSignature = {
--- 					globalOn = true,
--- 				},
--- 				gadt = {
--- 					globalOn = false,
--- 				},
--- 				alternateNumberFormat = {
--- 					globalOn = false,
--- 				},
--- 				class = {
--- 					globalOn = true,
--- 				},
---                 splice = {
---                     globalOn = true,
---                 }
--- 			},
--- 		},
--- 	},
--- })
+local lsps = {
+	"erlangls",
+	"pyright",
+	"rust_analyzer",
+	"lua_ls",
+	"gopls",
+	"marksman",
+	"ccls",
+	"nil_ls",
+	"tinymist",
+	"clangd",
+}
 
-nvim_lsp.erlangls.setup(default)
-nvim_lsp.pyright.setup(default)
-nvim_lsp.rust_analyzer.setup(default)
-nvim_lsp.lua_ls.setup(default)
-nvim_lsp.gopls.setup(default)
-nvim_lsp.marksman.setup(default)
-nvim_lsp.ccls.setup(default)
-nvim_lsp.nil_ls.setup(default)
-nvim_lsp.tinymist.setup(union(default, { offset_encoding = "utf-8" }))
-nvim_lsp.clangd.setup(default)
+for _, lsp in ipairs(lsps) do
+	local default = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	}
+	if lsp == "tinymist" then
+		vim.lsp.config(lsp, union(default, { offset_encoding = "utf-8" }))
+	else
+		vim.lsp.config(lsp, default)
+	end
+end
 
-nvim_lsp.dafny.setup(default)
+vim.lsp.enable(lsps)
 
 vim.diagnostic.config({
+	float = { border = "rounded" },
 	virtual_text = false,
 	signs = true,
 	update_in_insert = false,
