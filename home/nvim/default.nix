@@ -5,6 +5,7 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       catppuccin-nvim
+      vague-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
@@ -13,8 +14,6 @@
       cmp_luasnip
       conform-nvim
       diffview-nvim
-      flash-nvim
-      fzf-lua
       gitsigns-nvim
       harpoon2
       haskell-tools-nvim
@@ -46,8 +45,6 @@
       typst-preview-nvim
       undotree
       vim-abolish
-      vimtex
-      vscode-nvim
     ];
   };
   xdg.configFile = {
