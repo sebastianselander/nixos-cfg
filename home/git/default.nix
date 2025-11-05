@@ -1,11 +1,12 @@
 { ... }:
 {
+  programs.delta.enable = true;
+  programs.delta.enableGitIntegration = true;
   programs.git = {
     enable = true;
-    userName = "Sebastian Selander";
-    userEmail = "sebastian.selander@gmail.com";
-    delta.enable = true;
-    extraConfig = {
+    settings = {
+      user.name = "Sebastian Selander";
+      user.email = "sebastian.selander@gmail.com";
       branch.sort = "-committerdate";
       commit.verbose = true;
       gpg.format = "ssh";
