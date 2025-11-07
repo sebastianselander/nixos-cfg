@@ -89,6 +89,7 @@
       wget
       xclip
       xorg.xhost
+      xxd
       zip
       zlib
       zlib.dev
