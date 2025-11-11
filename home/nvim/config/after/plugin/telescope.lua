@@ -60,10 +60,8 @@ telescope.setup({
 	},
 })
 telescope.load_extension("fzf")
-telescope.load_extension("hoogle")
 telescope.load_extension("frecency")
 
-vim.keymap.set("n", "<leader>ph", "<cmd>Telescope hoogle initial_mode=insert <CR>")
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope frecency workspace=CWD previewer=true initial_mode=insert <CR>")
 vim.keymap.set("n", "<leader>ps", builtin.live_grep)
 vim.keymap.set("n", "<leader>pw", builtin.grep_string)

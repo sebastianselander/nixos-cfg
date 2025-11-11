@@ -1,22 +1,3 @@
--- Must be setup before lspconfig
-require("neodev").setup({
-	library = {
-		enabled = true,
-		runtime = true,
-		types = true,
-		plugins = true,
-	},
-	setup_jsonls = true,
-	override = function(root_dir, options)
-		if root_dir:find("/home/sebastian/Documents/git/nixos-cfg", 1, true) == 1 then
-			options.enabled = true
-			options.plugins = true
-		end
-	end,
-	lspconfig = true,
-	pathStrict = true,
-})
-
 local default_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = require("cmp_nvim_lsp").default_capabilities(default_capabilities)
 

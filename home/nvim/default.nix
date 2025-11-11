@@ -20,12 +20,10 @@
       lualine-nvim
       luasnip
       mini-nvim
-      neodev-nvim
       nightfly
       nightfox-nvim
       nvim-cmp
       nvim-lint
-      nvim-lspconfig
       nvim-treesitter.withAllGrammars
       oil-nvim
       plenary-nvim
@@ -35,7 +33,6 @@
       telescope-frecency-nvim
       telescope-fzf-native-nvim
       telescope-nvim
-      telescope_hoogle
       tiny-inline-diagnostic-nvim
       tmux-nvim
       todo-comments-nvim
