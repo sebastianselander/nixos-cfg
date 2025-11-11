@@ -16,7 +16,7 @@ lualine.setup({
 		},
 	},
 	options = {
-		theme = "catppuccin-macchiato",
+		theme = "vague",
 	},
 })
 
