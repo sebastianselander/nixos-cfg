@@ -14,7 +14,6 @@
       cargo
       ccls
       chromium
-      gcc
       clippy
       cloc
       cron
@@ -30,6 +29,7 @@
       file
       firefox
       fzf
+      gcc
       ghc
       ghcid
       glow
@@ -48,6 +48,7 @@
       just
       lean4
       libreoffice
+      lua
       lua-language-server
       man-pages
       man-pages-posix
