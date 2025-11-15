@@ -1,4 +1,3 @@
-
 vim.cmd("cnoreabbrev Q  q")
 vim.cmd("cnoreabbrev q1  q!")
 vim.cmd("cnoreabbrev Q1  q!")
@@ -20,6 +19,27 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 			end
 		end
 	end,
+})
+
+local active_cursorline_group = vim.api.nvim_create_augroup("active_cursorline", { clear = true })
+
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+	group = active_cursorline_group,
+	callback = function()
+		vim.opt_local.cursorline = true
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+	group = active_cursorline_group,
+	callback = function()
+		vim.opt_local.cursorline = false
+	end,
+})
+
+
+vim.api.nvim_create_autocmd("VimResized", {
+	command = "wincmd =",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
