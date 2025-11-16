@@ -35,7 +35,7 @@ local on_attach = function(_, _)
 end
 
 local union = function(t1, t2)
-	return vim.tbl_deep_extend("error", t1, t2)
+	return vim.tbl_deep_extend("force", t1, t2)
 end
 
 local lsps = {
@@ -53,14 +53,12 @@ local lsps = {
 
 for _, lsp in ipairs(lsps) do
 	local default = {
+		root_markers = { ".git" },
 		on_attach = on_attach,
 		capabilities = capabilities,
+		offset_encoding = "utf-8",
 	}
-	if lsp == "tinymist" then
-		vim.lsp.config(lsp, union(default, { offset_encoding = "utf-8" }))
-	else
-		vim.lsp.config(lsp, default)
-	end
+	vim.lsp.config(lsp, default)
 end
 
 vim.lsp.enable(lsps)

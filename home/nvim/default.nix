@@ -34,6 +34,8 @@
       telescope-fzf-native-nvim
       telescope-nvim
       tiny-inline-diagnostic-nvim
+      neodev-nvim
+      nvim-lspconfig
       tmux-nvim
       todo-comments-nvim
       toggleterm-nvim
