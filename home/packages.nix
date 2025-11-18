@@ -22,6 +22,7 @@
       distrobox
       dmenu
       edir
+      element-desktop
       eza
       fd
       feh

@@ -79,14 +79,14 @@ myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "nitrogen --restore"
     spawnOnce "xsetroot -cursor_name left_ptr"
-    spawnOnce "polybar xmonadbar & disown"
     spawnOnce "xset r rate 230 40"
     spawnOnce "mullvad-exclude thunderbird"
-    spawnOnce "mullvad-vpn"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
     spawnOn "8" "discordptb"
+    spawnOn "8" "element-desktop --password-store=\"gnome-libsecret\""
     spawnOn "9" "thunderbird"
+    spawnOnce "polybar"
 
 myEventHook :: Event -> X All
 myEventHook = swallowEventHook (className =? myTerminal) (return True)

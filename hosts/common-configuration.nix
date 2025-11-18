@@ -55,6 +55,7 @@
   };
 
   services = {
+    gnome.gnome-keyring.enable = true;
     envfs.enable = true;
     openssh = {
       enable = true;
