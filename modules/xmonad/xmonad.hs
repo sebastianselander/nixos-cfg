@@ -28,14 +28,14 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Renamed
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Spacing
+import XMonad.Layout.SubLayouts
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ToggleLayouts
-import XMonad.Layout.SubLayouts
 
 -- actions
 
-import XMonad.Actions.CycleWS (nextScreen, shiftNextScreen)
+import XMonad.Actions.CycleWS (nextScreen, prevScreen, shiftNextScreen)
 import XMonad.Actions.SpawnOn
 
 -- utils
@@ -160,8 +160,10 @@ tabs = renamed [Replace "Tabbed"] . mySpacing (myGaps `div` 2) $ tabbed shrinkTe
 
 myLayout = avoidStruts $ smartBorders myDefaultLayout
   where
-    myDefaultLayout = fullTog (tall ||| tabs {- ||| fullTog wide -})
+    myDefaultLayout = fullTog (tall ||| tabs)
       where
+        -- \||| fullTog wide
+
         fullTog l = toggleLayouts full l
 
 myTabConfig :: Theme
@@ -229,19 +231,22 @@ myKeys isDualMonitor conf@(XConfig{XMonad.modMask = modm}) =
                , ((0 .|. shiftMask, xK_Print), spawn "flameshot screen -p ~/Pictures/screenshots")
                , ((0 .|. controlMask, xK_Print), spawn "flameshot full -p ~/Pictures/screenshots")
                ]
-                ++ [((modm .|. shiftMask .|. controlMask, xK_Escape) 
-                   , spawn "~/Documents/git/nixos-cfg/modules/xmonad/monitors.sh") 
-                   | isDualMonitor]
+            ++ [ ( (modm .|. shiftMask .|. controlMask, xK_Escape)
+                 , spawn "~/Documents/git/nixos-cfg/modules/xmonad/monitors.sh"
+                 )
+               | isDualMonitor
+               ]
   where
     workspace =
         [ ((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
         ]
+            ++ [ ((controlMask .|. modm, k), nextScreen >> windows (W.greedyView i) >> prevScreen)
+               | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+               ]
 
 -------------------------------------------------------------------------------
--- MAIN
-
 main :: IO ()
 main = do
     dbus <- D.connectSession
