@@ -30,9 +30,6 @@
       quicker-nvim
       snacks-nvim
       tabby-nvim
-      telescope-frecency-nvim
-      telescope-fzf-native-nvim
-      telescope-nvim
       tiny-inline-diagnostic-nvim
       neodev-nvim
       nvim-lspconfig
