@@ -5,6 +5,15 @@ snacks.setup({
 	quickfile = { enabled = true },
 	zen = { enabled = true },
 	input = { enabled = true },
+	dim = {
+		enabled = true,
+		animate = {
+			duration = {
+				step = 0,
+				total = 0,
+			},
+		},
+	},
 	gitbrowse = { enabled = true },
 	image = {
 		doc = {
@@ -61,3 +70,4 @@ vim.keymap.set("n", "<leader>pm", snacks.picker.marks)
 vim.keymap.set("n", "<leader>pd", snacks.picker.diagnostics)
 vim.keymap.set("n", '<leader>"', snacks.picker.registers)
 vim.keymap.set("n", "<F1>", snacks.picker.help)
+
