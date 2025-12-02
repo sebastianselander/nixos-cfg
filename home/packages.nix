@@ -3,7 +3,7 @@
   home.packages = with pkgs;
     [
       (agda.withPackages [ agdaPackages.standard-library ])
-      (python3.withPackages (ps: with ps; [ python-lsp-black ]))
+      (python3.withPackages (ps: with ps; [ python-lsp-black pylint ruff]))
       alsa-utils
       arandr
       audacity
