@@ -17,6 +17,7 @@
       gitsigns-nvim
       harpoon2
       haskell-tools-nvim
+      rustaceanvim
       lualine-nvim
       luasnip
       mini-nvim

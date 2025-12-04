@@ -6,8 +6,8 @@ capabilities.textDocument.foldingRange = {
 	lineFoldingOnly = true,
 }
 
-local on_attach = function(_, _)
-	local opts = { noremap = true, silent = true, buffer = 0 }
+local on_attach = function(_, bufnr)
+	local opts = { noremap = true, silent = true, buffer = bufnr}
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover({ border = "single" })
@@ -41,7 +41,6 @@ end
 local lsps = {
 	"erlangls",
 	"pyright",
-	"rust_analyzer",
 	"lua_ls",
 	"gopls",
 	"marksman",
