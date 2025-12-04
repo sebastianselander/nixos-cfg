@@ -40,8 +40,8 @@ require("tokyonight").setup({
 })
 
 local background = "dark"
-local colorscheme_dark = "vague"
-local colorscheme_light = "vague"
+local colorscheme_dark = "tokyonight"
+local colorscheme_light = "tokyonight"
 
 vim.o.background = background
 vim.cmd.colorscheme(colorscheme_dark)
