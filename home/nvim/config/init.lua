@@ -1,3 +1,5 @@
 require("keymaps")
 require("cmd")
 require("set")
+require("lsp.servers")
+require("lsp.diagnostics")
