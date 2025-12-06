@@ -19,7 +19,7 @@ local lsp_setup = function(server, opts)
 	opts = opts or {}
 	opts.capabilities = common.capabilities
 	opts.on_attach = common.on_attach
-    vim.lsp.config(server, opts)
+	vim.lsp.config(server, opts)
 	vim.lsp.enable(server)
 end
 
