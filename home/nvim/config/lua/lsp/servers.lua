@@ -32,6 +32,7 @@ lsp_setup("pyright")
 lsp_setup("hls", {
 	haskell = {
 		maxCompletions = 40,
+        checkParents = 'CheckOnSave',
 		plugin = {
 			callHierarchy = { globalOn = true },
 			class = {
@@ -44,8 +45,11 @@ lsp_setup("hls", {
 					crossModule = true,
 				},
 			},
+			retrie = { globalOn = true },
 			splice = {
 				globalOn = true,
+				codeActionsOn = true,
+				codeLensOn = true,
 			},
 			moduleName = {
 				globalOn = false,
