@@ -7,6 +7,7 @@
       alsa-utils
       arandr
       audacity
+      bc
       bitwarden-desktop
       bitwarden-menu
       btop
@@ -54,6 +55,7 @@
       man-pages
       man-pages-posix
       marksman
+      ncdu
       neofetch
       nil
       nix-prefetch-git
