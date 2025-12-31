@@ -80,6 +80,7 @@ lsp_setup("marksman")
 lsp_setup("ccls")
 lsp_setup("nil_ls")
 lsp_setup("clangd")
+lsp_setup("ccls")
 lsp_setup("tinymist", {
 	offset_encoding = "utf-8",
 })
