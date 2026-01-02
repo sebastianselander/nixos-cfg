@@ -14,7 +14,7 @@
       lsa = "eza --group-directories-first -la";
       lst = "eza -s modified -1 -la";
       test-font = "echo -e \"\\e[1mbold\\e[0m\\n\\e[3mitalic\\e[0m\\n\\e[4munderline\\e[0m\\n\\e[9mstrikethrough\\e[0m\"";
-      gc = "echo \"Collecting garbage\"; sudo nix-collect-garbage -d --quiet 2> /dev/null; nix-collect-garbage -d --quiet 2> /dev/null";
+      gc = "echo \"Collecting garbage\"; nix-collect-garbage -d --quiet 2> /dev/null";
       vi = "nvim";
 
     };
