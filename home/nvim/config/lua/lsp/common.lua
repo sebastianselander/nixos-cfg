@@ -30,7 +30,12 @@ M.on_attach = function(_, bufnr)
 	map("n", "<C-j>", function()
 		vim.diagnostic.jump({ count = 1, float = true })
 	end, "Prev diagnostic")
-	map("n", "<leader>ll", vim.diagnostic.setloclist, "Set location list")
+	map("n", "[d", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, "Next diagnostic")
+	map("n", "]d", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, "Prev diagnostic")
 	map("n", "<leader>d", vim.diagnostic.open_float, "Line diagnostics")
 end
 
