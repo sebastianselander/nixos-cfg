@@ -48,6 +48,7 @@ vim.keymap.set("n", "<leader>zz", function()
 end)
 
 vim.keymap.set("n", "<C-p>", snacks.picker.smart)
+vim.keymap.set("n", "<leader>pp", snacks.picker.resume)
 vim.keymap.set("n", "<leader>ps", snacks.picker.grep)
 vim.keymap.set("n", "<leader>pc", snacks.picker.colorschemes)
 vim.keymap.set("n", "<leader>pw", snacks.picker.grep_word)
