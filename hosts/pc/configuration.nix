@@ -49,5 +49,6 @@
     wine
     winetricks
     mangohud
+    os-prober
   ];
 }
