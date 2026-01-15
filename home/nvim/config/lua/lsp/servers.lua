@@ -28,7 +28,7 @@ lsp_setup("rust_analyzer", {
 		["rust-analyzer"] = { cargo = { allFeatures = true } },
 	},
 })
-lsp_setup("pyright")
+lsp_setup("basedpyright")
 lsp_setup("hls", {
 	haskell = {
 		maxCompletions = 40,
