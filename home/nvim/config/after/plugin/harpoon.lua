@@ -13,7 +13,7 @@ harpoon:setup()
 
 local previous_buffer = nil
 
-vim.keymap.set("n", ";", function()
+vim.keymap.set("n", "<leader>;", function()
 	previous_buffer = vim.api.nvim_get_current_buf()
 	local ui = harpoon.ui
 	ui:toggle_quick_menu(harpoon:list())
