@@ -23,6 +23,7 @@
       nightfox-nvim
       nvim-cmp
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-textobjects
       oil-nvim
       plenary-nvim
       quicker-nvim
