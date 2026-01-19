@@ -68,6 +68,6 @@ vim.api.nvim_create_autocmd('FileType', {
     end
 
     -- Auto-install missing parsers (async, no-op if already installed)
-    ts.install({ lang })
+    -- ts.install({ lang })
   end,
 })
