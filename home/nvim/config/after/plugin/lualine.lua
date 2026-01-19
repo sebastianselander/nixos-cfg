@@ -12,7 +12,10 @@ end
 lualine.setup({
 	sections = {
 		lualine_b = {
-			 show_macro_recording
+			show_macro_recording,
+		},
+		lualine_c = {
+			{ "filename", path = 1 },
 		},
 	},
 	options = {
