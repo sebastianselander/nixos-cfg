@@ -28,11 +28,24 @@ lsp_setup("rust_analyzer", {
 		["rust-analyzer"] = { cargo = { allFeatures = true } },
 	},
 })
-lsp_setup("basedpyright")
+lsp_setup("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+                useLibraryCodeForTypes = true,
+				typeCheckingMode = "standard",
+                diagnosticMode = "workspace",
+                inlayHits = {
+                    callArgumentNames = true,
+                },
+			},
+		},
+	},
+})
 lsp_setup("hls", {
 	haskell = {
 		maxCompletions = 40,
-        checkParents = 'CheckOnSave',
+		checkParents = "CheckOnSave",
 		plugin = {
 			callHierarchy = { globalOn = true },
 			class = {
