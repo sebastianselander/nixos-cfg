@@ -3,7 +3,17 @@ local snacks = require("snacks")
 snacks.setup({
 	bigfile = { enabled = true },
 	quickfile = { enabled = true },
-	zen = { enabled = true },
+	zen = {
+        toggles = {
+            dim = false,
+        },
+        win = {
+            backdrop = {
+                transparent = false,
+            },
+        },
+	    enabled = true
+	},
 	input = { enabled = true },
 	dim = {
 		enabled = true,
