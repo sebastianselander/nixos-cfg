@@ -15,7 +15,6 @@
       conform-nvim
       diffview-nvim
       gitsigns-nvim
-      harpoon2
       lualine-nvim
       luasnip
       mini-nvim
