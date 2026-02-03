@@ -9,40 +9,14 @@ local indentscope = require("mini.indentscope")
 local operators = require("mini.operators")
 local icons = require("mini.icons")
 local notify = require("mini.notify")
-local jump = require("mini.jump")
+local hues = require("mini.hues")
 
 notify.setup()
 
 bracketed.setup()
 
-jump.setup(
-    -- No need to copy this inside `setup()`. Will be used automatically.
-{
-  -- Module mappings. Use `''` (empty string) to disable one.
-  mappings = {
-    forward = 'f',
-    backward = 'F',
-    forward_till = 't',
-    backward_till = 'T',
-    repeat_jump = '',
-  },
 
-  -- Delay values (in ms) for different functionalities. Set any of them to
-  -- a very big number (like 10^7) to virtually disable.
-  delay = {
-    -- Delay between jump and highlighting all possible jumps
-    highlight = 250,
-
-    -- Delay between jump and automatic stop if idle (no jump is done)
-    idle_stop = 10000000,
-  },
-
-  -- Whether to disable showing non-error feedback
-  -- This also affects (purely informational) helper messages shown after
-  -- idle time if user input is required.
-  silent = false,
-}
-)
+hues.setup({ background = "#24283b", foreground = "#c0caf5" })
 
 ai.setup({
 	custom_textobjects = {
