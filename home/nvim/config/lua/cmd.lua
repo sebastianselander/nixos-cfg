@@ -99,10 +99,12 @@ local cmdline_group = vim.api.nvim_create_augroup("CmdlineLinenr", {})
 -- debounce cmdline enter events to make sure we dont have flickering for non user cmdline use
 -- e.g. mappings using : instead of <cmd>
 local cmdline_debounce_timer
+local enter_with_relative = vim.o.relativenumber
 
 vim.api.nvim_create_autocmd("CmdlineEnter", {
 	group = cmdline_group,
 	callback = function()
+        enter_with_relative = vim.o.relativenumber
 		cmdline_debounce_timer = vim.uv.new_timer()
 		cmdline_debounce_timer:start(
 			100,
@@ -120,11 +122,14 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
 vim.api.nvim_create_autocmd("CmdlineLeave", {
 	group = cmdline_group,
 	callback = function()
+        if not enter_with_relative then
+            return
+        end
 		if cmdline_debounce_timer then
 			cmdline_debounce_timer:stop()
 			cmdline_debounce_timer = nil
 		end
-		if vim.o.number then
+		if vim.o.number and enter_with_relative then
 			vim.o.relativenumber = true
 		end
 	end,

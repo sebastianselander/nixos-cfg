@@ -70,3 +70,11 @@ vmap(".", ":norm .<CR>")
 for c in ("abcdefghijklmnopqrstuvwxyz"):gmatch(".") do
 	vmap("@" .. c, ":norm @" .. c .. "<CR>")
 end
+
+nmap("<leader><BS>", function()
+	if vim.o.relativenumber then
+		vim.o.relativenumber = false
+	else
+		vim.o.relativenumber = true
+	end
+end)
