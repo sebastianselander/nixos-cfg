@@ -1,18 +1,31 @@
 local snacks = require("snacks")
 
+local layouts = { "ivy", "left", "right", "bottom", "telescope", "vscode", "default" }
+
+local idx = 1
+
+local default_layout = function()
+	return layouts[idx]
+end
+
+local next_layout = function(picker)
+	idx = idx % #layouts + 1
+	picker:set_layout(layouts[idx])
+end
+
 snacks.setup({
 	bigfile = { enabled = true },
 	quickfile = { enabled = true },
 	zen = {
-        toggles = {
-            dim = false,
-        },
-        win = {
-            backdrop = {
-                transparent = false,
-            },
-        },
-	    enabled = true
+		toggles = {
+			dim = false,
+		},
+		win = {
+			backdrop = {
+				transparent = false,
+			},
+		},
+		enabled = true,
 	},
 	input = { enabled = true },
 	dim = {
@@ -33,9 +46,22 @@ snacks.setup({
 	},
 	explorer = { enabled = true },
 	picker = {
+		win = {
+			input = {
+				keys = {
+					["<c-l>"] = { "cycle_layouts", mode = { "i", "n" } },
+				},
+			},
+		},
+		actions = {
+			cycle_layouts = function(picker) next_layout(picker) end,
+		},
+		layout = {
+			preset = default_layout(),
+		},
 		matcher = {
 			cwd_bonus = true,
-            frecency = true,
+			frecency = true,
 		},
 		main = {
 			current = true,
@@ -63,6 +89,7 @@ vim.keymap.set("n", "<leader>p", function() snacks.picker() end)
 vim.keymap.set("n", "<leader>pr", snacks.picker.resume)
 vim.keymap.set("n", "<leader>pp", snacks.picker.resume)
 vim.keymap.set("n", "<leader>ps", snacks.picker.grep)
+vim.keymap.set("n", "<leader>pgl", snacks.picker.git_log)
 vim.keymap.set("n", "<leader>/", snacks.picker.grep)
 vim.keymap.set("n", "<leader>pc", snacks.picker.colorschemes)
 vim.keymap.set("n", "<leader>pw", snacks.picker.grep_word)
