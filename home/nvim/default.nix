@@ -18,6 +18,7 @@
       lualine-nvim
       luasnip
       mini-nvim
+      vim-fugitive
       nightfly
       nightfox-nvim
       nvim-cmp
