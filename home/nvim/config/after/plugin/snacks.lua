@@ -15,6 +15,7 @@ end
 
 snacks.setup({
 	bigfile = { enabled = true },
+	bufdelete = { enabled = true },
 	quickfile = { enabled = true },
 	zen = {
 		toggles = {
@@ -54,7 +55,9 @@ snacks.setup({
 			},
 		},
 		actions = {
-			cycle_layouts = function(picker) next_layout(picker) end,
+			cycle_layouts = function(picker)
+				next_layout(picker)
+			end,
 		},
 		layout = {
 			preset = default_layout(),
@@ -89,11 +92,12 @@ vim.keymap.set("n", "<leader>p", function() snacks.picker() end)
 vim.keymap.set("n", "<leader>pr", snacks.picker.resume)
 vim.keymap.set("n", "<leader>pp", snacks.picker.resume)
 vim.keymap.set("n", "<leader>ps", snacks.picker.grep)
-vim.keymap.set("n", "<leader>pgl", snacks.picker.git_log)
+vim.keymap.set("n", "<leader>gd", snacks.picker.git_diff)
 vim.keymap.set("n", "<leader>/", snacks.picker.grep)
+vim.keymap.set("n", "<leader>g/", snacks.picker.git_grep)
 vim.keymap.set("n", "<leader>pc", snacks.picker.colorschemes)
 vim.keymap.set("n", "<leader>pw", snacks.picker.grep_word)
-vim.keymap.set("n", "<leader>b", function()
+vim.keymap.set("n", "<leader>bb", function()
 	snacks.picker.buffers({
 		format = "buffer",
 		focus = "list",
@@ -112,3 +116,5 @@ vim.keymap.set("n", "<leader>pm", snacks.picker.marks)
 vim.keymap.set("n", "<leader>pd", snacks.picker.diagnostics)
 vim.keymap.set("n", '<leader>"', snacks.picker.registers)
 vim.keymap.set("n", "<F1>", snacks.picker.help)
+vim.keymap.set("n", "<leader>ph", snacks.picker.help)
+vim.keymap.set("n", "<leader>bd", snacks.bufdelete.delete)
