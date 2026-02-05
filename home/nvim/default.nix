@@ -25,6 +25,7 @@
       nvim-treesitter.withAllGrammars
       oil-nvim
       plenary-nvim
+      noice-nvim
       quicker-nvim
       snacks-nvim
       tabby-nvim
