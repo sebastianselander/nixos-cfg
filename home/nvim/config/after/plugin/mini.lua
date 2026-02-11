@@ -1,4 +1,5 @@
 local ai = require("mini.ai")
+local bracketed = require("mini.bracketed")
 local align = require("mini.align")
 local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
@@ -11,6 +12,8 @@ local notify = require("mini.notify")
 local jump = require("mini.jump")
 
 notify.setup()
+
+bracketed.setup()
 
 jump.setup(
     -- No need to copy this inside `setup()`. Will be used automatically.
