@@ -27,7 +27,6 @@
       nvim-treesitter-context
       oil-nvim
       plenary-nvim
-      noice-nvim
       quicker-nvim
       snacks-nvim
       tabby-nvim
