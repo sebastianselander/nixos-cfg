@@ -4,12 +4,16 @@ local align = require("mini.align")
 local splitjoin = require("mini.splitjoin")
 local move = require("mini.move")
 local surround = require("mini.surround")
+local diff = require("mini.diff")
 local hipatterns = require("mini.hipatterns")
-local indentscope = require("mini.indentscope")
-local operators = require("mini.operators")
-local icons = require("mini.icons")
-local notify = require("mini.notify")
 local hues = require("mini.hues")
+local icons = require("mini.icons")
+local indentscope = require("mini.indentscope")
+local move = require("mini.move")
+local notify = require("mini.notify")
+local operators = require("mini.operators")
+local splitjoin = require("mini.splitjoin")
+local surround = require("mini.surround")
 
 notify.setup()
 
@@ -49,7 +53,12 @@ ai.setup({
 		},
 	},
 })
-align.setup()
+
+diff.setup()
+
+vim.api.nvim_create_user_command("DiffInline", function()
+    diff.toggle_overlay()
+end, {})
 
 icons.setup()
 
