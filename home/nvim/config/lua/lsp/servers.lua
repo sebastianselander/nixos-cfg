@@ -28,20 +28,30 @@ lsp_setup("rust_analyzer", {
 		["rust-analyzer"] = { cargo = { allFeatures = true } },
 	},
 })
+
 lsp_setup("basedpyright", {
+    filestypes = { "python" },
+	root_markers = {
+		"pyproject.toml",
+		"setup.py",
+		"setup.cfg",
+		"requirements.txt",
+		"Pipfile",
+		"pyrightconfig.json",
+		".git",
+	},
 	settings = {
 		basedpyright = {
 			analysis = {
-                useLibraryCodeForTypes = true,
-				typeCheckingMode = "standard",
-                diagnosticMode = "workspace",
-                inlayHits = {
-                    callArgumentNames = true,
-                },
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true,
+				autoSearchPaths = true,
+				typeCheckingMode = "basic",
 			},
 		},
 	},
 })
+
 lsp_setup("hls", {
 	haskell = {
 		maxCompletions = 40,
