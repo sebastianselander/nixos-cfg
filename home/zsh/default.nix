@@ -10,7 +10,7 @@
       lg = "lazygit";
       nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
-      ls = "eza --icons=always -l --git --group-directories-first";
+      ls = "eza --icons=always -l --group-directories-first";
       lsa = "eza --group-directories-first -la";
       lst = "eza -s modified -1 -la";
       test-font = "echo -e \"\\e[1mbold\\e[0m\\n\\e[3mitalic\\e[0m\\n\\e[4munderline\\e[0m\\n\\e[9mstrikethrough\\e[0m\"";
