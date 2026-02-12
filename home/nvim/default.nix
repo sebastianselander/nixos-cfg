@@ -24,6 +24,7 @@
       nvim-cmp
       nvim-lint
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-context
       oil-nvim
       plenary-nvim
       noice-nvim
