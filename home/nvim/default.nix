@@ -22,6 +22,7 @@
       nightfly
       nightfox-nvim
       nvim-cmp
+      nvim-lint
       nvim-treesitter.withAllGrammars
       oil-nvim
       plenary-nvim
