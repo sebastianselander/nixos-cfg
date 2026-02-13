@@ -18,7 +18,7 @@
         mnemonicPrefix = true;
         renames = true;
       };
-      merge.conflictstyle = "zdiff3";
+      merge.conflictstyle = "diff3";
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase = {
