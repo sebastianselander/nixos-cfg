@@ -7,7 +7,6 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       p = "pwd | sed -E \"s/\\/home\\/[a-z]*/~/g\"";
-      lg = "lazygit";
       nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
       ls = "eza --icons=always -l --group-directories-first";
