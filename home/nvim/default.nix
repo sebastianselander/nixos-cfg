@@ -25,6 +25,9 @@
       nvim-lint
       nvim-treesitter.withAllGrammars
       oil-nvim
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
       plenary-nvim
       quicker-nvim
       snacks-nvim
