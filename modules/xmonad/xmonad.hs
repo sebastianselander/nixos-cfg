@@ -7,7 +7,6 @@ import Data.Map qualified as M
 import Data.Monoid
 
 import XMonad
-import XMonad.Config.Kde
 
 -- window stack manipulation and map creation
 import XMonad.StackSet qualified as W
@@ -158,12 +157,13 @@ wide = renamed [Replace "Wide"] . mySpacing myGaps $ Mirror $ ResizableTall 1 (3
 tabs :: ModifiedLayout Rename (ModifiedLayout Spacing (ModifiedLayout (Decoration TabbedDecoration DefaultShrinker) Simplest)) Window
 tabs = renamed [Replace "Tabbed"] . mySpacing (myGaps `div` 2) $ tabbed shrinkText myTabConfig
 
+columns :: ModifiedLayout Rename (ModifiedLayout Spacing ThreeCol) a
+columns = renamed [Replace "Column"] . mySpacing myGaps $ ThreeColMid 1 (1/10) (1/2)
+
 myLayout = avoidStruts $ smartBorders myDefaultLayout
   where
-    myDefaultLayout = fullTog (tall ||| tabs)
+    myDefaultLayout = fullTog (tall ||| tabs ||| columns)
       where
-        -- \||| fullTog wide
-
         fullTog l = toggleLayouts full l
 
 myTabConfig :: Theme
