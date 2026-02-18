@@ -6,12 +6,13 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      p = "pwd | sed -E \"s/\\/home\\/[a-z]*/~/g\"";
+      p = "pwd | sed -E \"s/\\/home\\/[a-z0-9]*/~/g\"";
       nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
       ls = "eza --icons=always -l --group-directories-first";
-      lsa = "eza --group-directories-first -la";
-      lst = "eza -s modified -1 -la";
+      ll = "eza -lAh --group-directories-first";
+      lsa = "eza --group-directories-first -lA";
+      lst = "eza -s modified -1 -lA";
       test-font = "echo -e \"\\e[1mbold\\e[0m\\n\\e[3mitalic\\e[0m\\n\\e[4munderline\\e[0m\\n\\e[9mstrikethrough\\e[0m\"";
       vi = "nvim";
       gc = "git commit -v";
