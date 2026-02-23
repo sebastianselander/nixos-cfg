@@ -15,7 +15,7 @@
       blueberry
       blueman
       pamixer
-      xorg.xbacklight
+      xbacklight
       flameshot
       pavucontrol
       nitrogen

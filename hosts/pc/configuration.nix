@@ -44,7 +44,7 @@
     lm_sensors
     geckodriver
     lutris
-    wineWowPackages.staging
+    wineWow64Packages.staging
     wine64
     wine
     winetricks

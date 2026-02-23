@@ -60,7 +60,7 @@
       nil
       nix-prefetch-git
       nix-tree
-      nixfmt-classic
+      nixfmt
       nixos-option
       nixpkgs-fmt
       nixpkgs-lint
@@ -92,7 +92,7 @@
       watchexec
       wget
       xclip
-      xorg.xhost
+      xhost
       xxd
       zip
       zlib
