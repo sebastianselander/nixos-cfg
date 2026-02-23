@@ -42,6 +42,7 @@ vim.opt.smartcase = true
 vim.opt.timeoutlen = 400
 vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
+vim.opt.laststatus = 3
 
 vim.o.foldlevel = 99
 vim.o.foldenable = true
