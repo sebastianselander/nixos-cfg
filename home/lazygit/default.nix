@@ -5,8 +5,7 @@
     settings = {
       promptToReturnFromSubprocess = false;
       git = {
-        paging = [
-          { colorArg = "never"; }
+        pagers = [
           { pager = "delta --paging=never"; }
         ];
       };
