@@ -18,7 +18,15 @@
         mnemonicPrefix = true;
         renames = true;
       };
-      merge.conflictstyle = "diff3";
+      merge = {
+        tool = "nvim";
+        conflictstyle = "diff3";
+      };
+      mergetool = {
+        nvim.cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"";
+        keepBackup = false;
+        prompt = false;
+      };
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase = {
