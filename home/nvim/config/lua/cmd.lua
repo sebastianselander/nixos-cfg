@@ -37,7 +37,6 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 	end,
 })
 
-
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
 })
@@ -87,7 +86,7 @@ local enter_with_relative = vim.o.relativenumber
 vim.api.nvim_create_autocmd("CmdlineEnter", {
 	group = cmdline_group,
 	callback = function()
-        enter_with_relative = vim.o.relativenumber
+		enter_with_relative = vim.o.relativenumber
 		cmdline_debounce_timer = vim.uv.new_timer()
 		cmdline_debounce_timer:start(
 			100,
@@ -105,9 +104,9 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
 vim.api.nvim_create_autocmd("CmdlineLeave", {
 	group = cmdline_group,
 	callback = function()
-        if not enter_with_relative then
-            return
-        end
+		if not enter_with_relative then
+			return
+		end
 		if cmdline_debounce_timer then
 			cmdline_debounce_timer:stop()
 			cmdline_debounce_timer = nil
@@ -133,3 +132,8 @@ end
 vim.api.nvim_create_user_command("Reverse", function(opts)
 	reverse(opts.line1, opts.line2, opts.range == 0)
 end, { range = true })
+
+vim.api.nvim_create_user_command("CopyPathRelative", function(opts) 
+    local path = vim.fn.expand("%:.")
+    vim.fn.setreg("+", path)
+end, {})
