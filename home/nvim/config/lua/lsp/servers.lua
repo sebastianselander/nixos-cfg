@@ -46,7 +46,7 @@ lsp_setup("basedpyright", {
 				diagnosticMode = "openFilesOnly",
 				useLibraryCodeForTypes = true,
 				autoSearchPaths = true,
-				typeCheckingMode = "basic",
+				typeCheckingMode = "standard",
 			},
 		},
 	},
