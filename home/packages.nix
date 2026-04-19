@@ -57,7 +57,6 @@
       man-pages-posix
       marksman
       ncdu
-      neofetch
       nil
       nix-prefetch-git
       nix-tree
