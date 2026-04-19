@@ -7,6 +7,7 @@
       alsa-utils
       arandr
       audacity
+      basedpyright
       bc
       bitwarden-desktop
       bitwarden-menu
