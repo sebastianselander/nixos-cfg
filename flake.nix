@@ -7,17 +7,16 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, neovim-nightly-overlay, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }:
     let
       # A function that takes the imports to use for the system and home and builds the system
       index = nix-index-database.nixosModules.nix-index;
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      overlays = [];
       buildSystem = { systemImports, homeImports }:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
