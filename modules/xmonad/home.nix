@@ -12,7 +12,6 @@
     };
     packages = with pkgs; [
       networkmanagerapplet
-      blueberry
       blueman
       pamixer
       xbacklight

@@ -4,6 +4,9 @@
   programs.delta.enableGitIntegration = true;
   programs.git = {
     enable = true;
+    signing = {
+      format = null;
+    };
     settings = {
       user.name = "Sebastian Selander";
       user.email = "sebastian.selander@gmail.com";
