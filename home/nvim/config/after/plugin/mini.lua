@@ -6,7 +6,6 @@ local move = require("mini.move")
 local surround = require("mini.surround")
 local diff = require("mini.diff")
 local hipatterns = require("mini.hipatterns")
-local hues = require("mini.hues")
 local icons = require("mini.icons")
 local indentscope = require("mini.indentscope")
 local move = require("mini.move")
@@ -19,8 +18,6 @@ notify.setup()
 
 bracketed.setup()
 
-
-hues.setup({ background = "#24283b", foreground = "#c0caf5" })
 
 ai.setup({
 	custom_textobjects = {
