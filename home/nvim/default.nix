@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -7,7 +8,6 @@
     withPython3 = false;
     plugins = with pkgs.vimPlugins; [
       catppuccin-nvim
-      vague-nvim
       cmp-buffer
       cmp-cmdline
       cmp-latex-symbols
@@ -20,31 +20,26 @@
       lualine-nvim
       luasnip
       mini-nvim
-      vim-fugitive
+      neodev-nvim
       nightfly
       nightfox-nvim
       nvim-cmp
-      nvim-lint
-      nvim-treesitter.withAllGrammars
-      oil-nvim
       nvim-dap
       nvim-dap-ui
       nvim-dap-virtual-text
+      nvim-lint
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      oil-nvim
       plenary-nvim
       quicker-nvim
       snacks-nvim
       tabby-nvim
       tiny-inline-diagnostic-nvim
-      neodev-nvim
-      nvim-lspconfig
       tmux-nvim
-      todo-comments-nvim
-      toggleterm-nvim
       tokyonight-nvim
       trouble-nvim
       typst-preview-nvim
-      undotree
-      vim-abolish
     ];
   };
   xdg.configFile = {
