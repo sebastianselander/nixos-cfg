@@ -23,7 +23,13 @@
     let
       # A function that takes the imports to use for the system and home and builds the system
       index = nix-index-database.nixosModules.nix-index;
-      overlays = [ ];
+      overlays = [
+        (final: prev: {
+          openldap = prev.openldap.overrideAttrs (_: {
+            doCheck = false;
+          });
+        })
+      ];
       buildSystem =
         { systemImports, homeImports }:
         nixpkgs.lib.nixosSystem {
