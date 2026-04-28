@@ -82,7 +82,7 @@ myStartupHook = do
     spawnOnce "mullvad-exclude thunderbird"
     spawnOnce "flameshot"
     spawnOnce "blueman-applet"
-    spawnOn "8" "discordptb"
+    spawnOn "8" "discord"
     spawnOn "8" "element-desktop --password-store=\"gnome-libsecret\""
     spawnOn "9" "thunderbird"
     spawnOnce "polybar"

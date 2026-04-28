@@ -20,7 +20,7 @@
       cloc
       cron
       difftastic
-      discord-ptb
+      discord
       distrobox
       dmenu
       edir
