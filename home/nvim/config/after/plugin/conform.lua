@@ -27,7 +27,7 @@ conform.setup({
 		rust = { "rustfmt" },
 		typst = { "typstyle" },
 		nix = { "nixfmt" },
-		python = { "black" },
+		python = { "ruff" },
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 		erlang = { "erlfmt" },
