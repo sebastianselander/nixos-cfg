@@ -12,7 +12,7 @@ vim.cmd("cnoreabbrev SET set")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
+		vim.hl.on_yank({ higroup = "IncSearch", timeout = 300 })
 		if vim.v.event.operator == "y" then
 			for i = 9, 1, -1 do
 				vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
