@@ -115,6 +115,19 @@ snacks.setup({
 	},
 })
 
+local grep_hl_word = function()
+	local lines = get_visual_selection_text()
+	local text = ""
+	for _, line in pairs(lines) do
+		if text == "" then
+			text = text .. line
+		else
+			text = text .. "\n" .. line
+		end
+	end
+	snacks.picker.grep({ regex = false, search = text })
+end
+
 vim.api.nvim_create_user_command("Explore", function()
 	snacks.explorer()
 end, {})
@@ -142,19 +155,10 @@ vim.keymap.set("n", "<leader>gd", snacks.picker.git_diff)
 vim.keymap.set("n", "<leader>glf", snacks.picker.git_log_file)
 vim.keymap.set("n", "<leader>gll", snacks.picker.git_log_line)
 vim.keymap.set("n", "<leader>/", snacks.picker.grep)
-vim.keymap.set("v", "<leader>/", function()
-	local lines = get_visual_selection_text()
-	local text = ""
-	for _, line in pairs(lines) do
-		if text == "" then
-			text = text .. line
-		else
-			text = text .. "\n" .. line
-		end
-	end
-	vim.print(text)
-	snacks.picker.grep({ regex = false, search = text })
-end)
+vim.keymap.set("n", "<C-_>", snacks.picker.grep)
+vim.keymap.set("v", "<leader>/", grep_hl_word)
+vim.keymap.set("v", "<C-_>", grep_hl_word)
+
 vim.keymap.set("n", "<C-s>", function()
 	snacks.picker.git_status({ focus = "list" })
 end)
