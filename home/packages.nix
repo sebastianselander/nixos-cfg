@@ -78,6 +78,7 @@
       rustfmt
       spotify
       spotify-player
+      stremio-linux-shell
       stylua
       texliveSmall
       thunderbird
