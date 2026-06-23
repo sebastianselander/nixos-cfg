@@ -1,6 +1,6 @@
 local snacks = require("snacks")
 
-local layouts = { "ivy", "left", "right", "bottom", "telescope", "vscode", "default" }
+local layouts = { "default", "ivy", "left", "right", "bottom", "vscode", "telescope" }
 
 local idx = 1
 
