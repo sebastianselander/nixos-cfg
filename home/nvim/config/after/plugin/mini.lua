@@ -53,9 +53,9 @@ ai.setup({
 
 diff.setup()
 
-vim.api.nvim_create_user_command("DiffInline", function()
-    diff.toggle_overlay()
-end, {})
+vim.api.nvim_create_user_command("DiffInline", diff.toggle_overlay, {})
+
+vim.keymap.set("n", "<leader>di", diff.toggle_overlay, {})
 
 icons.setup()
 
