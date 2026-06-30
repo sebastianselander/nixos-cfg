@@ -31,6 +31,7 @@
       nvim-lint
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-context
       oil-nvim
       plenary-nvim
       quicker-nvim
