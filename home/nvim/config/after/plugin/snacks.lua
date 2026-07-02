@@ -115,7 +115,7 @@ snacks.setup({
 	},
 })
 
-local grep_hl_word = function()
+local highlighted_word = function()
 	local lines = get_visual_selection_text()
 	local text = ""
 	for _, line in pairs(lines) do
@@ -125,7 +125,7 @@ local grep_hl_word = function()
 			text = text .. "\n" .. line
 		end
 	end
-	snacks.picker.grep({ regex = false, search = text })
+	return text
 end
 
 vim.api.nvim_create_user_command("Explore", function()
@@ -141,6 +141,7 @@ vim.keymap.set("n", "<leader>zz", function()
 end)
 
 vim.keymap.set("n", "<C-p>", snacks.picker.smart)
+vim.keymap.set("v", "<C-p>", snacks.picker.smart({ search = highlighted_word() }))
 vim.keymap.set("n", "<C-l>", snacks.picker.lines)
 vim.keymap.set("n", "<leader>p", function()
 	snacks.picker()
@@ -154,10 +155,14 @@ end)
 vim.keymap.set("n", "<leader>gd", snacks.picker.git_diff)
 vim.keymap.set("n", "<leader>glf", snacks.picker.git_log_file)
 vim.keymap.set("n", "<leader>gll", snacks.picker.git_log_line)
+vim.keymap.set("n", "<leader>?", function()
+	snacks.picker.grep({ auto_close = false, layout = "left" })
+end)
 vim.keymap.set("n", "<leader>/", snacks.picker.grep)
 vim.keymap.set("n", "<C-_>", snacks.picker.grep)
-vim.keymap.set("v", "<leader>/", grep_hl_word)
-vim.keymap.set("v", "<C-_>", grep_hl_word)
+
+vim.keymap.set("v", "<leader>/", snacks.picker.grep({ regex = false, search = highlighted_word() }))
+vim.keymap.set("v", "<C-_>", snacks.picker.grep({ regex = false, search = highlighted_word() }))
 
 vim.keymap.set("n", "<C-s>", snacks.picker.git_status)
 vim.keymap.set("n", "<leader>g/", snacks.picker.git_grep)
