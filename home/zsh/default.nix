@@ -6,6 +6,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
+      copy = "xclip -sel clip";
       p = "pwd | sed -E \"s/\\/home\\/[a-z0-9]*/~/g\"";
       nixdev = "nix develop -c zsh";
       cfg = "cd ~/Documents/git/nixos-cfg/";
