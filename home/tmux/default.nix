@@ -15,7 +15,6 @@
       sensible
       yank
       continuum
-      tmux-floax
     ];
     extraConfig = builtins.readFile ./tmux.conf;
   };
