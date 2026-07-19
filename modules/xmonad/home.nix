@@ -6,6 +6,7 @@
   services.betterlockscreen.enable = true;
   home = {
     pointerCursor = {
+      enable = true;
       size = 30;
       package = pkgs.nordzy-cursor-theme;
       name = "Nordzy-cursors-white";

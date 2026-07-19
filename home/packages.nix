@@ -3,13 +3,12 @@
   home.packages = with pkgs;
     [
       (agda.withPackages [ agdaPackages.standard-library ])
-      (python3.withPackages (ps: with ps; [ python-lsp-black pylint ruff]))
+      (python3.withPackages (ps: with ps; [ pylint ruff ]))
       alsa-utils
       arandr
       audacity
       basedpyright
       bc
-      bitwarden-desktop
       bitwarden-menu
       btop
       cabal2nix
