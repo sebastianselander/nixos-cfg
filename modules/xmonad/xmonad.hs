@@ -217,8 +217,8 @@ myKeys isDualMonitor conf@(XConfig{XMonad.modMask = modm}) =
                , -- keyboard
                  ((modm, xK_space), spawn "~/Documents/git/nixos-cfg/modules/xmonad/keyboardToggle.sh")
                , -- brightness
-                 ((0, xF86XK_MonBrightnessUp), spawn "light -A 5")
-               , ((0, xF86XK_MonBrightnessDown), spawn "light -U 5")
+                 ((0, xF86XK_MonBrightnessUp), spawn "brightnessctl set +10%")
+               , ((0, xF86XK_MonBrightnessDown), spawn "brightnessctl set 10%-")
                , -- volume
                  ((0, xF86XK_AudioMute), spawn "pamixer --toggle-mute")
                , ((0, xF86XK_AudioRaiseVolume), spawn "pamixer -i 3")
