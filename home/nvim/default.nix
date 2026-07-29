@@ -15,6 +15,7 @@
       cmp-path
       cmp_luasnip
       conform-nvim
+      demicolon-nvim
       diffview-nvim
       gitsigns-nvim
       goto-preview
