@@ -44,6 +44,7 @@ vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
 vim.opt.laststatus = 3
 
+vim.o.winborder = "single"
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.foldmethod = "expr"
