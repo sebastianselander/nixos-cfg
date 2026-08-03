@@ -7,6 +7,9 @@ cmp_caps.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true,
 }
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.with(vim.lsp.handlers.hover, { border = "single" })
+
 M.capabilities = cmp_caps
 
 M.on_attach = function(_, bufnr)
