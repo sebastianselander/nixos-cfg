@@ -13,11 +13,19 @@ local notify = require("mini.notify")
 local operators = require("mini.operators")
 local splitjoin = require("mini.splitjoin")
 local surround = require("mini.surround")
+local trailspace = require("mini.trailspace")
+local sessions = require("mini.sessions")
 
 notify.setup()
 
 bracketed.setup()
 
+trailspace.setup()
+
+sessions.setup({
+    autoread = true,
+    autowrite = true
+})
 
 ai.setup({
 	custom_textobjects = {
