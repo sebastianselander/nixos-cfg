@@ -5,8 +5,8 @@
     settings = {
       promptToReturnFromSubprocess = false;
       git = {
-        pagers = [
-          { pager = "delta --paging=never"; }
+        diffRenderers = [
+          { command = "delta --paging=never"; }
         ];
       };
     };
