@@ -36,6 +36,10 @@
         autoSquash = true;
         autoStash = true;
       };
+      rerere = {
+        enabled = true; 
+        autoupdate = true;
+      };
       url."git@github.com:" = {
         insteadOf = "https://github.com/";
       };
