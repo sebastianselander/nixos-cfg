@@ -12,7 +12,7 @@ local rep = require("luasnip.extras").rep
 return {
 	s(
 		"for",
-		fmta("for (int <> = 0; <> << <>; <>++) {\n    <>\n}", {
+		fmta("for (int <> = 0; <> << <>; ++<>) {\n    <>\n}", {
 			i(1, "i"),
 			rep(1),
 			i(2, ""),
