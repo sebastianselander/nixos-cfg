@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<esc>", function()
+	vim.cmd.noh()
+    local multicursor = vim.api.nvim_create_namespace('nvim.multicursor')
+    vim.api.nvim_buf_clear_namespace(0, multicursor, 0, -1)
+end)
