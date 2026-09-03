@@ -7,6 +7,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +19,7 @@
       nixpkgs,
       home-manager,
       nix-index-database,
+      neovim-nightly-overlay,
       ...
     }:
     let
@@ -29,6 +31,7 @@
             doCheck = false;
           });
         })
+        inputs.neovim-nightly-overlay.overlays.default
       ];
       buildSystem =
         { systemImports, homeImports }:
