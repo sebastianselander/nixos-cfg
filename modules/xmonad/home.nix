@@ -18,7 +18,6 @@
       xbacklight
       flameshot
       pavucontrol
-      nitrogen
     ];
   };
 }

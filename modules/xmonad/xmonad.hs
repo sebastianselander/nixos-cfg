@@ -76,7 +76,6 @@ myBrowser = "firefox"
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "nitrogen --restore"
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawnOnce "xset r rate 230 40"
     spawnOnce "mullvad-exclude thunderbird"
