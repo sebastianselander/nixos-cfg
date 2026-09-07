@@ -33,7 +33,6 @@
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
       oil-nvim
-      plenary-nvim
       quicker-nvim
       snacks-nvim
       tiny-inline-diagnostic-nvim
