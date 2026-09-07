@@ -36,7 +36,6 @@
       plenary-nvim
       quicker-nvim
       snacks-nvim
-      tabby-nvim
       tiny-inline-diagnostic-nvim
       tmux-nvim
       tokyonight-nvim
