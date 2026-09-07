@@ -42,7 +42,6 @@
       toggleterm-nvim
       tokyonight-nvim
       trouble-nvim
-      typst-preview-nvim
     ];
   };
   xdg.configFile = {
