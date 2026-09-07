@@ -26,9 +26,6 @@
       nightfly
       nightfox-nvim
       nvim-cmp
-      nvim-dap
-      nvim-dap-ui
-      nvim-dap-virtual-text
       nvim-lint
       nvim-lspconfig
       nvim-treesitter-context
