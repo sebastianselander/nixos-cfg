@@ -18,7 +18,6 @@
       demicolon-nvim
       diffview-nvim
       gitsigns-nvim
-      goto-preview
       lualine-nvim
       luasnip
       mini-nvim
