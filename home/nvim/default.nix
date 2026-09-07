@@ -15,7 +15,6 @@
       cmp-path
       cmp_luasnip
       conform-nvim
-      demicolon-nvim
       diffview-nvim
       dracula-nvim
       gitsigns-nvim
