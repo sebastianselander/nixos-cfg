@@ -39,7 +39,6 @@
       tabby-nvim
       tiny-inline-diagnostic-nvim
       tmux-nvim
-      toggleterm-nvim
       tokyonight-nvim
       trouble-nvim
     ];
