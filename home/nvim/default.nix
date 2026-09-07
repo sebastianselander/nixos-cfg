@@ -23,8 +23,6 @@
       luasnip
       mini-nvim
       neodev-nvim
-      nightfly
-      nightfox-nvim
       nvim-cmp
       nvim-lint
       nvim-lspconfig
