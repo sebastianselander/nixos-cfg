@@ -17,6 +17,7 @@
       conform-nvim
       demicolon-nvim
       diffview-nvim
+      dracula-nvim
       gitsigns-nvim
       lualine-nvim
       luasnip
@@ -30,8 +31,8 @@
       nvim-dap-virtual-text
       nvim-lint
       nvim-lspconfig
-      nvim-treesitter.withAllGrammars
       nvim-treesitter-context
+      nvim-treesitter.withAllGrammars
       oil-nvim
       quicker-nvim
       snacks-nvim
