@@ -34,6 +34,7 @@
       tmux-nvim
       tokyonight-nvim
       trouble-nvim
+      poimandres-nvim
     ];
   };
   xdg.configFile = {
