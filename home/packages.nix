@@ -49,7 +49,6 @@
       hlint
       just
       lean4
-      libreoffice
       lua
       lua-language-server
       man-pages
