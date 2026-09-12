@@ -12,16 +12,22 @@ local notify = require("mini.notify")
 local operators = require("mini.operators")
 local trailspace = require("mini.trailspace")
 local sessions = require("mini.sessions")
+local cmdline = require("mini.cmdline")
 
 notify.setup()
+cmdline.setup({
+	autocomplete = {
+		enable = false,
+	},
+})
 
 bracketed.setup()
 
 trailspace.setup()
 
 sessions.setup({
-    autoread = true,
-    autowrite = true
+	autoread = true,
+	autowrite = true,
 })
 
 ai.setup({
