@@ -54,6 +54,7 @@
       man-pages
       man-pages-posix
       marksman
+      mergiraf
       ncdu
       nil
       nix-prefetch-git
