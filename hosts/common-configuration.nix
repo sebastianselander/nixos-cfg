@@ -108,6 +108,9 @@
   nixpkgs.config.allowUnfree = true;
   nix.optimise = { automatic = true; };
   programs = {
+    nix-ld = {
+      enable = true;
+    };
     zsh.enable = true;
     dconf.enable = true;
     command-not-found.enable = false;
