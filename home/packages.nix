@@ -48,7 +48,6 @@
       haskellPackages.stylish-haskell
       hlint
       just
-      lean4
       lua
       lua-language-server
       man-pages
