@@ -2,7 +2,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
-vim.opt.colorcolumn = { 100 }
+vim.opt.colorcolumn = "100"
 vim.bo.makeprg = "cabal run"
 
 -- vim.keymap.set("n", "<leader>hs", ht.hoogle.hoogle_signature, opts)
