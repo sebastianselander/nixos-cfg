@@ -14,8 +14,9 @@ local next_layout = function(picker)
 end
 
 local get_visual_selection_text = function()
-	local _, srow, scol = table.unpack(vim.fn.getpos("v"))
-	local _, erow, ecol = table.unpack(vim.fn.getpos("."))
+    local unp = table.unpack or unpack 
+	local _, srow, scol = unp(vim.fn.getpos("v"))
+	local _, erow, ecol = unp(vim.fn.getpos("."))
 
 	-- visual line mode
 	if vim.fn.mode() == "V" then
