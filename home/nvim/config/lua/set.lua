@@ -60,3 +60,8 @@ vim.opt.fillchars = {
 	foldsep = " ",
 }
 
+vim.opt.winbar = "> %f %m"
+
+local hl = vim.api.nvim_get_hl(0,{})
+vim.api.nvim_set_hl(0, "WinBar", { bg = hl["StatusLine"].bg, fg = hl["StatusLine"].fg})
+vim.api.nvim_set_hl(0, "WinBarNC", { bg = hl["StatusLineNC"].bg, fg = hl["StatusLineNC"].fg})
