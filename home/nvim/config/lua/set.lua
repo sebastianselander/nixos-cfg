@@ -43,6 +43,7 @@ vim.opt.timeoutlen = 400
 vim.opt.inccommand = "split"
 vim.opt.jumpoptions = "stack,view"
 vim.opt.laststatus = 3
+vim.opt.autoread = true
 
 vim.o.winborder = "single"
 vim.o.foldlevelstart = 99
