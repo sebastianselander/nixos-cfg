@@ -56,3 +56,8 @@ vim.api.nvim_create_user_command("ColorToggle", function()
         vim.cmd.colorscheme(colorscheme_light)
     end
 end, {})
+
+
+local hl = vim.api.nvim_get_hl(0,{})
+vim.api.nvim_set_hl(0, "WinBar", { bg = hl["StatusLine"].bg, fg = hl["StatusLine"].fg})
+vim.api.nvim_set_hl(0, "WinBarNC", { bg = hl["StatusLineNC"].bg, fg = hl["StatusLineNC"].fg})
