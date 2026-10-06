@@ -40,24 +40,27 @@ require("tokyonight").setup({
 })
 
 local background = "dark"
-local colorscheme_dark = "dracula"
-local colorscheme_light = "dracula"
+local colorscheme_dark = "catppuccin-frappe"
+local colorscheme_light = "catppuccin-latte"
 
+local scheme = colorscheme_dark
+if background == "light" then
+	scheme = colorscheme_light
+end
 vim.o.background = background
 vim.cmd.colorscheme(colorscheme_dark)
 
 vim.api.nvim_create_user_command("ColorToggle", function()
 	local bg = vim.o.background
-    if bg == "light" then
-        vim.o.background = "dark"
-        vim.cmd.colorscheme(colorscheme_dark)
-    else
-        vim.o.background = "light"
-        vim.cmd.colorscheme(colorscheme_light)
-    end
+	if bg == "light" then
+		vim.o.background = "dark"
+		vim.cmd.colorscheme(colorscheme_dark)
+	else
+		vim.o.background = "light"
+		vim.cmd.colorscheme(colorscheme_light)
+	end
 end, {})
 
-
-local hl = vim.api.nvim_get_hl(0,{})
-vim.api.nvim_set_hl(0, "WinBar", { bg = hl["StatusLine"].bg, fg = hl["StatusLine"].fg})
-vim.api.nvim_set_hl(0, "WinBarNC", { bg = hl["StatusLineNC"].bg, fg = hl["StatusLineNC"].fg})
+local hl = vim.api.nvim_get_hl(0, {})
+vim.api.nvim_set_hl(0, "WinBar", { bg = hl["StatusLine"].bg, fg = hl["StatusLine"].fg })
+vim.api.nvim_set_hl(0, "WinBarNC", { bg = hl["StatusLineNC"].bg, fg = hl["StatusLineNC"].fg })
