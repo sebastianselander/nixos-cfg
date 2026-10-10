@@ -10,7 +10,6 @@
       catppuccin-nvim
       cmp-buffer
       cmp-cmdline
-      cmp-latex-symbols
       cmp-nvim-lsp
       cmp-path
       cmp_luasnip
