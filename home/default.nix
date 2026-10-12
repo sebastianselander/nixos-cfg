@@ -1,4 +1,4 @@
-{ inputs, extraImports, ... }: {
+{ username, homeDirectory, inputs, extraImports, ... }: {
   imports = [
     (import ./packages.nix { inherit inputs; })
     ./atuin
@@ -21,8 +21,8 @@
   ] ++ extraImports;
 
   home = {
-    username = "sebastian";
-    homeDirectory = "/home/sebastian";
+    username = username;
+    homeDirectory = homeDirectory;
     stateVersion = "23.05";
     language.base = "en_US.UTF-8";
   };

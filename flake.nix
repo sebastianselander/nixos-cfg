@@ -49,6 +49,8 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.sebastian = import ./home {
+                  username = "sebastian";
+                  homeDirectory = "/home/sebastian";
                   inherit inputs;
                   extraImports = homeImports;
                 };
