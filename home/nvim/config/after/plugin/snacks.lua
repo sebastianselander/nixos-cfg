@@ -2,7 +2,7 @@ local snacks = require("snacks")
 
 local layouts = { "default", "ivy", "left", "right", "bottom", "vscode", "telescope" }
 
-local idx = 1
+local idx = 2
 
 local default_layout = function()
 	return layouts[idx]
@@ -14,7 +14,7 @@ local next_layout = function(picker)
 end
 
 local get_visual_selection_text = function()
-    local unp = table.unpack or unpack 
+	local unp = table.unpack or unpack
 	local _, srow, scol = unp(vim.fn.getpos("v"))
 	local _, erow, ecol = unp(vim.fn.getpos("."))
 
