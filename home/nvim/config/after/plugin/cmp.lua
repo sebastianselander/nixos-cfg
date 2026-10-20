@@ -48,6 +48,9 @@ cmp.setup.cmdline({ "/", "?" }, {
 })
 
 cmp.setup.cmdline(":", {
+	enabled = function()
+		return not vim.fn.getcmdline():find("%*")
+	end,
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
 		{ name = "path" },
